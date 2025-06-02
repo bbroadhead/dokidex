@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: LEEA
 number: 124
-name: Leea
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/leea.png
-description: 
-lang_description: 
+name: LEEA
+type:
+- Grass
+- Fairy
+stage: 1
+evolves_at: ''
+location: route 14, gad'riel peak, wicked woods
 ---
+
+# LEEA
 

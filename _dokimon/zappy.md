@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: ZAPPY
 number: 86
-name: Zappy
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/zappy.png
-description: 
-lang_description: 
+name: ZAPPY
+type:
+- Electric
+- Flying
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# ZAPPY
 

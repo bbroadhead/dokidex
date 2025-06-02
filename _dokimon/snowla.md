@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: SNOWLA
 number: 102
-name: Snowla
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/snowla.png
-description: 
-lang_description: 
+name: SNOWLA
+type:
+- Flying
+- Ice
+stage: 1
+evolves_at: ''
+location: scarlet sea, gad'riel mountain (💧), pirate ship (💧)
 ---
+
+# SNOWLA
 

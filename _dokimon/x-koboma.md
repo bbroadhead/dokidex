@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: X-KOBOMA
 number: 113
-name: X-koboma
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/x-koboma.png
-description: 
-lang_description: 
+name: X-KOBOMA
+type:
+- Fire
+- Ghost
+stage: 2
+evolves_at: ''
+location: gad'riel's domain
 ---
+
+# X-KOBOMA
 

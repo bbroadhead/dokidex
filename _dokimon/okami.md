@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: OKAMI
 number: 94
-name: Okami
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/okami.png
-description: 
-lang_description: 
+name: OKAMI
+type:
+- Dark
+stage: 2
+evolves_at: ''
+location: Xer cave, wicked woods
 ---
+
+# OKAMI
 

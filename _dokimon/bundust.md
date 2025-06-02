@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: BUNDUST
 number: 27
-name: Bundust
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/bundust.png
-description: 
-lang_description: 
+name: BUNDUST
+type:
+- Fairy
+stage: 1
+evolves_at: lvl. 15
+location: routes 04 05 06, Xer cave
 ---
+
+# BUNDUST
 

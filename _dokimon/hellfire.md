@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: HELLFIRE
 number: 108
-name: Hellfire
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/hellfire.png
-description: 
-lang_description: 
+name: HELLFIRE
+type:
+- Dragon
+- Ice
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# HELLFIRE
 

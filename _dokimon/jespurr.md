@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: JESPURR
 number: 28
-name: Jespurr
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/jespurr.png
-description: 
-lang_description: 
+name: JESPURR
+type:
+- Light
+stage: 1
+evolves_at: lvl. 34
+location: which-way, gad'riel mountain (🌿), passaway, Xer cave
 ---
+
+# JESPURR
 

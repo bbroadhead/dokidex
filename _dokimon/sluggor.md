@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: SLUGGOR
 number: 143
-name: Sluggor
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/sluggor.png
-description: 
-lang_description: 
+name: SLUGGOR
+type:
+- Water
+- Poison
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# SLUGGOR
 

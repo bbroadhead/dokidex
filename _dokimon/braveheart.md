@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: BRAVEHEART
 number: 3
-name: Braveheart
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/braveheart.png
-description: 
-lang_description: 
+name: BRAVEHEART
+type:
+- Fire
+- Fight
+stage: 3
+evolves_at: ''
+location: ''
 ---
+
+# BRAVEHEART
 

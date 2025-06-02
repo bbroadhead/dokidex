@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: LEEKSWORD
 number: 12
-name: Leeksword
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/leeksword.png
-description: 
-lang_description: 
+name: LEEKSWORD
+type:
+- Light
+- Dark
+stage: 3
+evolves_at: ''
+location: ''
 ---
+
+# LEEKSWORD
 

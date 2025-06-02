@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: T-KOBOM
 number: 112
-name: T-kobom
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/t-kobom.png
-description: 
-lang_description: 
+name: T-KOBOM
+type:
+- Fire
+- Electric
+stage: 2
+evolves_at: ''
+location: gad'riel's domain
 ---
+
+# T-KOBOM
 

@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: WOOLLEC
 number: 54
-name: Woollec
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/woollec.png
-description: 
-lang_description: 
+name: WOOLLEC
+type:
+- Electric
+- Poison
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# WOOLLEC
 

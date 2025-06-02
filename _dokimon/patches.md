@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: PATCHES
 number: 53
-name: Patches
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/patches.png
-description: 
-lang_description: 
+name: PATCHES
+type:
+- Electric
+stage: 1
+evolves_at: ''
+location: route 03 06, gad'riel mountain (🌿)
 ---
+
+# PATCHES
 

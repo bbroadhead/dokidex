@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: MISMA
 number: 87
-name: Misma
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/misma.png
-description: 
-lang_description: 
+name: MISMA
+type:
+- Electric
+stage: 1
+evolves_at: ''
+location: gad'riel mountain (🟪)
 ---
+
+# MISMA
 

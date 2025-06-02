@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: LEMA
 number: 136
-name: Lema
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/lema.png
-description: 
-lang_description: 
+name: LEMA
+type:
+- Fire
+stage: 1
+evolves_at: ''
+location: behind aki's shrine (🌿), X2 base [obtain 🌸 to access] (💧), yor city shore
+  (🔥)
 ---
+
+# LEMA
 

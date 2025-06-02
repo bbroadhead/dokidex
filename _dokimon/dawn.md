@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: DAWN
 number: 134
-name: Dawn
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/dawn.png
-description: 
-lang_description: 
+name: DAWN
+type:
+- Dragon
+- Flying
+stage: 1
+evolves_at: ''
+location: ''
 ---
+
+# DAWN
 

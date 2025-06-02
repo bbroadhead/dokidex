@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: MAG
 number: 130
-name: Mag
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/mag.png
-description: 
-lang_description: 
+name: MAG
+type:
+- Fire
+stage: 1
+evolves_at: ''
+location: ''
 ---
+
+# MAG
 

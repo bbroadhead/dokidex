@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: KAMIOKAMI
 number: 95
-name: Kamiokami
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/kamiokami.png
-description: 
-lang_description: 
+name: KAMIOKAMI
+type:
+- Dark
+stage: 2
+evolves_at: ''
+location: wicked woods
 ---
+
+# KAMIOKAMI
 

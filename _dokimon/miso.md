@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: MISO
 number: 66
-name: Miso
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/miso.png
-description: 
-lang_description: 
+name: MISO
+type:
+- Dragon
+- Light
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# MISO
 

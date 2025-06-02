@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: HEMLING
 number: 96
-name: Hemling
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/hemling.png
-description: 
-lang_description: 
+name: HEMLING
+type:
+- Fire
+stage: 1
+evolves_at: ''
+location: gad'riel mountain (🔥), darkshawl
 ---
+
+# HEMLING
 

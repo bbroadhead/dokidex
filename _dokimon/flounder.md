@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: FLOUNDER
 number: 25
-name: Flounder
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/flounder.png
-description: 
-lang_description: 
+name: FLOUNDER
+type:
+- Water
+- Flying
+stage: 1
+evolves_at: lvl. 38
+location: routes 03 11, scarlet sea, gad'riel mountain (💧), pirate ship
 ---
+
+# FLOUNDER
 

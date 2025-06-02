@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: BULBAPOD
 number: 4
-name: Bulbapod
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/bulbapod.png
-description: 
-lang_description: 
+name: BULBAPOD
+type:
+- Grass
+stage: 1
+evolves_at: lvl. 15
+location: Starter
 ---
+
+# BULBAPOD
 

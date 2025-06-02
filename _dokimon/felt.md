@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: FELT
 number: 2
-name: Felt
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/felt.png
-description: 
-lang_description: 
+name: FELT
+type:
+- Fire
+stage: 2
+evolves_at: lvl. 38
+location: ''
 ---
+
+# FELT
 

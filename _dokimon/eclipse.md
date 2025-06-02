@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: ECLIPSE
 number: 47
-name: Eclipse
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/eclipse.png
-description: 
-lang_description: 
+name: ECLIPSE
+type:
+- Ghost
+- Poison
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# ECLIPSE
 

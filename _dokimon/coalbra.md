@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: COALBRA
 number: 52
-name: Coalbra
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/coalbra.png
-description: 
-lang_description: 
+name: COALBRA
+type:
+- Fire
+- Dragon
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# COALBRA
 

@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: MUSHLO
 number: 90
-name: Mushlo
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/mushlo.png
-description: 
-lang_description: 
+name: MUSHLO
+type:
+- Grass
+stage: 1
+evolves_at: ''
+location: routes 07 14, gad'riel mountain (🟪), wicked woods
 ---
+
+# MUSHLO
 

@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: LANTIS
 number: 71
-name: Lantis
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/lantis.png
-description: 
-lang_description: 
+name: LANTIS
+type:
+- Dragon
+stage: 2
+evolves_at: ''
+location: yoink (yor city)
 ---
+
+# LANTIS
 

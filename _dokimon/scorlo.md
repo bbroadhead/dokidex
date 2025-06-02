@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: SCORLO
 number: 67
-name: Scorlo
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/scorlo.png
-description: 
-lang_description: 
+name: SCORLO
+type:
+- Poison
+stage: 1
+evolves_at: ''
+location: gad'riel mountain (🌿)
 ---
+
+# SCORLO
 

@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: TOXIHOP
 number: 79
-name: Toxihop
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/toxihop.png
-description: 
-lang_description: 
+name: TOXIHOP
+type:
+- Water
+- Poison
+stage: 2
+evolves_at: ''
+location: wicked woods
 ---
+
+# TOXIHOP
 

@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: EMBEROX
 number: 56
-name: Emberox
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/emberox.png
-description: 
-lang_description: 
+name: EMBEROX
+type:
+- Fire
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# EMBEROX
 

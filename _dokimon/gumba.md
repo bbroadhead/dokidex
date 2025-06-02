@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: GUMBA
 number: 78
-name: Gumba
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/gumba.png
-description: 
-lang_description: 
+name: GUMBA
+type:
+- Water
+- Poison
+stage: 1
+evolves_at: ''
+location: gad'riel mountain (💧, 🟪), wicked woods, pirate ship
 ---
+
+# GUMBA
 

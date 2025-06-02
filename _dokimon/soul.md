@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: SOUL
 number: 42
-name: Soul
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/soul.png
-description: 
-lang_description: 
+name: SOUL
+type:
+- Dark
+stage: 1
+evolves_at: ''
+location: which-way, gad'riel mountain (🟪, 🪨)
 ---
+
+# SOUL
 

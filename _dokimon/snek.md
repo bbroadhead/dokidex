@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: SNEK
 number: 106
-name: Snek
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/snek.png
-description: 
-lang_description: 
+name: SNEK
+type:
+- Grass
+stage: 1
+evolves_at: ''
+location: route 14, gad'riel mountain (🌸), peak, Xer base (🌿), tenshou tower, darkshawl
 ---
+
+# SNEK
 

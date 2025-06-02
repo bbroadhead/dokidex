@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: MUDSLIP
 number: 26
-name: Mudslip
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/mudslip.png
-description: 
-lang_description: 
+name: MUDSLIP
+type:
+- Water
+- Flying
+stage: 2
+evolves_at: ''
+location: gad'riel mountain (💧)
 ---
+
+# MUDSLIP
 

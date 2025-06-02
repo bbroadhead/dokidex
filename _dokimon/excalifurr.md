@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: EXCALIFURR
 number: 14
-name: Excalifurr
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/excalifurr.png
-description: 
-lang_description: 
+name: EXCALIFURR
+type:
+- Fairy
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# EXCALIFURR
 

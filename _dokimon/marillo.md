@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: MARILLO
 number: 45
-name: Marillo
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/marillo.png
-description: 
-lang_description: 
+name: MARILLO
+type:
+- Water
+- Fight
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# MARILLO
 

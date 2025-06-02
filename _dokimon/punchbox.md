@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: PUNCHBOX
 number: 89
-name: Punchbox
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/punchbox.png
-description: 
-lang_description: 
+name: PUNCHBOX
+type:
+- Ghost
+- Fight
+stage: 2
+evolves_at: ''
+location: wicked woods
 ---
+
+# PUNCHBOX
 

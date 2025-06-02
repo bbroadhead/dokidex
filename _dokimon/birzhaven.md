@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: BIRZHAVEN
 number: 32
-name: Birzhaven
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/birzhaven.png
-description: 
-lang_description: 
+name: BIRZHAVEN
+type:
+- Poison
+- Flying
+stage: 2
+evolves_at: ''
+location: pirate ship
 ---
+
+# BIRZHAVEN
 

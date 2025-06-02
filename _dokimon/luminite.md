@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: LUMINITE
 number: 85
-name: Luminite
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/luminite.png
-description: 
-lang_description: 
+name: LUMINITE
+type:
+- Electric
+- Fire
+stage: 2
+evolves_at: ''
+location: gad'riel mountain (🔥)
 ---
+
+# LUMINITE
 

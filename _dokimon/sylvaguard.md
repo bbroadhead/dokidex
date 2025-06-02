@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: SYLVAGUARD
 number: 99
-name: Sylvaguard
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/sylvaguard.png
-description: 
-lang_description: 
+name: SYLVAGUARD
+type:
+- Grass
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# SYLVAGUARD
 

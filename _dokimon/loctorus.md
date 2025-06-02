@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: LOCTORUS
 number: 8
-name: Loctorus
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/loctorus.png
-description: 
-lang_description: 
+name: LOCTORUS
+type:
+- Water
+stage: 2
+evolves_at: lvl. 36
+location: ''
 ---
+
+# LOCTORUS
 

@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: OHM
 number: 120
-name: Ohm
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/ohm.png
-description: 
-lang_description: 
+name: OHM
+type:
+- Electric
+- Fairy
+stage: 5
+evolves_at: ''
+location: ''
 ---
+
+# OHM
 

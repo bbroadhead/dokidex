@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: HARLEQITTY
 number: 30
-name: Harleqitty
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/harleqitty.png
-description: 
-lang_description: 
+name: HARLEQITTY
+type:
+- Light
+- Fairy
+stage: 3
+evolves_at: lvl. 16
+location: ''
 ---
+
+# HARLEQITTY
 

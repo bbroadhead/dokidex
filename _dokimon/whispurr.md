@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: WHISPURR
 number: 13
-name: Whispurr
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/whispurr.png
-description: 
-lang_description: 
+name: WHISPURR
+type:
+- Fairy
+stage: 1
+evolves_at: lvl. 18
+location: Route 01
 ---
+
+# WHISPURR
 

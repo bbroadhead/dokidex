@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: BOXBI
 number: 83
-name: Boxbi
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/boxbi.png
-description: 
-lang_description: 
+name: BOXBI
+type:
+- Dark
+- Fight
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# BOXBI
 

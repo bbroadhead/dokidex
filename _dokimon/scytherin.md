@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: SCYTHERIN
 number: 5
-name: Scytherin
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/scytherin.png
-description: 
-lang_description: 
+name: SCYTHERIN
+type:
+- Grass
+stage: 2
+evolves_at: lvl. 34
+location: ''
 ---
+
+# SCYTHERIN
 

@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: HEXABELLE
 number: 119
-name: Hexabelle
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/hexabelle.png
-description: 
-lang_description: 
+name: HEXABELLE
+type:
+- Ghost
+- Fairy
+stage: 4
+evolves_at: ''
+location: ''
 ---
+
+# HEXABELLE
 

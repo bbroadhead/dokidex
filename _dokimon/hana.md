@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: HANA
 number: 76
-name: Hana
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/hana.png
-description: 
-lang_description: 
+name: HANA
+type:
+- Light
+- Fairy
+stage: 2
+evolves_at: ''
+location: ''
 ---
+
+# HANA
 

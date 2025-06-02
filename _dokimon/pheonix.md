@@ -1,13 +1,15 @@
 ---
+layout: dex_entry
+title: PHEONIX
 number: 23
-name: Pheonix
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/pheonix.png
-description: 
-lang_description: 
+name: PHEONIX
+type:
+- Flying
+- Fire
+stage: 1
+evolves_at: lvl. 24
+location: gad'riel mountain (🔥), Xer base (🔥)
 ---
+
+# PHEONIX
 

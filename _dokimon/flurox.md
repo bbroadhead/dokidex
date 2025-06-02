@@ -1,13 +1,14 @@
 ---
+layout: dex_entry
+title: FLUROX
 number: 58
-name: Flurox
-lang_names: 
-stage: 
-evolves_at: 
-type: 
-location: 
-image: /assets/images/flurox.png
-description: 
-lang_description: 
+name: FLUROX
+type:
+- Grass
+stage: 4
+evolves_at: ''
+location: ''
 ---
+
+# FLUROX
 
