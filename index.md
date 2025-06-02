@@ -35,7 +35,7 @@ title: Dokimon: Quest - Wiki
 </div>
 
 <div class="dex-grid" id="dex-grid">
-  {% assign sorted = site.pages | where: "layout", "dex_entry" | sort: "number" %}
+  {% assign sorted = site.dokimon | sort: "number" %}
   {% for mon in sorted %}
     <div class="dex-entry"
          data-name="{{ mon.name | downcase }}"
@@ -44,7 +44,7 @@ title: Dokimon: Quest - Wiki
          data-type="{{ mon.type | join: ' ' }}">
       <a href="{{ mon.url }}">
         <div class="img-wrapper">
-          <img src="{{ mon.image | relative_url }}" alt="{{ mon.name }}">
+          <img src="{{ mon.image }}" alt="{{ mon.name }}">
           <div class="img-blocker"></div>
         </div>
         <div>#{{ mon.number }} - {{ mon.name }}</div>
