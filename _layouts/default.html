@@ -4,19 +4,23 @@
   <meta charset="UTF-8">
   <title>Dokimon:Quest - Wiki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- Stylesheet with Jekyll-relative URL for GitLab Pages compatibility -->
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+
+  <!-- Favicon with relative URL -->
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
 </head>
-<body>
+<body class="dokimon-theme">
   <header class="site-header">
     <div class="header-bg">
-      <img src="/assets/images/dokimon_wiki_header.png" alt="Dokimon Wiki Logo" class="header-logo">
+      <img src="{{ '/assets/images/dokimon_wiki_header.png' | relative_url }}" alt="Dokimon Wiki Logo" class="header-logo">
     </div>
     <nav class="site-nav">
       <div class="nav-left">
-        <a href="/">Dex</a>
-        <a href="/world/">World</a>
-        <a href="/links/">Links</a>
+        <a href="{{ '/' | relative_url }}">Dex</a>
+        <a href="{{ '/world/' | relative_url }}">World</a>
+        <a href="{{ '/links/' | relative_url }}">Links</a>
       </div>
       <div class="nav-center">
         <input type="text" placeholder="Search..." class="search-bar">
