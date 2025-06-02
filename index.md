@@ -44,7 +44,7 @@ title: Dokimon Dex
          data-type="{{ mon.type | join: ' ' }}">
       <a href="{{ mon.url }}">
         <div class="img-wrapper">
-          <img src="{{ mon.image }}" alt="{{ mon.name }}">
+          <img src="{{ '/assets/images/' | append: mon.name | append: '.png' | downcase | relative_url }}" alt="{{ mon.name }}">
           <div class="img-blocker"></div>
         </div>
         <div>#{{ mon.number }} - {{ mon.name }}</div>
