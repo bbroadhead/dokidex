@@ -32,7 +32,7 @@ layout: default
           {% if mon %}
             <div class="chain-stage">
               <div class="img-wrapper">
-                <img src="{{ mon.image }}" alt="{{ mon.name }}">
+                <img src="{{ '/assets/images/' | append: mon.name | append: '.png' | downcase | relative_url }}" alt="{{ mon.name }}">
                 <div class="img-blocker"></div>
               </div>
               <div>{{ mon.name }}</div>
@@ -53,7 +53,7 @@ layout: default
   {% endif %}
 
   <div class="img-wrapper">
-    <img src="{{ page.image }}" alt="{{ page.name }}">
+    <img src="{{ '/assets/images/' | append: page.name | append: '.png' | downcase | relative_url }}" alt="{{ page.name }}">
     <div class="img-blocker"></div>
   </div>
 
