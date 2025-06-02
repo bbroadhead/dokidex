@@ -1,15 +1,15 @@
-# Dokimon Quest - Bestiary Wiki
+# Dokimon Quest - Official Wiki
 
-Welcome to the **official Dokimon Quest Bestiary**, a Jekyll-based site designed to function like a Pokédex for the monster taming game **Dokimon Quest**.
+Welcome to the **official Dokimon Quest Wiki**, a Jekyll-based site designed to function like a Pokédex for the monster taming game **Dokimon: Quest**.
 
 ## 🌐 Live Site
 
 View the site live via GitLab Pages:  
 👉 https://your-username.gitlab.io/dokimon-quest/
 
-## 📦 Features
+## 📦 Features (all of these are work in progress)
 
-- 🧬 Evolution chain display (Serebii-style)
+- 🧬 Evolution chain display
 - 🎨 Type-based colored borders and background tints
 - 🔥 Multi-select type filtering
 - 🎚️ Stage and 🗺️ location filters
@@ -30,7 +30,7 @@ View the site live via GitLab Pages:
 ├── assets/
 │   └── images/
 │       ├── dokimon_wiki_header.png
-│       ├── favicon.png / favicon.ico
+│       ├── favicon.png
 │       └── monster image assets
 ├── index.md                     # Main Dex page with filters
 ├── styles.css                   # All styling (dark mode, type colors, etc.)
@@ -75,6 +75,6 @@ pages:
 
 ## 💡 Credits
 
-- Game: **Dokimon Quest**
-- Design by: [Your Name or Team]
-- Powered by: Jekyll + GitLab Pages
+- Game: **Dokimon: Quest**
+- Design by: Yanako RPGs
+- https://www.yanakorpgs.com/
