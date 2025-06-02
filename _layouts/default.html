@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title | default: site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  {{ content }}
+  <header class="site-header">
+    <div class="header-bg">
+      <img src="/assets/images/dokimon_wiki_header.png" alt="Dokimon Wiki Logo" class="header-logo">
+    </div>
+    <nav class="site-nav">
+      <div class="nav-left">
+        <a href="/">Dex</a>
+        <a href="/world/">World</a>
+        <a href="/links/">Links</a>
+      </div>
+      <div class="nav-center">
+        <input type="text" placeholder="Search..." class="search-bar">
+      </div>
+      <div class="nav-right">
+        <span class="lang-flag" data-lang="en">🇺🇸</span>
+        <span class="lang-flag" data-lang="ja">🇯🇵</span>
+        <span class="lang-flag" data-lang="pt">🇧🇷</span>
+        <span class="lang-flag" data-lang="es">🇪🇸</span>
+        <span class="lang-flag" data-lang="ko">🇰🇷</span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <!-- Prevent Right Click on Images -->
+  <script>
+    document.addEventListener('contextmenu', event => {
+      if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
