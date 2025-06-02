@@ -41,7 +41,7 @@ title: Dokimon: Quest - Wiki
          data-name="{{ mon.name | downcase }}"
          data-location="{{ mon.location | downcase }}"
          data-stage="{{ mon.stage }}"
-         data-type="{{ mon.type | join: ' ' }}">
+         data-type="{% if mon.type.size > 0 %}{{ mon.type | join: ' ' }}{% else %}{{ mon.type }}{% endif %}">
       <a href="{{ '/_dokimon/' | append: mon.name | append: '.html' | downcase | relative_url }}">
         <div class="img-wrapper">
           <img src="{{ '/assets/images/' | append: mon.name | append: '.png' | downcase | relative_url }}" alt="{{ mon.name }}">
