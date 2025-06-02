@@ -76,5 +76,5 @@ pages:
 ## 💡 Credits
 
 - Game: **Dokimon: Quest**
-- Design by: Yanako RPGs
+- by: Yanako RPGs
 - https://www.yanakorpgs.com/
