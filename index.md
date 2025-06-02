@@ -35,7 +35,7 @@ title: Dokimon Dex
 </div>
 
 <div class="dex-grid" id="dex-grid">
-  {% assign sorted = site.dokimon | sort: "number" %}
+  {% assign sorted = site.pages | where: "layout", "dex_entry" | sort: "number" %}
   {% for mon in sorted %}
     <div class="dex-entry"
          data-name="{{ mon.name | downcase }}"
