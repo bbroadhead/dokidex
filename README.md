@@ -5,7 +5,7 @@ Welcome to the **official Dokimon Quest Wiki**, a Jekyll-based site designed to 
 ## 🌐 Live Site
 
 View the site live via GitLab Pages:  
-👉 https://your-username.gitlab.io/dokimon-quest/
+👉 https://dokimon.gitlab.io/dokimon-quest
 
 ## 📦 Features (all of these are work in progress)
 
