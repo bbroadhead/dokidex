@@ -1,1440 +1,1875 @@
 - description: ''
-  evolves_at: ''
+  evolution_level: '14'
+  evolves_at: lvl. 14
+  evolves_from: null
+  evolves_to: Felt
   image: /assets/images/burnsby.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Starter
   name: Burnsby
   number: 1
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fire
 - description: ''
-  evolves_at: ''
+  evolution_level: '38'
+  evolves_at: lvl. 38
+  evolves_from: Burnsby
+  evolves_to: Braveheart
   image: /assets/images/felt.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Felt
   number: 2
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Felt
+  evolves_to: null
   image: /assets/images/braveheart.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Braveheart
   number: 3
-  stage: ''
-  type: ''
+  stage: 3️⃣
+  type: Fire/Fight
 - description: ''
-  evolves_at: ''
+  evolution_level: '15'
+  evolves_at: lvl. 15
+  evolves_from: null
+  evolves_to: Scytherin
   image: /assets/images/bulbapod.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Starter
   name: Bulbapod
   number: 4
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Grass
 - description: ''
-  evolves_at: ''
+  evolution_level: '34'
+  evolves_at: lvl. 34
+  evolves_from: Bulbapod
+  evolves_to: Slytharot
   image: /assets/images/scytherin.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Scytherin
   number: 5
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Scytherin
+  evolves_to: null
   image: /assets/images/slytharot.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Slytharot
   number: 6
-  stage: ''
-  type: ''
+  stage: 3️⃣
+  type: Grass/Flying
 - description: ''
-  evolves_at: ''
+  evolution_level: '16'
+  evolves_at: lvl. 16
+  evolves_from: null
+  evolves_to: Loctorus
   image: /assets/images/squibbly.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Starter
   name: Squibbly
   number: 7
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Water
 - description: ''
-  evolves_at: ''
+  evolution_level: '36'
+  evolves_at: lvl. 36
+  evolves_from: Squibbly
+  evolves_to: Krakanchor
   image: /assets/images/loctorus.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Loctorus
   number: 8
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Water
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Loctorus
+  evolves_to: null
   image: /assets/images/krakanchor.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Krakanchor
   number: 9
-  stage: ''
-  type: ''
+  stage: 3️⃣
+  type: Water/Elect
 - description: ''
-  evolves_at: ''
+  evolution_level: '10'
+  evolves_at: lvl. 10
+  evolves_from: null
+  evolves_to: Jolleek
   image: /assets/images/furreal.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Routes 01, 02, 03, 07, Twindle
   name: Furreal
   number: 10
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Light
 - description: ''
-  evolves_at: ''
+  evolution_level: '15'
+  evolves_at: lvl. 15
+  evolves_from: Furreal
+  evolves_to: Leeksword
   image: /assets/images/jolleek.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Which-Way
   name: Jolleek
   number: 11
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Light
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Jolleek
+  evolves_to: null
   image: /assets/images/leeksword.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Leeksword
   number: 12
-  stage: ''
-  type: ''
+  stage: 3️⃣
+  type: Light/Dark
 - description: ''
-  evolves_at: ''
+  evolution_level: '18'
+  evolves_at: lvl. 18
+  evolves_from: null
+  evolves_to: Excalifurr
   image: /assets/images/whispurr.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Route 01
   name: Whispurr
   number: 13
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Whispurr
+  evolves_to: null
   image: /assets/images/excalifurr.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Excalifurr
   number: 14
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fairy
 - description: ''
-  evolves_at: ''
+  evolution_level: '16'
+  evolves_at: lvl. 16
+  evolves_from: null
+  evolves_to: Kakaratt
   image: /assets/images/carrotti.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Route 01, Twindle, Pirate Ship, Xer Base
   name: Carrotti
   number: 15
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Grass
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Carrotti
+  evolves_to: null
   image: /assets/images/kakaratt.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Pirate Ship, Xer Base
   name: Kakaratt
   number: 16
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass/Dark
 - description: ''
-  evolves_at: ''
+  evolution_level: '15'
+  evolves_at: lvl. 15
+  evolves_from: null
+  evolves_to: Quackfear
   image: /assets/images/quackfil.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Routes 01, 02, 03, 07, Twindle, Gad'riel Mountain (🌿, 🟪)
   name: Quackfil
   number: 17
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dark/Flying
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Quackfil
+  evolves_to: null
   image: /assets/images/quackfear.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Xer Cave
   name: Quackfear
   number: 18
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dark/Flying
 - description: ''
-  evolves_at: ''
+  evolution_level: '16'
+  evolves_at: lvl. 16
+  evolves_from: null
+  evolves_to: Deathscye
   image: /assets/images/casper.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Routes 01, 02, 03, 07, Twindle, Which-Way, Gad'riel Mountain (🪨)
   name: Casper
   number: 19
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Casper
+  evolves_to: null
   image: /assets/images/deathscye.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Deathscye
   number: 20
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dark/Ghost
 - description: ''
-  evolves_at: ''
+  evolution_level: '16'
+  evolves_at: lvl. 16
+  evolves_from: null
+  evolves_to: Lloudious
   image: /assets/images/nimbis.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 04 05 06
   name: Nimbis
   number: 21
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Light
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Nimbis
+  evolves_to: null
   image: /assets/images/lloudious.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Lloudious
   number: 22
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Light
 - description: ''
-  evolves_at: ''
+  evolution_level: '24'
+  evolves_at: lvl. 24
+  evolves_from: null
+  evolves_to: Lucifeather
   image: /assets/images/pheonix.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🔥), Xer base (🔥)
   name: Pheonix
   number: 23
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Flying/Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Pheonix
+  evolves_to: null
   image: /assets/images/lucifeather.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: yoink
   name: Lucifeather
   number: 24
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Flying/Fire
 - description: ''
-  evolves_at: ''
+  evolution_level: '38'
+  evolves_at: lvl. 38
+  evolves_from: null
+  evolves_to: Mudslip
   image: /assets/images/flounder.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 03 11, scarlet sea, gad'riel mountain (💧), pirate ship
   name: Flounder
   number: 25
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Water/Flying
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Flounder
+  evolves_to: null
   image: /assets/images/mudslip.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (💧)
   name: Mudslip
   number: 26
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Water/Flying
 - description: ''
-  evolves_at: ''
+  evolution_level: '15'
+  evolves_at: lvl. 15
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/bundust.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 04 05 06, Xer cave
   name: Bundust
   number: 27
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fairy
 - description: ''
-  evolves_at: ''
+  evolution_level: '34'
+  evolves_at: lvl. 34
+  evolves_from: null
+  evolves_to: Juskitten
   image: /assets/images/jespurr.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: which-way, gad'riel mountain (🌿), passaway, Xer cave
   name: Jespurr
   number: 28
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Light
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Jespurr
+  evolves_to: Harleqitty
   image: /assets/images/juskitten.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🌿)
   name: Juskitten
   number: 29
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Light/Fairy
 - description: ''
-  evolves_at: ''
+  evolution_level: '16'
+  evolves_at: lvl. 16
+  evolves_from: Juskitten
+  evolves_to: null
   image: /assets/images/harleqitty.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Harleqitty
   number: 30
-  stage: ''
-  type: ''
+  stage: 3️⃣
+  type: Light/Fairy
 - description: ''
-  evolves_at: ''
+  evolution_level: '36'
+  evolves_at: lvl. 36
+  evolves_from: null
+  evolves_to: Birzhaven
   image: /assets/images/moisen.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 04 05 06, gad'riel mountain (🌿), pirate ship
   name: Moisen
   number: 31
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Poison/Flying
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Moisen
+  evolves_to: null
   image: /assets/images/birzhaven.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: pirate ship
   name: Birzhaven
   number: 32
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Poison/Flying
 - description: ''
-  evolves_at: ''
+  evolution_level: '10'
+  evolves_at: lvl. 10
+  evolves_from: null
+  evolves_to: Spooklet
   image: /assets/images/brixlet.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 05, gad'riel mountain (🌿)
   name: Brixlet
   number: 33
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fairy/Electric
 - description: ''
-  evolves_at: ''
+  evolution_level: '15'
+  evolves_at: lvl. 15
+  evolves_from: Brixlet
+  evolves_to: null
   image: /assets/images/spooklet.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 05, gad'riel mountain (🌿)
   name: Spooklet
   number: 34
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Ghost/Electric
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Sparkstride
   image: /assets/images/wattlet.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 03 05 07, pirate ship
   name: Wattlet
   number: 35
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Electric/Flying
 - description: ''
-  evolves_at: ''
+  evolution_level: '18'
+  evolves_at: lvl. 18
+  evolves_from: Wattlet
+  evolves_to: null
   image: /assets/images/sparkstride.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Sparkstride
   number: 36
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Electric/Flying
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Tigris
   image: /assets/images/tignis.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 04 06, gad'riel mountain (🔥)
   name: Tignis
   number: 37
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fire
 - description: ''
-  evolves_at: ''
+  evolution_level: '16'
+  evolves_at: lvl. 16
+  evolves_from: Tignis
+  evolves_to: Tignispyre
   image: /assets/images/tigris.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🔥), yoink (yor city)
   name: Tigris
   number: 38
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Tigris
+  evolves_to: null
   image: /assets/images/tignispyre.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: yoink (yor city)
   name: Tignispyre
   number: 39
-  stage: ''
-  type: ''
+  stage: 3️⃣
+  type: Fire/Fairy
 - description: ''
-  evolves_at: ''
+  evolution_level: '15'
+  evolves_at: lvl. 15
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/haracker.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 04 05 06, which-way, gad'riel mountain (🪨), passaway
   name: Haracker
   number: 40
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fight
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/hareate.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Hareate
   number: 41
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fight
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Jistery
   image: /assets/images/soul.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: which-way, gad'riel mountain (🟪, 🪨)
   name: Soul
   number: 42
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Soul
+  evolves_to: null
   image: /assets/images/jistery.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Jistery
   number: 43
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Marillo
   image: /assets/images/loomleak.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 02 03 07, scarlet sea, gad'riel mountain (💧), pirate ship
   name: Loomleak
   number: 44
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Water
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Loomleak
+  evolves_to: null
   image: /assets/images/marillo.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Marillo
   number: 45
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Water/Fight
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Eclipse
   image: /assets/images/luna.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: twindle, which-way, gad'riel mountain (🟪), passaway
   name: Luna
   number: 46
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Luna
+  evolves_to: null
   image: /assets/images/eclipse.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Eclipse
   number: 47
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Ghost/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Shinigam
   image: /assets/images/yomeshi.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: which-way, Xer cave
   name: Yomeshi
   number: 48
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Yomeshi
+  evolves_to: null
   image: /assets/images/shinigam.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Shinigam
   number: 49
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/emboa.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 04 06
   name: Emboa
   number: 50
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Coalbra
   image: /assets/images/rattler.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🔥, 🟪)
   name: Rattler
   number: 51
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Rattler
+  evolves_to: null
   image: /assets/images/coalbra.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Coalbra
   number: 52
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire/Dragon
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Woollec
   image: /assets/images/patches.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 03 06, gad'riel mountain (🌿)
   name: Patches
   number: 53
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Electric
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Patches
+  evolves_to: null
   image: /assets/images/woollec.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Woollec
   number: 54
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Electric/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Emberox
   image: /assets/images/kitsu.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🌿) [obtain access to 🌸 encounters]
   name: Kitsu
   number: 55
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Light
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Kitsu
+  evolves_to: Glaceia
   image: /assets/images/emberox.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Emberox
   number: 56
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Emberox
+  evolves_to: null
   image: /assets/images/glaceia.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Glaceia
   number: 57
-  stage: ''
-  type: ''
+  stage: 3️⃣
+  type: Water
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/flurox.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Flurox
   number: 58
-  stage: ''
-  type: ''
+  stage: 4️⃣
+  type: Grass
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/boltrex.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Boltrex
   number: 59
-  stage: ''
-  type: ''
+  stage: 5️⃣
+  type: Electric
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/yorox.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Yorox
   number: 60
-  stage: ''
-  type: ''
+  stage: 6️⃣
+  type: Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Umbralancer
   image: /assets/images/lunapet.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 14, gad'riel mountain (🟪, 🌸), peak, tenshou tower
   name: Lunapet
   number: 61
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Ghost/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Lunapet
+  evolves_to: null
   image: /assets/images/umbralancer.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: tenshou tower
   name: Umbralancer
   number: 62
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Ghost/Light
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/corsac.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 7 oni log
   name: Corsac
   number: 63
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Electric
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Kilnwyrm
   image: /assets/images/kugwyrm.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 14, gad'riel mountain (🔥, 🌸), peak, tenshou tower
   name: Kugwyrm
   number: 64
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dragon/Light
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Kugwyrm
+  evolves_to: null
   image: /assets/images/kilnwyrm.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Kilnwyrm
   number: 65
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dragon/Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Kilnwyrm
+  evolves_to: null
   image: /assets/images/miso.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Miso
   number: 66
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dragon/Light
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Winzzle
   image: /assets/images/scorlo.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🌿)
   name: Scorlo
   number: 67
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Scorlo
+  evolves_to: null
   image: /assets/images/winzzle.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🌿)
   name: Winzzle
   number: 68
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Winzzle
+  evolves_to: null
   image: /assets/images/skrappler.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Skrappler
   number: 69
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Lantis
   image: /assets/images/atlas.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 02 (🎣), pirate ship
   name: Atlas
   number: 70
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dragon
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Atlas
+  evolves_to: null
   image: /assets/images/lantis.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: yoink (yor city)
   name: Lantis
   number: 71
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dragon
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Lantis
+  evolves_to: null
   image: /assets/images/hunch.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Hunch
   number: 72
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dragon/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Toxorb
   image: /assets/images/voltistrike.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🟪, 🪨), wicked woods
   name: Voltistrike
   number: 73
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Voltistrike
+  evolves_to: null
   image: /assets/images/toxorb.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🟪)
   name: Toxorb
   number: 74
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Hana
   image: /assets/images/ariel.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 14, gad'riel mountain (🌸, 🪨), peak, tenshou tower, darkshawl
   name: Ariel
   number: 75
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Light/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Ariel
+  evolves_to: null
   image: /assets/images/hana.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Hana
   number: 76
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Light/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/toppa.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 11, scarlet sea, gad'riel mountain (💧), pirate ship
   name: Toppa
   number: 77
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Water
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Toxihop
   image: /assets/images/gumba.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (💧, 🟪), wicked woods, pirate ship
   name: Gumba
   number: 78
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Water/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Gumba
+  evolves_to: null
   image: /assets/images/toxihop.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: wicked woods
   name: Toxihop
   number: 79
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Water/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Mimi-to
   image: /assets/images/bloomtad.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Bloomtad
   number: 80
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Grass/Water
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Bloomtad
+  evolves_to: null
   image: /assets/images/mimi-to.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Xer base (🌿)
   name: Mimi-to
   number: 81
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass/Water
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Boxbi
   image: /assets/images/dustle.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🪨, 🌿)
   name: Dustle
   number: 82
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Dustle
+  evolves_to: null
   image: /assets/images/boxbi.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Boxbi
   number: 83
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dark/Fight
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Luminite
   image: /assets/images/plasma.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🔥)
   name: Plasma
   number: 84
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Electric
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Plasma
+  evolves_to: null
   image: /assets/images/luminite.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🔥)
   name: Luminite
   number: 85
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Electric/Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Luminite
+  evolves_to: null
   image: /assets/images/zappy.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Zappy
   number: 86
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Electric/Flying
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Umbral
   image: /assets/images/misma.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🟪)
   name: Misma
   number: 87
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Electric
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Misma
+  evolves_to: null
   image: /assets/images/umbral.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🟪), wicked woods
   name: Umbral
   number: 88
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Electric/Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Umbral
+  evolves_to: null
   image: /assets/images/punchbox.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: wicked woods
   name: Punchbox
   number: 89
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Ghost/Fight
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Shroolia
   image: /assets/images/mushlo.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 07 14, gad'riel mountain (🟪), wicked woods
   name: Mushlo
   number: 90
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Grass
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Mushlo
+  evolves_to: null
   image: /assets/images/shroolia.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: wicked woods
   name: Shroolia
   number: 91
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Shroolia
+  evolves_to: null
   image: /assets/images/fungalina.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: wicked woods
   name: Fungalina
   number: 92
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fairy/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Okami
   image: /assets/images/minx.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🌿, 🟪), wicked woods
   name: Minx
   number: 93
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Minx
+  evolves_to: null
   image: /assets/images/okami.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Xer cave, wicked woods
   name: Okami
   number: 94
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Okami
+  evolves_to: null
   image: /assets/images/kamiokami.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: wicked woods
   name: Kamiokami
   number: 95
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Knyfagon
   image: /assets/images/hemling.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🔥), darkshawl
   name: Hemling
   number: 96
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Hemling
+  evolves_to: null
   image: /assets/images/knyfagon.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel mountain (🌿)
   name: Knyfagon
   number: 97
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Sylvaguard
   image: /assets/images/sylfi.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Xer cave, darkshawl
   name: Sylfi
   number: 98
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Grass
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Sylfi
+  evolves_to: null
   image: /assets/images/sylvaguard.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Sylvaguard
   number: 99
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Polar
   image: /assets/images/frostby.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: scarlet sea, gad'riel mountain (💧)
   name: Frostby
   number: 100
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Ice
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Frostby
+  evolves_to: null
   image: /assets/images/polar.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Polar
   number: 101
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Ice/Fight
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Frostla
   image: /assets/images/snowla.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: scarlet sea, gad'riel mountain (💧), pirate ship (💧)
   name: Snowla
   number: 102
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Flying/Ice
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Snowla
+  evolves_to: null
   image: /assets/images/frostla.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Frostla
   number: 103
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Flying/Ice
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Palsamon
   image: /assets/images/aoimon.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 11, scarlet sea, pirate ship (💧)
   name: Aoimon
   number: 104
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Ice/Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Aoimon
+  evolves_to: null
   image: /assets/images/palsamon.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Palsamon
   number: 105
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Ice/Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Frossla
   image: /assets/images/snek.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 14, gad'riel mountain (🌸), peak, Xer base (🌿), tenshou tower, darkshawl
   name: Snek
   number: 106
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Grass
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Snek
+  evolves_to: null
   image: /assets/images/frossla.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: tenshou tower, darkshawl
   name: Frossla
   number: 107
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass/Ice
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Frossla
+  evolves_to: null
   image: /assets/images/hellfire.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Hellfire
   number: 108
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dragon/Ice
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Creselidite
   image: /assets/images/woodsly.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: Xer base (🌿)
   name: Woodsly
   number: 109
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Grass
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Woodsly
+  evolves_to: null
   image: /assets/images/creselidite.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Creselidite
   number: 110
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass/Fight
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: T-kobom
   image: /assets/images/t-kob.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 14, gad'riel mountain (🌸), wicked woods
   name: T-kob
   number: 111
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fire/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: T-kob
+  evolves_to: null
   image: /assets/images/t-kobom.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel's domain
   name: T-kobom
   number: 112
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire/Electric
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: T-kobom
+  evolves_to: null
   image: /assets/images/x-koboma.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel's domain
   name: X-koboma
   number: 113
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire/Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Dartarget
   image: /assets/images/dartly.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: routes 02 03? 07 14, peak, tenshou tower, wicked woods, darkshawl
   name: Dartly
   number: 114
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Dartly
+  evolves_to: null
   image: /assets/images/dartarget.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Dartarget
   number: 115
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Noxy
   image: /assets/images/gloombud.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: gad'riel peak, wicked woods, gad'riel's domain
   name: Gloombud
   number: 116
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dark/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Gloombud
+  evolves_to: Duskalina
   image: /assets/images/noxy.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: wicked woods, gad'riel's domain
   name: Noxy
   number: 117
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dark/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Noxy
+  evolves_to: null
   image: /assets/images/duskalina.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Duskalina
   number: 118
-  stage: ''
-  type: ''
+  stage: 3️⃣
+  type: Dark/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/hexabelle.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Hexabelle
   number: 119
-  stage: ''
-  type: ''
+  stage: 4️⃣
+  type: Ghost/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: null
   image: /assets/images/ohm.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Ohm
   number: 120
-  stage: ''
-  type: ''
+  stage: 5️⃣
+  type: Electric/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Embellia
   image: /assets/images/embud.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: tenshou tower, darkshawl
   name: Embud
   number: 121
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fire/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Embud
+  evolves_to: null
   image: /assets/images/embellia.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Embellia
   number: 122
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Embellia
+  evolves_to: null
   image: /assets/images/kthuune.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Kthuune
   number: 123
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Linna
   image: /assets/images/leea.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 14, gad'riel peak, wicked woods
   name: Leea
   number: 124
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Grass/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Leea
+  evolves_to: null
   image: /assets/images/linna.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: route 14, wicked woods
   name: Linna
   number: 125
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Linna
+  evolves_to: null
   image: /assets/images/sindela.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Sindela
   number: 126
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Milli
   image: /assets/images/blu.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: darkshawl
   name: Blu
   number: 127
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Water/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Blu
+  evolves_to: null
   image: /assets/images/milli.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: darkshawl
   name: Milli
   number: 128
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Water/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Milli
+  evolves_to: null
   image: /assets/images/millian.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Millian
   number: 129
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Water/Fairy
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Magma
   image: /assets/images/mag.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Mag
   number: 130
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Mag
+  evolves_to: null
   image: /assets/images/magma.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Magma
   number: 131
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dragon/Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Draeking
   image: /assets/images/rex.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Rex
   number: 132
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dragon/Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Rex
+  evolves_to: null
   image: /assets/images/draeking.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Draeking
   number: 133
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dragon/Ghost
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Midnight
   image: /assets/images/dawn.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Dawn
   number: 134
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Dragon/Flying
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Dawn
+  evolves_to: null
   image: /assets/images/midnight.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Midnight
   number: 135
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Dragon/Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Riley
   image: /assets/images/lema.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: behind aki's shrine (🌿), X2 base [obtain 🌸 to access] (💧), yor city shore
+    (🔥)
   name: Lema
   number: 136
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Lema
+  evolves_to: null
   image: /assets/images/riley.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Riley
   number: 137
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Riley
+  evolves_to: null
   image: /assets/images/yan-yaa lii.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Yan-yaa lii
   number: 138
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Fire/Fight
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Photo
   image: /assets/images/spud.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: behind aki's shrine (💧), X2 base [obtain 🌸 to access] (🔥), yor city shore
+    (🌿)
   name: Spud
   number: 139
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Grass
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Spud
+  evolves_to: null
   image: /assets/images/photo.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Photo
   number: 140
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass/Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Photo
+  evolves_to: null
   image: /assets/images/spring-lee.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Spring-lee
   number: 141
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Grass/Dark
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: null
+  evolves_to: Sluggor
   image: /assets/images/toola.png
   lang_description: ''
   lang_names: ''
-  location: ''
+  location: behind aki's shrine (🔥), X2 base [obtain 🌸 to access] (🌿), yor city shore
+    (💧)
   name: Toola
   number: 142
-  stage: ''
-  type: ''
+  stage: 1️⃣
+  type: Water
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Toola
+  evolves_to: null
   image: /assets/images/sluggor.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Sluggor
   number: 143
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Water/Poison
 - description: ''
+  evolution_level: ''
   evolves_at: ''
+  evolves_from: Sluggor
+  evolves_to: null
   image: /assets/images/drifty.png
   lang_description: ''
   lang_names: ''
   location: ''
   name: Drifty
   number: 144
-  stage: ''
-  type: ''
+  stage: 2️⃣
+  type: Water/Poison
