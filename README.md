@@ -1,4 +1,4 @@
-# Dokimon Quest - Official Wiki
+# Dokimon: Quest - Official Wiki
 
 Welcome to the **official Dokimon Quest Wiki**, a Jekyll-based site designed to function like a Pokédex for the monster taming game **Dokimon: Quest**.
 
