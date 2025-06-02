@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: lvl. 18
 location: Route 01
+description: ''
+lang_description: ''
 ---
 
 # WHISPURR
-

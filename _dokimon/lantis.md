@@ -8,7 +8,8 @@ type:
 stage: 2
 evolves_at: ''
 location: yoink (yor city)
+description: ''
+lang_description: ''
 ---
 
 # LANTIS
-

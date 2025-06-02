@@ -8,7 +8,8 @@ type:
 stage: 4
 evolves_at: ''
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # FLUROX
-

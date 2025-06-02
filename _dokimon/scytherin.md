@@ -8,7 +8,8 @@ type:
 stage: 2
 evolves_at: lvl. 34
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # SCYTHERIN
-

@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: lvl. 15
 location: routes 04 05 06, Xer cave
+description: ''
+lang_description: ''
 ---
 
 # BUNDUST
-

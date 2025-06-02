@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: ''
 location: route 03 06, gad'riel mountain (🌿)
+description: ''
+lang_description: ''
 ---
 
 # PATCHES
-

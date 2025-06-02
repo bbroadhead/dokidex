@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: Xer base (🌿)
+description: ''
+lang_description: ''
 ---
 
 # MIMI-TO
-

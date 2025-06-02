@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: gad'riel's domain
+description: ''
+lang_description: ''
 ---
 
 # T-KOBOM
-

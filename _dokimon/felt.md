@@ -8,7 +8,8 @@ type:
 stage: 2
 evolves_at: lvl. 38
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # FELT
-

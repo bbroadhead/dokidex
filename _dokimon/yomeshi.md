@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: ''
 location: which-way, Xer cave
+description: ''
+lang_description: ''
 ---
 
 # YOMESHI
-

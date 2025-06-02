@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: ''
 location: route 14, gad'riel mountain (🌸), wicked woods
+description: ''
+lang_description: ''
 ---
 
 # T-KOB
-

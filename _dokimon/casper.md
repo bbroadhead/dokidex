@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: lvl. 16
 location: Routes 01, 02, 03, 07, Twindle, Which-Way, Gad'riel Mountain (🪨)
+description: ''
+lang_description: ''
 ---
 
 # CASPER
-

@@ -8,7 +8,8 @@ type:
 stage: 2
 evolves_at: ''
 location: Xer cave, wicked woods
+description: ''
+lang_description: ''
 ---
 
 # OKAMI
-

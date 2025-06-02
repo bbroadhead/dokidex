@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: ''
 location: tenshou tower, darkshawl
+description: ''
+lang_description: ''
 ---
 
 # EMBUD
-

@@ -8,7 +8,8 @@ type:
 stage: 2
 evolves_at: lvl. 15
 location: Which-Way
+description: ''
+lang_description: ''
 ---
 
 # JOLLEEK
-

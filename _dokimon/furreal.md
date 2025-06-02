@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: lvl. 10
 location: Routes 01, 02, 03, 07, Twindle
+description: ''
+lang_description: ''
 ---
 
 # FURREAL
-

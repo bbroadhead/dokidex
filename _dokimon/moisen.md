@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: lvl. 36
 location: routes 04 05 06, gad'riel mountain (🌿), pirate ship
+description: ''
+lang_description: ''
 ---
 
 # MOISEN
-

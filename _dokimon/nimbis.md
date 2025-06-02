@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: lvl. 16
 location: routes 04 05 06
+description: ''
+lang_description: ''
 ---
 
 # NIMBIS
-

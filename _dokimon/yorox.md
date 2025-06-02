@@ -8,7 +8,8 @@ type:
 stage: 6
 evolves_at: ''
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # YOROX
-

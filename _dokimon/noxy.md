@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: wicked woods, gad'riel's domain
+description: ''
+lang_description: ''
 ---
 
 # NOXY
-

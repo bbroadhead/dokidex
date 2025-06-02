@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: darkshawl
+description: ''
+lang_description: ''
 ---
 
 # MILLI
-

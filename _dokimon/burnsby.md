@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: lvl. 14
 location: Starter
+description: ''
+lang_description: ''
 ---
 
 # BURNSBY
-

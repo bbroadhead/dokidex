@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: ''
 location: gad'riel mountain (🌿, 🟪), wicked woods
+description: ''
+lang_description: ''
 ---
 
 # MINX
-

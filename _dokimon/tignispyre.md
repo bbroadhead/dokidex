@@ -9,7 +9,8 @@ type:
 stage: 3
 evolves_at: ''
 location: yoink (yor city)
+description: ''
+lang_description: ''
 ---
 
 # TIGNISPYRE
-

@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: ''
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # REX
-

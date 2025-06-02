@@ -9,7 +9,8 @@ type:
 stage: 3
 evolves_at: lvl. 16
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # HARLEQITTY
-

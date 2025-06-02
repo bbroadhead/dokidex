@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: Pirate Ship, Xer Base
+description: ''
+lang_description: ''
 ---
 
 # KAKARATT
-

@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: ''
 location: darkshawl
+description: ''
+lang_description: ''
 ---
 
 # BLU
-

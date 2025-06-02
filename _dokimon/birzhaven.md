@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: pirate ship
+description: ''
+lang_description: ''
 ---
 
 # BIRZHAVEN
-

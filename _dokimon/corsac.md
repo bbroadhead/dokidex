@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: ''
 location: route 7 oni log
+description: ''
+lang_description: ''
 ---
 
 # CORSAC
-

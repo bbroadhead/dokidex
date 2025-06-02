@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: ''
 location: gad'riel mountain (💧, 🟪), wicked woods, pirate ship
+description: ''
+lang_description: ''
 ---
 
 # GUMBA
-

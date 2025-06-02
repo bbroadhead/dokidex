@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: lvl. 38
 location: routes 03 11, scarlet sea, gad'riel mountain (💧), pirate ship
+description: ''
+lang_description: ''
 ---
 
 # FLOUNDER
-

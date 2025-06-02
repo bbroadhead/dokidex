@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: ''
 location: gad'riel peak, wicked woods, gad'riel's domain
+description: ''
+lang_description: ''
 ---
 
 # GLOOMBUD
-

@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # EMBELLIA
-

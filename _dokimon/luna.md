@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: ''
 location: twindle, which-way, gad'riel mountain (🟪), passaway
+description: ''
+lang_description: ''
 ---
 
 # LUNA
-

@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: lvl. 15
 location: routes 05, gad'riel mountain (🌿)
+description: ''
+lang_description: ''
 ---
 
 # SPOOKLET
-

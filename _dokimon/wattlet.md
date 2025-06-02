@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: ''
 location: routes 03 05 07, pirate ship
+description: ''
+lang_description: ''
 ---
 
 # WATTLET
-

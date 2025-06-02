@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: gad'riel mountain (🟪), wicked woods
+description: ''
+lang_description: ''
 ---
 
 # UMBRAL
-

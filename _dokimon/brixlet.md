@@ -9,7 +9,8 @@ type:
 stage: 1
 evolves_at: lvl. 10
 location: routes 05, gad'riel mountain (🌿)
+description: ''
+lang_description: ''
 ---
 
 # BRIXLET
-

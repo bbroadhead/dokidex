@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: route 14, wicked woods
+description: ''
+lang_description: ''
 ---
 
 # LINNA
-

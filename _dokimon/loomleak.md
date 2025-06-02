@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: ''
 location: routes 02 03 07, scarlet sea, gad'riel mountain (💧), pirate ship
+description: ''
+lang_description: ''
 ---
 
 # LOOMLEAK
-

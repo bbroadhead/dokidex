@@ -8,7 +8,8 @@ type:
 stage: 2
 evolves_at: lvl. 36
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # LOCTORUS
-

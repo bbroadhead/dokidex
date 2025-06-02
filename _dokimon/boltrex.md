@@ -8,7 +8,8 @@ type:
 stage: 5
 evolves_at: ''
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # BOLTREX
-

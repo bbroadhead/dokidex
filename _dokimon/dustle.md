@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: ''
 location: gad'riel mountain (🪨, 🌿)
+description: ''
+lang_description: ''
 ---
 
 # DUSTLE
-

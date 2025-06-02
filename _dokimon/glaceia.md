@@ -8,7 +8,8 @@ type:
 stage: 3
 evolves_at: ''
 location: ''
+description: ''
+lang_description: ''
 ---
 
 # GLACEIA
-

@@ -9,7 +9,8 @@ stage: 1
 evolves_at: ''
 location: behind aki's shrine (🔥), X2 base [obtain 🌸 to access] (🌿), yor city shore
   (💧)
+description: ''
+lang_description: ''
 ---
 
 # TOOLA
-

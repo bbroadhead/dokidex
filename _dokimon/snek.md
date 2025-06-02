@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: ''
 location: route 14, gad'riel mountain (🌸), peak, Xer base (🌿), tenshou tower, darkshawl
+description: ''
+lang_description: ''
 ---
 
 # SNEK
-

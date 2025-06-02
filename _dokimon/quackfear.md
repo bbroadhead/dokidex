@@ -9,7 +9,8 @@ type:
 stage: 2
 evolves_at: ''
 location: Xer Cave
+description: ''
+lang_description: ''
 ---
 
 # QUACKFEAR
-

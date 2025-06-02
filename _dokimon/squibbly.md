@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: lvl. 16
 location: Starter
+description: ''
+lang_description: ''
 ---
 
 # SQUIBBLY
-

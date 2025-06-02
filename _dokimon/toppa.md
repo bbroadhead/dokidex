@@ -8,7 +8,8 @@ type:
 stage: 1
 evolves_at: ''
 location: routes 11, scarlet sea, gad'riel mountain (💧), pirate ship
+description: ''
+lang_description: ''
 ---
 
 # TOPPA
-
