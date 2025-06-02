@@ -1,19 +1,261 @@
 body {
   font-family: sans-serif;
-  background-color: #f9f9f9;
-  padding: 2rem;
+  margin: 0;
+  background: #fafafa url("https://www.transparenttextures.com/patterns/white-wall-3.png");
+  color: #222;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.site-header {
+  background: linear-gradient(to bottom, #cde, #eef);
+  padding-bottom: 1rem;
+}
+
+.header-bg {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  background: linear-gradient(135deg, #d3ecff, #f0f8ff);
+}
+
+.header-logo {
+  max-height: 100px;
+  height: auto;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #336699;
+  color: white;
+  padding: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.search-bar {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  min-width: 200px;
+}
+
+.lang-flag {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+main {
+  padding: 1rem;
+}
+
 .dex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.dex-entry {
+  text-align: center;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background: white;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.dex-entry:hover {
+  transform: scale(1.03);
+}
+
+.dex-entry img {
+  max-width: 100%;
+  height: auto;
+}
+
+.filter-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 10px;
 }
-.dex-grid li {
-  width: 150px;
-  text-align: center;
+
+.type-btn {
+  padding: 5px 10px;
+  border: 1px solid #888;
+  background: #eee;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.dex-entry img {
-  max-width: 200px;
+
+.type-btn.active {
+  background: #ffaa00;
+  border-color: #ffaa00;
+  color: black;
 }
+
+#clear-filters {
+  padding: 5px 10px;
+  background: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#clear-filters:hover {
+  background: #c9302c;
+}
+
+#dark-toggle {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 100;
+  padding: 6px 12px;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#dark-toggle:hover {
+  background: #666;
+  transform: scale(1.05);
+}
+#dark-toggle::before {
+  content: "☀️";
+  margin-right: 8px;
+}
+body.dark #dark-toggle::before {
+  content: "🌙";
+}
+
+/* DARK MODE */
+body.dark {
+  background-color: #1b1b1b;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
+  color: #e0e0e0;
+}
+body.dark .filter-controls {
+  background: rgba(30, 30, 30, 0.9);
+  border-color: #444;
+}
+body.dark .dex-entry {
+  background: #2a2a2a;
+  border-color: #555;
+}
+body.dark select,
+body.dark input[type="text"] {
+  background: #3a3a3a;
+  color: #e0e0e0;
+  border-color: #666;
+}
+body.dark .type-btn.active {
+  background: #ffaa00;
+  border-color: #ffaa00;
+  color: #000;
+}
+
+/* Collapsible Filters */
+#filter-toggle {
+  padding: 5px 10px;
+  margin: 10px auto;
+  display: block;
+  background: #888;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#filter-toggle:hover {
+  background: #666;
+}
+.filter-controls.collapsed {
+  display: none;
+}
+
+/* Type Colors - Border + Background */
+.dex-entry[data-type*="fire"] {
+  border-color: #f08030;
+  background-color: #fff5ef;
+}
+.dex-entry[data-type*="water"] {
+  border-color: #6890f0;
+  background-color: #f0f8ff;
+}
+.dex-entry[data-type*="grass"] {
+  border-color: #78c850;
+  background-color: #f5fff2;
+}
+.dex-entry[data-type*="electric"] {
+  border-color: #f8d030;
+  background-color: #fffbea;
+}
+.dex-entry[data-type*="light"] {
+  border-color: #ffeeaa;
+  background-color: #fffef0;
+}
+.dex-entry[data-type*="dark"] {
+  border-color: #705848;
+  background-color: #f6f3f0;
+}
+.dex-entry[data-type*="psychic"] {
+  border-color: #f85888;
+  background-color: #fff3f6;
+}
+.dex-entry[data-type*="bug"] {
+  border-color: #a8b820;
+  background-color: #f8fce8;
+}
+.dex-entry[data-type*="rock"] {
+  border-color: #b8a038;
+  background-color: #fdf8e7;
+}
+.dex-entry[data-type*="steel"] {
+  border-color: #b8b8d0;
+  background-color: #f8f8fc;
+}
+.dex-entry[data-type*="flying"] {
+  border-color: #a890f0;
+  background-color: #f5f3fc;
+}
+.dex-entry[data-type*="fight"] {
+  border-color: #c03028;
+  background-color: #fff1f0;
+}
+.dex-entry[data-type*="ice"] {
+  border-color: #98d8d8;
+  background-color: #f2fdff;
+}
+.dex-entry[data-type*="poison"] {
+  border-color: #a040a0;
+  background-color: #fcf0fc;
+}
+
+/* Dark type backgrounds */
+body.dark .dex-entry[data-type*="fire"] { background-color: #3c2b27; }
+body.dark .dex-entry[data-type*="water"] { background-color: #263849; }
+body.dark .dex-entry[data-type*="grass"] { background-color: #2b3c2a; }
+body.dark .dex-entry[data-type*="electric"] { background-color: #3e3922; }
+body.dark .dex-entry[data-type*="light"] { background-color: #3e3b2d; }
+body.dark .dex-entry[data-type*="dark"] { background-color: #2c2a28; }
+body.dark .dex-entry[data-type*="psychic"] { background-color: #442a3b; }
+body.dark .dex-entry[data-type*="bug"] { background-color: #363d1e; }
+body.dark .dex-entry[data-type*="rock"] { background-color: #3c3723; }
+body.dark .dex-entry[data-type*="steel"] { background-color: #32323b; }
+body.dark .dex-entry[data-type*="flying"] { background-color: #362f4e; }
+body.dark .dex-entry[data-type*="fight"] { background-color: #4a2d2d; }
+body.dark .dex-entry[data-type*="ice"] { background-color: #2b434b; }
+body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
