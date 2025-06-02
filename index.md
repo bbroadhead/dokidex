@@ -35,16 +35,16 @@ title: Dokimon: Quest - Wiki
 </div>
 
 <div class="dex-grid" id="dex-grid">
-  {% assign sorted = site.data.dokimon | sort: "number" %}
+  {% assign sorted = site.pages | where: "layout", "dex_entry" | sort: "number" %}
   {% for mon in sorted %}
     <div class="dex-entry"
          data-name="{{ mon.name | downcase }}"
          data-location="{{ mon.location | downcase }}"
          data-stage="{{ mon.stage }}"
          data-type="{{ mon.type | join: ' ' }}">
-      <a href="{{ '/_dokimon/' | append: mon.name | append: '.html' | downcase | relative_url }}">
+      <a href="{{ mon.url }}">
         <div class="img-wrapper">
-          <img src="{{ '/assets/images/' | append: mon.name | append: '.png' | downcase | relative_url }}" alt="{{ mon.name }}">
+          <img src="{{ mon.image | relative_url }}" alt="{{ mon.name }}">
           <div class="img-blocker"></div>
         </div>
         <div>#{{ mon.number }} - {{ mon.name }}</div>
