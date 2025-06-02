@@ -1,14 +1,68 @@
 ---
 layout: default
 ---
+
 <div class="dex-entry">
   <h1>#{{ page.number }} - {{ page.name }}</h1>
-  <img src="{{ page.image }}" alt="{{ page.name }}">
+
+  {% assign dex = site.data.dokimon %}
+  {% assign current_index = nil %}
+  {% for mon in dex %}
+    {% if mon.name == page.name %}
+      {% assign current_index = forloop.index0 %}
+    {% endif %}
+  {% endfor %}
+
+  {% if current_index != nil %}
+    <div class="evolution-chain">
+      <h2>Evolution Chain</h2>
+      <div class="chain-wrapper">
+        {% assign first = current_index %}
+        {% assign second = current_index %}
+        {% if dex[current_index].evolves_from %}
+          {% assign second = current_index %}
+          {% assign first = second | minus: 1 %}
+          {% if dex[first].evolves_from %}
+            {% assign first = first | minus: 1 %}
+          {% endif %}
+        {% endif %}
+        {% assign evolution_range = (first..first+2) %}
+        {% for i in evolution_range %}
+          {% assign mon = dex[i] %}
+          {% if mon %}
+            <div class="chain-stage">
+              <div class="img-wrapper">
+                <img src="{{ mon.image }}" alt="{{ mon.name }}">
+                <div class="img-blocker"></div>
+              </div>
+              <div>{{ mon.name }}</div>
+            </div>
+            {% unless forloop.last %}
+              <div class="evo-arrow">
+                {% if dex[i+1] and dex[i+1].evolution_level %}
+                  Lv. {{ dex[i+1].evolution_level }} →
+                {% else %}
+                  →
+                {% endif %}
+              </div>
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="img-wrapper">
+    <img src="{{ page.image }}" alt="{{ page.name }}">
+    <div class="img-blocker"></div>
+  </div>
+
   <p><strong>Type:</strong> {{ page.type }}</p>
   <p><strong>Stage:</strong> {{ page.stage }}</p>
   <p><strong>Evolves at:</strong> {{ page.evolves_at }}</p>
   <p><strong>Location:</strong> {{ page.location }}</p>
   <p>{{ page.description }}</p>
   <p>{{ page.lang_description }}</p>
+
   <a href="/">← Back to Index</a>
 </div>
