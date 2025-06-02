@@ -1,0 +1,13 @@
+title: Dokimon Dex
+description: An online Pokédex for the monster-tamer game Dokimon.
+baseurl: ""
+url: ""
+collections:
+  dokimon:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: dokimon
+    values:
+      layout: dex_entry

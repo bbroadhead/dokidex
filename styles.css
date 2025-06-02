@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+.dex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+.dex-grid li {
+  width: 150px;
+  text-align: center;
+}
+.dex-entry img {
+  max-width: 200px;
+}

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<div class="dex-entry">
+  <h1>#{{ page.number }} - {{ page.name }}</h1>
+  <img src="{{ page.image }}" alt="{{ page.name }}">
+  <p><strong>Type:</strong> {{ page.type }}</p>
+  <p><strong>Stage:</strong> {{ page.stage }}</p>
+  <p><strong>Evolves at:</strong> {{ page.evolves_at }}</p>
+  <p><strong>Location:</strong> {{ page.location }}</p>
+  <p>{{ page.description }}</p>
+  <p>{{ page.lang_description }}</p>
+  <a href="/">← Back to Index</a>
+</div>
