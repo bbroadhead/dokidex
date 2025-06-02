@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: JOLLEEK
 number: 11
-name: JOLLEEK
-type:
-- Light
-stage: 2
-evolves_at: lvl. 15
-location: Which-Way
-description: ''
-lang_description: ''
+name: Jolleek
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/jolleek.png
+description: 
+lang_description: 
 ---
 
-# JOLLEEK

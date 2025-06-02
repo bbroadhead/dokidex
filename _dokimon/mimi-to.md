@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: MIMI-TO
 number: 81
-name: MIMI-TO
-type:
-- Grass
-- Water
-stage: 2
-evolves_at: ''
-location: Xer base (🌿)
-description: ''
-lang_description: ''
+name: Mimi-to
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/mimi-to.png
+description: 
+lang_description: 
 ---
 
-# MIMI-TO

@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: REX
 number: 132
-name: REX
-type:
-- Dragon
-- Ghost
-stage: 1
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Rex
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/rex.png
+description: 
+lang_description: 
 ---
 
-# REX

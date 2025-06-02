@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: MILLIAN
 number: 129
-name: MILLIAN
-type:
-- Water
-- Fairy
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Millian
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/millian.png
+description: 
+lang_description: 
 ---
 
-# MILLIAN

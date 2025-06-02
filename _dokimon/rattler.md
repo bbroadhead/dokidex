@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: RATTLER
 number: 51
-name: RATTLER
-type:
-- Fire
-stage: 1
-evolves_at: ''
-location: gad'riel mountain (🔥, 🟪)
-description: ''
-lang_description: ''
+name: Rattler
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/rattler.png
+description: 
+lang_description: 
 ---
 
-# RATTLER

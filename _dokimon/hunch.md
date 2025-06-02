@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: HUNCH
 number: 72
-name: HUNCH
-type:
-- Dragon
-- Poison
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Hunch
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/hunch.png
+description: 
+lang_description: 
 ---
 
-# HUNCH

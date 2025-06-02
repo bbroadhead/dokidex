@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: JISTERY
 number: 43
-name: JISTERY
-type:
-- Dark
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Jistery
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/jistery.png
+description: 
+lang_description: 
 ---
 
-# JISTERY

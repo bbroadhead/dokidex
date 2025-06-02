@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: YOROX
 number: 60
-name: YOROX
-type:
-- Dark
-stage: 6
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Yorox
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/yorox.png
+description: 
+lang_description: 
 ---
 
-# YOROX

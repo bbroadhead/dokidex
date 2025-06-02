@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: RILEY
 number: 137
-name: RILEY
-type:
-- Fire
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Riley
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/riley.png
+description: 
+lang_description: 
 ---
 
-# RILEY

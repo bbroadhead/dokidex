@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: YOMESHI
 number: 48
-name: YOMESHI
-type:
-- Ghost
-stage: 1
-evolves_at: ''
-location: which-way, Xer cave
-description: ''
-lang_description: ''
+name: Yomeshi
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/yomeshi.png
+description: 
+lang_description: 
 ---
 
-# YOMESHI

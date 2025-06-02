@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: PLASMA
 number: 84
-name: PLASMA
-type:
-- Electric
-stage: 1
-evolves_at: ''
-location: gad'riel mountain (🔥)
-description: ''
-lang_description: ''
+name: Plasma
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/plasma.png
+description: 
+lang_description: 
 ---
 
-# PLASMA

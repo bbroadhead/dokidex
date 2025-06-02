@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: LUCIFEATHER
 number: 24
-name: LUCIFEATHER
-type:
-- Flying
-- Fire
-stage: 2
-evolves_at: ''
-location: yoink
-description: ''
-lang_description: ''
+name: Lucifeather
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/lucifeather.png
+description: 
+lang_description: 
 ---
 
-# LUCIFEATHER

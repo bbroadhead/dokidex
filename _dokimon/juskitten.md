@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: JUSKITTEN
 number: 29
-name: JUSKITTEN
-type:
-- Light
-- Fairy
-stage: 2
-evolves_at: ''
-location: gad'riel mountain (🌿)
-description: ''
-lang_description: ''
+name: Juskitten
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/juskitten.png
+description: 
+lang_description: 
 ---
 
-# JUSKITTEN

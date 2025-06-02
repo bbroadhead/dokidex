@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: DUSKALINA
 number: 118
-name: DUSKALINA
-type:
-- Dark
-- Fairy
-stage: 3
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Duskalina
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/duskalina.png
+description: 
+lang_description: 
 ---
 
-# DUSKALINA

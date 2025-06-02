@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: FUNGALINA
 number: 92
-name: FUNGALINA
-type:
-- Fairy
-- Poison
-stage: 2
-evolves_at: ''
-location: wicked woods
-description: ''
-lang_description: ''
+name: Fungalina
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/fungalina.png
+description: 
+lang_description: 
 ---
 
-# FUNGALINA

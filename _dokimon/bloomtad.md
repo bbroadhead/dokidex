@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: BLOOMTAD
 number: 80
-name: BLOOMTAD
-type:
-- Grass
-- Water
-stage: 1
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Bloomtad
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/bloomtad.png
+description: 
+lang_description: 
 ---
 
-# BLOOMTAD

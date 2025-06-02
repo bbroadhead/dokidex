@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: MAGMA
 number: 131
-name: MAGMA
-type:
-- Dragon
-- Fire
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Magma
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/magma.png
+description: 
+lang_description: 
 ---
 
-# MAGMA

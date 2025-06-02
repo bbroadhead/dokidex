@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: FROSSLA
 number: 107
-name: FROSSLA
-type:
-- Grass
-- Ice
-stage: 2
-evolves_at: ''
-location: tenshou tower, darkshawl
-description: ''
-lang_description: ''
+name: Frossla
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/frossla.png
+description: 
+lang_description: 
 ---
 
-# FROSSLA

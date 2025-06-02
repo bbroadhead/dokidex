@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: MIDNIGHT
 number: 135
-name: MIDNIGHT
-type:
-- Dragon
-- Dark
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Midnight
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/midnight.png
+description: 
+lang_description: 
 ---
 
-# MIDNIGHT

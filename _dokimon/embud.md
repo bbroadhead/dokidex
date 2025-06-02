@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: EMBUD
 number: 121
-name: EMBUD
-type:
-- Fire
-- Fairy
-stage: 1
-evolves_at: ''
-location: tenshou tower, darkshawl
-description: ''
-lang_description: ''
+name: Embud
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/embud.png
+description: 
+lang_description: 
 ---
 
-# EMBUD

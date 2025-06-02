@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: LUNA
 number: 46
-name: LUNA
-type:
-- Ghost
-stage: 1
-evolves_at: ''
-location: twindle, which-way, gad'riel mountain (🟪), passaway
-description: ''
-lang_description: ''
+name: Luna
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/luna.png
+description: 
+lang_description: 
 ---
 
-# LUNA

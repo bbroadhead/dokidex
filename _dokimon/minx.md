@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: MINX
 number: 93
-name: MINX
-type:
-- Dark
-stage: 1
-evolves_at: ''
-location: gad'riel mountain (🌿, 🟪), wicked woods
-description: ''
-lang_description: ''
+name: Minx
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/minx.png
+description: 
+lang_description: 
 ---
 
-# MINX

@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: NIMBIS
 number: 21
-name: NIMBIS
-type:
-- Light
-stage: 1
-evolves_at: lvl. 16
-location: routes 04 05 06
-description: ''
-lang_description: ''
+name: Nimbis
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/nimbis.png
+description: 
+lang_description: 
 ---
 
-# NIMBIS

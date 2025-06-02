@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: BURNSBY
 number: 1
-name: BURNSBY
-type:
-- Fire
-stage: 1
-evolves_at: lvl. 14
-location: Starter
-description: ''
-lang_description: ''
+name: Burnsby
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/burnsby.png
+description: 
+lang_description: 
 ---
 
-# BURNSBY

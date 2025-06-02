@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: NOXY
 number: 117
-name: NOXY
-type:
-- Dark
-- Fairy
-stage: 2
-evolves_at: ''
-location: wicked woods, gad'riel's domain
-description: ''
-lang_description: ''
+name: Noxy
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/noxy.png
+description: 
+lang_description: 
 ---
 
-# NOXY

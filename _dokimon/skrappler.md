@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: SKRAPPLER
 number: 69
-name: SKRAPPLER
-type:
-- Poison
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Skrappler
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/skrappler.png
+description: 
+lang_description: 
 ---
 
-# SKRAPPLER

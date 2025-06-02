@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: DARTARGET
 number: 115
-name: DARTARGET
-type:
-- Dark
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Dartarget
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/dartarget.png
+description: 
+lang_description: 
 ---
 
-# DARTARGET

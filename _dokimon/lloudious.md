@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: LLOUDIOUS
 number: 22
-name: LLOUDIOUS
-type:
-- Light
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Lloudious
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/lloudious.png
+description: 
+lang_description: 
 ---
 
-# LLOUDIOUS

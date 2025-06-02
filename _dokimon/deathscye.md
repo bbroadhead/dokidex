@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: DEATHSCYE
 number: 20
-name: DEATHSCYE
-type:
-- Dark
-- Ghost
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Deathscye
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/deathscye.png
+description: 
+lang_description: 
 ---
 
-# DEATHSCYE

@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: BLU
 number: 127
-name: BLU
-type:
-- Water
-- Fairy
-stage: 1
-evolves_at: ''
-location: darkshawl
-description: ''
-lang_description: ''
+name: Blu
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/blu.png
+description: 
+lang_description: 
 ---
 
-# BLU

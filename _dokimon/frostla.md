@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: FROSTLA
 number: 103
-name: FROSTLA
-type:
-- Flying
-- Ice
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Frostla
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/frostla.png
+description: 
+lang_description: 
 ---
 
-# FROSTLA

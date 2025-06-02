@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: TOXORB
 number: 74
-name: TOXORB
-type:
-- Ghost
-stage: 2
-evolves_at: ''
-location: gad'riel mountain (🟪)
-description: ''
-lang_description: ''
+name: Toxorb
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/toxorb.png
+description: 
+lang_description: 
 ---
 
-# TOXORB

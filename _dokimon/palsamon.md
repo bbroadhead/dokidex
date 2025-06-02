@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: PALSAMON
 number: 105
-name: PALSAMON
-type:
-- Ice
-- Dark
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Palsamon
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/palsamon.png
+description: 
+lang_description: 
 ---
 
-# PALSAMON

@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: PHOTO
 number: 140
-name: PHOTO
-type:
-- Grass
-- Dark
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Photo
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/photo.png
+description: 
+lang_description: 
 ---
 
-# PHOTO

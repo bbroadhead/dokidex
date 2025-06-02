@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: DUSTLE
 number: 82
-name: DUSTLE
-type:
-- Dark
-stage: 1
-evolves_at: ''
-location: gad'riel mountain (🪨, 🌿)
-description: ''
-lang_description: ''
+name: Dustle
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/dustle.png
+description: 
+lang_description: 
 ---
 
-# DUSTLE

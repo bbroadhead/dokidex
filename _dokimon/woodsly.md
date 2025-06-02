@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: WOODSLY
 number: 109
-name: WOODSLY
-type:
-- Grass
-stage: 1
-evolves_at: ''
-location: Xer base (🌿)
-description: ''
-lang_description: ''
+name: Woodsly
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/woodsly.png
+description: 
+lang_description: 
 ---
 
-# WOODSLY

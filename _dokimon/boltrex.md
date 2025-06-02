@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: BOLTREX
 number: 59
-name: BOLTREX
-type:
-- Electric
-stage: 5
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Boltrex
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/boltrex.png
+description: 
+lang_description: 
 ---
 
-# BOLTREX

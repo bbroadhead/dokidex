@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: KILNWYRM
 number: 65
-name: KILNWYRM
-type:
-- Dragon
-- Dark
-stage: 2
-evolves_at: ''
-location: ''
-description: ''
-lang_description: ''
+name: Kilnwyrm
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/kilnwyrm.png
+description: 
+lang_description: 
 ---
 
-# KILNWYRM

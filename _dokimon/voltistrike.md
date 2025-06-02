@@ -1,15 +1,13 @@
 ---
-layout: dex_entry
-title: VOLTISTRIKE
 number: 73
-name: VOLTISTRIKE
-type:
-- Ghost
-stage: 1
-evolves_at: ''
-location: gad'riel mountain (🟪, 🪨), wicked woods
-description: ''
-lang_description: ''
+name: Voltistrike
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/voltistrike.png
+description: 
+lang_description: 
 ---
 
-# VOLTISTRIKE

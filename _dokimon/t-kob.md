@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: T-KOB
 number: 111
-name: T-KOB
-type:
-- Fire
-- Poison
-stage: 1
-evolves_at: ''
-location: route 14, gad'riel mountain (🌸), wicked woods
-description: ''
-lang_description: ''
+name: T-kob
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/t-kob.png
+description: 
+lang_description: 
 ---
 
-# T-KOB

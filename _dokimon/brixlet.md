@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: BRIXLET
 number: 33
-name: BRIXLET
-type:
-- Fairy
-- Electric
-stage: 1
-evolves_at: lvl. 10
-location: routes 05, gad'riel mountain (🌿)
-description: ''
-lang_description: ''
+name: Brixlet
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/brixlet.png
+description: 
+lang_description: 
 ---
 
-# BRIXLET

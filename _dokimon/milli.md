@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: MILLI
 number: 128
-name: MILLI
-type:
-- Water
-- Fairy
-stage: 2
-evolves_at: ''
-location: darkshawl
-description: ''
-lang_description: ''
+name: Milli
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/milli.png
+description: 
+lang_description: 
 ---
 
-# MILLI

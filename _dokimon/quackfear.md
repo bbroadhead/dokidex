@@ -1,16 +1,13 @@
 ---
-layout: dex_entry
-title: QUACKFEAR
 number: 18
-name: QUACKFEAR
-type:
-- Dark
-- Flying
-stage: 2
-evolves_at: ''
-location: Xer Cave
-description: ''
-lang_description: ''
+name: Quackfear
+lang_names: 
+stage: 
+evolves_at: 
+type: 
+location: 
+image: /assets/images/quackfear.png
+description: 
+lang_description: 
 ---
 
-# QUACKFEAR
