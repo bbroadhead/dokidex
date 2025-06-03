@@ -35,7 +35,7 @@ title: Dokimon: Quest - Wiki
 </div>
 
 <div class="dex-grid" id="dex-grid">
-  {% assign sorted = site.dokimon | sort: "number" %}
+  {% assign sorted = site.dokimon.docs | sort: "number" %}
   {% for mon in sorted %}
     <div class="dex-entry"
          data-name="{{ mon.name | downcase }}"
