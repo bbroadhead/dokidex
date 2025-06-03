@@ -35,22 +35,26 @@ title: Dokimon: Quest - Wiki
 </div>
 
 <div class="dex-grid" id="dex-grid">
-  {% assign sorted = site.dokimon.docs | sort: "number" %}
-  {% for mon in sorted %}
-    <div class="dex-entry"
-         data-name="{{ mon.name | downcase }}"
-         data-location="{{ mon.location | downcase | default: '' }}"
-         data-stage="{{ mon.stage | default: '' }}"
-         data-type="{{ mon.type | join: ' ' }}">
-      <a href="{{ mon.url }}">
-        <div class="img-wrapper">
-          <img src="{{ mon.image }}" alt="{{ mon.name }}">
-          <div class="img-blocker"></div>
-        </div>
-        <div>#{{ mon.number }} - {{ mon.name }}</div>
-      </a>
-    </div>
-  {% endfor %}
+  {% if site.dokimon %}
+    {% assign sorted = site.dokimon | sort: "number" %}
+    {% for mon in sorted %}
+      <div class="dex-entry"
+           data-name="{{ mon.name | downcase | default: '' }}"
+           data-location="{{ mon.location | downcase | default: '' }}"
+           data-stage="{{ mon.stage | default: '' }}"
+           data-type="{% if mon.type %}{{ mon.type | join: ' ' }}{% else %}none{% endif %}">
+        <a href="{{ mon.url }}">
+          <div class="img-wrapper">
+            <img src="{{ mon.image }}" alt="{{ mon.name }}">
+            <div class="img-blocker"></div>
+          </div>
+          <div>#{{ mon.number }} - {{ mon.name }}</div>
+        </a>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p style="color: red;">⚠ No Dokimon collection found. Check `_config.yml` and `_dokimon/` folder.</p>
+  {% endif %}
 </div>
 
 <script>
