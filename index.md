@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dokimon: Quest - Wiki
+title: "Dokimon: Quest - Wiki"
 ---
 
 <button id="filter-toggle">Toggle Filters</button>
