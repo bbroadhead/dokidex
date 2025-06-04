@@ -2,12 +2,12 @@
 number: 56
 name: Emberox
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Fire
 location: ''
 image: /assets/images/emberox.png
 description: ''
 lang_description: ''
 ---
-

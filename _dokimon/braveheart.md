@@ -2,12 +2,13 @@
 number: 3
 name: Braveheart
 lang_names: []
-stage: ''
+stage: '3'
 evolves_at: ''
-type: []
+type:
+- Fire
+- Fight
 location: ''
 image: /assets/images/braveheart.png
 description: ''
 lang_description: ''
 ---
-

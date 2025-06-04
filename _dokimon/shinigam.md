@@ -2,12 +2,12 @@
 number: 49
 name: Shinigam
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Ghost
 location: ''
 image: /assets/images/shinigam.png
 description: ''
 lang_description: ''
 ---
-

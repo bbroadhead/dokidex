@@ -2,12 +2,13 @@
 number: 122
 name: Embellia
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Fire
+- Fairy
 location: ''
 image: /assets/images/embellia.png
 description: ''
 lang_description: ''
 ---
-

@@ -2,12 +2,13 @@
 number: 126
 name: Sindela
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Grass
+- Fairy
 location: ''
 image: /assets/images/sindela.png
 description: ''
 lang_description: ''
 ---
-

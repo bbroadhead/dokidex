@@ -2,12 +2,13 @@
 number: 91
 name: Shroolia
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Grass
+- Poison
+location: wicked woods
 image: /assets/images/shroolia.png
 description: ''
 lang_description: ''
 ---
-

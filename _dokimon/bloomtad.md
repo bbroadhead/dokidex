@@ -2,12 +2,13 @@
 number: 80
 name: Bloomtad
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
+type:
+- Grass
+- Water
 location: ''
 image: /assets/images/bloomtad.png
 description: ''
 lang_description: ''
 ---
-

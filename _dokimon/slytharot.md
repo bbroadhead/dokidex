@@ -2,12 +2,13 @@
 number: 6
 name: Slytharot
 lang_names: []
-stage: ''
+stage: '3'
 evolves_at: ''
-type: []
+type:
+- Grass
+- Flying
 location: ''
 image: /assets/images/slytharot.png
 description: ''
 lang_description: ''
 ---
-

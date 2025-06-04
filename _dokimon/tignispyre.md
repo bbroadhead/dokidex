@@ -2,12 +2,13 @@
 number: 39
 name: Tignispyre
 lang_names: []
-stage: ''
+stage: '3'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Fire
+- Fairy
+location: yoink (yor city)
 image: /assets/images/tignispyre.png
 description: ''
 lang_description: ''
 ---
-

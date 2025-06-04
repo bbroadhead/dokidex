@@ -2,12 +2,12 @@
 number: 74
 name: Toxorb
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Ghost
+location: "gad'riel mountain (\U0001F7EA)"
 image: /assets/images/toxorb.png
 description: ''
 lang_description: ''
 ---
-

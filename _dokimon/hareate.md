@@ -2,12 +2,12 @@
 number: 41
 name: Hareate
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
+type:
+- Fight
 location: ''
 image: /assets/images/hareate.png
 description: ''
 lang_description: ''
 ---
-

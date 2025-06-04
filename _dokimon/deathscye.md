@@ -2,12 +2,13 @@
 number: 20
 name: Deathscye
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Dark
+- Ghost
 location: ''
 image: /assets/images/deathscye.png
 description: ''
 lang_description: ''
 ---
-

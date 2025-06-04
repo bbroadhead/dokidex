@@ -2,12 +2,12 @@
 number: 57
 name: Glaceia
 lang_names: []
-stage: ''
+stage: '3'
 evolves_at: ''
-type: []
+type:
+- Water
 location: ''
 image: /assets/images/glaceia.png
 description: ''
 lang_description: ''
 ---
-

@@ -2,12 +2,13 @@
 number: 129
 name: Millian
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Water
+- Fairy
 location: ''
 image: /assets/images/millian.png
 description: ''
 lang_description: ''
 ---
-

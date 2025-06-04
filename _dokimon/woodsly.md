@@ -2,12 +2,12 @@
 number: 109
 name: Woodsly
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Grass
+location: "Xer base (\U0001F33F)"
 image: /assets/images/woodsly.png
 description: ''
 lang_description: ''
 ---
-

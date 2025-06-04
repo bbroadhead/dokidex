@@ -2,12 +2,13 @@
 number: 32
 name: Birzhaven
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Poison
+- Flying
+location: pirate ship
 image: /assets/images/birzhaven.png
 description: ''
 lang_description: ''
 ---
-

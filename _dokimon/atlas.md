@@ -2,12 +2,12 @@
 number: 70
 name: Atlas
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Dragon
+location: "route 02 (\U0001F3A3), pirate ship"
 image: /assets/images/atlas.png
 description: ''
 lang_description: ''
 ---
-

@@ -2,12 +2,13 @@
 number: 120
 name: Ohm
 lang_names: []
-stage: ''
+stage: '5'
 evolves_at: ''
-type: []
+type:
+- Electric
+- Fairy
 location: ''
 image: /assets/images/ohm.png
 description: ''
 lang_description: ''
 ---
-

@@ -2,12 +2,13 @@
 number: 128
 name: Milli
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Water
+- Fairy
+location: darkshawl
 image: /assets/images/milli.png
 description: ''
 lang_description: ''
 ---
-

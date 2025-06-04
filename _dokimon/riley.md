@@ -2,12 +2,12 @@
 number: 137
 name: Riley
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Fire
 location: ''
 image: /assets/images/riley.png
 description: ''
 lang_description: ''
 ---
-

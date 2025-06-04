@@ -2,12 +2,13 @@
 number: 117
 name: Noxy
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Dark
+- Fairy
+location: wicked woods, gad'riel's domain
 image: /assets/images/noxy.png
 description: ''
 lang_description: ''
 ---
-

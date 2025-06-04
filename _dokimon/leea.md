@@ -2,12 +2,13 @@
 number: 124
 name: Leea
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Grass
+- Fairy
+location: route 14, gad'riel peak, wicked woods
 image: /assets/images/leea.png
 description: ''
 lang_description: ''
 ---
-

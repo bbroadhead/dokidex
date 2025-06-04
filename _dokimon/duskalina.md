@@ -2,12 +2,13 @@
 number: 118
 name: Duskalina
 lang_names: []
-stage: ''
+stage: '3'
 evolves_at: ''
-type: []
+type:
+- Dark
+- Fairy
 location: ''
 image: /assets/images/duskalina.png
 description: ''
 lang_description: ''
 ---
-

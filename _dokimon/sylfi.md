@@ -2,12 +2,12 @@
 number: 98
 name: Sylfi
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Grass
+location: Xer cave, darkshawl
 image: /assets/images/sylfi.png
 description: ''
 lang_description: ''
 ---
-

@@ -2,12 +2,12 @@
 number: 7
 name: Squibbly
 lang_names: []
-stage: ''
-evolves_at: ''
-type: []
-location: ''
+stage: '1'
+evolves_at: lvl. 16
+type:
+- Water
+location: Starter
 image: /assets/images/squibbly.png
 description: ''
 lang_description: ''
 ---
-

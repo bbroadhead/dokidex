@@ -2,12 +2,12 @@
 number: 95
 name: Kamiokami
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Dark
+location: wicked woods
 image: /assets/images/kamiokami.png
 description: ''
 lang_description: ''
 ---
-

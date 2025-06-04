@@ -2,12 +2,12 @@
 number: 115
 name: Dartarget
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Dark
 location: ''
 image: /assets/images/dartarget.png
 description: ''
 lang_description: ''
 ---
-

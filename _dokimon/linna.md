@@ -2,12 +2,13 @@
 number: 125
 name: Linna
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Grass
+- Fairy
+location: route 14, wicked woods
 image: /assets/images/linna.png
 description: ''
 lang_description: ''
 ---
-

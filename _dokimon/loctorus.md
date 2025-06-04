@@ -2,12 +2,12 @@
 number: 8
 name: Loctorus
 lang_names: []
-stage: ''
-evolves_at: ''
-type: []
+stage: '2'
+evolves_at: lvl. 36
+type:
+- Water
 location: ''
 image: /assets/images/loctorus.png
 description: ''
 lang_description: ''
 ---
-

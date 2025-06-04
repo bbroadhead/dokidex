@@ -2,12 +2,13 @@
 number: 108
 name: Hellfire
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Dragon
+- Ice
 location: ''
 image: /assets/images/hellfire.png
 description: ''
 lang_description: ''
 ---
-

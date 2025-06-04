@@ -2,12 +2,13 @@
 number: 66
 name: Miso
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Dragon
+- Light
 location: ''
 image: /assets/images/miso.png
 description: ''
 lang_description: ''
 ---
-

@@ -2,12 +2,13 @@
 number: 65
 name: Kilnwyrm
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Dragon
+- Dark
 location: ''
 image: /assets/images/kilnwyrm.png
 description: ''
 lang_description: ''
 ---
-

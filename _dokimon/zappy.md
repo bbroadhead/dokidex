@@ -2,12 +2,13 @@
 number: 86
 name: Zappy
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Electric
+- Flying
 location: ''
 image: /assets/images/zappy.png
 description: ''
 lang_description: ''
 ---
-

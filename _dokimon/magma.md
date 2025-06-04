@@ -2,12 +2,13 @@
 number: 131
 name: Magma
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Dragon
+- Fire
 location: ''
 image: /assets/images/magma.png
 description: ''
 lang_description: ''
 ---
-

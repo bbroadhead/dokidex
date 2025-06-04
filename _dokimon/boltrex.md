@@ -2,12 +2,12 @@
 number: 59
 name: Boltrex
 lang_names: []
-stage: ''
+stage: '5'
 evolves_at: ''
-type: []
+type:
+- Electric
 location: ''
 image: /assets/images/boltrex.png
 description: ''
 lang_description: ''
 ---
-

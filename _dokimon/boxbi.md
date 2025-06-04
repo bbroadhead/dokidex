@@ -2,12 +2,13 @@
 number: 83
 name: Boxbi
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Dark
+- Fight
 location: ''
 image: /assets/images/boxbi.png
 description: ''
 lang_description: ''
 ---
-

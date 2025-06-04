@@ -2,12 +2,13 @@
 number: 113
 name: X-koboma
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Fire
+- Ghost
+location: gad'riel's domain
 image: /assets/images/x-koboma.png
 description: ''
 lang_description: ''
 ---
-

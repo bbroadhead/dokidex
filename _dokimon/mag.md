@@ -2,12 +2,12 @@
 number: 130
 name: Mag
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
+type:
+- Fire
 location: ''
 image: /assets/images/mag.png
 description: ''
 lang_description: ''
 ---
-

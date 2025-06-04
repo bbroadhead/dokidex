@@ -2,12 +2,12 @@
 number: 46
 name: Luna
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Ghost
+location: "twindle, which-way, gad'riel mountain (\U0001F7EA), passaway"
 image: /assets/images/luna.png
 description: ''
 lang_description: ''
 ---
-

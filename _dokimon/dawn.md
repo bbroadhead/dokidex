@@ -2,12 +2,13 @@
 number: 134
 name: Dawn
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
+type:
+- Dragon
+- Flying
 location: ''
 image: /assets/images/dawn.png
 description: ''
 lang_description: ''
 ---
-

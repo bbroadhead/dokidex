@@ -2,12 +2,13 @@
 number: 24
 name: Lucifeather
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Flying
+- Fire
+location: yoink
 image: /assets/images/lucifeather.png
 description: ''
 lang_description: ''
 ---
-

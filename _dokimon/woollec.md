@@ -2,12 +2,13 @@
 number: 54
 name: Woollec
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Electric
+- Poison
 location: ''
 image: /assets/images/woollec.png
 description: ''
 lang_description: ''
 ---
-

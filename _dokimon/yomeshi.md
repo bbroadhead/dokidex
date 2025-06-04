@@ -2,12 +2,12 @@
 number: 48
 name: Yomeshi
 lang_names: []
-stage: ''
+stage: '1'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Ghost
+location: which-way, Xer cave
 image: /assets/images/yomeshi.png
 description: ''
 lang_description: ''
 ---
-

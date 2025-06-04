@@ -2,12 +2,12 @@
 number: 97
 name: Knyfagon
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Fire
+location: "gad'riel mountain (\U0001F33F)"
 image: /assets/images/knyfagon.png
 description: ''
 lang_description: ''
 ---
-

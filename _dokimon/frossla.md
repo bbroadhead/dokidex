@@ -2,12 +2,13 @@
 number: 107
 name: Frossla
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Grass
+- Ice
+location: tenshou tower, darkshawl
 image: /assets/images/frossla.png
 description: ''
 lang_description: ''
 ---
-

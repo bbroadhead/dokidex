@@ -2,12 +2,13 @@
 number: 110
 name: Creselidite
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Grass
+- Fight
 location: ''
 image: /assets/images/creselidite.png
 description: ''
 lang_description: ''
 ---
-

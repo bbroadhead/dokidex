@@ -2,12 +2,12 @@
 number: 71
 name: Lantis
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
-location: ''
+type:
+- Dragon
+location: yoink (yor city)
 image: /assets/images/lantis.png
 description: ''
 lang_description: ''
 ---
-

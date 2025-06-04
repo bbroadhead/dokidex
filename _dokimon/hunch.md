@@ -2,12 +2,13 @@
 number: 72
 name: Hunch
 lang_names: []
-stage: ''
+stage: '2'
 evolves_at: ''
-type: []
+type:
+- Dragon
+- Poison
 location: ''
 image: /assets/images/hunch.png
 description: ''
 lang_description: ''
 ---
-
