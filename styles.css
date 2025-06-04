@@ -14,13 +14,15 @@ body {
 .header-bg {
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 0;
   background: linear-gradient(135deg, #d3ecff, #f0f8ff);
 }
 
 .header-logo {
   max-height: 300px;
   height: auto;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .site-nav {
