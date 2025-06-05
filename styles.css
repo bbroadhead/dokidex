@@ -1456,6 +1456,41 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   0% { box-shadow: 0 0 0px #8E44AD, 0 0 0px #95A5A6; }
   100% { box-shadow: 0 0 20px #8E44AD, 0 0 35px #95A5A6; }
 }
+.border-electric {
+  animation: pulseGlow-electric 2s infinite alternate;
+  border: 4px solid #fce303;
+  border-radius: 1rem;
+}
+@keyframes pulseGlow-electric {
+  0% { box-shadow: 0 0 0px #fce303; }
+  100% { box-shadow: 0 0 18px #fce303; }
+}
+
+.border-fairy-electric {
+  animation: pulseGlow-fairy-electric 2s infinite alternate;
+  border: 4px solid transparent;
+  border-radius: 1rem;
+  background-image: linear-gradient(135deg, #ffa0e0, #fce303);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+@keyframes pulseGlow-fairy-electric {
+  0% { box-shadow: 0 0 0px #ffa0e0, 0 0 0px #fce303; }
+  100% { box-shadow: 0 0 10px #ffa0e0, 0 0 18px #fce303; }
+}
+
+.border-ghost-electric {
+  animation: pulseGlow-ghost-electric 2s infinite alternate;
+  border: 4px solid transparent;
+  border-radius: 1rem;
+  background-image: linear-gradient(135deg, #6b4e9b, #fce303);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+@keyframes pulseGlow-ghost-electric {
+  0% { box-shadow: 0 0 0px #6b4e9b, 0 0 0px #fce303; }
+  100% { box-shadow: 0 0 10px #6b4e9b, 0 0 18px #fce303; }
+}
 
 /* water-flying */
 .border-water-flying {
