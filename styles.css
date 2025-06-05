@@ -532,6 +532,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   grid-area: image;
   display: flex;
   justify-content: center;
+  padding-top: 1.5rem;
   align-items: center;
   border-radius: 1rem;
   overflow: visible;
