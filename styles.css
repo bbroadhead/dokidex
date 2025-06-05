@@ -423,7 +423,8 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .return-link {
-  margin-bottom: 0.1rem;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
 .back-to-dex {
@@ -431,11 +432,12 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   font-weight: bold;
   color: #007bff;
   text-decoration: none;
-  margin-bottom: 1rem;
+  transition: color 0.3s;
 }
 
 .back-to-dex:hover {
   text-decoration: underline;
+  color: #222;
 }
 
 .monster-stats-visual {
