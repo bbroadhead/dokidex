@@ -1,3 +1,78 @@
+:root {
+  --fire-color: #FF5733;
+  --water-color: #3498DB;
+  --grass-color: #27AE60;
+  --elect-color: #F1C40F;
+  --light-color: #FCE883;
+  --dark-color: #2C3E50;
+  --flying-color: #95A5A6;
+  --fairy-color: #FFB6C1;
+  --ghost-color: #9B59B6;
+  --poison-color: #8E44AD;
+  --fight-color: #E67E22;
+  --dragon-color: #5D6D7E;
+  --ice-color: #85C1E9;
+}
+
+/* Dual-Type Glows: Diagonal Split */
+.border-fire-grass {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #FF6B3C, #3CBD4C) 1;
+}
+.border-fire-elect {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #FF6B3C, #FFD93B) 1;
+}
+.border-fire-fight {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #FF6B3C, #B63E2D) 1;
+}
+.border-water-elect {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #4E9FEF, #FFD93B) 1;
+}
+.border-grass-flying {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #3CBD4C, #A6EFFF) 1;
+}
+.border-grass-fairy {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #3CBD4C, #FFB7E6) 1;
+}
+.border-light-dark {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #FFFA91, #333333) 1;
+}
+.border-dark-ghost {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #333333, #7A55C4) 1;
+}
+.border-ghost-dark {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #7A55C4, #333333) 1;
+}
+.border-poison-ghost {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #A65DDA, #7A55C4) 1;
+}
+.border-fight-dark {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #B63E2D, #333333) 1;
+}
+.border-fight-dragon {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #B63E2D, #6381FF) 1;
+}
+.border-dragon-ice {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #6381FF, #88E2F2) 1;
+}
+.border-ice-dragon {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #88E2F2, #6381FF) 1;
+}
+
+
 body {
   font-family: sans-serif;
   margin: 0;
