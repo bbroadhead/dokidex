@@ -337,3 +337,45 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 .back-to-dex:hover {
   text-decoration: underline;
 }
+
+.monster-stats-visual {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+
+.monster-stats {
+  border-collapse: collapse;
+  width: auto;
+  min-width: 280px;
+}
+
+.monster-stats th,
+.monster-stats td {
+  padding: 0.3rem;
+  text-align: center;
+  font-size: 0.95rem;
+  border: 1px solid #dee2e6;
+}
+
+.monster-stats th.hp { background-color: #f66; }
+.monster-stats th.atk { background-color: #f90; }
+.monster-stats th.def { background-color: #fc3; }
+.monster-stats th.matk { background-color: #99f; }
+.monster-stats th.mdef { background-color: #6cf; }
+.monster-stats th.spd { background-color: #9f9; }
+
+.monster-lore {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.monster-lore h2 {
+  margin: 0;
+  white-space: nowrap;
+}
