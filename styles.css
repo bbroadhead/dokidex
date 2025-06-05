@@ -160,6 +160,9 @@ main {
 
 .dex-entry .img-wrapper {
   border-radius: 8px;
+  max-width: 100px;
+  margin: 0 auto;
+  box-sizing: border-box;
   overflow: hidden;
   display: inline-block;
 }
@@ -368,6 +371,13 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   border-radius: 1rem;
   background: #e9ecef;
   padding: 0.5rem;
+}
+
+.monster-image.small {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .monster-info {
