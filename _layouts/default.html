@@ -31,9 +31,54 @@
     </nav>
   </header>
 
-  <main class="page-content">
+<main class="page-content">
+  {% if page.image and page.base_stats %}
+    <!-- Monster Detail Layout -->
+    <div class="monster-profile">
+      <div class="header">
+        <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
+        <div class="basic-info">
+          <h1>{{ page.name }} <span class="dex-number">#{{ page.number }}</span></h1>
+          <p><strong>Stage:</strong> {{ page.stage }}</p>
+          <p><strong>Evolution Level:</strong> {{ page.evolves_at | default: "None" }}</p>
+          <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
+          <p><strong>Location:</strong> {{ page.location }}</p>
+        </div>
+      </div>
+
+      <div class="descriptions">
+        <h2>Short Description</h2>
+        <p>{{ page.short_description }}</p>
+        <h2>Long Description</h2>
+        <p>{{ page.long_description }}</p>
+      </div>
+
+      <div class="base-stats">
+        <h2>Base Stats</h2>
+        <table>
+          <tr>
+            <th>Health</th>
+            <th>Attack</th>
+            <th>Defense</th>
+            <th>Magick Atk.</th>
+            <th>Magick Def.</th>
+            <th>Speed</th>
+          </tr>
+          <tr>
+            <td>{{ page.base_stats[0] }}</td>
+            <td>{{ page.base_stats[1] }}</td>
+            <td>{{ page.base_stats[2] }}</td>
+            <td>{{ page.base_stats[3] }}</td>
+            <td>{{ page.base_stats[4] }}</td>
+            <td>{{ page.base_stats[5] }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  {% else %}
     {{ content }}
-  </main>
+  {% endif %}
+</main>
 
   <!-- Prevent Right Click on Images -->
   <script>
