@@ -75,8 +75,10 @@
   {% assign type_class = 'border-' | append: type1 %}
 {% endif %}
 
-<div class="monster-image-container {{ type_class }}">
-  <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
+<div class="monster-image-container">
+  <div class="glow-wrapper {{ type_class }}">
+    <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
+  </div>
 </div>
 
     <div class="monster-info">
