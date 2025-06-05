@@ -63,8 +63,12 @@
       </table>
     </div>
 
-    <div class="monster-image-container">
-      <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
+    {% if page.type %}
+      <div class="monster-image-container border-{{ page.type | join: '-' | downcase }}">
+    {% else %}
+      <div class="monster-image-container">
+    {% endif %}
+        <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
     </div>
 
     <div class="monster-info">
