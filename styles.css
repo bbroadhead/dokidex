@@ -349,8 +349,8 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 
 .monster-stats {
   border-collapse: collapse;
-  width: auto;
-  min-width: 280px;
+  width: 100%;
+  min-width: fixed;
 }
 
 .monster-stats th,
@@ -361,12 +361,12 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   border: 1px solid #dee2e6;
 }
 
-.monster-stats th.hp { background-color: #f66; }
-.monster-stats th.atk { background-color: #f90; }
-.monster-stats th.def { background-color: #fc3; }
-.monster-stats th.matk { background-color: #99f; }
-.monster-stats th.mdef { background-color: #6cf; }
-.monster-stats th.spd { background-color: #9f9; }
+.monster-stats th.hp { background-color: #f66; color: black; }
+.monster-stats th.atk { background-color: #f90; color: black; }
+.monster-stats th.def { background-color: #fc3; color: black; }
+.monster-stats th.matk { background-color: #99f; color: black; }
+.monster-stats th.mdef { background-color: #6cf; color: black; }
+.monster-stats th.spd { background-color: #9f9; color: black; }
 
 .monster-lore {
   display: flex;
