@@ -37,17 +37,44 @@
       <a href="/" class="back-to-dex">&larr; Return to Dex</a>
     </div>
     <!-- Monster Detail Layout -->
-    <div class="monster-profile">
-      <div class="header">
-        <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
-        <div class="basic-info">
-          <h1>{{ page.name }} <span class="dex-number">#{{ page.number }}</span></h1>
-          <p><strong>Stage:</strong> {{ page.stage }}</p>
-          <p><strong>Evolution Level:</strong> {{ page.evolves_at | default: "None" }}</p>
-          <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
-          <p><strong>Location:</strong> {{ page.location }}</p>
-        </div>
-      </div>
+<div class="monster-profile">
+  <div class="monster-upper">
+    <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
+    <div class="monster-info">
+      <h1>{{ page.name }} <span class="dex-number">#{{ page.number }}</span></h1>
+      <p><strong>Stage:</strong> {{ page.stage }}</p>
+      <p><strong>Evolution Level:</strong> {{ page.evolves_at | default: "None" }}</p>
+      <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
+      <p><strong>Location:</strong> {{ page.location }}</p>
+      <p><strong>Short Description:</strong> {{ page.short_description }}</p>
+    </div>
+    <div class="monster-stats">
+      <table>
+        <tr>
+          <th>HP</th>
+          <th>ATK</th>
+          <th>DEF</th>
+          <th>MAG ATK</th>
+          <th>MAG DEF</th>
+          <th>SPD</th>
+        </tr>
+        <tr>
+          <td>{{ page.base_stats[0] }}</td>
+          <td>{{ page.base_stats[1] }}</td>
+          <td>{{ page.base_stats[2] }}</td>
+          <td>{{ page.base_stats[3] }}</td>
+          <td>{{ page.base_stats[4] }}</td>
+          <td>{{ page.base_stats[5] }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="monster-lore">
+    <h2>Long Description</h2>
+    <p>{{ page.long_description }}</p>
+  </div>
+</div>
+
 
       <div class="descriptions">
         <h2>Short Description</h2>
