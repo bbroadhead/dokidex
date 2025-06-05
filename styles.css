@@ -298,6 +298,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .monster-info {
+  order: 3;
   flex: 1;
   min-width: 300px;
 }
