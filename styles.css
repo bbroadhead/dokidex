@@ -264,55 +264,64 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 
 /* Monster Profile Styles */
 .monster-profile {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 2rem auto;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   background-color: #f8f9fa;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', sans-serif;
   color: #212529;
 }
-.header {
+
+.monster-upper {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
+
 .monster-image {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   object-fit: contain;
   border-radius: 1rem;
   background: #e9ecef;
   padding: 0.5rem;
 }
-.basic-info h1 {
-  margin: 0;
-  font-size: 2rem;
+
+.monster-info {
+  flex: 1;
+  min-width: 300px;
 }
-.dex-number {
-  font-size: 1.2rem;
-  color: #6c757d;
+
+.monster-stats {
+  min-width: 280px;
 }
-.descriptions h2,
-.base-stats h2 {
-  margin-top: 1.5rem;
-  color: #495057;
-}
-.base-stats table {
+
+.monster-stats table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 0.5rem;
 }
-.base-stats th,
-.base-stats td {
+
+.monster-stats th,
+.monster-stats td {
   border: 1px solid #dee2e6;
-  padding: 0.75rem;
+  padding: 0.6rem;
   text-align: center;
+  font-size: 0.95rem;
 }
-.base-stats th {
+
+.monster-stats th {
   background-color: #e9ecef;
 }
+
+.monster-lore {
+  margin-top: 1rem;
+}
+
 .return-link {
   margin-bottom: 1rem;
 }
