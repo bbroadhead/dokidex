@@ -427,6 +427,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   grid-area: image;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .monster-info {
@@ -441,7 +442,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  max-width: 300px;
+  max-width: 350px;
 }
 
 /* Mobile layout */
