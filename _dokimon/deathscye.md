@@ -3,12 +3,21 @@ number: 20
 name: Deathscye
 lang_names: []
 stage: '2'
-evolves_at: ''
+evolves_at: null
 type:
 - Dark
 - Ghost
 location: ''
 image: /assets/images/deathscye.png
 description: ''
-lang_description: ''
+long_description: An old nursery rhyme says that if you feel a sharp chill down your
+  spine, it's likely that you are being stalked by a Deathscye.
+short_description: Scythe Dokimon
+base_stats:
+- 35
+- 17
+- 46
+- 105
+- 82
+- 106
 ---

@@ -3,13 +3,21 @@ number: 75
 name: Ariel
 lang_names: []
 stage: '1'
-evolves_at: ''
+evolves_at: 17
 type:
 - Light
 - Fairy
-location: "route 14, gad'riel mountain (\U0001F338, \U0001FAA8), peak, tenshou tower,\
-  \ darkshawl"
+location: route 14, gad'riel mountain (🌸, 🪨), peak, tenshou tower, darkshawl
 image: /assets/images/ariel.png
 description: ''
-lang_description: ''
+long_description: Ariel is a protector of nature. They're often found healing plants
+  and animals, and won't hesitate to zap intruders into a pile of ash.
+short_description: Angel Dokimon
+base_stats:
+- 35
+- 10
+- 30
+- 55
+- 50
+- 45
 ---

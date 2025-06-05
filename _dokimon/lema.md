@@ -3,12 +3,21 @@ number: 136
 name: Lema
 lang_names: []
 stage: '1'
-evolves_at: ''
+evolves_at: 14
 type:
 - Fire
-location: "behind aki's shrine (\U0001F33F), X2 base [obtain \U0001F338 to access]\
-  \ (\U0001F4A7), yor city shore (\U0001F525)"
+location: behind aki's shrine (🌿), X2 base [obtain 🌸 to access] (💧), yor city shore
+  (🔥)
 image: /assets/images/lema.png
 description: ''
-lang_description: ''
+long_description: Lema can often be found in groups of 3 or 5. Nothing can break their
+  focus when they are play fighting amongst themselves.
+short_description: Lemuer Dokimon
+base_stats:
+- 54
+- 38
+- 53
+- 68
+- 40
+- 71
 ---

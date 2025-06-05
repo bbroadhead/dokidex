@@ -3,11 +3,20 @@ number: 70
 name: Atlas
 lang_names: []
 stage: '1'
-evolves_at: ''
+evolves_at: 20
 type:
 - Dragon
-location: "route 02 (\U0001F3A3), pirate ship"
+location: route 02 (🎣), pirate ship
 image: /assets/images/atlas.png
 description: ''
-lang_description: ''
+long_description: When its born, this shy Dokimon will hollow out a rock at the bottom
+  of the sea. This will be their shell until they evolve.
+short_description: Stone Dragon Dokimon
+base_stats:
+- 55
+- 40
+- 60
+- 55
+- 50
+- 25
 ---

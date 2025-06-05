@@ -3,12 +3,19 @@ number: 113
 name: X-koboma
 lang_names: []
 stage: '2'
-evolves_at: ''
+evolves_at: null
 type:
 - Fire
 - Ghost
 location: gad'riel's domain
 image: /assets/images/x-koboma.png
 description: ''
-lang_description: ''
+long_description: ''
+base_stats:
+- 100
+- 60
+- 70
+- 140
+- 110
+- 120
 ---

@@ -3,12 +3,22 @@ number: 88
 name: Umbral
 lang_names: []
 stage: '2'
-evolves_at: ''
+evolves_at: 30
 type:
 - Electric
 - Ghost
-location: "gad'riel mountain (\U0001F7EA), wicked woods"
+location: gad'riel mountain (🟪), wicked woods
 image: /assets/images/umbral.png
 description: ''
-lang_description: ''
+long_description: Umbral emanates an ethereal glow that transcends the realm of the
+  living. Its radiant luminescence can unveil glimpses of otherworldly beings from
+  the depths of the underworld.
+short_description: Blacklight Dokimon
+base_stats:
+- 45
+- 30
+- 50
+- 75
+- 60
+- 45
 ---

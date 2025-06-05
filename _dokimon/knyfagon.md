@@ -3,11 +3,20 @@ number: 97
 name: Knyfagon
 lang_names: []
 stage: '2'
-evolves_at: ''
+evolves_at: null
 type:
 - Fire
-location: "gad'riel mountain (\U0001F33F)"
+location: gad'riel mountain (🌿)
 image: /assets/images/knyfagon.png
 description: ''
-lang_description: ''
+long_description: A guardian of the night, Knyfagon's stony form blends seamlessly
+  with the architecture, ever watchful and ready to defend its territory.
+short_description: Gargoyle Dokimon
+base_stats:
+- 120
+- 101
+- 100
+- 88
+- 91
+- 92
 ---

@@ -3,12 +3,21 @@ number: 105
 name: Palsamon
 lang_names: []
 stage: '2'
-evolves_at: ''
+evolves_at: null
 type:
 - Ice
 - Dark
 location: ''
 image: /assets/images/palsamon.png
 description: ''
-lang_description: ''
+long_description: Palsamon, the embodiment of creativity and talent, excels in its
+  remarkable cosplay abilities, flawlessly replicating the looks of anyone.
+short_description: Cosplay Dokimon
+base_stats:
+- 130
+- 85
+- 110
+- 75
+- 90
+- 75
 ---

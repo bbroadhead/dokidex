@@ -3,12 +3,21 @@ number: 108
 name: Hellfire
 lang_names: []
 stage: '2'
-evolves_at: ''
+evolves_at: 1
 type:
 - Dragon
 - Ice
 location: ''
 image: /assets/images/hellfire.png
 description: ''
-lang_description: ''
+long_description: Hellfire's ice powers and frost breath are so chilling they'll leave
+  opponents with painful ice burns that will never heal if not treated urgently.
+short_description: Ice Dragon Dokimon
+base_stats:
+- 99
+- 94
+- 58
+- 127
+- 62
+- 115
 ---

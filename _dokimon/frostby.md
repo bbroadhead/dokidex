@@ -3,11 +3,20 @@ number: 100
 name: Frostby
 lang_names: []
 stage: '1'
-evolves_at: ''
+evolves_at: 24
 type:
 - Ice
-location: "scarlet sea, gad'riel mountain (\U0001F4A7)"
+location: scarlet sea, gad'riel mountain (💧)
 image: /assets/images/frostby.png
 description: ''
-lang_description: ''
+long_description: Frostby's fists are frozen over due to fishing with their hands.
+  It's said one must capture 100,000 fish to evolve.
+short_description: Ice Fist Dokimon
+base_stats:
+- 55
+- 40
+- 40
+- 20
+- 40
+- 40
 ---

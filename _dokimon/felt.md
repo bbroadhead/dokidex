@@ -3,11 +3,20 @@ number: 2
 name: Felt
 lang_names: []
 stage: '2'
-evolves_at: lvl. 38
+evolves_at: 38
 type:
 - Fire
 location: ''
 image: /assets/images/felt.png
 description: ''
-lang_description: ''
+long_description: Quick and Stylish, Felt is the type of monster that takes out his
+  enemies with ease, and a smile on his face.
+short_description: Charismatic Dokimon
+base_stats:
+- 85
+- 84
+- 66
+- 90
+- 52
+- 89
 ---

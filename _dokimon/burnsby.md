@@ -3,11 +3,20 @@ number: 1
 name: Burnsby
 lang_names: []
 stage: '1'
-evolves_at: lvl. 14
+evolves_at: 14
 type:
 - Fire
 location: Starter
 image: /assets/images/burnsby.png
 description: ''
-lang_description: ''
+long_description: It's said they often hide amongst other plushies in hopes to torch
+  unsuspecting prey that might pass by.
+short_description: Teddy Bear Dokimon
+base_stats:
+- 54
+- 38
+- 53
+- 68
+- 40
+- 71
 ---

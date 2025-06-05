@@ -3,12 +3,21 @@ number: 29
 name: Juskitten
 lang_names: []
 stage: '2'
-evolves_at: ''
+evolves_at: 26
 type:
 - Light
 - Fairy
-location: "gad'riel mountain (\U0001F33F)"
+location: gad'riel mountain (🌿)
 image: /assets/images/juskitten.png
 description: ''
-lang_description: ''
+long_description: While very playful and seemingly harmless, Juskitten's often play
+  with their food, and may lure others into traps with their brightly colored balls.
+short_description: Trickster Cat Dokimon
+base_stats:
+- 40
+- 82
+- 52
+- 92
+- 88
+- 88
 ---

@@ -3,12 +3,21 @@ number: 23
 name: Pheonix
 lang_names: []
 stage: '1'
-evolves_at: lvl. 24
+evolves_at: 24
 type:
 - Flying
 - Fire
-location: "gad'riel mountain (\U0001F525), Xer base (\U0001F525)"
+location: gad'riel mountain (🔥), Xer base (🔥)
 image: /assets/images/pheonix.png
 description: ''
-lang_description: ''
+long_description: There are many mysteries regarding Pheonix, including whether its
+  shape is many creatures, or one, and if many, whether or not they share a conscious.
+short_description: Hatchling Dokimon
+base_stats:
+- 46
+- 61
+- 39
+- 74
+- 52
+- 47
 ---
