@@ -48,8 +48,9 @@
       <p><strong>Location:</strong> {{ page.location }}</p>
       <p><strong>Short Description:</strong> {{ page.short_description }}</p>
     </div>
-    <div class="monster-stats">
-      <table>
+<div class="monster-stats-visual">
+  <canvas id="statRadarChart" width="240" height="240"></canvas>
+      <table class="monster-stats">
         <tr>
           <th>HP</th>
           <th>ATK</th>
@@ -79,7 +80,6 @@
     {{ content }}
   {% endif %}
 </main>
-
   <!-- Prevent Right Click on Images -->
   <script>
     document.addEventListener('contextmenu', event => {
@@ -88,5 +88,39 @@
       }
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('statRadarChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['HP', 'ATK', 'DEF', 'MAG ATK', 'MAG DEF', 'SPD'],
+      datasets: [{
+        label: '{{ page.name }}',
+        data: {{ page.base_stats | jsonify }},
+        backgroundColor: 'rgba(100, 149, 237, 0.2)',
+        borderColor: 'rgba(100, 149, 237, 1)',
+        pointBackgroundColor: 'rgba(100, 149, 237, 1)',
+      }]
+    },
+    options: {
+      responsive: false,
+      scales: {
+        r: {
+          suggestedMin: 0,
+          suggestedMax: 177,  // Set to the highest stat in the dataset globally
+          ticks: {
+            backdropColor: 'transparent'
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false
+        }
+      }
+    }
+  });
+</script>
 </body>
 </html>
