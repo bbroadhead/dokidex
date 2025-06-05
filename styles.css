@@ -262,6 +262,12 @@ body.dark .dex-entry[data-type*="fight"] { background-color: #4a2d2d; }
 body.dark .dex-entry[data-type*="ice"] { background-color: #2b434b; }
 body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 
+.dex-number {
+  font-size: 1rem;
+  color: #666;
+  margin-left: 0.5rem;
+}
+
 /* Monster Profile Styles */
 .monster-profile {
   max-width: 1400px;
@@ -319,7 +325,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .return-link {
-  margin-bottom: 1rem;
+  margin-bottom: 0.1rem;
 }
 
 .back-to-dex {
