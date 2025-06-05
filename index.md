@@ -58,7 +58,7 @@ title: "Dokimon: Quest - Wiki"
            data-stage="{{ mon.stage | default: '' }}"
            data-type="{% if mon.type %}{{ mon.type | default: '' | join: ' ' }}{% else %}none{% endif %}">
         <a href="{{ mon.url }}">
-          <div class="img-wrapper {{ type_class }} {{ pulse_class }}">
+          <div class="img-wrapper {{ type_class }}">
             <img src="{{ mon.image }}" alt="{{ mon.name }}" class="monster-image small">
             <div class="img-blocker"></div>
           </div>
