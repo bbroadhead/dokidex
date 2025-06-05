@@ -368,7 +368,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 /* Monster Profile Styles */
 .monster-profile {
   max-width: 1400px;
-  margin: 1rem auto;
+  margin: 0.2rem auto;
   padding: 1.5rem 2rem;
   background-color: #f8f9fa;
   border-radius: 1rem;
