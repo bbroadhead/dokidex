@@ -94,7 +94,7 @@
   new Chart(ctx, {
     type: 'radar',
     data: {
-      labels: ['HP', 'ATK', 'DEF', 'MAG ATK', 'MAG DEF', 'SPD'],
+      labels: ['HP', 'ATK', 'DEF', 'M.ATK', 'M.DEF', 'SPD'],
       datasets: [{
         label: '{{ page.name }}',
         data: {{ page.base_stats | jsonify }},
@@ -121,38 +121,35 @@
         borderWidth: 2
       }]
     },
-    options: {
-      responsive: false,
-      scales: {
-        r: {
-          suggestedMin: 0,
-          suggestedMax: 177,  // Set to the highest stat in the dataset globally
-          ticks: {
-            backdropColor: 'transparent'
-            font: {
-              wight: 'bold'
-            }
-          },
-          pointLabels: {
-  font: {
-    weight: 'bold'
-  },
-  pointLabels: {
-  font: { weight: 'bold' },
-  color: function(context) {
-    const colors = ['#f66', '#f90', '#fc3', '#99f', '#6cf', '#9f9'];
-    return colors[context.index];
-  }
-}
-}
+options: {
+  responsive: false,
+  scales: {
+    r: {
+      suggestedMin: 0,
+      suggestedMax: 177,
+      ticks: {
+        backdropColor: 'transparent',
+        font: {
+          weight: 'bold'
         }
-      },
-      plugins: {
-        legend: {
-          display: false
+      }, // ← COMMA HERE!
+      pointLabels: {
+        font: {
+          weight: 'bold'
+        },
+        color: function(context) {
+          const colors = ['#f66', '#f90', '#fc3', '#99f', '#6cf', '#9f9'];
+          return colors[context.index];
         }
       }
     }
+  },
+  plugins: {
+    legend: {
+      display: false
+    }
+  }
+}
   });
 </script>
 </body>
