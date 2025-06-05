@@ -318,10 +318,6 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   background-color: #e9ecef;
 }
 
-.monster-lore {
-  margin-top: 1rem;
-}
-
 .return-link {
   margin-bottom: 1rem;
 }
@@ -373,9 +369,15 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   align-items: baseline;
   gap: 0.5rem;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .monster-lore h2 {
   margin: 0;
   white-space: nowrap;
+}
+
+.monster-lore p {
+  margin: 0;
+  flex: 1;
 }
