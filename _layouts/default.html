@@ -98,9 +98,27 @@
       datasets: [{
         label: '{{ page.name }}',
         data: {{ page.base_stats | jsonify }},
-        backgroundColor: 'rgba(100, 149, 237, 0.2)',
-        borderColor: 'rgba(100, 149, 237, 1)',
-        pointBackgroundColor: 'rgba(100, 149, 237, 1)',
+        backgroundColor: 'rgba(255, 255, 255, 0)', // transparent center
+        borderColor: '#888', // neutral edge
+        pointBackgroundColor: [
+          '#f66', // HP
+          '#f90', // ATK
+          '#fc3', // DEF
+          '#99f', // M.ATK
+          '#6cf', // M.DEF
+          '#9f9'  // SPD
+        ],
+        pointBorderColor: [
+          '#f66', // HP
+          '#f90', // ATK
+          '#fc3', // DEF
+          '#99f', // M.ATK
+          '#6cf', // M.DEF
+          '#9f9'  // SPD
+        ],
+        pointRadius: 5,
+        pointHoverRadius: 6,
+        borderWidth: 2
       }]
     },
     options: {
@@ -118,7 +136,14 @@
           pointLabels: {
   font: {
     weight: 'bold'
+  },
+  pointLabels: {
+  font: { weight: 'bold' },
+  color: function(context) {
+    const colors = ['#f66', '#f90', '#fc3', '#99f', '#6cf', '#9f9'];
+    return colors[context.index];
   }
+}
 }
         }
       },
