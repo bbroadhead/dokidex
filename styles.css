@@ -423,7 +423,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .return-link {
-  margin-bottom: 1rem;
+  margin-bottom: 0.1rem;
   text-align: left;
 }
 
