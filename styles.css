@@ -144,7 +144,7 @@ main {
   text-align: center;
   border: 3px solid #ccc;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible;
   padding: 10px;
   background: white;
   transition: transform 0.2s ease, background-color 0.3s ease;
