@@ -144,6 +144,7 @@ main {
   text-align: center;
   border: 3px solid #ccc;
   border-radius: 8px;
+  overflow: hidden;
   padding: 10px;
   background: white;
   transition: transform 0.2s ease, background-color 0.3s ease;
@@ -519,6 +520,8 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .monster-info {
@@ -1000,6 +1003,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 /* Apply pulse on hover to border-glow thumbnails */
 .dex-entry .img-wrapper:hover {
   animation: glowPulse 1.5s ease-in-out infinite;
+  border-radius: 8px;
 }
 
 /* Mobile layout */
