@@ -313,3 +313,18 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 .base-stats th {
   background-color: #e9ecef;
 }
+.return-link {
+  margin-bottom: 1rem;
+}
+
+.back-to-dex {
+  display: inline-block;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.back-to-dex:hover {
+  text-decoration: underline;
+}
