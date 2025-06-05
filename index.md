@@ -37,25 +37,31 @@ title: "Dokimon: Quest - Wiki"
 <div class="dex-grid" id="dex-grid">
   {% if site.dokimon %}
     {% assign sorted = site.dokimon | sort: "number" %}
-    {% for mon in sorted %}
-      <div class="dex-entry"
-           data-name="{{ mon.name | downcase | default: '' }}"
-           data-location="{{ mon.location | downcase | default: '' }}"
-           data-stage="{{ mon.stage | default: '' }}"
-           data-type="{% if mon.type %}{{ mon.type | default: '' | join: ' ' }}{% else %}none{% endif %}">
-        <a href="{{ mon.url }}">
-        {% if mon.type %}
-          <div class="img-wrapper border-{{ mon.type | join: '-' | downcase }}">
-        {% else %}
-          <div class="img-wrapper">
-        {% endif %}
-            <img src="{{ mon.image }}" alt="{{ mon.name }}" class="monster-image small">
-            <div class="img-blocker"></div>
-          </div>
-          <div>#{{ mon.number }} - {{ mon.name }}</div>
-        </a>
+{% for mon in sorted %}
+  {% assign type_array = mon.type | join: ',' | split: ',' %}
+  {% assign type1 = type_array[0] | downcase %}
+  {% assign type2 = type_array[1] | downcase %}
+  {% assign type_class = '' %}
+  {% if type2 != '' %}
+    {% assign type_class = 'border-' | append: type1 | append: '-' | append: type2 %}
+  {% elsif type1 != '' %}
+    {% assign type_class = 'border-' | append: type1 %}
+  {% endif %}
+
+  <div class="dex-entry"
+       data-name="{{ mon.name | downcase | default: '' }}"
+       data-location="{{ mon.location | downcase | default: '' }}"
+       data-stage="{{ mon.stage | default: '' }}"
+       data-type="{% if mon.type %}{{ mon.type | default: '' | join: ' ' }}{% else %}none{% endif %}">
+    <a href="{{ mon.url }}">
+      <div class="img-wrapper {{ type_class }}">
+        <img src="{{ mon.image }}" alt="{{ mon.name }}" class="monster-image small">
+        <div class="img-blocker"></div>
       </div>
-    {% endfor %}
+      <div>#{{ mon.number }} - {{ mon.name }}</div>
+    </a>
+  </div>
+{% endfor %}
   {% else %}
     <p style="color: red;">⚠ No Dokimon collection found. Check `_config.yml` and `_dokimon/` folder.</p>
   {% endif %}
