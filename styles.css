@@ -170,10 +170,13 @@ main {
 
 .img-wrapper {
   border-radius: 8px;
-  overflow: hidden;
-  display: inline-block;
   box-sizing: border-box;
-  padding: 4px; /* Prevent clipping from glow border */
+  display: inline-block;
+  position: relative;
+  padding: 4px; /* Creates space for glow to show */
+  background-clip: padding-box; /* Ensures padding shows glow correctly */
+  overflow: visible; /* IMPORTANT: allows glow to escape */
+  width: fit-content;
 }
 
 .filter-controls {
@@ -383,10 +386,10 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .monster-image.small {
-  width: 100%;
-  height: auto;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
-  display: block;
+  border-radius: 6px;
 }
 
 .monster-info {
@@ -804,6 +807,96 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   border-image: linear-gradient(135deg, #FF6B3C, #3CBD4C) 1;
   animation: pulse-fire-grass 2.5s ease-in-out infinite alternate;
 }
+
+/* 🔥🌿 GRASS-DARK */
+.border-grass-dark {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #3CBD4C, #333333) 1;
+}
+@keyframes pulseGlow-grass-dark {
+  0% { box-shadow: 0 0 0px #3CBD4C, 0 0 0px #333333; }
+  50% { box-shadow: 0 0 12px #3CBD4C, 0 0 12px #333333; }
+  100% { box-shadow: 0 0 0px #3CBD4C, 0 0 0px #333333; }
+}
+
+/* 🌑🕊 DARK-FLYING */
+.border-dark-flying {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #333333, #A6EFFF) 1;
+}
+@keyframes pulseGlow-dark-flying {
+  0% { box-shadow: 0 0 0px #333333, 0 0 0px #A6EFFF; }
+  50% { box-shadow: 0 0 12px #333333, 0 0 12px #A6EFFF; }
+  100% { box-shadow: 0 0 0px #333333, 0 0 0px #A6EFFF; }
+}
+
+/* 🕊🔥 FLYING-FIRE */
+.border-flying-fire {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #A6EFFF, #FF6B3C) 1;
+}
+@keyframes pulseGlow-flying-fire {
+  0% { box-shadow: 0 0 0px #A6EFFF, 0 0 0px #FF6B3C; }
+  50% { box-shadow: 0 0 12px #A6EFFF, 0 0 12px #FF6B3C; }
+  100% { box-shadow: 0 0 0px #A6EFFF, 0 0 0px #FF6B3C; }
+}
+
+/* 💧🕊 WATER-FLYING */
+.border-water-flying {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #4E9FEF, #A6EFFF) 1;
+}
+@keyframes pulseGlow-water-flying {
+  0% { box-shadow: 0 0 0px #4E9FEF, 0 0 0px #A6EFFF; }
+  50% { box-shadow: 0 0 12px #4E9FEF, 0 0 12px #A6EFFF; }
+  100% { box-shadow: 0 0 0px #4E9FEF, 0 0 0px #A6EFFF; }
+}
+
+/* ✨🧚 LIGHT-FAIRY */
+.border-light-fairy {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #FFFA91, #FFB7E6) 1;
+}
+@keyframes pulseGlow-light-fairy {
+  0% { box-shadow: 0 0 0px #FFFA91, 0 0 0px #FFB7E6; }
+  50% { box-shadow: 0 0 12px #FFFA91, 0 0 12px #FFB7E6; }
+  100% { box-shadow: 0 0 0px #FFFA91, 0 0 0px #FFB7E6; }
+}
+
+/* ☠🕊 POISON-FLYING */
+.border-poison-flying {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #A65DDA, #A6EFFF) 1;
+}
+@keyframes pulseGlow-poison-flying {
+  0% { box-shadow: 0 0 0px #A65DDA, 0 0 0px #A6EFFF; }
+  50% { box-shadow: 0 0 12px #A65DDA, 0 0 12px #A6EFFF; }
+  100% { box-shadow: 0 0 0px #A65DDA, 0 0 0px #A6EFFF; }
+}
+
+/* 🧚⚡ FAIRY-ELECTRIC */
+.border-fairy-elect {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #FFB7E6, #FFD93B) 1;
+}
+@keyframes pulseGlow-fairy-elect {
+  0% { box-shadow: 0 0 0px #FFB7E6, 0 0 0px #FFD93B; }
+  50% { box-shadow: 0 0 12px #FFB7E6, 0 0 12px #FFD93B; }
+  100% { box-shadow: 0 0 0px #FFB7E6, 0 0 0px #FFD93B; }
+}
+
+/* 👻⚡ GHOST-ELECTRIC */
+.border-ghost-elect {
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg, #7A55C4, #FFD93B) 1;
+}
+@keyframes pulseGlow-ghost-elect {
+  0% { box-shadow: 0 0 0px #7A55C4, 0 0 0px #FFD93B; }
+  50% { box-shadow: 0 0 12px #7A55C4, 0 0 12px #FFD93B; }
+  100% { box-shadow: 0 0 0px #7A55C4, 0 0 0px #FFD93B; }
+}
+
+
 /* === Missing Dual-Type Glow Effects === */
 
 /* Fire + Fairy */
