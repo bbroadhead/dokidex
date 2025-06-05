@@ -261,3 +261,55 @@ body.dark .dex-entry[data-type*="flying"] { background-color: #362f4e; }
 body.dark .dex-entry[data-type*="fight"] { background-color: #4a2d2d; }
 body.dark .dex-entry[data-type*="ice"] { background-color: #2b434b; }
 body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
+
+/* Monster Profile Styles */
+.monster-profile {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #212529;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.monster-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 1rem;
+  background: #e9ecef;
+  padding: 0.5rem;
+}
+.basic-info h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+.dex-number {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+.descriptions h2,
+.base-stats h2 {
+  margin-top: 1.5rem;
+  color: #495057;
+}
+.base-stats table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+.base-stats th,
+.base-stats td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: center;
+}
+.base-stats th {
+  background-color: #e9ecef;
+}
