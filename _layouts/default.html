@@ -63,8 +63,10 @@
       </table>
     </div>
 
-    {% if page.type %}
-      <div class="monster-image-container border-{{ page.type | join: '-' | downcase }}">
+    {% if page.type.size == 2 %}
+      <div class="monster-image-container border-{{ page.type[0] | downcase }}-{{ page.type[1] | downcase }}">
+    {% elsif page.type.size == 1 %}
+      <div class="monster-image-container border-{{ page.type[0] | downcase }}">
     {% else %}
       <div class="monster-image-container">
     {% endif %}
