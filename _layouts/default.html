@@ -66,9 +66,18 @@
 {% assign type_array = page.type | join: ',' | split: ',' %}
 {% assign type1 = type_array[0] | downcase %}
 {% assign type2 = type_array[1] | downcase %}
+{% assign type_class = '' %}
+{% assign pulse_class = '' %}
 
-<div class="monster-image-container 
-  {% if type2 != blank %}border-{{ type1 }}-{{ type2 }}{% elsif type1 != blank %}border-{{ type1 }}{% endif %}">
+{% if type2 != '' %}
+  {% assign type_class = 'border-' | append: type1 | append: '-' | append: type2 %}
+  {% assign pulse_class = 'pulseGlow-' | append: type1 | append: '-' | append: type2 %}
+{% elsif type1 != '' %}
+  {% assign type_class = 'border-' | append: type1 %}
+  {% assign pulse_class = 'pulseGlow-' | append: type1 %}
+{% endif %}
+
+<div class="monster-image-container {{ type_class }} {{ pulse_class }}">
   <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
 </div>
 
