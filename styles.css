@@ -364,6 +364,12 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   color: #666;
   margin-left: 0.5rem;
 }
+.glow-wrapper {
+  border-radius: 1rem;
+  overflow: visible;
+  padding: 0;
+  display: inline-block;
+}
 
 /* Monster Profile Styles */
 .monster-profile {
