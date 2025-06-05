@@ -169,14 +169,13 @@ main {
 }
 
 .img-wrapper {
-  border-radius: 8px;
-  box-sizing: border-box;
   display: inline-block;
   position: relative;
-  padding: 4px; /* Creates space for glow to show */
-  background-clip: padding-box; /* Ensures padding shows glow correctly */
-  overflow: visible; /* IMPORTANT: allows glow to escape */
   width: fit-content;
+  height: fit-content;
+  border-radius: 8px;
+  overflow: visible;
+  box-sizing: content-box;
 }
 
 .filter-controls {
@@ -388,8 +387,8 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 .monster-image.small {
   width: 96px;
   height: 96px;
-  object-fit: contain;
-  border-radius: 6px;
+  border-radius: 8px;
+  display: block;
 }
 
 .monster-info {
