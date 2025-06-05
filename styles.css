@@ -158,6 +158,12 @@ main {
   height: auto;
 }
 
+.dex-entry .img-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  display: inline-block;
+}
+
 .filter-controls {
   display: flex;
   flex-wrap: wrap;
@@ -518,6 +524,134 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   align-items: center;
   gap: 1rem;
   max-width: 350px;
+}
+
+/* Generic pulse effect */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0,0,0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 10px 10px rgba(0,0,0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0,0,0, 0);
+  }
+}
+
+/* Type-specific glow pulses on hover */
+.dex-entry[data-type*="fire"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #FF5733;
+}
+
+.dex-entry[data-type*="water"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #3498DB;
+}
+
+.dex-entry[data-type*="grass"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #27AE60;
+}
+
+.dex-entry[data-type*="elect"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #F1C40F;
+}
+
+.dex-entry[data-type*="light"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #FCE883;
+}
+
+.dex-entry[data-type*="dark"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #2C3E50;
+}
+
+.dex-entry[data-type*="flying"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #95A5A6;
+}
+
+.dex-entry[data-type*="fairy"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #FFB6C1;
+}
+
+.dex-entry[data-type*="ghost"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #9B59B6;
+}
+
+.dex-entry[data-type*="poison"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #8E44AD;
+}
+
+.dex-entry[data-type*="fight"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #E67E22;
+}
+
+.dex-entry[data-type*="dragon"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #5D6D7E;
+}
+
+.dex-entry[data-type*="ice"]:hover {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #85C1E9;
+}
+
+/* Dual-Type Glow Pulses */
+.dex-entry.border-fire-grass:hover {
+  box-shadow: 0 0 10px #FF5733, 0 0 20px #27AE60;
+}
+.dex-entry.border-fire-elect:hover {
+  box-shadow: 0 0 10px #FF5733, 0 0 20px #F1C40F;
+}
+.dex-entry.border-fire-fight:hover {
+  box-shadow: 0 0 10px #FF5733, 0 0 20px #E67E22;
+}
+.dex-entry.border-water-elect:hover {
+  box-shadow: 0 0 10px #3498DB, 0 0 20px #F1C40F;
+}
+.dex-entry.border-grass-flying:hover {
+  box-shadow: 0 0 10px #27AE60, 0 0 20px #95A5A6;
+}
+.dex-entry.border-grass-fairy:hover {
+  box-shadow: 0 0 10px #27AE60, 0 0 20px #FFB6C1;
+}
+.dex-entry.border-light-dark:hover {
+  box-shadow: 0 0 10px #FCE883, 0 0 20px #2C3E50;
+}
+.dex-entry.border-dark-ghost:hover {
+  box-shadow: 0 0 10px #2C3E50, 0 0 20px #9B59B6;
+}
+.dex-entry.border-ghost-dark:hover {
+  box-shadow: 0 0 10px #9B59B6, 0 0 20px #2C3E50;
+}
+.dex-entry.border-poison-ghost:hover {
+  box-shadow: 0 0 10px #8E44AD, 0 0 20px #9B59B6;
+}
+.dex-entry.border-fight-dark:hover {
+  box-shadow: 0 0 10px #E67E22, 0 0 20px #2C3E50;
+}
+.dex-entry.border-fight-dragon:hover {
+  box-shadow: 0 0 10px #E67E22, 0 0 20px #5D6D7E;
+}
+.dex-entry.border-dragon-ice:hover {
+  box-shadow: 0 0 10px #5D6D7E, 0 0 20px #85C1E9;
+}
+.dex-entry.border-ice-dragon:hover {
+  box-shadow: 0 0 10px #85C1E9, 0 0 20px #5D6D7E;
+}
+
+/* Apply pulse on hover to border-glow thumbnails */
+.dex-entry .img-wrapper:hover {
+  animation: glowPulse 1.5s ease-in-out infinite;
 }
 
 /* Mobile layout */
