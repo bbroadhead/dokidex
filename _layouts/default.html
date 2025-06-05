@@ -38,20 +38,15 @@
     <div class="return-link">
       <a href="/" class="back-to-dex">&larr; Return to Dex</a>
     </div>
-    <!-- Monster Detail Layout -->
+<!-- Monster Detail Layout -->
 <div class="monster-profile">
+  <div class="return-link">
+    <a href="/" class="back-to-dex">&larr; Return to Dex</a>
+  </div>
+
   <div class="monster-upper">
-    <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
-    <div class="monster-info">
-      <h1>{{ page.name }} <span class="dex-number">#{{ page.number }}</span></h1>
-      <p><strong>Stage:</strong> {{ page.stage }}</p>
-      <p><strong>Evolution Level:</strong> {{ page.evolves_at | default: "None" }}</p>
-      <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
-      <p><strong>Location:</strong> {{ page.location }}</p>
-      <p><strong>Classification:</strong> {{ page.short_description }}</p>
-    </div>
-<div class="monster-stats-visual">
-  <canvas id="statRadarChart" width="240" height="240"></canvas>
+    <div class="stats-side">
+      <canvas id="statRadarChart" width="240" height="240"></canvas>
       <table class="monster-stats">
         <tr>
           <th class="hp">HP</th>
@@ -71,13 +66,23 @@
         </tr>
       </table>
     </div>
-  </div>
-  <div class="monster-lore">
-    <h2>Lore:</h2>
-    <p>{{ page.long_description }}</p>
+
+    <div class="monster-image-container">
+      <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
+    </div>
+
+    <div class="monster-info">
+      <h1>{{ page.name }} <span class="dex-number">#{{ page.number }}</span></h1>
+      <p><strong>Stage:</strong> {{ page.stage }}</p>
+      <p><strong>Evolution Level:</strong> {{ page.evolves_at | default: "None" }}</p>
+      <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
+      <p><strong>Location:</strong> {{ page.location }}</p>
+      <p><strong>Classification:</strong> {{ page.short_description }}</p>
+      <p><strong>Lore:</strong> {{ page.long_description }}</p>
+    </div>
   </div>
 </div>
-    </div>
+
   {% else %}
     {{ content }}
   {% endif %}
