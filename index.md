@@ -38,23 +38,19 @@ title: "Dokimon: Quest - Wiki"
   {% if site.dokimon %}
     {% assign sorted = site.dokimon | sort: "number" %}
     {% for mon in sorted %}
-      {% assign type_array = mon.type | join: ',' | split: ',' %}
-      {% assign type1 = type_array[0] | downcase %}
-      {% assign type2 = type_array[1] | downcase %}
+{% assign type_array = mon.type | join: ',' | split: ',' %}
+{% assign type1 = type_array[0] | downcase %}
+{% assign type2 = type_array[1] | downcase %}
+{% assign type_class = '' %}
+{% assign pulse_class = '' %}
 
-      {% assign type_class = '' %}
-      {% if type2 != '' %}
-        {% assign type_class = 'border-' | append: type1 | append: '-' | append: type2 %}
-      {% elsif type1 != '' %}
-        {% assign type_class = 'border-' | append: type1 %}
-      {% endif %}
-
-      {% assign pulse_class = '' %}
-      {% if type2 != '' %}
-        {% assign pulse_class = 'pulseGlow-' | append: type1 | append: '-' | append: type2 %}
-      {% elsif type1 != '' %}
-        {% assign pulse_class = 'pulseGlow-' | append: type1 %}
-      {% endif %}
+{% if type1 != blank and type2 != blank and type2 != 'nan' %}
+  {% assign type_class = 'border-' | append: type1 | append: '-' | append: type2 %}
+  {% assign pulse_class = 'pulseGlow-' | append: type1 | append: '-' | append: type2 %}
+{% elsif type1 != blank and type1 != 'nan' %}
+  {% assign type_class = 'border-' | append: type1 %}
+  {% assign pulse_class = 'pulseGlow-' | append: type1 %}
+{% endif %}
 
       <div class="dex-entry"
            data-name="{{ mon.name | downcase | default: '' }}"
