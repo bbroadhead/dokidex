@@ -169,13 +169,15 @@ main {
 }
 
 .img-wrapper {
-  display: inline-block;
   position: relative;
-  width: fit-content;
-  height: fit-content;
-  border-radius: 8px;
-  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  border-radius: 12px;
   box-sizing: content-box;
+  overflow: visible; /* Crucial to let glow expand */
 }
 
 .filter-controls {
@@ -387,8 +389,9 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 .monster-image.small {
   width: 96px;
   height: 96px;
-  border-radius: 8px;
   display: block;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .monster-info {
@@ -531,7 +534,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  overflow: hidden;
+  overflow: visible;
   margin: 0 1.5rem;
 }
 
