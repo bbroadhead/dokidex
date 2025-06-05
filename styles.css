@@ -343,16 +343,25 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 .monster-stats-visual {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 1rem;
-  justify-content: flex-end;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .monster-stats-visual {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .monster-stats {
   border-collapse: collapse;
   width: 100%;
-  min-width: fixed;
+  table-layout: fixed;
 }
 
 .monster-stats th,
