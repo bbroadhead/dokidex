@@ -342,12 +342,18 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 
 .monster-stats-visual {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: flex-start;
+  flex-wrap: wrap;              /* Allow wrapping on small screens */
+  justify-content: center;      /* Center the content as a group */
+  gap: 1rem;                    /* Space between graph and table */
+  align-items: flex-start;      /* Align to the top when side-by-side */
   margin-top: 1rem;
-  justify-content: center;
+  flex: 1;                      /* Ensure it uses available space */
+}
+
+.monster-stats-visual canvas,
+.monster-stats-visual table {
+  max-width: 300px;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
