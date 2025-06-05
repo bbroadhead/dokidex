@@ -42,14 +42,11 @@ title: "Dokimon: Quest - Wiki"
 {% assign type1 = type_array[0] | downcase %}
 {% assign type2 = type_array[1] | downcase %}
 {% assign type_class = '' %}
-{% assign pulse_class = '' %}
 
 {% if type1 != blank and type2 != blank and type2 != 'nan' %}
   {% assign type_class = 'border-' | append: type1 | append: '-' | append: type2 %}
-  {% assign pulse_class = 'pulseGlow-' | append: type1 | append: '-' | append: type2 %}
 {% elsif type1 != blank and type1 != 'nan' %}
   {% assign type_class = 'border-' | append: type1 %}
-  {% assign pulse_class = 'pulseGlow-' | append: type1 %}
 {% endif %}
 
       <div class="dex-entry"
