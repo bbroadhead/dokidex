@@ -46,18 +46,18 @@
       <p><strong>Evolution Level:</strong> {{ page.evolves_at | default: "None" }}</p>
       <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
       <p><strong>Location:</strong> {{ page.location }}</p>
-      <p><strong>Short Description:</strong> {{ page.short_description }}</p>
+      <p><strong>Classification:</strong> {{ page.short_description }}</p>
     </div>
 <div class="monster-stats-visual">
   <canvas id="statRadarChart" width="240" height="240"></canvas>
       <table class="monster-stats">
         <tr>
-          <th>HP</th>
-          <th>ATK</th>
-          <th>DEF</th>
-          <th>MAG ATK</th>
-          <th>MAG DEF</th>
-          <th>SPD</th>
+          <th class="hp">HP</th>
+          <th class="atk">ATK</th>
+          <th class="def">DEF</th>
+          <th class="matk">MAG ATK</th>
+          <th class="mdef">MAG DEF</th>
+          <th class="spd">SPD</th>
         </tr>
         <tr>
           <td>{{ page.base_stats[0] }}</td>
@@ -71,7 +71,7 @@
     </div>
   </div>
   <div class="monster-lore">
-    <h2>Long Description</h2>
+    <h2>Lore:</h2>
     <p>{{ page.long_description }}</p>
   </div>
 </div>
