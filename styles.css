@@ -1745,6 +1745,15 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 .type-dragon   { background-color: var(--dragon-color); color: var(--dragon-color); }
 .type-ice      { background-color: var(--ice-color); color: var(--ice-color); }
 
+#type-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  max-width: 600px; /* adjust to control row wrapping */
+  margin: 0 auto;
+}
+
 /* Mobile layout */
 @media (max-width: 768px) {
   .monster-upper {
