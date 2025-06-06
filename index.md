@@ -15,19 +15,19 @@ title: "Dokimon: Quest - Wiki"
 
   <label>Type:</label>
   <div id="type-filters">
-    <button class="type-btn" data-type="Fire">Fire</button>
-    <button class="type-btn" data-type="Water">Water</button>
-    <button class="type-btn" data-type="Grass">Grass</button>
-    <button class="type-btn" data-type="Electric">Electric</button>
-    <button class="type-btn" data-type="Light">Light</button>
-    <button class="type-btn" data-type="Dark">Dark</button>
-    <button class="type-btn" data-type="Flying">Flying</button>
-    <button class="type-btn" data-type="Fight">Fight</button>
-    <button class="type-btn" data-type="Fairy">Fairy</button>
-    <button class="type-btn" data-type="Ghost">Ghost</button>
-    <button class="type-btn" data-type="Poison">Poison</button>
-    <button class="type-btn" data-type="Dragon">Dragon</button>
-    <button class="type-btn" data-type="Ice">Ice</button>
+    <button class="type-btn type-fire" data-type="Fire">Fire</button>
+    <button class="type-btn type-water" data-type="Water">Water</button>
+    <button class="type-btn type-grass" data-type="Grass">Grass</button>
+    <button class="type-btn type-electric" data-type="Electric">Electric</button>
+    <button class="type-btn type-light" data-type="Light">Light</button>
+    <button class="type-btn type-dark" data-type="Dark">Dark</button>
+    <button class="type-btn type-flying" data-type="Flying">Flying</button>
+    <button class="type-btn type-fight" data-type="Fight">Fight</button>
+    <button class="type-btn type-fairy" data-type="Fairy">Fairy</button>
+    <button class="type-btn type-ghost" data-type="Ghost">Ghost</button>
+    <button class="type-btn type-poison" data-type="Poison">Poison</button>
+    <button class="type-btn type-dragon" data-type="Dragon">Dragon</button>
+    <button class="type-btn type-ice" data-type="Ice">Ice</button>
   </div>
 
   <label for="location-filter">Location:</label>
