@@ -57,7 +57,7 @@ layout: default
     <div class="img-blocker"></div>
   </div>
 
-  <p><strong>Type:</strong> {{ page.type }}</p>
+  <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
   <p><strong>Stage:</strong> {{ page.stage }}</p>
   <p><strong>Evolves at:</strong> {{ page.evolves_at }}</p>
   <p><strong>Location:</strong> {{ page.location }}</p>
