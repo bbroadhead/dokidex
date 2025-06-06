@@ -1,4 +1,5 @@
 ---
+layout: default
 number: 34
 name: Spooklet
 lang_names: []
