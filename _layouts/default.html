@@ -64,8 +64,7 @@
       </table>
     </div>
 
-{% assign type_array = page.type | join: ',' | split: ',' %}
-{% assign type_array = type_array | map: 'downcase' %}
+{% assign type_array = mon.type | map: 'downcase' %}
 {% assign type1 = type_array[0] %}
 {% assign type2 = type_array[1] %}
 {% assign type_class = '' %}
