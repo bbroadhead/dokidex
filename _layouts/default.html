@@ -64,7 +64,7 @@
       </table>
     </div>
 
-{% assign type_array = mon.type | map: 'downcase' %}
+{% assign type_array = mon.type | downcase | split: ',' | map: 'strip' %}
 {% assign type1 = type_array[0] %}
 {% assign type2 = type_array[1] %}
 {% assign type_class = '' %}
