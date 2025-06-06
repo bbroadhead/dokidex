@@ -255,15 +255,12 @@ main {
 
 .filter-controls {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1rem;
+  align-items: flex-start;
   background: rgba(255, 255, 255, 0.8);
-  padding: 0.1rem 1rem 1rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
-  overflow-x: auto;
 }
 
 .type-btn {
@@ -1784,17 +1781,6 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   100% { box-shadow: 0 0 20px #3498DB, 0 0 35px #8E44AD; }
 }
 
-#type-filter-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  justify-content: center;
-  max-width: 500px;
-  height: auto;
-  padding-bottom: 0.2rem;
-  align-self: flex-start; /* Prevents stretching in flex parent */
-}
-
 .type-btn {
   padding: 0.5rem 1rem;
   border: none;
@@ -1843,9 +1829,16 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
+}
+
+.filter-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.type-block {
+  max-width: 600px;
 }
 
 #filters {
