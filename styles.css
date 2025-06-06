@@ -132,10 +132,12 @@ body {
 .nav-button {
   color: white;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
+  line-height: 1.4;
   display: inline-block;
   font-weight: normal;
   font-family: inherit;
+  vertical-align: middle;
 }
 
 .dropdown {
@@ -253,12 +255,15 @@ main {
 
 .filter-controls {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
   margin-bottom: 1rem;
   background: rgba(255, 255, 255, 0.8);
   padding: 0.1rem 1rem 1rem 1rem;
   border-radius: 10px;
+  overflow-x: auto;
 }
 
 .type-btn {
@@ -1851,7 +1856,10 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .filter-group {
-  align-self: flex-start; /* prevents stretching to match tallest sibling */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
 }
 
 /* Mobile layout */
