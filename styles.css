@@ -1844,7 +1844,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   flex-wrap: wrap;
   gap: 0.4rem;
   justify-content: center;
-  max-width: 600px; /* adjust to control row wrapping */
+  width: 100%;
   margin: 0 auto;
 }
 
