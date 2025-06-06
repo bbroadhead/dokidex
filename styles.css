@@ -1827,6 +1827,11 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 .type-dragon   { background-color: var(--dragon-color); --border-color: var(--dragon-color); }
 .type-ice      { background-color: var(--ice-color); --border-color: var(--ice-color); }
 
+.filter-row {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
 #type-filters {
   display: flex;
   flex-wrap: wrap;
