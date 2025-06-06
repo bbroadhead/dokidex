@@ -129,6 +129,15 @@ body {
   display: inline-block;
 }
 
+.nav-button {
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  font-weight: normal;
+  font-family: inherit;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -154,6 +163,7 @@ body {
   border-radius: 0.5rem;
   overflow: hidden;
   margin-top: 0.5rem;
+  font-family: inherit;
 }
 
 .dropdown-content a {
@@ -170,23 +180,6 @@ body {
 
 .dropdown-content a:hover {
   background-color: #2a547a; /* darker blue on hover */
-}
-
-
-.dropdown-content a {
-  color: white;
-  padding: 0.6rem 1rem;
-  text-decoration: none;
-  display: block;
-  border-bottom: 1px solid #333;
-}
-
-.dropdown-content a:last-child {
-  border-bottom: none;
-}
-
-.dropdown-content a:hover {
-  background-color: #444;
 }
 
 .dropdown:hover .dropdown-content {
