@@ -38,8 +38,7 @@ title: "Dokimon: Quest - Wiki"
   {% if site.dokimon %}
     {% assign sorted = site.dokimon | sort: "number" %}
     {% for mon in sorted %}
-{% assign type_array = mon.type | join: ',' | split: ',' %}
-{% assign type_array = type_array | map: 'downcase' %}
+{% assign type_array = mon.type | map: 'downcase' %}
 {% assign type1 = type_array[0] %}
 {% assign type2 = type_array[1] %}
 {% assign type_class = '' %}
