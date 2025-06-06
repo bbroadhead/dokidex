@@ -15,6 +15,7 @@ title: "Dokimon: Quest - Wiki"
 
   <label>Type:</label>
   <div id="type-filters">
+  <div id="type-filter-wrapper">
     <button class="type-btn type-fire" data-type="Fire">Fire</button>
     <button class="type-btn type-water" data-type="Water">Water</button>
     <button class="type-btn type-grass" data-type="Grass">Grass</button>
@@ -28,6 +29,7 @@ title: "Dokimon: Quest - Wiki"
     <button class="type-btn type-poison" data-type="Poison">Poison</button>
     <button class="type-btn type-dragon" data-type="Dragon">Dragon</button>
     <button class="type-btn type-ice" data-type="Ice">Ice</button>
+  </div>
   </div>
 
   <label for="location-filter">Location:</label>
