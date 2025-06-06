@@ -70,7 +70,8 @@
 {% assign type_class = '' %}
 
 {% if type1 != blank and type2 != blank and type2 != 'nan' %}
-  {% assign type_class = 'border-' | append: type1 | append: '-' | append: type2 %}
+  {% assign types_sorted = type_array | sort %}
+  {% assign type_class = 'border-' | append: types_sorted[0] | append: '-' | append: types_sorted[1] %}
 {% elsif type1 != blank and type1 != 'nan' %}
   {% assign type_class = 'border-' | append: type1 %}
 {% endif %}
