@@ -1711,7 +1711,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 9999px;
-  color: #fff;
+  color: #000;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
@@ -1724,26 +1724,27 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .type-btn.active {
+  background-color: #aaa !important;
+  color: #000 !important; /* keep text black even when selected */
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
   transform: translateY(2px);
-  filter: brightness(0.9);
-  border: 2px solid white;
+  border: 2px solid var(--border-color);
 }
 
 /* Color-coded types */
-.type-fire     { background-color: var(--fire-color); color: var(--fire-color); }
-.type-water    { background-color: var(--water-color); color: var(--water-color); }
-.type-grass    { background-color: var(--grass-color); color: var(--grass-color); }
-.type-electric { background-color: var(--elect-color); color: var(--elect-color); }
-.type-light    { background-color: var(--light-color); color: var(--light-color); }
-.type-dark     { background-color: var(--dark-color); color: var(--dark-color); }
-.type-flying   { background-color: var(--flying-color); color: var(--flying-color); }
-.type-fight    { background-color: var(--fight-color); color: var(--fight-color); }
-.type-fairy    { background-color: var(--fairy-color); color: var(--fairy-color); }
-.type-ghost    { background-color: var(--ghost-color); color: var(--ghost-color); }
-.type-poison   { background-color: var(--poison-color); color: var(--poison-color); }
-.type-dragon   { background-color: var(--dragon-color); color: var(--dragon-color); }
-.type-ice      { background-color: var(--ice-color); color: var(--ice-color); }
+.type-fire     { background-color: var(--fire-color); --border-color: var(--fire-color); }
+.type-water    { background-color: var(--water-color); --border-color: var(--water-color); }
+.type-grass    { background-color: var(--grass-color); --border-color: var(--grass-color); }
+.type-electric { background-color: var(--electric-color); --border-color: var(--electric-color); }
+.type-light    { background-color: var(--light-color); --border-color: var(--light-color); }
+.type-dark     { background-color: var(--dark-color); --border-color: var(--dark-color); }
+.type-flying   { background-color: var(--flying-color); --border-color: var(--flying-color); }
+.type-fight    { background-color: var(--fight-color); --border-color: var(--fight-color); }
+.type-fairy    { background-color: var(--fairy-color); --border-color: var(--fairy-color); }
+.type-ghost    { background-color: var(--ghost-color); --border-color: var(--ghost-color); }
+.type-poison   { background-color: var(--poison-color); --border-color: var(--poison-color); }
+.type-dragon   { background-color: var(--dragon-color); --border-color: var(--dragon-color); }
+.type-ice      { background-color: var(--ice-color); --border-color: var(--ice-color); }
 
 #type-filters {
   display: flex;
