@@ -23,6 +23,11 @@ title: "Dokimon: Quest - Wiki"
     <button class="type-btn" data-type="Dark">Dark</button>
     <button class="type-btn" data-type="Flying">Flying</button>
     <button class="type-btn" data-type="Fight">Fight</button>
+    <button class="type-btn" data-type="Fairy">Fight</button>
+    <button class="type-btn" data-type="Ghost">Fight</button>
+    <button class="type-btn" data-type="Poison">Fight</button>
+    <button class="type-btn" data-type="Dragon">Fight</button>
+    <button class="type-btn" data-type="Ice">Fight</button>
   </div>
 
   <label for="location-filter">Location:</label>
