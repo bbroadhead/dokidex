@@ -199,9 +199,11 @@ main {
 }
 
 .type-btn.active {
-  background: #ffaa00;
-  border-color: #ffaa00;
-  color: black;
+  background-color: #aaa !important;  /* Override the type color with grey */
+  color: #fff !important;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
+  transform: translateY(2px);
+  border: 2px solid currentColor;
 }
 
 #clear-filters {
@@ -1729,19 +1731,19 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 /* Color-coded types */
-.type-fire     { background-color: var(--fire-color); }
-.type-water    { background-color: var(--water-color); }
-.type-grass    { background-color: var(--grass-color); }
-.type-electric { background-color: var(--elect-color); }
-.type-light    { background-color: var(--light-color); color: #333; }
-.type-dark     { background-color: var(--dark-color); }
-.type-flying   { background-color: var(--flying-color); color: #333; }
-.type-fight    { background-color: var(--fight-color); }
-.type-fairy    { background-color: var(--fairy-color); color: #333; }
-.type-ghost    { background-color: var(--ghost-color); }
-.type-poison   { background-color: var(--poison-color); }
-.type-dragon   { background-color: var(--dragon-color); }
-.type-ice      { background-color: var(--ice-color); color: #333; }
+.type-fire     { background-color: var(--fire-color); color: var(--fire-color); }
+.type-water    { background-color: var(--water-color); color: var(--water-color); }
+.type-grass    { background-color: var(--grass-color); color: var(--grass-color); }
+.type-electric { background-color: var(--elect-color); color: var(--elect-color); }
+.type-light    { background-color: var(--light-color); color: var(--light-color); }
+.type-dark     { background-color: var(--dark-color); color: var(--dark-color); }
+.type-flying   { background-color: var(--flying-color); color: var(--flying-color); }
+.type-fight    { background-color: var(--fight-color); color: var(--fight-color); }
+.type-fairy    { background-color: var(--fairy-color); color: var(--fairy-color); }
+.type-ghost    { background-color: var(--ghost-color); color: var(--ghost-color); }
+.type-poison   { background-color: var(--poison-color); color: var(--poison-color); }
+.type-dragon   { background-color: var(--dragon-color); color: var(--dragon-color); }
+.type-ice      { background-color: var(--ice-color); color: var(--ice-color); }
 
 /* Mobile layout */
 @media (max-width: 768px) {
