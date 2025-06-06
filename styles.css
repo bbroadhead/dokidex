@@ -1709,15 +1709,14 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 #type-filter-wrapper {
-  flex: 1 1 auto;
-  max-width: 500px;
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
   justify-content: center;
-  align-content: flex-start;
-  max-height: 5.5rem; /* Adjust to allow two rows of buttons */
-  overflow-y: auto;
+  max-width: 500px;
+  height: auto;
+  padding-bottom: 0.2rem;
+  align-self: flex-start; /* Prevents stretching in flex parent */
 }
 
 .type-btn {
@@ -1766,6 +1765,17 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   justify-content: center;
   max-width: 600px; /* adjust to control row wrapping */
   margin: 0 auto;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.filter-group {
+  align-self: flex-start; /* prevents stretching to match tallest sibling */
 }
 
 /* Mobile layout */
