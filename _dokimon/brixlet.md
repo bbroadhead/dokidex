@@ -1,4 +1,5 @@
 ---
+layout: default
 number: 33
 name: Brixlet
 lang_names: []
