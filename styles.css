@@ -2,7 +2,7 @@
   --fire-color: #FF5733;
   --water-color: #3498DB;
   --grass-color: #27AE60;
-  --elect-color: #F1C40F;
+  --electric-color: #F1C40F;
   --light-color: #FCE883;
   --dark-color: #2C3E50;
   --flying-color: #95A5A6;
@@ -667,7 +667,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   100% { box-shadow: 0 0 20px var(--grass-color), 0 0 35px var(--grass-color); }
 }
 
-.border-elect {
+.border-electric {
   border: 4px solid var(--elect-color);
   animation: pulse-elect 2.5s ease-in-out infinite alternate;
 }
@@ -939,7 +939,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 /* Electric + Water */
-.border-elect-water {
+.border-electric-water {
   border: 4px solid transparent;
   border-image: linear-gradient(135deg, #F1C40F, #3498DB) 1;
   animation: pulse-elect-water 2.5s ease-in-out infinite alternate;
@@ -1010,7 +1010,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   100% { box-shadow: 0 0 20px #27AE60, 0 0 35px #8E44AD; }
 }
 
-.border-elect-water {
+.border-electric-water {
   border: 4px solid transparent;
   border-image: linear-gradient(135deg, #F1C40F, #3498DB) 1;
   animation: pulse-elect-water 2.5s ease-in-out infinite alternate;
