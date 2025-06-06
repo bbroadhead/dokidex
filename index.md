@@ -39,8 +39,9 @@ title: "Dokimon: Quest - Wiki"
     {% assign sorted = site.dokimon | sort: "number" %}
     {% for mon in sorted %}
 {% assign type_array = mon.type | join: ',' | split: ',' %}
-{% assign type1 = type_array[0] | downcase %}
-{% assign type2 = type_array[1] | downcase %}
+{% assign type_array = type_array | map: 'downcase' %}
+{% assign type1 = type_array[0] %}
+{% assign type2 = type_array[1] %}
 {% assign type_class = '' %}
 
 {% if type1 != blank and type2 != blank and type2 != 'nan' %}
