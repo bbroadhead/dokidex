@@ -1,5 +1,4 @@
 ---
-layout: default
 number: 33
 name: Brixlet
 lang_names: []
@@ -14,4 +13,5 @@ description: ''
 long_description: The undying loyalty of this Dokimon species makes them very popular
   amongst youngsters as well as the elderly.
 short_description: Companion Dokimon
+base_stats: [40, 14, 43, 88, 64, 107]
 ---
