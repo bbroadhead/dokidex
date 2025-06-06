@@ -4,8 +4,7 @@ name: Burnsby
 lang_names: []
 stage: '1'
 evolves_at: 14
-type:
-- Fire
+type: "Fire"
 location: Starter
 image: /assets/images/burnsby.png
 description: ''
