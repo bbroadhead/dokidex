@@ -1707,6 +1707,19 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   0% { box-shadow: 0 0 0px #3498DB, 0 0 0px #8E44AD; }
   100% { box-shadow: 0 0 20px #3498DB, 0 0 35px #8E44AD; }
 }
+
+#type-filter-wrapper {
+  flex: 1 1 auto;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  align-content: flex-start;
+  max-height: 5.5rem; /* Adjust to allow two rows of buttons */
+  overflow-y: auto;
+}
+
 .type-btn {
   padding: 0.5rem 1rem;
   border: none;
