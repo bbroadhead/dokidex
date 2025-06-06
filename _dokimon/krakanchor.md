@@ -6,7 +6,7 @@ stage: '3'
 evolves_at: null
 type:
 - Water
-- Elect
+- Electric
 location: ''
 image: /assets/images/krakanchor.png
 description: ''
