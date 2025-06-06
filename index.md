@@ -7,7 +7,7 @@ title: "Dokimon: Quest - Wiki"
 
 <div class="filter-controls">
   <!-- Group: Stage -->
-  <div class="filter-row">
+  <div class="filter-block">
     <label for="stage-filter">Stage:</label>
     <select id="stage-filter">
       <option value="">All</option>
@@ -18,7 +18,7 @@ title: "Dokimon: Quest - Wiki"
   </div>
 
   <!-- Group: Type -->
-  <div class="filter-row">
+  <div class="filter-block type-block">
     <label>Type:</label>
     <div id="type-filters">
       <button class="type-btn type-fire" data-type="Fire">Fire</button>
@@ -38,19 +38,19 @@ title: "Dokimon: Quest - Wiki"
   </div>
 
   <!-- Group: Location -->
-  <div class="filter-row">
+  <div class="filter-block">
     <label for="location-filter">Location:</label>
     <input type="text" id="location-filter" placeholder="Search Location">
   </div>
 
   <!-- Group: Name -->
-  <div class="filter-row">
+  <div class="filter-block">
     <label for="search-filter">Name:</label>
     <input type="text" id="search-filter" placeholder="Search Name">
   </div>
 
   <!-- Group: Clear Button -->
-  <div class="filter-row">
+  <div class="filter-block">
     <button id="clear-filters" class="clear-btn">Clear Filters</button>
   </div>
 </div>
