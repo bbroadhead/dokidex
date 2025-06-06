@@ -119,6 +119,41 @@
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.links-button');
+    const menu = document.querySelector('.dropdown-content');
+
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      menu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!button.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.links-button');
+    const menu = document.querySelector('.dropdown-content');
+
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      menu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!button.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  });
+</script>
+
 <script>
   const canvas = document.getElementById('statRadarChart');
   if (canvas) {
