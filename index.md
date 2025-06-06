@@ -4,41 +4,55 @@ title: "Dokimon: Quest - Wiki"
 ---
 
 <button id="filter-toggle">Toggle Filters</button>
+
 <div class="filter-controls">
-  <label for="stage-filter">Stage:</label>
-  <select id="stage-filter">
-    <option value="">All</option>
-    <option value="1">Stage 1</option>
-    <option value="2">Stage 2</option>
-    <option value="3">Stage 3</option>
-  </select>
-
-  <label>Type:</label>
-  <div class="filter-group">
-  <div id="type-filters">
-    <button class="type-btn type-fire" data-type="Fire">Fire</button>
-    <button class="type-btn type-water" data-type="Water">Water</button>
-    <button class="type-btn type-grass" data-type="Grass">Grass</button>
-    <button class="type-btn type-electric" data-type="Electric">Electric</button>
-    <button class="type-btn type-light" data-type="Light">Light</button>
-    <button class="type-btn type-dark" data-type="Dark">Dark</button>
-    <button class="type-btn type-flying" data-type="Flying">Flying</button>
-    <button class="type-btn type-fight" data-type="Fight">Fight</button>
-    <button class="type-btn type-fairy" data-type="Fairy">Fairy</button>
-    <button class="type-btn type-ghost" data-type="Ghost">Ghost</button>
-    <button class="type-btn type-poison" data-type="Poison">Poison</button>
-    <button class="type-btn type-dragon" data-type="Dragon">Dragon</button>
-    <button class="type-btn type-ice" data-type="Ice">Ice</button>
+  <!-- Group: Stage -->
+  <div class="filter-row">
+    <label for="stage-filter">Stage:</label>
+    <select id="stage-filter">
+      <option value="">All</option>
+      <option value="1">Stage 1</option>
+      <option value="2">Stage 2</option>
+      <option value="3">Stage 3</option>
+    </select>
   </div>
-  </div> 
 
-  <label for="location-filter">Location:</label>
-  <input type="text" id="location-filter" placeholder="Search Location">
+  <!-- Group: Type -->
+  <div class="filter-row">
+    <label>Type:</label>
+    <div id="type-filters">
+      <button class="type-btn type-fire" data-type="Fire">Fire</button>
+      <button class="type-btn type-water" data-type="Water">Water</button>
+      <button class="type-btn type-grass" data-type="Grass">Grass</button>
+      <button class="type-btn type-electric" data-type="Electric">Electric</button>
+      <button class="type-btn type-light" data-type="Light">Light</button>
+      <button class="type-btn type-dark" data-type="Dark">Dark</button>
+      <button class="type-btn type-flying" data-type="Flying">Flying</button>
+      <button class="type-btn type-fight" data-type="Fight">Fight</button>
+      <button class="type-btn type-fairy" data-type="Fairy">Fairy</button>
+      <button class="type-btn type-ghost" data-type="Ghost">Ghost</button>
+      <button class="type-btn type-poison" data-type="Poison">Poison</button>
+      <button class="type-btn type-dragon" data-type="Dragon">Dragon</button>
+      <button class="type-btn type-ice" data-type="Ice">Ice</button>
+    </div>
+  </div>
 
-  <label for="search-filter">Name:</label>
-  <input type="text" id="search-filter" placeholder="Search Name">
+  <!-- Group: Location -->
+  <div class="filter-row">
+    <label for="location-filter">Location:</label>
+    <input type="text" id="location-filter" placeholder="Search Location">
+  </div>
 
-  <button id="clear-filters" class="clear-btn">Clear Filters</button>
+  <!-- Group: Name -->
+  <div class="filter-row">
+    <label for="search-filter">Name:</label>
+    <input type="text" id="search-filter" placeholder="Search Name">
+  </div>
+
+  <!-- Group: Clear Button -->
+  <div class="filter-row">
+    <button id="clear-filters" class="clear-btn">Clear Filters</button>
+  </div>
 </div>
 
 <div class="dex-grid" id="dex-grid">
