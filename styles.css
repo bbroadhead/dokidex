@@ -2058,10 +2058,11 @@ body.dark-mode .dex-entry a:visited {
   color: #ccc !important;
 }
 
+.monster-profile,
+.monster-upper,
 .monster-image-container,
-.monster-image-container .glow-wrapper {
+.glow-wrapper {
   background-color: transparent !important;
   border: none !important;
-  border-image: none !important;
   box-shadow: none !important;
 }
