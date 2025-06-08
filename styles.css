@@ -16,6 +16,7 @@
   --text-color: #000000;
   --card-bg: #f2f2f2;
   --link-color: #007bff;
+  --border-color: #ccc;
 }
 
 .page-content {
@@ -1946,7 +1947,7 @@ body.dark-mode {
   --bg-color: #121212;
   --text-color: #f5f5f5;
   --card-bg: #1e1e1e;
-  --border: #333333;
+  --border-color: #333333;
   --link-color: #4aa8ff;
 }
 
@@ -1970,14 +1971,37 @@ body.dark-mode .dex-entry img {
   background-color: #2a2a2a;
 }
 
-body.dark-mode dropdown-content a {
-  color: white;
-  background: #000000;
+body.dark-mode .dropdown-content {
+  background-color: #000;
+  border: 1px solid #444;
 }
 
-body.dark-mode dropdown-content a:hover {
-  background-color: #1e1e1e; /* lighter on hover */
+body.dark-mode .dropdown-content a {
+  color: #fff;
 }
+
+body.dark-mode .dropdown-content a:hover {
+  background-color: #1e1e1e;
+}
+
+/* Dark Mode: Monster Profile */
+body.dark-mode .monster-profile {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+/* Make sure text inside also switches to white */
+body.dark-mode .monster-profile *,
+body.dark-mode .monster-profile .stat-label {
+  color: white;
+}
+
+/* EXCEPTION: Don't override stat name boxes (HP, ATK, etc.) */
+body.dark-mode .monster-profile .base-stat-label {
+  color: inherit;       /* Keep as-is */
+  background-color: inherit; /* Do not force dark bg */
+}
+
 
 /* Mobile layout */
 @media (max-width: 768px) {
