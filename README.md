@@ -23,7 +23,9 @@ View the site live via GitLab Pages:
 
 ```
 ├── _data/
-│   └── dokimon.yml              # Core monster data
+│   └── dokimon.yml              # Core monster data (depricated)
+├── _dokimon/
+│   └── (monster_name).md        # Core monster data (individual monster markdown files)
 ├── _layouts/
 │   ├── default.html             # Site wrapper and header
 │   └── dex_entry.html           # Individual monster detail layout
