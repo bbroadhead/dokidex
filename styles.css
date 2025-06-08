@@ -2043,6 +2043,12 @@ body.dark-mode .monster-image-container .glow-wrapper {
 
 body.dark-mode .glow-wrapper {
   background-color: #2a2a2a !important;
+  border-image: none !important;
+  border: 4px solid #444 !important;
+}
+
+body.dark-mode .dex-entry h2 {
+  color: white !important;
 }
 
 /* Mobile layout */
