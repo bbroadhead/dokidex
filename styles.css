@@ -81,7 +81,8 @@
   left: 8px;
   top: 4px;
   font-size: 14px;
-  z-index: 1;
+  pointer-events: none;
+  z-index: 3;
 }
 
 input:checked + .slider {
@@ -95,6 +96,8 @@ input:checked + .slider::before {
 input:checked + .slider::after {
   content: "🌙";
   left: 34px;
+  pointer-events: none;
+  z-index: 3;
 }
 
 /* Dual-Type Glows: Diagonal Split */
