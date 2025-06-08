@@ -33,6 +33,12 @@
       </div>
       <div class="nav-center">
         <input type="text" placeholder="Search..." class="search-bar">
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-toggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
       </div>
       <div class="nav-right">
         <span class="lang-flag" data-lang="en">🇺🇸</span>
@@ -118,7 +124,25 @@
       }
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const toggleSwitch = document.getElementById('dark-mode-toggle');
+  const body = document.body;
+
+  function applyTheme(isDark) {
+    body.classList.toggle('dark-mode', isDark);
+    toggleSwitch.checked = isDark;
+    localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+  }
+
+  toggleSwitch.addEventListener('change', () => {
+    applyTheme(toggleSwitch.checked);
+  });
+
+  // Load preference
+  const savedTheme = localStorage.getItem('dark-mode');
+  applyTheme(savedTheme === 'enabled');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('.links-button');
@@ -138,7 +162,6 @@
     }
   });
 </script>
-
 <script>
   const canvas = document.getElementById('statRadarChart');
   if (canvas) {
