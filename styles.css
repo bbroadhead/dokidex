@@ -1967,6 +1967,18 @@ body.dark-mode .header-bg {
   background: linear-gradient(to right, #000000, #1e1e1e);
 }
 
+body.dark-mode .dex-entry {
+  border-color: #444;
+}
+
+body.dark-mode .dex-name {
+  color: white;
+}
+
+body.dark-mode .glow-wrapper {
+  background-color: #2a2a2a;
+}
+
 body.dark-mode .dex-entry img {
   background-color: #2a2a2a;
 }
