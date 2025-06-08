@@ -551,7 +551,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   height: 250px;
   object-fit: contain;
   border-radius: 1rem;
-  background: #e9ecef;
+  background: transparent;
   padding: 0.5rem;
 }
 
