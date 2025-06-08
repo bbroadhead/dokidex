@@ -2018,6 +2018,15 @@ body.dark-mode .monster-profile .img-wrapper {
   background-color: #2a2a2a;
 }
 
+body.dark-mode .monster-stats th.hp,
+body.dark-mode .monster-stats th.atk,
+body.dark-mode .monster-stats th.def,
+body.dark-mode .monster-stats th.matk,
+body.dark-mode .monster-stats th.mdef,
+body.dark-mode .monster-stats th.spd {
+  color: black;
+}
+
 /* Mobile layout */
 @media (max-width: 768px) {
   .monster-upper {
