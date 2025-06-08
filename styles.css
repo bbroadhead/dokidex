@@ -704,6 +704,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   display: flex;
   justify-content: center;
   padding-top: 1.5rem;
+  background-color: transparent;
   align-items: center;
   border-radius: 1rem;
   overflow: visible;
