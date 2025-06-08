@@ -2002,6 +2002,9 @@ body.dark-mode .monster-profile .base-stat-label {
   background-color: inherit; /* Do not force dark bg */
 }
 
+body.dark-mode .monster-profile .img-wrapper {
+  background-color: #2a2a2a;
+}
 
 /* Mobile layout */
 @media (max-width: 768px) {
