@@ -143,7 +143,7 @@
   // If no saved preference, check system preference
   if (!localStorage.getItem('dark-mode')) {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      body.classList.add('dark-mode');
+      document.body.classList.add('dark-mode');
       toggleSwitch.checked = true;
     }
   }
