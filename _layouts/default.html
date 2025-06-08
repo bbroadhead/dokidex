@@ -176,6 +176,7 @@
   const canvas = document.getElementById('statRadarChart');
   if (canvas) {
   const ctx = canvas.getContext('2d');
+  const isDark = document.body.classList.contains("dark-mode");
   new Chart(ctx, {
     type: 'radar',
     data: {
@@ -214,10 +215,11 @@ options: {
       suggestedMax: 177,
       ticks: {
         backdropColor: 'transparent',
+        color: isDark ? '#ffffff' : '#000000',
         font: {
           weight: 'bold'
         }
-      }, // ← COMMA HERE!
+      },
       pointLabels: {
         font: {
           weight: 'bold'
