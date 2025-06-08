@@ -2015,7 +2015,7 @@ body.dark-mode .monster-profile .base-stat-label {
 }
 
 body.dark-mode .monster-profile .img-wrapper {
-  background-color: #2a2a2a;
+  background-color: #2a2a2a !important;
 }
 
 body.dark-mode .monster-stats th.hp,
@@ -2025,6 +2025,14 @@ body.dark-mode .monster-stats th.matk,
 body.dark-mode .monster-stats th.mdef,
 body.dark-mode .monster-stats th.spd {
   color: black;
+}
+
+body.dark-mode .dex-entry .dex-name {
+  color: white !important;
+}
+
+body.dark-mode .monster-image-container .glow-wrapper {
+  background-color: #2a2a2a !important;
 }
 
 /* Mobile layout */
