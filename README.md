@@ -39,7 +39,7 @@ View the site live via GitLab Pages:
 
 ## 🖼️ How to Add/Update Dokimon
 
-Edit `_data/dokimon.yml` to update names, types, stages, images, evolutions, and multilingual text. All pages and filters update automatically based on this file.
+Edit the individual .md files in `_dokimon` to update names, types, stages, images, evolutions, and multilingual text. All pages and filters update automatically based on this file.
 
 ## 🛠️ Development
 
@@ -78,3 +78,4 @@ pages:
 - Game: **Dokimon: Quest**
 - by: Yanako RPGs
 - https://www.yanakorpgs.com/
+- Dokidex: Benjamin Broadhead (Knight Excalibur)
