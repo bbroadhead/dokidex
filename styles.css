@@ -294,7 +294,7 @@ main {
 
 .dex-entry {
   text-align: center;
-  border: 3px solid var(--border-color);
+  border: 3px solid #ccc;
   border-radius: 8px;
   overflow: visible;
   padding: 10px;
@@ -1961,6 +1961,15 @@ body.dark-mode .header-bg {
 
 body.dark-mode .dex-entry img {
   background-color: #2a2a2a;
+}
+
+.dropdown-content.dark-mode a {
+  color: white;
+  background: #000000;
+}
+
+.dropdown-content.dark-mode a:hover {
+  background-color: #1e1e1e; /* lighter on hover */
 }
 
 /* Mobile layout */
