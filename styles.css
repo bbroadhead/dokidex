@@ -1969,6 +1969,11 @@ body.dark-mode .header-bg {
 
 body.dark-mode .dex-entry {
   border-color: #444;
+}
+
+body.dark-mode .dex-entry .dex-name,
+body.dark-mode .dex-entry h2,
+body.dark-mode .dex-entry p {
   color: white;
 }
 
