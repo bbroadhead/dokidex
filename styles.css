@@ -2067,3 +2067,8 @@ body.dark-mode .dex-entry a:visited {
   border: none !important;
   box-shadow: none !important;
 }
+
+body.dark-mode .monster-image-container {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
