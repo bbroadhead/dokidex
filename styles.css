@@ -681,15 +681,6 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   gap: 1rem;
 }
 
-.monster-image {
-  width: 250px;
-  height: 250px;
-  object-fit: contain;
-  border-radius: 1rem;
-  background: #e9ecef;
-  padding: 0.5rem;
-}
-
 .monster-upper {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -706,8 +697,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   padding-top: 1.5rem;
   background-color: transparent;
   align-items: center;
-  border-radius: 1rem;
-  overflow: visible;
+  border-radius: 0 !important;
   margin: 0 1.5rem;
 }
 
