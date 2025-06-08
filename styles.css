@@ -18,6 +18,11 @@
   --link-color: #007bff;
 }
 
+.page-content {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .site-header,
 .dropdown-content,
 .monster-card, /* or whatever class you use for cards */
@@ -161,7 +166,7 @@ body {
 
 .site-header {
   background: linear-gradient(to bottom, #cde, #eef);
-  padding-bottom: 1rem;
+  padding-bottom: 0;
 }
 
 .header-bg {
