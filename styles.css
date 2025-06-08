@@ -413,7 +413,7 @@ body.dark .filter-controls {
 }
 body.dark .dex-entry {
   background: #2a2a2a;
-  border-color: #555;
+  border: #555;
 }
 body.dark select,
 body.dark input[type="text"] {
