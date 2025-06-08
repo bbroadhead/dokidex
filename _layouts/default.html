@@ -176,7 +176,6 @@
   const canvas = document.getElementById('statRadarChart');
   if (canvas) {
   const ctx = canvas.getContext('2d');
-  const isDark = document.body.classList.contains("dark-mode");
   new Chart(ctx, {
     type: 'radar',
     data: {
@@ -215,7 +214,9 @@ options: {
       suggestedMax: 177,
       ticks: {
         backdropColor: 'transparent',
-        color: isDark ? '#ffffff' : '#000000',
+        color: function() {
+          return document.body.classList.contains("dark-mode") ? "#ffffff" : "#000000";
+        },
         font: {
           weight: 'bold'
         }
@@ -228,6 +229,12 @@ options: {
           const colors = ['#f66', '#f90', '#fc3', '#99f', '#6cf', '#3cba54'];
           return colors[context.index];
         }
+      },
+      grid: {
+  color: function() {
+    return document.body.classList.contains("dark-mode") ? "#ffffff" : "#666666";
+        },
+        lineWidth: 1.5
       }
     }
   },
