@@ -138,6 +138,7 @@
 
   toggleSwitch.addEventListener('change', () => {
     applyTheme(toggleSwitch.checked);
+    createRadarChart();
   });
 
   // If no saved preference, check system preference
@@ -173,10 +174,14 @@
   });
 </script>
 <script>
+let radarChart;
+
+function createRadarChart() {
   const canvas = document.getElementById('statRadarChart');
-  if (canvas) {
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  new Chart(ctx, {
+  if (radarChart) radarChart.destroy();
+  radarChart = new Chart(ctx, {
     type: 'radar',
     data: {
       labels: ['HP', 'ATK', 'DEF', 'M.ATK', 'M.DEF', 'SPD'],
@@ -214,9 +219,7 @@ options: {
       suggestedMax: 177,
       ticks: {
         backdropColor: 'transparent',
-        color: function() {
-          return document.body.classList.contains("dark-mode") ? "#ffffff" : "#000000";
-        },
+        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#000000",
         font: {
           weight: 'bold'
         }
@@ -231,9 +234,7 @@ options: {
         }
       },
       grid: {
-  color: function() {
-    return document.body.classList.contains("dark-mode") ? "#ffffff" : "#666666";
-        },
+        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#bbbbbb",
       }
     }
   },
@@ -245,6 +246,7 @@ options: {
 }
   });
 }
+createRadarChart();
 </script>
 </body>
 </html>
