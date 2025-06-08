@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Ice
 - Dark
-location: ''
+location: Route 02
 image: /assets/images/palsamon.png
 description: ''
 long_description: Palsamon, the embodiment of creativity and talent, excels in its

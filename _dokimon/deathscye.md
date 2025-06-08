@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Dark
 - Ghost
-location: ''
+location: Route 08, Yugo Caves
 image: /assets/images/deathscye.png
 description: ''
 long_description: An old nursery rhyme says that if you feel a sharp chill down your

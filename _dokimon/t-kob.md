@@ -7,7 +7,7 @@ evolves_at: 22
 type:
 - Fire
 - Poison
-location: route 14, gad'riel mountain (🌸), wicked woods
+location: ???, Fallenridge, Gad'riel Peak, Gad'riel's Domain, Mellow Mines, Route 01, Route 02, Route 14, Tenshou Tower, Wicked Woods
 image: /assets/images/t-kob.png
 description: ''
 long_description: ''

@@ -6,7 +6,7 @@ stage: '3'
 evolves_at: 20
 type:
 - Water
-location: ''
+location: Route 04
 image: /assets/images/glaceia.png
 description: ''
 long_description: Its entire body is made of water. Make sure to keep it cool, or

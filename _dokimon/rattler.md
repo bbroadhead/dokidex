@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 30
 type:
 - Fire
-location: gad'riel mountain (🔥, 🟪)
+location: Gad'riel Mountain, Rocky Ridge, Route 03
 image: /assets/images/rattler.png
 description: ''
 long_description: It can heat its body to volcanic temperatures. It constricts prey,

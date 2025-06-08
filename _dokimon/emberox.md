@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: 18
 type:
 - Fire
-location: ''
+location: Route 04
 image: /assets/images/emberox.png
 description: ''
 long_description: It has a hot temper! If angered, it will enter a frenzy, its eyes

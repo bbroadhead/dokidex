@@ -7,7 +7,7 @@ evolves_at: 30
 type:
 - Electric
 - Ghost
-location: gad'riel mountain (🟪), wicked woods
+location: Mysterious Cave, Route 08, Wicked Woods, Windy Woods
 image: /assets/images/umbral.png
 description: ''
 long_description: Umbral emanates an ethereal glow that transcends the realm of the

@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Ghost
 - Light
-location: tenshou tower
+location: Tenshou Tower
 image: /assets/images/umbralancer.png
 description: ''
 long_description: It stores moonlight into its sword for additional strength. Its

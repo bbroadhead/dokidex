@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Water
 - Poison
-location: wicked woods
+location: Route 06, Wicked Woods
 image: /assets/images/toxihop.png
 description: ''
 long_description: A harbinger of poison and decay, this maleficent toad brings ruin

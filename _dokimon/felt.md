@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: 38
 type:
 - Fire
-location: ''
+location: 
 image: /assets/images/felt.png
 description: ''
 long_description: Quick and Stylish, Felt is the type of monster that takes out his

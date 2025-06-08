@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 14
 type:
 - Dark
-location: gad'riel mountain (🌿, 🟪), wicked woods
+location: Gad'riel Mountain, Wicked Woods
 image: /assets/images/minx.png
 description: ''
 long_description: Usually found in small packs of 3 or 4, Minx are often looked over

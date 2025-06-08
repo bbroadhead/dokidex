@@ -6,7 +6,7 @@ stage: '5'
 evolves_at: 28
 type:
 - Electric
-location: ''
+location: Route 05
 image: /assets/images/boltrex.png
 description: ''
 long_description: It builds up static electricity in its fur. If you try to pet it,

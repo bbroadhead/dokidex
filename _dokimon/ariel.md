@@ -7,7 +7,7 @@ evolves_at: 17
 type:
 - Light
 - Fairy
-location: route 14, gad'riel mountain (🌸, 🪨), peak, tenshou tower, darkshawl
+location: Darkshawl Peak, Fallenridge, Gad'riel Peak, Mysterious Cave, Route 14, Tenshou Tower
 image: /assets/images/ariel.png
 description: ''
 long_description: Ariel is a protector of nature. They're often found healing plants

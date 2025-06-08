@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: null
 type:
 - Electric
-location: route 7 oni log
+location: 
 image: /assets/images/corsac.png
 description: ''
 long_description: ''

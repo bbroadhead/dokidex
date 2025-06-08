@@ -7,7 +7,7 @@ evolves_at: 18
 type:
 - Ghost
 - Poison
-location: route 14, gad'riel mountain (🟪, 🌸), peak, tenshou tower
+location: Fallenridge, Gad'riel Mountain, Gad'riel Peak, Route 14, Tenshou Tower
 image: /assets/images/lunapet.png
 description: ''
 long_description: Since it is known to guide lost trainers at night, it has become

@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 15
 type:
 - Grass
-location: behind aki's shrine (💧), X2 base [obtain 🌸 to access] (🔥), yor city shore
+location: 
   (🌿)
 image: /assets/images/spud.png
 description: ''

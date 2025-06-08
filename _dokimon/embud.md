@@ -7,7 +7,7 @@ evolves_at: 20
 type:
 - Fire
 - Fairy
-location: tenshou tower, darkshawl
+location: Darkshawl Peak, Tenshou Tower
 image: /assets/images/embud.png
 description: ''
 long_description: Embud is a clueless fairy creature that spends most of its time

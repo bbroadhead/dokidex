@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 15
 type:
 - Grass
-location: Starter
+location: 
 image: /assets/images/bulbapod.png
 description: ''
 long_description: Bulbapod is known for using its cute face to lure in passerbys,

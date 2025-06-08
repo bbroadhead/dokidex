@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 18
 type:
 - Ghost
-location: twindle, which-way, gad'riel mountain (🟪), passaway
+location: Gad'riel Mountain, Passaway Caves, Twindle Forest, Which-way Caves
 image: /assets/images/luna.png
 description: ''
 long_description: It has a gloomy aura, which lowers the mood of nearby people and

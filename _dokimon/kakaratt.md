@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Grass
 - Dark
-location: Pirate Ship, Xer Base
+location: Pirate Ship, Xer Central
 image: /assets/images/kakaratt.png
 description: ''
 long_description: It is able to spin at rapid speeds without making a noise. Its blades

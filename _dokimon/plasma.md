@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 12
 type:
 - Electric
-location: gad'riel mountain (🔥)
+location: Gad'riel Mountain, Xer Central
 image: /assets/images/plasma.png
 description: ''
 long_description: This positive little Dokimon is always looking at the bright side

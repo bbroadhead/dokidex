@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: null
 type:
 - Ghost
-location: ''
+location: Route 04, Route 05
 image: /assets/images/shinigam.png
 description: ''
 long_description: Rumors state these monsters guide people in the depths of the underworld.

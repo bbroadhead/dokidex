@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Dragon
 - Poison
-location: ''
+location: Route 03
 image: /assets/images/hunch.png
 description: ''
 long_description: When it evolves, Hunch will break out of its shell. Their posture

@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 14
 type:
 - Light
-location: which-way, gad'riel mountain (🌿), passaway, Xer cave
+location: Gad'riel Mountain, Passaway Caves, Route 15, Which-way Caves, Yugo Caves
 image: /assets/images/jespurr.png
 description: ''
 long_description: Although shy to strangers, Juspurr's are very playful with their

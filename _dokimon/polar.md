@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Ice
 - Fight
-location: ''
+location: Route 07
 image: /assets/images/polar.png
 description: ''
 long_description: Polar Dokimon are an incredibly powerful Dokimon, therefore they

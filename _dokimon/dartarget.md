@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: null
 type:
 - Dark
-location: ''
+location: 
 image: /assets/images/dartarget.png
 description: ''
 long_description: Dartargets are a mysterious, yet incredibly powerful Dokimon that

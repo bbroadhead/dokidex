@@ -7,7 +7,7 @@ evolves_at: 15
 type:
 - Dark
 - Flying
-location: Routes 01, 02, 03, 07, Twindle, Gad'riel Mountain (🌿, 🟪)
+location: Gad'riel Mountain, Mysterious Cave, Route 01, Route 02, Route 03, Route 07, Twindle Forest
 image: /assets/images/quackfil.png
 description: ''
 long_description: It has a bossy nature, and has even been known to pick on its own

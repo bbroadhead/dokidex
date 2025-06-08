@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: 26
 type:
 - Poison
-location: gad'riel mountain (🌿)
+location: Gad'riel Mountain, Route 15
 image: /assets/images/winzzle.png
 description: ''
 long_description: You may be curious about the winding key on its back, but if you

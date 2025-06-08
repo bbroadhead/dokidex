@@ -7,7 +7,7 @@ evolves_at: lvl. 10
 type:
 - Fairy
 - Electric
-location: routes 05, gad'riel mountain (🌿)
+location: Gad'riel Mountain, Route 05, Route 15
 image: /assets/images/brixlet.png
 description: ''
 long_description: The undying loyalty of this Dokimon species makes them very popular

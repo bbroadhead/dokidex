@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: null
 type:
 - Dark
-location: ''
+location: Route 08
 image: /assets/images/jistery.png
 description: ''
 long_description: It always wants the spotlight. It tends to put on a performance

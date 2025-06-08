@@ -7,7 +7,7 @@ evolves_at: 16
 type:
 - Poison
 - Flying
-location: routes 04 05 06, gad'riel mountain (🌿), pirate ship
+location: ??? Town, Gad'riel Mountain, Pirate Ship, Route 04, Route 05, Route 06, Route 15
 image: /assets/images/moisen.png
 description: ''
 long_description: Its feathers hold powerful healing properties, but excessive amounts

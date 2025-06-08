@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Dark
 - Fight
-location: ''
+location: 
 image: /assets/images/boxbi.png
 description: ''
 long_description: It doesn't have much in term of defense, so it has to learn how

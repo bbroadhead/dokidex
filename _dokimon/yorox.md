@@ -6,7 +6,7 @@ stage: '6'
 evolves_at: null
 type:
 - Dark
-location: ''
+location: Route 06
 image: /assets/images/yorox.png
 description: ''
 long_description: A stealthy Dokimon, it can blend in with shadows. Its sense of sight

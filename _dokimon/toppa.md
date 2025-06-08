@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 14
 type:
 - Water
-location: routes 11, scarlet sea, gad'riel mountain (💧), pirate ship
+location: Gad'riel Mountain, Pirate Ship, Route 11, Route 12, Route 14, Scarlet Sea, Xer Central
 image: /assets/images/toppa.png
 description: ''
 long_description: If you've never heard this Dokimon cry, count yourself lucky! They

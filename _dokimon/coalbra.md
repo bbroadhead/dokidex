@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Fire
 - Dragon
-location: ''
+location: Rocky Ridge, Route 03
 image: /assets/images/coalbra.png
 description: ''
 long_description: When provoked, it will spit corrosive acid at their target. It does

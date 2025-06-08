@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Fairy
 - Poison
-location: wicked woods
+location: 
 image: /assets/images/fungalina.png
 description: ''
 long_description: Fungalina are extremely powerful plant-like Dokimon, that had to

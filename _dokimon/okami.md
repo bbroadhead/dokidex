@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: 28
 type:
 - Dark
-location: Xer cave, wicked woods
+location: Wicked Woods, Windy Woods, Yugo Caves
 image: /assets/images/okami.png
 description: ''
 long_description: If you find a lone Okami, it means they've been cut off from the

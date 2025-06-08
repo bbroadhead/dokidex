@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 16
 type:
 - Grass
-location: Route 01, Twindle, Pirate Ship, Xer Base
+location: Pirate Ship, Route 01, Twindle Forest, Xer Central
 image: /assets/images/carrotti.png
 description: ''
 long_description: Born with a stem to gather nutrients, it hibernates in soil until

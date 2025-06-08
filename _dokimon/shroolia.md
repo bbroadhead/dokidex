@@ -7,7 +7,7 @@ evolves_at: 32
 type:
 - Grass
 - Poison
-location: wicked woods
+location: ???, Wicked Woods
 image: /assets/images/shroolia.png
 description: ''
 long_description: Shroolia are tough Mushroom Dokimon that often look out for the

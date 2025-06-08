@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 20
 type:
 - Fight
-location: routes 04 05 06, which-way, gad'riel mountain (🪨), passaway
+location: ??? Town, Mysterious Cave, Passaway Caves, Route 04, Route 05, Route 06, Which-way Caves
 image: /assets/images/haracker.png
 description: ''
 long_description: It spends all its time training, so they make good partners for

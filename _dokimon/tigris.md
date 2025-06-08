@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: 28
 type:
 - Fire
-location: gad'riel mountain (🔥), yoink (yor city)
+location: Gad'riel Mountain, Yumeko's Domain
 image: /assets/images/tigris.png
 description: ''
 long_description: While its fur is normally orange, it can also be blue, or even white,

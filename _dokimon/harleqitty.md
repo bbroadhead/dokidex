@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Light
 - Fairy
-location: ''
+location: Koi Cove Cave
 image: /assets/images/harleqitty.png
 description: ''
 long_description: Boasting formidable magic powers, Harlequitten makes up for its

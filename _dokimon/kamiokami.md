@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: null
 type:
 - Dark
-location: wicked woods
+location: Windy Woods
 image: /assets/images/kamiokami.png
 description: ''
 long_description: According to old tales, people that encounter these during a full

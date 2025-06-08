@@ -7,7 +7,7 @@ evolves_at: 16
 type:
 - Electric
 - Flying
-location: routes 03 05 07, pirate ship
+location: Koi Cove Cave, Pirate Ship, Route 02, Route 05, Route 07
 image: /assets/images/wattlet.png
 description: ''
 long_description: Wattlet's wings hum with electric currents as it soars through the

@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 22
 type:
 - Ghost
-location: which-way, Xer cave
+location: Passaway Caves, Route 04, Route 05, Which-way Caves, Yugo Caves
 image: /assets/images/yomeshi.png
 description: ''
 long_description: A mythical monster that returned with the appearance of Dokimon.

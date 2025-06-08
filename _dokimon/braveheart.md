@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Fire
 - Fight
-location: ''
+location: 
 image: /assets/images/braveheart.png
 description: ''
 long_description: Few can dabble with Braveheart and make it out unharmed. With vicious

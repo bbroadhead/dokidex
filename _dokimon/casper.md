@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 16
 type:
 - Ghost
-location: Routes 01, 02, 03, 07, Twindle, Which-Way, Gad'riel Mountain (🪨)
+location: Mysterious Cave, Passaway Caves, Route 01, Route 02, Route 03, Route 07, Twindle Forest, Which-way Caves
 image: /assets/images/casper.png
 description: ''
 long_description: It's common for children to be told that if they don't behave, a

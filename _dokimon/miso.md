@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Dragon
 - Light
-location: ''
+location: Yumeko's Domain
 image: /assets/images/miso.png
 description: ''
 long_description: This Dokimon came about from a kitchen disaster, when a chef tried

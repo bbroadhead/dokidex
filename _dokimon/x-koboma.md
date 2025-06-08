@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Fire
 - Ghost
-location: gad'riel's domain
+location: Gad'riel's Domain
 image: /assets/images/x-koboma.png
 description: ''
 long_description: ''

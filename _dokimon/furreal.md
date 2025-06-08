@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 10
 type:
 - Light
-location: Routes 01, 02, 03, 07, Twindle
+location: Route 01, Route 02, Route 03, Route 07, Twindle Forest
 image: /assets/images/furreal.png
 description: ''
 long_description: Rarely seen alone, these lively little Dokimon are always grouping

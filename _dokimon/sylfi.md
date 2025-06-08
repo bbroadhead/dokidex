@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 20
 type:
 - Grass
-location: Xer cave, darkshawl
+location: Darkshawl Peak, Yugo Caves
 image: /assets/images/sylfi.png
 description: ''
 long_description: It's said they evolve after they've eaten enough, and never eat

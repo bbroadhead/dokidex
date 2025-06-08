@@ -7,7 +7,7 @@ evolves_at: 15
 type:
 - Dragon
 - Light
-location: route 14, gad'riel mountain (🔥, 🌸), peak, tenshou tower
+location: Fallenridge, Gad'riel Mountain, Gad'riel Peak, Route 14, Tenshou Tower
 image: /assets/images/kugwyrm.png
 description: ''
 long_description: People have tried to remove the Dokimon from its cozy cup, but failed

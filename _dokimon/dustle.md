@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 19
 type:
 - Dark
-location: gad'riel mountain (🪨, 🌿)
+location: Gad'riel Mountain, Mysterious Cave, Route 15
 image: /assets/images/dustle.png
 description: ''
 long_description: It's unable to fly, but Dustle is so light that it will drift in

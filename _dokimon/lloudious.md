@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: null
 type:
 - Light
-location: ''
+location: Koi Cove
 image: /assets/images/lloudious.png
 description: ''
 long_description: Since it is known to guide lost trainers at night, it has become

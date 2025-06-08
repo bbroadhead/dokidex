@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Ghost
 - Poison
-location: ''
+location: Route 08
 image: /assets/images/eclipse.png
 description: ''
 long_description: It has a talent for mixing dangerous potions, and can mix items

@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 20
 type:
 - Fire
-location: gad'riel mountain (🔥), darkshawl
+location: Darkshawl Peak, Gad'riel Mountain, Xer Central
 image: /assets/images/hemling.png
 description: ''
 long_description: Hemling are known for being incredibly noisy and consistently attempting

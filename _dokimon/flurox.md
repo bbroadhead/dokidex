@@ -6,7 +6,7 @@ stage: '4'
 evolves_at: 24
 type:
 - Grass
-location: ''
+location: Route 05
 image: /assets/images/flurox.png
 description: ''
 long_description: It doesn't have fur, but foliage! The types of flora it grows depends

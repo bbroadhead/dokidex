@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: 36
 type:
 - Dragon
-location: yoink (yor city)
+location: Rocky Ridge, Route 03
 image: /assets/images/lantis.png
 description: ''
 long_description: The crystals on its back are super durable. Scientists have found

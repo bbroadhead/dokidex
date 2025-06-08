@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Flying
 - Ice
-location: ''
+location: Route 07
 image: /assets/images/frostla.png
 description: ''
 long_description: Frostla's feathers are razor sharp, and any who come in contact

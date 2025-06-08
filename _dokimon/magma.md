@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Dragon
 - Fire
-location: ''
+location: Route 01
 image: /assets/images/magma.png
 description: ''
 long_description: With a body made of obsidian and flowing magma, Magma protects the

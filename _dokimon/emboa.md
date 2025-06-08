@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 14
 type:
 - Fire
-location: routes 04 06
+location: ??? Town, Gad'riel Mountain, Route 04, Route 06, Xer Central
 image: /assets/images/emboa.png
 description: ''
 long_description: It collects heat in the spikes on its back, which it can transfer

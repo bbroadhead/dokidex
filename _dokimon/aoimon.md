@@ -7,7 +7,7 @@ evolves_at: 28
 type:
   - Ice
   - Dark
-location: routes 11, scarlet sea, pirate ship (💧)
+location: Gad'riel Mountain, Pirate Ship, Route 02, Route 07, Route 11, Route 12, Route 14, Scarlet Sea, Xer Central
 image: /assets/images/aoimon.png
 description: ''
 long_description: >

@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Electric
 - Flying
-location: ''
+location: Koi Cove Cave
 image: /assets/images/sparkstride.png
 description: ''
 long_description: Sparkstride dazzles its opponents with its lightning-fast moves

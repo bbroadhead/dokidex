@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Fire
 - Fairy
-location: yoink (yor city)
+location: Yumeko's Domain
 image: /assets/images/tignispyre.png
 description: ''
 long_description: Tignispyre is the ultimate form of the Tignis family. It's said

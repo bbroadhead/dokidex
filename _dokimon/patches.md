@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 17
 type:
 - Electric
-location: route 03 06, gad'riel mountain (🌿)
+location: ??? Town, Gad'riel Mountain, Route 03, Route 04, Route 06, Route 15
 image: /assets/images/patches.png
 description: ''
 long_description: They're adored for their thick, fluffy wool, however, people that

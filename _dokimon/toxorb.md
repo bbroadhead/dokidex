@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: null
 type:
 - Ghost
-location: gad'riel mountain (🟪)
+location: Gad'riel Mountain, Route 05, Route 06
 image: /assets/images/toxorb.png
 description: ''
 long_description: Toxorb's toxic spores erupt quickly and spread quickly, killing

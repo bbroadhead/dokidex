@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 24
 type:
 - Ice
-location: scarlet sea, gad'riel mountain (💧)
+location: Gad'riel Mountain, Route 07, Route 14, Scarlet Sea, Xer Central
 image: /assets/images/frostby.png
 description: ''
 long_description: Frostby's fists are frozen over due to fishing with their hands.

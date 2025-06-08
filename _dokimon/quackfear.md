@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Dark
 - Flying
-location: Xer Cave
+location: Yugo Caves
 image: /assets/images/quackfear.png
 description: ''
 long_description: The bully of the forest, it often forces weaker Dokimon to work

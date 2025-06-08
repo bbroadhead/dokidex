@@ -7,7 +7,7 @@ evolves_at: 1
 type:
 - Dragon
 - Ice
-location: ''
+location: Route 07, Windy Woods
 image: /assets/images/hellfire.png
 description: ''
 long_description: Hellfire's ice powers and frost breath are so chilling they'll leave

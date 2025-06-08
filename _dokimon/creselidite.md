@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Grass
 - Fight
-location: ''
+location: 
 image: /assets/images/creselidite.png
 description: ''
 long_description: With incredible speed, any forests consisting of this Dokimon are

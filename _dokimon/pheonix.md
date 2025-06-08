@@ -7,7 +7,7 @@ evolves_at: 24
 type:
 - Flying
 - Fire
-location: gad'riel mountain (🔥), Xer base (🔥)
+location: Gad'riel Mountain, Xer Central
 image: /assets/images/pheonix.png
 description: ''
 long_description: There are many mysteries regarding Pheonix, including whether its

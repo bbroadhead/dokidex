@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: null
 type:
 - Grass
-location: ''
+location: 
 image: /assets/images/sylvaguard.png
 description: ''
 long_description: They are able to control the wind to keep themselves afloat, even

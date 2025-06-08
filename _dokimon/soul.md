@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 22
 type:
 - Dark
-location: which-way, gad'riel mountain (🟪, 🪨)
+location: Gad'riel Mountain, Mysterious Cave, Passaway Caves, Which-way Caves
 image: /assets/images/soul.png
 description: ''
 long_description: It likes to play pranks on people. It doesn't mean harm, but is

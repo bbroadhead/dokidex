@@ -7,7 +7,7 @@ evolves_at: 26
 type:
 - Light
 - Fairy
-location: gad'riel mountain (🌿)
+location: Gad'riel Mountain, Koi Cove Cave, Route 15
 image: /assets/images/juskitten.png
 description: ''
 long_description: While very playful and seemingly harmless, Juskitten's often play

@@ -7,7 +7,7 @@ evolves_at: 38
 type:
 - Grass
 - Ice
-location: tenshou tower, darkshawl
+location: Darkshawl Peak, Route 14, Tenshou Tower
 image: /assets/images/frossla.png
 description: ''
 long_description: Frossla take on glacial powers upon evolving, that lets them sink

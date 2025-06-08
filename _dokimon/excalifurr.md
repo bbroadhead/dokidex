@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: null
 type:
 - Fairy
-location: ''
+location: Route 01
 image: /assets/images/excalifurr.png
 description: ''
 long_description: When it's done with fighting, it will pass on its skills on to a

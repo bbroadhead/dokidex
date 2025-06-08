@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 12
 type:
 - Electric
-location: gad'riel mountain (🟪)
+location: ???, Gad'riel Mountain
 image: /assets/images/misma.png
 description: ''
 long_description: It can drain energy from living things, and convert it to electricity.

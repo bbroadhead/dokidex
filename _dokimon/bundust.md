@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: null
 type:
 - Fairy
-location: routes 04 05 06, Xer cave
+location: ??? Town, Route 04, Route 05, Route 06, Yugo Caves
 image: /assets/images/bundust.png
 description: ''
 long_description: It lives in old neglected buildings. The more cluttered and dusty

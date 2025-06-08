@@ -7,7 +7,7 @@ evolves_at: 40
 type:
 - Water
 - Fairy
-location: darkshawl
+location: Darkshawl Peak
 image: /assets/images/milli.png
 description: ''
 long_description: Milli are theorized to be the cause of siren stories, as people

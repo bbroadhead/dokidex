@@ -7,7 +7,7 @@ evolves_at: 34
 type:
 - Grass
 - Dark
-location: ''
+location: 
 image: /assets/images/photo.png
 description: ''
 long_description: Photo are a nefarious type, and can occasionally be found teasing

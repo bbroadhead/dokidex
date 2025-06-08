@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 14
 type:
 - Grass
-location: routes 07 14, gad'riel mountain (🟪), wicked woods
+location: Gad'riel Mountain, Route 07, Route 14, Wicked Woods
 image: /assets/images/mushlo.png
 description: ''
 long_description: Mushlo are weak and skiddish, therefore they often team up together

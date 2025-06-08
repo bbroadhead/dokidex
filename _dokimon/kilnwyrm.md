@@ -7,7 +7,7 @@ evolves_at: 35
 type:
 - Dragon
 - Dark
-location: ''
+location: Route 06, Yumeko's Domain
 image: /assets/images/kilnwyrm.png
 description: ''
 long_description: When dirty pots and pans are left out for too long, a Terra will

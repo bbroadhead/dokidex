@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: null
 type:
 - Fight
-location: ''
+location: Koi Cove Cave
 image: /assets/images/hareate.png
 description: ''
 long_description: It has a strong sense of hearing, and is quick on its feet. It predicts

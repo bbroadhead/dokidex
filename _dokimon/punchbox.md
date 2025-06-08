@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Ghost
 - Fight
-location: wicked woods
+location: Wicked Woods, Windy Woods
 image: /assets/images/punchbox.png
 description: ''
 long_description: Dokicenters have special equipment to fix up injured robot Dokimon,

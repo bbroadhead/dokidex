@@ -7,7 +7,7 @@ evolves_at: lvl. 15
 type:
 - Ghost
 - Electric
-location: routes 05, gad'riel mountain (🌿)
+location: Gad'riel Mountain, Route 05, Route 15
 image: /assets/images/spooklet.png
 description: ''
 long_description: It's unknown how many variations of this species of Dokimon exist.

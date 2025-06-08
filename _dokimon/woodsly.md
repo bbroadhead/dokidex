@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 19
 type:
 - Grass
-location: Xer base (🌿)
+location: Xer Central
 image: /assets/images/woodsly.png
 description: ''
 long_description: Woodsly can often be found playing in the woods, but has a strange

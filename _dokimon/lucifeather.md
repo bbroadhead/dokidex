@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Flying
 - Fire
-location: yoink
+location: Koi Cove
 image: /assets/images/lucifeather.png
 description: ''
 long_description: Its flames can grow to blinding strengths. Rumors tell of enraged

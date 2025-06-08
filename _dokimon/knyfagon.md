@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: null
 type:
 - Fire
-location: gad'riel mountain (🌿)
+location: Gad'riel Mountain, Route 15
 image: /assets/images/knyfagon.png
 description: ''
 long_description: A guardian of the night, Knyfagon's stony form blends seamlessly

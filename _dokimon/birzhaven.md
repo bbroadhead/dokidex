@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Poison
 - Flying
-location: pirate ship
+location: Pirate Ship
 image: /assets/images/birzhaven.png
 description: ''
 long_description: Birzhaven's powerful poison rivals even that of the most deadly

@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: 15
 type:
 - Light
-location: Which-Way
+location: Passaway Caves, Route 01, Which-way Caves
 image: /assets/images/jolleek.png
 description: ''
 long_description: Although occasionally found leading small armies of Furreal, Jolleek

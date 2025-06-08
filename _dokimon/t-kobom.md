@@ -7,7 +7,7 @@ evolves_at: 46
 type:
 - Fire
 - Electric
-location: gad'riel's domain
+location: Gad'riel's Domain, Route 02
 image: /assets/images/t-kobom.png
 description: ''
 long_description: ''

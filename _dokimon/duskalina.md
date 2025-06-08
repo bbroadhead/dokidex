@@ -7,7 +7,7 @@ evolves_at: 40
 type:
 - Dark
 - Fairy
-location: ''
+location: 
 image: /assets/images/duskalina.png
 description: ''
 long_description: Duskalina's presence is as enchanting as it is intimidating, wielding

@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 18
 type:
 - Ghost
-location: gad'riel mountain (🟪, 🪨), wicked woods
+location: ???, Gad'riel Mountain, Mysterious Cave, Wicked Woods
 image: /assets/images/voltistrike.png
 description: ''
 long_description: Legend has it that these mysterious creatures hold the souls of

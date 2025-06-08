@@ -7,7 +7,7 @@ evolves_at: 15
 type:
 - Flying
 - Ice
-location: scarlet sea, gad'riel mountain (💧), pirate ship (💧)
+location: Gad'riel Mountain, Pirate Ship, Route 12, Route 14, Scarlet Sea, Xer Central
 image: /assets/images/snowla.png
 description: ''
 long_description: Snowla were named the Ice Egg Dokimon since their eggs can't be

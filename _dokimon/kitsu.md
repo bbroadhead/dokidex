@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 15
 type:
 - Light
-location: gad'riel mountain (🌿) [obtain access to 🌸 encounters]
+location: Gad'riel Mountain, Route 04, Route 15
 image: /assets/images/kitsu.png
 description: ''
 long_description: It may seem like a normal Dokimon, but Kitsu is quite unique. It

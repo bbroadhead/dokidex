@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Electric
 - Poison
-location: ''
+location: 
 image: /assets/images/woollec.png
 description: ''
 long_description: When provoked, it will spit corrosive acid at their target that

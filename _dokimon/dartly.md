@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 22
 type:
 - Dark
-location: routes 02 03? 07 14, peak, tenshou tower, wicked woods, darkshawl
+location: ???, Darkshawl Peak, Fallenridge, Gad'riel Peak, Route 02, Route 07, Route 14, Tenshou Tower, Wicked Woods
 image: /assets/images/dartly.png
 description: ''
 long_description: Dartly are an extremely rare Dokimon that can be found following

@@ -7,7 +7,7 @@ evolves_at: 20
 type:
 - Water
 - Fairy
-location: darkshawl
+location: Darkshawl Peak
 image: /assets/images/blu.png
 description: ''
 long_description: Blu is a carefree Dokimon that weighs almost nothing and is nearly

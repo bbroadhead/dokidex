@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Light
 - Dark
-location: ''
+location: Koi Cove, Route 01, Route 08
 image: /assets/images/leeksword.png
 description: ''
 long_description: Violent and filled with rage, some people claim they possess dark

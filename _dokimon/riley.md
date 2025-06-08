@@ -6,7 +6,7 @@ stage: '2'
 evolves_at: 38
 type:
 - Fire
-location: ''
+location: 
 image: /assets/images/riley.png
 description: ''
 long_description: It's said the arm strength of the Riley is capable of crushing skulls

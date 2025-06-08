@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Water
 - Electric
-location: ''
+location: 
 image: /assets/images/krakanchor.png
 description: ''
 long_description: Don't let the size of this massive beast fool you, many have been

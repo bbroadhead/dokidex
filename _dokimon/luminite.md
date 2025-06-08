@@ -7,7 +7,7 @@ evolves_at: 30
 type:
 - Electric
 - Fire
-location: gad'riel mountain (🔥)
+location: Gad'riel Mountain, Xer Central
 image: /assets/images/luminite.png
 description: ''
 long_description: It glows from a chemical reaction in its body. Scientists are unsure

@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Grass
 - Flying
-location: ''
+location: 
 image: /assets/images/slytharot.png
 description: ''
 long_description: Slytharot is a highly intelligent and extremely agile slasher. Because

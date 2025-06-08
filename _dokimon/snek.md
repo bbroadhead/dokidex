@@ -6,7 +6,7 @@ stage: '1'
 evolves_at: 16
 type:
 - Grass
-location: route 14, gad'riel mountain (🌸), peak, Xer base (🌿), tenshou tower, darkshawl
+location: Darkshawl Peak, Fallenridge, Gad'riel Peak, Route 14, Tenshou Tower, Xer Central
 image: /assets/images/snek.png
 description: ''
 long_description: Snek are a weak but fast serpent-like Dokimon, and although they

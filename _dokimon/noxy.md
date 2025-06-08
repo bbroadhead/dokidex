@@ -7,7 +7,7 @@ evolves_at: 36
 type:
 - Dark
 - Fairy
-location: wicked woods, gad'riel's domain
+location: Gad'riel's Domain, Wicked Woods
 image: /assets/images/noxy.png
 description: ''
 long_description: Noxy envelops itself in a cloak of twilight, blending the allure
