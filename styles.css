@@ -1943,6 +1943,27 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   min-width: 200px;
 }
 
+/* Mobile layout */
+@media (max-width: 768px) {
+  .monster-upper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "info"
+      "stats";
+  }
+@media (min-width: 769px) {
+  .monster-upper {
+    align-items: center;
+  }
+}
+  .monster-image-container,
+  .monster-info,
+  .stats-side {
+    width: 100%;
+  }
+}
+
 body.dark-mode {
   --bg-color: #121212;
   --text-color: #f5f5f5;
@@ -2051,23 +2072,6 @@ body.dark-mode .dex-entry h2 {
   color: white !important;
 }
 
-/* Mobile layout */
-@media (max-width: 768px) {
-  .monster-upper {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "image"
-      "info"
-      "stats";
-  }
-@media (min-width: 769px) {
-  .monster-upper {
-    align-items: center;
-  }
-}
-  .monster-image-container,
-  .monster-info,
-  .stats-side {
-    width: 100%;
-  }
+body.dark-mode .monster-image-container {
+  background-color: #2a2a2a !important;
 }
