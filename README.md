@@ -52,30 +52,10 @@ bundle exec jekyll serve
 
 Then open: [http://localhost:4000](http://localhost:4000)
 
-## 📤 Deploying to GitLab Pages
-
-Make sure your `.gitlab-ci.yml` includes:
-
-```yaml
-pages:
-  stage: deploy
-  script:
-    - mkdir public
-    - cp -r * public/
-  artifacts:
-    paths:
-      - public
-  only:
-    - main
-```
-
-> 🔁 Push to `main` branch to deploy automatically.
-
----
 
 ## 💡 Credits
 
 - Game: **Dokimon: Quest**
 - by: Yanako RPGs
 - https://www.yanakorpgs.com/
-- Dokidex: Benjamin Broadhead (Knight Excalibur)
+- Dokidex: Benjamin Broadhead (KnightExcalibur)
