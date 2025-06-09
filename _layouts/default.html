@@ -119,49 +119,45 @@
   {% endif %}
 
 <!-- Mini Map Insertion -->
-{% assign locs = page.location | split: "," | map: "strip" %}
-{% assign coords_found = false %}
-{% assign unmapped_exists = false %}
+{% if page.location %}
+  {% assign locs = page.location | split: "," | map: 'strip' %}
+  {% assign mapped_locs = '' | split: '' %}
+  {% assign has_unmapped = false %}
 
-{% for loc in locs %}
-  {% assign normalized = loc %}
-  {% if normalized == "???" or normalized == "??? Town" %}
-    {% assign normalized = "??? Town (Endgame Portal)" %}
+  {% for loc in locs %}
+    {% assign clean_loc = loc %}
+    {% if clean_loc == "???" or clean_loc == "??? Town" %}
+      {% assign clean_loc = "??? Town (Endgame Portal)" %}
+    {% endif %}
+
+    {% assign coords = site.data.map_locations[clean_loc] %}
+    {% if coords %}
+      {% assign mapped_locs = mapped_locs | push: coords %}
+    {% else %}
+      {% assign has_unmapped = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if mapped_locs.size > 0 or has_unmapped %}
+    <div class="mini-map-container">
+      <div class="mini-map-wrapper">
+        <img src="/assets/images/region_map_updated.png" alt="Map" class="mini-map">
+
+        {% if mapped_locs.size == 0 %}
+          <div class="mini-map-label">UNKNOWN</div>
+        {% elsif has_unmapped %}
+          <div class="mini-map-label">Unmapped locations exist for this Dokimon</div>
+        {% endif %}
+
+        {% for coords in mapped_locs %}
+          <img src="/assets/mini_sprites/{{ page.name | downcase }}_mini.png"
+               class="mini-sprite"
+               style="top: {{ coords.y | times: 0.5 | round }}px; left: {{ coords.x | times: 0.5 | round }}px;">
+        {% endfor %}
+      </div>
+    </div>
   {% endif %}
-
-  {% assign coords = site.data.map_locations[normalized] %}
-  {% if coords %}
-    {% assign coords_found = true %}
-  {% else %}
-    {% assign unmapped_exists = true %}
-  {% endif %}
-{% endfor %}
-
-<div class="mini-map-container">
-  {% if locs == empty or locs[0] == "" %}
-    <div style="color: white; font-weight: bold; margin-bottom: 0.5rem;">UNKNOWN</div>
-  {% elsif unmapped_exists %}
-    <div style="color: white; font-weight: bold; margin-bottom: 0.5rem;">unmapped locations exist for this Dokimon</div>
-  {% endif %}
-
-  <div class="mini-map-wrapper">
-    <img src="/assets/images/region_map_updated.png" alt="Map" class="mini-map">
-
-    {% for loc in locs %}
-      {% assign normalized = loc %}
-      {% if normalized == "???" or normalized == "??? Town" %}
-        {% assign normalized = "??? Town (Endgame Portal)" %}
-      {% endif %}
-
-      {% assign coords = site.data.map_locations[normalized] %}
-      {% if coords %}
-        <img src="/assets/mini_sprites/{{ page.name | downcase }}_mini.png"
-             class="mini-sprite"
-             style="top: {{ coords.y | times: 0.5 | round }}px; left: {{ coords.x | times: 0.5 | round }}px;">
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
+{% endif %}
 
 </main>
   <!-- Prevent Right Click on Images -->
