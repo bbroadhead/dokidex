@@ -157,7 +157,7 @@
       {% if coords %}
         <img src="/assets/mini_sprites/{{ page.name | downcase }}_mini.png"
              class="mini-sprite"
-             style="top: {{ coords.y | times: 0.3 | round }}px; left: {{ coords.x | times: 0.3 | round }}px;">
+             style="top: {{ coords.y | times: 0.5 | round }}px; left: {{ coords.x | times: 0.5 | round }}px;">
       {% endif %}
     {% endfor %}
   </div>
