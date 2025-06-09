@@ -1936,7 +1936,8 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 
 .mini-map-container {
   margin-top: 2rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .mini-map-wrapper {
