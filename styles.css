@@ -1944,12 +1944,17 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   display: inline-block;
   transform: scale(0.5);
   transform-origin: top left;
+  z-index: 0;
+  width: fit-content;
+  height: fit-content;
 }
 
 .mini-map {
   width: auto;
   height: auto;
-  max-width: none;
+  position: relative;
+  display: block;
+  z-index: 0;
 }
 
 .mini-sprite {
@@ -1958,6 +1963,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   height: 24px;
   animation: blink 1s infinite;
   image-rendering: pixelated;
+  z-index: 10;
 }
 
 @keyframes blink {
