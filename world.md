@@ -14,36 +14,43 @@ permalink: /world/
   </div>
 
   <div id="story" class="tab-content active">
-    <h2>Main Story</h2>
+
 <div class="story-text">
   <p><strong>Dokimon: Quest – Story</strong></p>
 
   <p>You play as a young adventurer in the peaceful town of Lillywood, alongside your childhood friends Ai and Koi. One day, the local professor is looking for you—you overslept! You’re quickly thrown into a journey with your first Dokimon, Whispurr, and are soon joined by Koi, who insists on giving you your first real battle.</p>
 
-  <p><strong>The Call to Adventure</strong><br>
-  You and your friends are driven by a deeper goal: to find Maiko, your long-lost childhood friend who vanished mysteriously 12 years ago. As the journey unfolds, strange dreams and visions suggest Maiko is still alive—but trapped somewhere beyond ordinary reach. Ai, who has emotional ties to Maiko, joins your party to help on this dangerous journey.</p>
+  <p><strong>The Call to Adventure</strong></p>
+  
+  <p>You and your friends are driven by a deeper goal: to find Maiko, your long-lost childhood friend who vanished mysteriously 12 years ago. As the journey unfolds, strange dreams and visions suggest Maiko is still alive—but trapped somewhere beyond ordinary reach. Ai, who has emotional ties to Maiko, joins your party to help on this dangerous journey.</p>
 
-  <p><strong>Confronting the X’ers</strong><br>
-  A sinister organization called the X’ers begins to make moves in the shadows. They're conducting dangerous experiments involving "Bound Dokimon" and forging contracts with monstrous entities for power. You foil their early plans in several towns and uncover that they're attempting to re-create a godlike Dokimon through dark rituals.</p>
+  <p><strong>Confronting the X’ers</strong></p>
+  
+  <p>A sinister organization called the X’ers begins to make moves in the shadows. They're conducting dangerous experiments involving "Bound Dokimon" and forging contracts with monstrous entities for power. You foil their early plans in several towns and uncover that they're attempting to re-create a godlike Dokimon through dark rituals.</p>
 
-  <p><strong>Mystics and Monsters</strong><br>
-  Along the way, you meet Aki, a sage with visions and spiritual powers, who confirms that Maiko is alive—but in grave danger, buried deep beneath the earth, surrounded by lava. Aki guides you through your path, eventually helping you infiltrate the X’er’s base using a disguise crafted by a surprisingly crafty sailor who enjoys knitting.</p>
+  <p><strong>Mystics and Monsters</strong></p>
+  
+  <p>Along the way, you meet Aki, a sage with visions and spiritual powers, who confirms that Maiko is alive—but in grave danger, buried deep beneath the earth, surrounded by lava. Aki guides you through your path, eventually helping you infiltrate the X’er’s base using a disguise crafted by a surprisingly crafty sailor who enjoys knitting.</p>
 
   <p>As you confront X’er generals and uncover dark secrets, Aki is struck down by an unknown force tied to the realm of darkness. You’re left to continue alone, burdened with more questions than answers.</p>
 
-  <p><strong>Enter the Shadow Realm</strong><br>
-  Venturing deeper into mystical and corrupted places, you begin experiencing disturbing visions and confrontations with a powerful entity that challenges your very purpose. You're eventually told that Maiko is imprisoned in the Shadow Realm by a being known as Gad’riel, the destroyer of worlds.</p>
+  <p><strong>Enter the Shadow Realm</strong></p>
+  
+  <p>Venturing deeper into mystical and corrupted places, you begin experiencing disturbing visions and confrontations with a powerful entity that challenges your very purpose. You're eventually told that Maiko is imprisoned in the Shadow Realm by a being known as Gad’riel, the destroyer of worlds.</p>
 
-  <p><strong>Clash of Mythics</strong><br>
-  In a climactic series of battles, you confront Magma, a powerful Mythic Dokimon and the son of Gad’riel. Unlike his father, Magma still clings to his morality and agrees to help you—if you can defeat him in battle.</p>
+  <p><strong>Clash of Mythics</strong></p>
+  
+  <p>In a climactic series of battles, you confront Magma, a powerful Mythic Dokimon and the son of Gad’riel. Unlike his father, Magma still clings to his morality and agrees to help you—if you can defeat him in battle.</p>
 
   <p>With Magma’s help, you find Maiko… but she is not the same. Years of exposure to the Shadow Realm have changed her. Gad’riel finally appears, challenging you directly.</p>
 
-  <p><strong>Final Confrontation</strong><br>
-  You defeat Gad’riel in a fierce battle. True to his word, he leaves the planet. But the victory comes at a cost—Maiko has been rescued, yet remains altered, her mind warped by darkness. Your quest is far from over.</p>
+  <p><strong>Final Confrontation</strong></p>
+  
+  <p>You defeat Gad’riel in a fierce battle. True to his word, he leaves the planet. But the victory comes at a cost—Maiko has been rescued, yet remains altered, her mind warped by darkness. Your quest is far from over.</p>
 
-  <p><strong>A New Beginning</strong><br>
-  With the truth revealed and Maiko back in the physical world, your next journey becomes clear: to restore her soul and identity. But that tale will be for another game...</p>
+  <p><strong>A New Beginning</strong></p>
+  
+  <p>With the truth revealed and Maiko back in the physical world, your next journey becomes clear: to restore her soul and identity. But that tale will be for another game...</p>
 </div>
 
 </p>
@@ -52,7 +59,6 @@ permalink: /world/
   <div id="characters" class="tab-content">
 <!-- Character Bios -->
   <section class="character-bios">
-    <h2>Main Characters</h2>
 
     <div class="character-card">
       <h3>The Player</h3>
@@ -103,7 +109,7 @@ permalink: /world/
 
   <div id="maps" class="tab-content">
     <h2>World Maps</h2>
-    <p>Explore the regions of Dokimon!</p>
+
     <img src="/assets/images/region_map_updated.png" alt="Pixel Map" style="max-width: 100%; margin-bottom: 1rem;">
     <img src="/assets/images/worldmap_labeled.jpg" alt="Labeled Map" style="max-width: 100%;">
   </div>
@@ -114,7 +120,6 @@ permalink: /world/
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
-    document.querySelector(`.tab-button[onclick*="` + tabId + `"]`).classList.add('active');
+    document.querySelector(`.tab-button[onclick*="' + tabId + '"]`).classList.add('active');
   }
-</script>
 </script>
