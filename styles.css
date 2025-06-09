@@ -1946,7 +1946,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .mini-map {
-  width: 30%;
+  width: 50%;
   height: auto;
 }
 
