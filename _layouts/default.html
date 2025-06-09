@@ -120,7 +120,12 @@
 
 <!-- Mini Map Insertion -->
 {% if page.location %}
-  {% assign coords = site.data.map_locations[page.location] %}
+  {% assign clean_location = page.location %}
+  {% if clean_location == "???" or clean_location == "??? Town" %}
+    {% assign clean_location = "??? Town (Endgame Portal)" %}
+  {% endif %}
+
+  {% assign coords = site.data.map_locations[clean_location] %}
   {% if coords %}
     <div class="mini-map-container">
       <div class="mini-map-wrapper">
