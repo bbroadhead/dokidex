@@ -1933,7 +1933,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   gap: 0.5rem;
   min-width: 200px;
 }
-
+/*
 .mini-map-container {
   margin-top: 2rem;
   text-align: center;
@@ -1965,7 +1965,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
 }
-
+*/
 /* Mobile layout */
 @media (max-width: 768px) {
   .monster-upper {
