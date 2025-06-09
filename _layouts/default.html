@@ -119,24 +119,49 @@
   {% endif %}
 
 <!-- Mini Map Insertion -->
-{% if page.location %}
-  {% assign clean_location = page.location %}
-  {% if clean_location == "???" or clean_location == "??? Town" %}
-    {% assign clean_location = "??? Town (Endgame Portal)" %}
+{% assign locs = page.location | split: "," | map: "strip" %}
+{% assign coords_found = false %}
+{% assign unmapped_exists = false %}
+
+{% for loc in locs %}
+  {% assign normalized = loc %}
+  {% if normalized == "???" or normalized == "??? Town" %}
+    {% assign normalized = "??? Town (Endgame Portal)" %}
   {% endif %}
 
-  {% assign coords = site.data.map_locations[clean_location] %}
+  {% assign coords = site.data.map_locations[normalized] %}
   {% if coords %}
-    <div class="mini-map-container">
-      <div class="mini-map-wrapper">
-        <img src="/assets/images/region_map_updated.png" alt="Map" class="mini-map">
-        <img src="/assets/images/mini_sprites/{{ page.name | downcase }}_mini.png"
+    {% assign coords_found = true %}
+  {% else %}
+    {% assign unmapped_exists = true %}
+  {% endif %}
+{% endfor %}
+
+<div class="mini-map-container">
+  {% if locs == empty or locs[0] == "" %}
+    <div style="color: white; font-weight: bold; margin-bottom: 0.5rem;">UNKNOWN</div>
+  {% elsif unmapped_exists %}
+    <div style="color: white; font-weight: bold; margin-bottom: 0.5rem;">unmapped locations exist for this Dokimon</div>
+  {% endif %}
+
+  <div class="mini-map-wrapper">
+    <img src="/assets/images/region_map_updated.png" alt="Map" class="mini-map">
+
+    {% for loc in locs %}
+      {% assign normalized = loc %}
+      {% if normalized == "???" or normalized == "??? Town" %}
+        {% assign normalized = "??? Town (Endgame Portal)" %}
+      {% endif %}
+
+      {% assign coords = site.data.map_locations[normalized] %}
+      {% if coords %}
+        <img src="/assets/mini_sprites/{{ page.name | downcase }}_mini.png"
              class="mini-sprite"
              style="top: {{ coords.y | times: 0.3 | round }}px; left: {{ coords.x | times: 0.3 | round }}px;">
-      </div>
-    </div>
-  {% endif %}
-{% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
 
 </main>
   <!-- Prevent Right Click on Images -->
