@@ -141,13 +141,10 @@
     createRadarChart();
   });
 
-  // If no saved preference, check system preference
-  if (!localStorage.getItem('dark-mode')) {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.classList.add('dark-mode');
-      toggleSwitch.checked = true;
-    }
-  }
+// Default to dark mode unless user set to light
+if (!localStorage.getItem('dark-mode')) {
+  localStorage.setItem('dark-mode', 'enabled');
+}
 
   // Load preference
   const savedTheme = localStorage.getItem('dark-mode');
