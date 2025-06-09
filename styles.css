@@ -1935,19 +1935,21 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .mini-map-container {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .mini-map-wrapper {
   position: relative;
-  width: fit-content;
+  display: inline-block;
+  transform: scale(0.5);
+  transform-origin: top left;
 }
 
 .mini-map {
-  width: 30%;
+  width: auto;
   height: auto;
+  max-width: none;
 }
 
 .mini-sprite {
