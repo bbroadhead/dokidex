@@ -108,7 +108,7 @@ permalink: /world/
   <div id="maps" class="tab-content">
     <h2>World Maps</h2>
 
-    <img src="/assets/images/region_map_updated.png" alt="Pixel Map" style="max-width: 100%; margin-bottom: 1rem;">
-    <img src="/assets/images/worldmap_labeled.jpg" alt="Labeled Map" style="max-width: 100%;">
+    <img src="/assets/images/worldmap_labeled.png" alt="Pixel Map" style="max-width: 100%; margin-bottom: 1rem;">
+    <img src="/assets/images/region_map_updated.jpg" alt="Labeled Map" style="max-width: 100%;">
   </div>
 </div>
