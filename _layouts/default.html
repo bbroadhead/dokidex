@@ -119,44 +119,46 @@
   {% endif %}
 
 <!-- Mini Map Insertion -->
-{% if page.location %}
-  {% assign locs = page.location | split: "," | map: 'strip' %}
-  {% assign mapped_locs = '' | split: '' %}
-  {% assign has_unmapped = false %}
+{% assign has_mapped_location = false %}
+{% assign unmapped_found = false %}
 
-  {% for loc in locs %}
-    {% assign clean_loc = loc %}
-    {% if clean_loc == "???" or clean_loc == "??? Town" %}
-      {% assign clean_loc = "??? Town (Endgame Portal)" %}
-    {% endif %}
+{% assign locations = page.location | split: ',' | map: 'strip' %}
+{% assign clean_locations = "" | split: "" %}
 
-    {% assign coords = site.data.map_locations[clean_loc] %}
-    {% if coords %}
-      {% assign mapped_locs = mapped_locs | push: coords %}
-    {% else %}
-      {% assign has_unmapped = true %}
-    {% endif %}
-  {% endfor %}
-
-  {% if mapped_locs.size > 0 or has_unmapped %}
-    <div class="mini-map-container">
-      <div class="mini-map-wrapper">
-        <img src="/assets/images/region_map_updated.png" alt="Map" class="mini-map">
-
-        {% if mapped_locs.size == 0 %}
-          <div class="mini-map-label">UNKNOWN</div>
-        {% elsif has_unmapped %}
-          <div class="mini-map-label">Unmapped locations exist for this Dokimon</div>
-        {% endif %}
-
-        {% for coords in mapped_locs %}
-          <img src="/assets/mini_sprites/{{ page.name | downcase }}_mini.png"
-               class="mini-sprite"
-               style="top: {{ coords.y | times: 0.5 | round }}px; left: {{ coords.x | times: 0.5 | round }}px;">
-        {% endfor %}
-      </div>
-    </div>
+{% for loc in locations %}
+  {% assign cleaned = loc %}
+  {% if cleaned == "???" or cleaned == "??? Town" %}
+    {% assign cleaned = "??? Town (Endgame Portal)" %}
   {% endif %}
+  {% assign clean_locations = clean_locations | push: cleaned %}
+  {% if site.data.map_locations[cleaned] %}
+    {% assign has_mapped_location = true %}
+  {% else %}
+    {% assign unmapped_found = true %}
+  {% endif %}
+{% endfor %}
+
+{% if has_mapped_location or unmapped_found %}
+<div class="mini-map-container">
+  {% if unmapped_found %}
+    <div class="map-label">Unmapped locations exist for this Dokimon</div>
+  {% elsif has_mapped_location == false %}
+    <div class="map-label">UNKNOWN</div>
+  {% endif %}
+  
+  <div class="mini-map-wrapper">
+    <img src="/assets/images/region_map_updated.png" alt="Map" class="mini-map">
+    
+    {% for loc in clean_locations %}
+      {% assign coords = site.data.map_locations[loc] %}
+      {% if coords %}
+        <img src="/assets/images/mini_sprites/{{ page.name | downcase }}_mini.png"
+             class="mini-sprite"
+             style="top: {{ coords.y | times: 0.5 | round }}px; left: {{ coords.x | times: 0.5 | round }}px;">
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
 {% endif %}
 
 </main>
