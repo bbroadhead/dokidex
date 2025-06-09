@@ -8,9 +8,9 @@ permalink: /world/
 
 <div class="tab-container">
   <div class="tabs">
-    <button class="tab-button active" onclick="showTab('story')">Story</button>
-    <button class="tab-button" onclick="showTab('characters')">Characters</button>
-    <button class="tab-button" onclick="showTab('maps')">Maps</button>
+    <button class="tab-button active" data-tab="story">Story</button>
+    <button class="tab-button" data-tab="characters">Characters</button>
+    <button class="tab-button" data-tab="maps">Maps</button>
   </div>
 
   <div id="story" class="tab-content active">
@@ -52,8 +52,6 @@ permalink: /world/
   
   <p>With the truth revealed and Maiko back in the physical world, your next journey becomes clear: to restore her soul and identity. But that tale will be for another game...</p>
 </div>
-
-</p>
   </div>
 
   <div id="characters" class="tab-content">
@@ -114,12 +112,3 @@ permalink: /world/
     <img src="/assets/images/worldmap_labeled.jpg" alt="Labeled Map" style="max-width: 100%;">
   </div>
 </div>
-
-<script>
-  function showTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
-    document.querySelector(`.tab-button[onclick*="' + tabId + '"]`).classList.add('active');
-  }
-</script>
