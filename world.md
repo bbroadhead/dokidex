@@ -4,7 +4,7 @@ title: World
 permalink: /world/
 ---
 
-<h1>Explore the World of Dokimon (This contains spoilers!)</h1>
+<h1>Explore the World of Dokimon <small>(This contains spoilers!)</small></h1>
 
 <div class="tab-container">
   <div class="tabs">
