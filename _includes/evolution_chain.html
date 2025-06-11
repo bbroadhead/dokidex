@@ -1,3 +1,7 @@
+<p style="color:red;">DEBUG: page.name = "{{ page.name }}"</p>
+<p style="color:red;">DEBUG: page.url = "{{ page.url }}"</p>
+<p style="color:red;">DEBUG: current_name = "{{ current_name }}"</p>
+
 {% assign current_name = page.name | downcase %}
 
 {% for item in site.data.evolution_chains %}
