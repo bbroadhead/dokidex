@@ -5,6 +5,7 @@ url: ""
 collections:
   dokimon:
     output: true
+    permalink: /dokimon/:name
 defaults:
   - scope:
       path: ""
