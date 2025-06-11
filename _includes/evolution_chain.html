@@ -1,29 +1,33 @@
 {% assign current_name = page.name | downcase %}
-{% assign rendered = false %}
 
 {% for item in site.data.evolution_chains %}
-  {% if rendered == false %}
-    {% for member in item.members %}
-      {% if member.name | downcase == current_name %}
-        <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
-          {% for m in item.members %}
-            <div style="text-align:center;">
-              <a href="/dokimon/{{ m.name | downcase | replace: ' ', '-' }}">
-                <img src="/assets/images/mini_sprites/{{ m.name | downcase }}_mini.png"
-                     alt="{{ m.name }}"
-                     style="image-rendering: pixelated; width:48px; height:48px;">
-              </a>
-              <div style="font-size:12px;">
-                {{ m.name }}{% if m.level %} (Lv {{ m.level }}){% endif %}
-              </div>
-            </div>
-            {% unless forloop.last %}
-              <div style="font-size:24px;">&rarr;</div>
-            {% endunless %}
-          {% endfor %}
+  {% assign matched = false %}
+  {% for member in item.members %}
+    {% if member.name | downcase == current_name %}
+      {% assign matched = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if matched %}
+    {% comment %} Render chain and exit outer loop manually {% endcomment %}
+    {% assign chain = item.members %}
+    <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
+      {% for m in chain %}
+        <div style="text-align:center;">
+          <a href="/dokimon/{{ m.name | downcase | replace: ' ', '-' }}">
+            <img src="/assets/images/mini_sprites/{{ m.name | downcase }}_mini.png"
+                 alt="{{ m.name }}"
+                 style="image-rendering: pixelated; width:48px; height:48px;">
+          </a>
+          <div style="font-size:12px;">
+            {{ m.name }}{% if m.level %} (Lv {{ m.level }}){% endif %}
+          </div>
         </div>
-        {% assign rendered = true %}
-      {% endif %}
-    {% endfor %}
+        {% unless forloop.last %}
+          <div style="font-size:24px;">&rarr;</div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+    {% break %}
   {% endif %}
 {% endfor %}
