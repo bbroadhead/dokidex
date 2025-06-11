@@ -1,25 +1,14 @@
-<p>Looking for: {{ page.name | downcase }}</p>
-<ul>
-{% for item in site.data.evolution_chains %}
-  <li>
-    {% for member in item.members %}
-      {{ member.name | downcase }},
-    {% endfor %}
-  </li>
-{% endfor %}
-</ul>
-
-
 {% assign current_name = page.name | downcase %}
 {% assign matching_chain = nil %}
 
 {% for item in site.data.evolution_chains %}
-  {% assign names = item.members | map: "name" %}
-  {% assign names_lower = "" | split: "" %}
-  {% for n in names %}
-    {% assign names_lower = names_lower | push: n | map: "downcase" %}
+  {% assign found = false %}
+  {% for member in item.members %}
+    {% if member.name | downcase == current_name %}
+      {% assign found = true %}
+    {% endif %}
   {% endfor %}
-  {% if names_lower contains current_name %}
+  {% if found %}
     {% assign matching_chain = item %}
     {% break %}
   {% endif %}
