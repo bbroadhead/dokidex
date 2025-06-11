@@ -20,7 +20,7 @@
       {% assign member_name = member.name %}
       {% assign level = member.level %}
       <div style="text-align:center;">
-        <img src="/assets/mini_sprites/{{ member_name | downcase }}_mini.png" alt="{{ member_name }}" style="image-rendering: pixelated; width:48px; height:48px;">
+        <img src="/assets/images/mini_sprites/{{ member_name | downcase }}_mini.png" alt="{{ member_name }}" style="image-rendering: pixelated; width:48px; height:48px;">
         <div style="font-size:12px;">
           {{ member_name }}{% if level %} (Lv {{ level }}){% endif %}
         </div>
