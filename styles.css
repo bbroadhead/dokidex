@@ -591,9 +591,22 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   background-color: #e9ecef;
 }
 
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 0.1rem;
+}
+
 .return-link {
   margin-bottom: 0.1rem;
   text-align: left;
+}
+
+.evolution-wrapper {
+  max-width: 300px;
+  text-align: right;
 }
 
 .back-to-dex {
