@@ -1,16 +1,16 @@
 {% assign current_name = page.name | downcase %}
-{% assign already_rendered = false %}
+{% capture evo_output %}{% endcapture %}
 
 {% for item in site.data.evolution_chains %}
-  {% if already_rendered == false %}
-    {% assign match = false %}
-    {% for member in item.members %}
-      {% if member.name | downcase == current_name %}
-        {% assign match = true %}
-      {% endif %}
-    {% endfor %}
+  {% assign match = false %}
+  {% for member in item.members %}
+    {% if member.name | downcase == current_name %}
+      {% assign match = true %}
+    {% endif %}
+  {% endfor %}
 
-    {% if match %}
+  {% if match %}
+    {% capture evo_output %}
       <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
         {% for m in item.members %}
           <div style="text-align:center;">
@@ -28,7 +28,9 @@
           {% endunless %}
         {% endfor %}
       </div>
-      {% assign already_rendered = true %}
-    {% endif %}
+    {% endcapture %}
+    {% break %}
   {% endif %}
 {% endfor %}
+
+{{ evo_output }}
