@@ -1,3 +1,16 @@
+<hr>
+<p>page.name = "{{ page.name }}"</p>
+
+{% assign test1 = page.name %}
+<p>test1 = "{{ test1 }}"</p>
+
+{% assign test2 = page.name | downcase %}
+<p>test2 = "{{ test2 }}"</p>
+
+{% assign current_name = page.name | downcase %}
+<p>current_name = "{{ current_name }}"</p>
+<hr>
+
 <p style="color:red;">DEBUG: page.name = "{{ page.name }}"</p>
 <p style="color:red;">DEBUG: page.url = "{{ page.url }}"</p>
 <p style="color:red;">DEBUG: current_name = "{{ current_name }}"</p>
