@@ -2,7 +2,7 @@
 number: 107
 name: Frossla
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 38
 type:
 - Grass

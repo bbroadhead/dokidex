@@ -2,7 +2,7 @@
 number: 12
 name: Leeksword
 lang_names: []
-stage: '3'
+stage: 3
 evolves_at: null
 type:
 - Light

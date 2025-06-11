@@ -2,7 +2,7 @@
 number: 6
 name: Slytharot
 lang_names: []
-stage: '3'
+stage: 3
 evolves_at: null
 type:
 - Grass

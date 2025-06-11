@@ -2,7 +2,7 @@
 number: 70
 name: Atlas
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 20
 type:
 - Dragon

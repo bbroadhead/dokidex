@@ -2,7 +2,7 @@
 number: 42
 name: Soul
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 22
 type:
 - Dark

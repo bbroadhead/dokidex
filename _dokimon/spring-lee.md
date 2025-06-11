@@ -2,7 +2,7 @@
 number: 141
 name: Spring-lee
 lang_names: []
-stage: '2'
+stage: 3
 evolves_at: null
 type:
 - Grass

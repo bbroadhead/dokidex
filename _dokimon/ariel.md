@@ -2,7 +2,7 @@
 number: 75
 name: Ariel
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 17
 type:
 - Light

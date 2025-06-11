@@ -2,7 +2,7 @@
 number: 45
 name: Marillo
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Water

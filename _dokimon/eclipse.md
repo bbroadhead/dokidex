@@ -2,7 +2,7 @@
 number: 47
 name: Eclipse
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Ghost

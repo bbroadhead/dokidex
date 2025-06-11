@@ -2,7 +2,7 @@
 number: 18
 name: Quackfear
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Dark

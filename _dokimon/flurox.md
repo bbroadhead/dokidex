@@ -2,7 +2,7 @@
 number: 58
 name: Flurox
 lang_names: []
-stage: '4'
+stage: 4
 evolves_at: 24
 type:
 - Grass

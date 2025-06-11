@@ -2,7 +2,7 @@
 number: 69
 name: Skrappler
 lang_names: []
-stage: '2'
+stage: 3
 evolves_at: null
 type:
 - Poison

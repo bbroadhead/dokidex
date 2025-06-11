@@ -2,7 +2,7 @@
 number: 33
 name: Brixlet
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: lvl. 10
 type:
 - Fairy

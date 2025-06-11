@@ -2,7 +2,7 @@
 number: 5
 name: Scytherin
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 34
 type:
 - Grass

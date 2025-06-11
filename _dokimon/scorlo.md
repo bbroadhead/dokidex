@@ -2,7 +2,7 @@
 number: 67
 name: Scorlo
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 12
 type:
 - Poison

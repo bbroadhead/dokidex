@@ -2,7 +2,7 @@
 number: 100
 name: Frostby
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 24
 type:
 - Ice

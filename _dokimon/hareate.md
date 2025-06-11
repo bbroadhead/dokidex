@@ -2,7 +2,7 @@
 number: 41
 name: Hareate
 lang_names: []
-stage: '1'
+stage: 2
 evolves_at: null
 type:
 - Fight

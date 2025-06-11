@@ -2,7 +2,7 @@
 number: 14
 name: Excalifurr
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Fairy

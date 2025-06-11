@@ -2,7 +2,7 @@
 number: 119
 name: Hexabelle
 lang_names: []
-stage: '4'
+stage: 4
 evolves_at: 44
 type:
 - Ghost

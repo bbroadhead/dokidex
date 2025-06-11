@@ -2,7 +2,7 @@
 number: 60
 name: Yorox
 lang_names: []
-stage: '6'
+stage: 6
 evolves_at: null
 type:
 - Dark

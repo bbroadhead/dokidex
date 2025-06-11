@@ -2,7 +2,7 @@
 number: 120
 name: Ohm
 lang_names: []
-stage: '5'
+stage: 5
 evolves_at: null
 type:
 - Electric

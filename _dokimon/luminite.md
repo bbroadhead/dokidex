@@ -2,7 +2,7 @@
 number: 85
 name: Luminite
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 30
 type:
 - Electric

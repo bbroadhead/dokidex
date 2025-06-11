@@ -2,7 +2,7 @@
 number: 139
 name: Spud
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 15
 type:
 - Grass

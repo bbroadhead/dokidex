@@ -2,7 +2,7 @@
 number: 122
 name: Embellia
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 40
 type:
 - Fire

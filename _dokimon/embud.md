@@ -2,7 +2,7 @@
 number: 121
 name: Embud
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 20
 type:
 - Fire

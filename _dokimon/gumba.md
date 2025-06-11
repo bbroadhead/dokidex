@@ -2,7 +2,7 @@
 number: 78
 name: Gumba
 lang_names: []
-stage: '1'
+stage: 2
 evolves_at: 28
 type:
 - Water

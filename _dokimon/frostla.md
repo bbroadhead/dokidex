@@ -2,7 +2,7 @@
 number: 103
 name: Frostla
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Flying

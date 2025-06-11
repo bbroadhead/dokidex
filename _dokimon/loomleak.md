@@ -2,7 +2,7 @@
 number: 44
 name: Loomleak
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 15
 type:
 - Water

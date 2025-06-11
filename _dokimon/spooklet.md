@@ -2,7 +2,7 @@
 number: 34
 name: Spooklet
 lang_names: []
-stage: '2'
+stage: 1
 evolves_at: lvl. 15
 type:
 - Ghost

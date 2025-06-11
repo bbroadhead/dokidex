@@ -2,7 +2,7 @@
 number: 56
 name: Emberox
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 18
 type:
 - Fire

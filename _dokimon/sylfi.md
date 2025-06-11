@@ -2,7 +2,7 @@
 number: 98
 name: Sylfi
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 20
 type:
 - Grass

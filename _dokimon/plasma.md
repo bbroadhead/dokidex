@@ -2,7 +2,7 @@
 number: 84
 name: Plasma
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 12
 type:
 - Electric

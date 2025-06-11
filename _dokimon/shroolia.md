@@ -2,7 +2,7 @@
 number: 91
 name: Shroolia
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 32
 type:
 - Grass

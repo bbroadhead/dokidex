@@ -2,7 +2,7 @@
 number: 57
 name: Glaceia
 lang_names: []
-stage: '3'
+stage: 3
 evolves_at: 20
 type:
 - Water

@@ -2,7 +2,7 @@
 number: 118
 name: Duskalina
 lang_names: []
-stage: '3'
+stage: 3
 evolves_at: 40
 type:
 - Dark

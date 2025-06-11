@@ -2,7 +2,7 @@
 number: 74
 name: Toxorb
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Ghost

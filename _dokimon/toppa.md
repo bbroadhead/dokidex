@@ -2,7 +2,7 @@
 number: 77
 name: Toppa
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 14
 type:
 - Water

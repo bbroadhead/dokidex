@@ -2,7 +2,7 @@
 number: 76
 name: Hana
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Light

@@ -2,7 +2,7 @@
 number: 133
 name: Draeking
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Dragon

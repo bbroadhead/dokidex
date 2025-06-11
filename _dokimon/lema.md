@@ -2,7 +2,7 @@
 number: 136
 name: Lema
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 14
 type:
 - Fire

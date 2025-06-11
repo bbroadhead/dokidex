@@ -2,7 +2,7 @@
 number: 36
 name: Sparkstride
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Electric

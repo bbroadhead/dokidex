@@ -2,7 +2,7 @@
 number: 30
 name: Harleqitty
 lang_names: []
-stage: '3'
+stage: 3
 evolves_at: null
 type:
 - Light

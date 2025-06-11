@@ -2,7 +2,7 @@
 number: 137
 name: Riley
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 38
 type:
 - Fire

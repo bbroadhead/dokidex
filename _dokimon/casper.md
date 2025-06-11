@@ -2,7 +2,7 @@
 number: 19
 name: Casper
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 16
 type:
 - Ghost

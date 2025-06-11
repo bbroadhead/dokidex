@@ -2,7 +2,7 @@
 number: 38
 name: Tigris
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 28
 type:
 - Fire

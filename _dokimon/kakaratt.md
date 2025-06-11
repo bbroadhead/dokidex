@@ -2,7 +2,7 @@
 number: 16
 name: Kakaratt
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Grass

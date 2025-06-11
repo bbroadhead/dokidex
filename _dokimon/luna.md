@@ -2,7 +2,7 @@
 number: 46
 name: Luna
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 18
 type:
 - Ghost

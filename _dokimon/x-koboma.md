@@ -2,7 +2,7 @@
 number: 113
 name: X-koboma
 lang_names: []
-stage: '2'
+stage: 3
 evolves_at: null
 type:
 - Fire

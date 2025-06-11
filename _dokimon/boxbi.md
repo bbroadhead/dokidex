@@ -2,7 +2,7 @@
 number: 83
 name: Boxbi
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Dark

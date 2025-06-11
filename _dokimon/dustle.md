@@ -2,7 +2,7 @@
 number: 82
 name: Dustle
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 19
 type:
 - Dark

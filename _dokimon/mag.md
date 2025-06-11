@@ -2,7 +2,7 @@
 number: 130
 name: Mag
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 20
 type:
 - Fire

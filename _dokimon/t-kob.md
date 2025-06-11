@@ -2,7 +2,7 @@
 number: 111
 name: T-kob
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 22
 type:
 - Fire

@@ -2,7 +2,7 @@
 number: 127
 name: Blu
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 20
 type:
 - Water

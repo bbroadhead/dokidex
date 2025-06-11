@@ -2,7 +2,7 @@
 number: 21
 name: Nimbis
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 16
 type:
 - Light

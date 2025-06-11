@@ -2,7 +2,7 @@
 number: 138
 name: Yan-yaa lii
 lang_names: []
-stage: '2'
+stage: 3
 evolves_at: null
 type:
 - Fire

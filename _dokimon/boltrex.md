@@ -2,7 +2,7 @@
 number: 59
 name: Boltrex
 lang_names: []
-stage: '5'
+stage: 5
 evolves_at: 28
 type:
 - Electric

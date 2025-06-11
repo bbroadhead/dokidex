@@ -2,7 +2,7 @@
 number: 62
 name: Umbralancer
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Ghost

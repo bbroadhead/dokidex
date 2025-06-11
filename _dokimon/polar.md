@@ -2,7 +2,7 @@
 number: 101
 name: Polar
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: null
 type:
 - Ice

@@ -2,7 +2,7 @@
 number: 123
 name: Kthuune
 lang_names: []
-stage: '2'
+stage: 3
 evolves_at: null
 type:
 - Fire

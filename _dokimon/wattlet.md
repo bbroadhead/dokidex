@@ -2,7 +2,7 @@
 number: 35
 name: Wattlet
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 16
 type:
 - Electric

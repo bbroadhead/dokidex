@@ -2,7 +2,7 @@
 number: 71
 name: Lantis
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 36
 type:
 - Dragon

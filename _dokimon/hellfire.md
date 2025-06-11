@@ -2,7 +2,7 @@
 number: 108
 name: Hellfire
 lang_names: []
-stage: '2'
+stage: 3
 evolves_at: null
 type:
 - Dragon

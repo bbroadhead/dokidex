@@ -2,7 +2,7 @@
 number: 13
 name: Whispurr
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 18
 type:
 - Fairy

@@ -2,7 +2,7 @@
 number: 51
 name: Rattler
 lang_names: []
-stage: '1'
+stage: 2
 evolves_at: 30
 type:
 - Fire

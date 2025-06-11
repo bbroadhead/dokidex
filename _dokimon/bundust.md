@@ -2,7 +2,7 @@
 number: 27
 name: Bundust
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: null
 type:
 - Fairy

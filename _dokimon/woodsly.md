@@ -2,7 +2,7 @@
 number: 109
 name: Woodsly
 lang_names: []
-stage: '1'
+stage: 1
 evolves_at: 19
 type:
 - Grass

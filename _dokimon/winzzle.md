@@ -2,7 +2,7 @@
 number: 68
 name: Winzzle
 lang_names: []
-stage: '2'
+stage: 2
 evolves_at: 26
 type:
 - Poison
