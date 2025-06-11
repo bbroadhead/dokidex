@@ -30,21 +30,3 @@
     {% endfor %}
   </div>
 {% endif %}
-
-{% if chain %}
-  <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
-    {% for member in chain.members %}
-      {% assign member_name = member.name %}
-      {% assign level = member.level %}
-      <div style="text-align:center;">
-        <img src="/assets/mini_sprites/{{ member_name | downcase }}_mini.png" alt="{{ member_name }}" style="image-rendering: pixelated; width:48px; height:48px;">
-        <div style="font-size:12px;">
-          {{ member_name }}{% if level %} (Lv {{ level }}){% endif %}
-        </div>
-      </div>
-      {% unless forloop.last %}
-        <div style="font-size:24px;">&rarr;</div>
-      {% endunless %}
-    {% endfor %}
-  </div>
-{% endif %}
