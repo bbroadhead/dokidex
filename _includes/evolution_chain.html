@@ -1,29 +1,32 @@
 {% assign current_name = page.name | downcase %}
 
 {% for item in site.data.evolution_chains %}
+  {% assign found = false %}
   {% for member in item.members %}
     {% if member.name | downcase == current_name %}
-      <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
-        {% for m in item.members %}
-          <div style="text-align:center;">
-            <a href="/dokimon/{{ m.name | downcase | replace: ' ', '-' }}">
-              <img src="/assets/images/mini_sprites/{{ m.name | downcase }}_mini.png"
-                   alt="{{ m.name }}"
-                   style="image-rendering: pixelated; width:48px; height:48px;">
-            </a>
-            <div style="font-size:12px;">
-              {{ m.name }}{% if m.level %} (Lv {{ m.level }}){% endif %}
-            </div>
-          </div>
-          {% unless forloop.last %}
-            <div style="font-size:24px;">&rarr;</div>
-          {% endunless %}
-        {% endfor %}
-      </div>
-      {% break %}
+      {% assign found = true %}
+    {% break %}
     {% endif %}
   {% endfor %}
-  {% if member.name | downcase == current_name %}
+
+  {% if found %}
+    <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
+      {% for m in item.members %}
+        <div style="text-align:center;">
+          <a href="/dokimon/{{ m.name | downcase | replace: ' ', '-' }}">
+            <img src="/assets/images/mini_sprites/{{ m.name | downcase }}_mini.png"
+                 alt="{{ m.name }}"
+                 style="image-rendering: pixelated; width:48px; height:48px;">
+          </a>
+          <div style="font-size:12px;">
+            {{ m.name }}{% if m.level %} (Lv {{ m.level }}){% endif %}
+          </div>
+        </div>
+        {% unless forloop.last %}
+          <div style="font-size:24px;">&rarr;</div>
+        {% endunless %}
+      {% endfor %}
+    </div>
     {% break %}
   {% endif %}
 {% endfor %}
