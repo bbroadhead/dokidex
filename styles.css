@@ -605,7 +605,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 }
 
 .evolution-wrapper {
-  max-width: 300px;
+  margin-bottom: 0.1rem
   text-align: right;
 }
 
