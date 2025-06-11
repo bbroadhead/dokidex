@@ -1,54 +1,29 @@
-<hr>
-<p>page.name = "{{ page.name }}"</p>
-
-{% assign test1 = page.name %}
-<p>test1 = "{{ test1 }}"</p>
-
-{% assign test2 = page.name | downcase %}
-<p>test2 = "{{ test2 }}"</p>
-
 {% assign current_name = page.name | downcase %}
-<p>current_name = "{{ current_name }}"</p>
-<hr>
-
-<p style="color:red;">DEBUG: page.name = "{{ page.name }}"</p>
-<p style="color:red;">DEBUG: page.url = "{{ page.url }}"</p>
-<p style="color:red;">DEBUG: current_name = "{{ current_name }}"</p>
-
-{% if page.name %}
-  {% assign current_name = page.name | downcase %}
-{% else %}
-  {% assign current_name = "" %}
-{% endif %}
 
 {% for item in site.data.evolution_chains %}
-  {% assign matched = false %}
   {% for member in item.members %}
     {% if member.name | downcase == current_name %}
-      {% assign matched = true %}
+      <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
+        {% for m in item.members %}
+          <div style="text-align:center;">
+            <a href="/dokimon/{{ m.name | downcase | replace: ' ', '-' }}">
+              <img src="/assets/images/mini_sprites/{{ m.name | downcase }}_mini.png"
+                   alt="{{ m.name }}"
+                   style="image-rendering: pixelated; width:48px; height:48px;">
+            </a>
+            <div style="font-size:12px;">
+              {{ m.name }}{% if m.level %} (Lv {{ m.level }}){% endif %}
+            </div>
+          </div>
+          {% unless forloop.last %}
+            <div style="font-size:24px;">&rarr;</div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+      {% break %}
     {% endif %}
   {% endfor %}
-
-  {% if matched %}
-    {% comment %} Render chain and exit outer loop manually {% endcomment %}
-    {% assign chain = item.members %}
-    <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
-      {% for m in chain %}
-        <div style="text-align:center;">
-          <a href="/dokimon/{{ m.name | downcase | replace: ' ', '-' }}">
-            <img src="/assets/images/mini_sprites/{{ m.name | downcase }}_mini.png"
-                 alt="{{ m.name }}"
-                 style="image-rendering: pixelated; width:48px; height:48px;">
-          </a>
-          <div style="font-size:12px;">
-            {{ m.name }}{% if m.level %} (Lv {{ m.level }}){% endif %}
-          </div>
-        </div>
-        {% unless forloop.last %}
-          <div style="font-size:24px;">&rarr;</div>
-        {% endunless %}
-      {% endfor %}
-    </div>
+  {% if member.name | downcase == current_name %}
     {% break %}
   {% endif %}
 {% endfor %}
