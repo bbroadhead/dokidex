@@ -1,30 +1,34 @@
 {% assign current_name = page.name | downcase %}
-{% assign matching_chain = nil %}
-{% assign found = false %}
+{% assign found_chain = false %}
 
 {% for item in site.data.evolution_chains %}
-  {% if found == false %}
+  {% if found_chain == false %}
+    {% assign match = false %}
     {% for member in item.members %}
       {% if member.name | downcase == current_name %}
-        {% assign matching_chain = item %}
-        {% assign found = true %}
+        {% assign match = true %}
       {% endif %}
     {% endfor %}
+
+    {% if match %}
+      {% assign found_chain = true %}
+      <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
+        {% for member in item.members %}
+          <div style="text-align:center;">
+            <a href="/dokimon/{{ member.name | downcase | replace: ' ', '-' }}">
+              <img src="/assets/images/mini_sprites/{{ member.name | downcase }}_mini.png"
+                   alt="{{ member.name }}"
+                   style="image-rendering: pixelated; width:48px; height:48px;">
+            </a>
+            <div style="font-size:12px;">
+              {{ member.name }}{% if member.level %} (Lv {{ member.level }}){% endif %}
+            </div>
+          </div>
+          {% unless forloop.last %}
+            <div style="font-size:24px;">&rarr;</div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    {% endif %}
   {% endif %}
 {% endfor %}
-
-{% if matching_chain %}
-  <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
-    {% for member in matching_chain.members %}
-      <div style="text-align:center;">
-        <img src="/assets/images/mini_sprites/{{ member.name | downcase }}_mini.png" alt="{{ member.name }}" style="image-rendering: pixelated; width:48px; height:48px;">
-        <div style="font-size:12px;">
-          {{ member.name }}{% if member.level %} (Lv {{ member.level }}){% endif %}
-        </div>
-      </div>
-      {% unless forloop.last %}
-        <div style="font-size:24px;">&rarr;</div>
-      {% endunless %}
-    {% endfor %}
-  </div>
-{% endif %}
