@@ -1,5 +1,5 @@
 {% assign current_name = page.name | downcase %}
-{% assign chain = site.data.evolution_chains | where_exp: "item", "item.members contains current_name" | first %}
+{% assign chain = site.data.evolution_chains | where_exp: "item", "item.members | map: 'name' | map: 'downcase' | contains: current_name" | first %}
 
 {% if chain %}
   <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
