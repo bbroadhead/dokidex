@@ -1,5 +1,35 @@
 {% assign current_name = page.name | downcase %}
-{% assign chain = site.data.evolution_chains | where_exp: "item", "item.members | map: 'name' | map: 'downcase' | contains: current_name" | first %}
+{% assign matching_chain = nil %}
+
+{% for item in site.data.evolution_chains %}
+  {% assign names = item.members | map: "name" %}
+  {% assign names_lower = "" | split: "" %}
+  {% for n in names %}
+    {% assign names_lower = names_lower | push: n | map: "downcase" %}
+  {% endfor %}
+  {% if names_lower contains current_name %}
+    {% assign matching_chain = item %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if matching_chain %}
+  <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
+    {% for member in matching_chain.members %}
+      {% assign member_name = member.name %}
+      {% assign level = member.level %}
+      <div style="text-align:center;">
+        <img src="/assets/mini_sprites/{{ member_name | downcase }}_mini.png" alt="{{ member_name }}" style="image-rendering: pixelated; width:48px; height:48px;">
+        <div style="font-size:12px;">
+          {{ member_name }}{% if level %} (Lv {{ level }}){% endif %}
+        </div>
+      </div>
+      {% unless forloop.last %}
+        <div style="font-size:24px;">&rarr;</div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+{% endif %}
 
 {% if chain %}
   <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
