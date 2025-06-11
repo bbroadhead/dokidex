@@ -1,3 +1,15 @@
+<p>Looking for: {{ page.name | downcase }}</p>
+<ul>
+{% for item in site.data.evolution_chains %}
+  <li>
+    {% for member in item.members %}
+      {{ member.name | downcase }},
+    {% endfor %}
+  </li>
+{% endfor %}
+</ul>
+
+
 {% assign current_name = page.name | downcase %}
 {% assign matching_chain = nil %}
 
