@@ -1,25 +1,26 @@
 {% assign current_name = page.name | downcase %}
+{% assign matching_chain = nil %}
 
 {% for item in site.data.evolution_chains %}
   {% for member in item.members %}
     {% if member.name | downcase == current_name %}
-      <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
-        {% for m in item.members %}
-          <div style="text-align:center;">
-            <img src="/assets/images/mini_sprites/{{ m.name | downcase }}_mini.png" alt="{{ m.name }}" style="image-rendering: pixelated; width:48px; height:48px;">
-            <div style="font-size:12px;">
-              {{ m.name }}{% if m.level %} (Lv {{ m.level }}){% endif %}
-            </div>
-          </div>
-          {% unless forloop.last %}
-            <div style="font-size:24px;">&rarr;</div>
-          {% endunless %}
-        {% endfor %}
-      </div>
-      {% break %}
+      {% assign matching_chain = item %}
     {% endif %}
   {% endfor %}
-  {% if member.name | downcase == current_name %}
-    {% break %}
-  {% endif %}
 {% endfor %}
+
+{% if matching_chain %}
+  <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
+    {% for member in matching_chain.members %}
+      <div style="text-align:center;">
+        <img src="/assets/mini_sprites/{{ member.name | downcase }}_mini.png" alt="{{ member.name }}" style="image-rendering: pixelated; width:48px; height:48px;">
+        <div style="font-size:12px;">
+          {{ member.name }}{% if member.level %} (Lv {{ member.level }}){% endif %}
+        </div>
+      </div>
+      {% unless forloop.last %}
+        <div style="font-size:24px;">&rarr;</div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+{% endif %}
