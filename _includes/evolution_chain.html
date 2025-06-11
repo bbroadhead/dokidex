@@ -2,7 +2,11 @@
 <p style="color:red;">DEBUG: page.url = "{{ page.url }}"</p>
 <p style="color:red;">DEBUG: current_name = "{{ current_name }}"</p>
 
-{% assign current_name = page.name | downcase %}
+{% if page.name %}
+  {% assign current_name = page.name | downcase %}
+{% else %}
+  {% assign current_name = "" %}
+{% endif %}
 
 {% for item in site.data.evolution_chains %}
   {% assign matched = false %}
