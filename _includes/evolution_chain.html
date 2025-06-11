@@ -1,8 +1,8 @@
 {% assign current_name = page.name | downcase %}
-{% assign found_chain = false %}
+{% assign already_rendered = false %}
 
 {% for item in site.data.evolution_chains %}
-  {% if found_chain == false %}
+  {% if already_rendered == false %}
     {% assign match = false %}
     {% for member in item.members %}
       {% if member.name | downcase == current_name %}
@@ -11,17 +11,16 @@
     {% endfor %}
 
     {% if match %}
-      {% assign found_chain = true %}
       <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
-        {% for member in item.members %}
+        {% for m in item.members %}
           <div style="text-align:center;">
-            <a href="/dokimon/{{ member.name | downcase | replace: ' ', '-' }}">
-              <img src="/assets/images/mini_sprites/{{ member.name | downcase }}_mini.png"
-                   alt="{{ member.name }}"
+            <a href="/dokimon/{{ m.name | downcase | replace: ' ', '-' }}">
+              <img src="/assets/images/mini_sprites/{{ m.name | downcase }}_mini.png"
+                   alt="{{ m.name }}"
                    style="image-rendering: pixelated; width:48px; height:48px;">
             </a>
             <div style="font-size:12px;">
-              {{ member.name }}{% if member.level %} (Lv {{ member.level }}){% endif %}
+              {{ m.name }}{% if m.level %} (Lv {{ m.level }}){% endif %}
             </div>
           </div>
           {% unless forloop.last %}
@@ -29,6 +28,7 @@
           {% endunless %}
         {% endfor %}
       </div>
+      {% assign already_rendered = true %}
     {% endif %}
   {% endif %}
 {% endfor %}
