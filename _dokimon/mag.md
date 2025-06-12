@@ -20,4 +20,5 @@ base_stats:
 - 95
 - 85
 - 65
+evo_chain_include: mag_chain.html
 ---

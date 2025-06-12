@@ -19,4 +19,5 @@ base_stats:
 - 90
 - 57
 - 85
+evo_chain_include: yomeshi_chain.html
 ---

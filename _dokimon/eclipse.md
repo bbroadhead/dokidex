@@ -20,4 +20,5 @@ base_stats:
 - 90
 - 60
 - 90
+evo_chain_include: luna_chain.html
 ---

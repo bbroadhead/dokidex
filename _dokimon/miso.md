@@ -20,4 +20,5 @@ base_stats:
 - 105
 - 90
 - 45
+evo_chain_include: kugwyrm_chain.html
 ---

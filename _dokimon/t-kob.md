@@ -18,4 +18,5 @@ base_stats:
 - 80
 - 70
 - 20
+evo_chain_include: t-kob_chain.html
 ---

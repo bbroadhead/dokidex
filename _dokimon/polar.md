@@ -20,4 +20,5 @@ base_stats:
 - 35
 - 60
 - 80
+evo_chain_include: frostby_chain.html
 ---

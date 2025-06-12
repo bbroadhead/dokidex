@@ -20,4 +20,5 @@ base_stats:
 - 38
 - 68
 - 56
+evo_chain_include: toola_chain.html
 ---

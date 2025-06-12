@@ -19,4 +19,5 @@ base_stats:
 - 88
 - 91
 - 92
+evo_chain_include: hemling_chain.html
 ---

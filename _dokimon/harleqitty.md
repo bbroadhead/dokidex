@@ -20,4 +20,5 @@ base_stats:
 - 100
 - 92
 - 102
+evo_chain_include: jespurr_chain.html
 ---

@@ -20,4 +20,5 @@ base_stats:
 - 53
 - 22
 - 66
+evo_chain_include: flounder_chain.html
 ---

@@ -20,4 +20,5 @@ base_stats:
 - 75
 - 70
 - 85
+evo_chain_include: misma_chain.html
 ---

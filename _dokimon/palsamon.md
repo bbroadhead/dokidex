@@ -20,4 +20,5 @@ base_stats:
 - 75
 - 90
 - 75
+evo_chain_include: aoimon_chain.html
 ---

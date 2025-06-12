@@ -19,4 +19,5 @@ base_stats:
 - 42
 - 29
 - 30
+evo_chain_include: emboa_chain.html
 ---

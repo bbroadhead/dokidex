@@ -19,4 +19,5 @@ base_stats:
 - 80
 - 94
 - 133
+evo_chain_include: whispurr_chain.html
 ---

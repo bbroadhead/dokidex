@@ -21,4 +21,5 @@ base_stats:
 - 177
 - 110
 - 176
+evo_chain_include: gloombud_chain.html
 ---

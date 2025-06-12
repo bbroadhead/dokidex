@@ -19,4 +19,5 @@ base_stats:
 - 42
 - 61
 - 101
+evo_chain_include: furreal_chain.html
 ---

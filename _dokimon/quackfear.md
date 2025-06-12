@@ -20,4 +20,5 @@ base_stats:
 - 90
 - 58
 - 80
+evo_chain_include: quackfil_chain.html
 ---

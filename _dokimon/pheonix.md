@@ -20,4 +20,5 @@ base_stats:
 - 74
 - 52
 - 47
+evo_chain_include: pheonix_chain.html
 ---

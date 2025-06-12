@@ -20,4 +20,5 @@ base_stats:
 - 75
 - 50
 - 45
+evo_chain_include: dawn_chain.html
 ---

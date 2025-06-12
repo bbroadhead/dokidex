@@ -19,4 +19,5 @@ base_stats:
 - 75
 - 40
 - 40
+evo_chain_include: voltistrike_chain.html
 ---

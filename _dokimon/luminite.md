@@ -20,4 +20,5 @@ base_stats:
 - 75
 - 60
 - 45
+evo_chain_include: plasma_chain.html
 ---

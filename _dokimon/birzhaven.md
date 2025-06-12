@@ -20,4 +20,5 @@ base_stats:
 - 119
 - 93
 - 114
+evo_chain_include: moisen_chain.html
 ---

@@ -20,4 +20,5 @@ base_stats:
 - 67
 - 92
 - 92
+evo_chain_include: bulbapod_chain.html
 ---

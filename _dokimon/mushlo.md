@@ -19,4 +19,5 @@ base_stats:
 - 35
 - 40
 - 35
+evo_chain_include: mushlo_chain.html
 ---

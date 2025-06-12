@@ -19,4 +19,5 @@ base_stats:
 - 10
 - 73
 - 31
+evo_chain_include: loomleak_chain.html
 ---

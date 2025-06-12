@@ -19,4 +19,5 @@ base_stats:
 - 88
 - 53
 - 66
+evo_chain_include: tignis_chain.html
 ---

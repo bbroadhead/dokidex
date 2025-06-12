@@ -20,4 +20,5 @@ base_stats:
 - 70
 - 60
 - 90
+evo_chain_include: lunapet_chain.html
 ---

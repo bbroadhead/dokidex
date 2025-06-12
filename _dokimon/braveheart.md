@@ -20,4 +20,5 @@ base_stats:
 - 124
 - 64
 - 108
+evo_chain_include: burnsby_chain.html
 ---

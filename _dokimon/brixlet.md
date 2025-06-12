@@ -14,4 +14,5 @@ long_description: The undying loyalty of this Dokimon species makes them very po
   amongst youngsters as well as the elderly.
 short_description: Companion Dokimon
 base_stats: [40, 14, 43, 88, 64, 107]
+evo_chain_include: brixlet_chain.html
 ---

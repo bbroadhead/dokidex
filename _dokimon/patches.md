@@ -19,4 +19,5 @@ base_stats:
 - 56
 - 66
 - 48
+evo_chain_include: patches_chain.html
 ---

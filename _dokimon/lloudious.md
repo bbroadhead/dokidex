@@ -19,4 +19,5 @@ base_stats:
 - 78
 - 56
 - 49
+evo_chain_include: nimbis_chain.html
 ---

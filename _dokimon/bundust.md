@@ -19,4 +19,5 @@ base_stats:
 - 76
 - 69
 - 52
+evo_chain_include: bundust_chain.html
 ---

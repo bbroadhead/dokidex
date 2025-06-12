@@ -19,4 +19,5 @@ base_stats:
 - 35
 - 40
 - 50
+evo_chain_include: minx_chain.html
 ---

@@ -20,4 +20,5 @@ base_stats:
 - 55
 - 50
 - 45
+evo_chain_include: ariel_chain.html
 ---

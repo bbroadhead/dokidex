@@ -20,4 +20,5 @@ base_stats:
 - 95
 - 85
 - 85
+evo_chain_include: embud_chain.html
 ---

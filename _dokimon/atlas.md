@@ -19,4 +19,5 @@ base_stats:
 - 55
 - 50
 - 25
+evo_chain_include: atlas_chain.html
 ---

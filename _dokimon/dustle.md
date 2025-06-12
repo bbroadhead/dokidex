@@ -19,4 +19,5 @@ base_stats:
 - 25
 - 30
 - 65
+evo_chain_include: dustle_chain.html
 ---

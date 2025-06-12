@@ -19,4 +19,5 @@ base_stats:
 - 55
 - 55
 - 25
+evo_chain_include: sylfi_chain.html
 ---

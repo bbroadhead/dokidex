@@ -19,4 +19,5 @@ base_stats:
 - 75
 - 50
 - 45
+evo_chain_include: dartly_chain.html
 ---

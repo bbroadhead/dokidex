@@ -19,4 +19,5 @@ base_stats:
 - 35
 - 70
 - 95
+evo_chain_include: haracker_chain.html
 ---

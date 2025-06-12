@@ -19,4 +19,5 @@ base_stats:
 - 90
 - 70
 - 80
+evo_chain_include: soul_chain.html
 ---

@@ -20,4 +20,5 @@ base_stats:
 - 67
 - 54
 - 103
+evo_chain_include: woodsly_chain.html
 ---

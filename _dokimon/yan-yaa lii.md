@@ -18,4 +18,5 @@ base_stats:
 - 124
 - 64
 - 108
+evo_chain_include: lema_chain.html
 ---

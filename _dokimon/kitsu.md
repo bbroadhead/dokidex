@@ -19,4 +19,5 @@ base_stats:
 - 45
 - 40
 - 45
+evo_chain_include: kitsu_chain.html
 ---

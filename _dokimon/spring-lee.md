@@ -18,4 +18,5 @@ base_stats:
 - 67
 - 92
 - 92
+evo_chain_include: spud_chain.html
 ---

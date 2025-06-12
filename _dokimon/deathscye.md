@@ -20,4 +20,5 @@ base_stats:
 - 105
 - 82
 - 106
+evo_chain_include: casper_chain.html
 ---

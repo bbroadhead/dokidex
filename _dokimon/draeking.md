@@ -20,4 +20,5 @@ base_stats:
 - 85
 - 110
 - 95
+evo_chain_include: rex_chain.html
 ---

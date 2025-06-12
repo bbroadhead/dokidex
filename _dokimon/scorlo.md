@@ -19,4 +19,5 @@ base_stats:
 - 15
 - 40
 - 35
+evo_chain_include: scorlo_chain.html
 ---

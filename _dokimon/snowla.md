@@ -20,4 +20,5 @@ base_stats:
 - 54
 - 32
 - 47
+evo_chain_include: snowla_chain.html
 ---

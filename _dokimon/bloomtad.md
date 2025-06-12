@@ -20,4 +20,5 @@ base_stats:
 - 45
 - 40
 - 55
+evo_chain_include: bloomtad_chain.html
 ---

@@ -19,4 +19,5 @@ base_stats:
 - 24
 - 48
 - 62
+evo_chain_include: carrotti_chain.html
 ---

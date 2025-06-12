@@ -20,4 +20,5 @@ base_stats:
 - 125
 - 110
 - 140
+evo_chain_include: leea_chain.html
 ---

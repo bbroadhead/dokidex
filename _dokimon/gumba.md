@@ -20,4 +20,5 @@ base_stats:
 - 55
 - 70
 - 55
+evo_chain_include: toppa_chain.html
 ---

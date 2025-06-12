@@ -20,4 +20,5 @@ base_stats:
 - 42
 - 95
 - 68
+evo_chain_include: squibbly_chain.html
 ---

@@ -21,4 +21,5 @@ base_stats:
 - 115
 - 80
 - 108
+evo_chain_include: wattlet_chain.html
 ---

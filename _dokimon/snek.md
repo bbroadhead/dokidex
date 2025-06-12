@@ -19,4 +19,5 @@ base_stats:
 - 67
 - 34
 - 55
+evo_chain_include: snek_chain.html
 ---

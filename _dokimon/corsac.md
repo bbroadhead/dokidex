@@ -17,4 +17,5 @@ base_stats:
 - 97
 - 98
 - 95
+evo_chain_include: corsac_chain.html
 ---
