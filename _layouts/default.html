@@ -62,7 +62,9 @@
       <a href="/" class="back-to-dex">&larr; Return to Dex</a>
     </div>
     <div class="evolution-wrapper">
-    <!--  {% include evolution_chain.html %}  -->
+      {% if page.evo_chain_include %}
+        {% include evo_chains/{{ page.evo_chain_include }} %}
+      {% endif %}
     </div>
   </div>
   <div class="monster-upper">
