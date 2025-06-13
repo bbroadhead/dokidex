@@ -63,63 +63,63 @@
     </div>
     <div class="evolution-wrapper">
       {% if page.evo_chain_include %}
-        {% include evo_chains/{{ page.evo_chain_include }} %}
-      {% endif %}
-    </div>
-  </div>
-  <div class="monster-upper">
-    <div class="stats-side">
-      <canvas id="statRadarChart" width="240" height="240"></canvas>
-      <table class="monster-stats">
-        <tr>
-          <th class="hp">HP</th>
-          <th class="atk">ATK</th>
-          <th class="def">DEF</th>
-          <th class="matk">M.ATK</th>
-          <th class="mdef">M.DEF</th>
-          <th class="spd">SPD</th>
-        </tr>
-        <tr>
-          <td>{{ page.base_stats[0] }}</td>
-          <td>{{ page.base_stats[1] }}</td>
-          <td>{{ page.base_stats[2] }}</td>
-          <td>{{ page.base_stats[3] }}</td>
-          <td>{{ page.base_stats[4] }}</td>
-          <td>{{ page.base_stats[5] }}</td>
-        </tr>
-      </table>
-    </div>
-
-{% assign raw_type = mon.type | default: '' %}
-{% assign type_array = raw_type | downcase | split: ',' | map: 'strip' %}
-{% assign type1 = type_array[0] %}
-{% assign type2 = type_array[1] %}
-{% assign type_class = '' %}
-
-{% if type1 != blank and type2 != blank and type2 != 'nan' %}
-  {% assign types_sorted = type_array | sort %}
-  {% assign type_class = 'border-' | append: types_sorted[0] | append: '-' | append: types_sorted[1] %}
-{% elsif type1 != blank and type1 != 'nan' %}
-  {% assign type_class = 'border-' | append: type1 %}
+  {% include evo_chains/{{ page.evo_chain_include }} %}
 {% endif %}
-
-<div class="monster-image-container">
-  <div class="glow-wrapper {{ type_class }}">
-    <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
-  </div>
-</div>
-
-    <div class="monster-info">
-      <h1>{{ page.name }} <span class="dex-number">#{{ page.number }}</span></h1>
-      <p><strong>Stage:</strong> {{ page.stage }}</p>
-      <p><strong>Evolution Level:</strong> {{ page.evolves_at | default: "None" }}</p>
-      <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
-      <p><strong>Location:</strong> {{ page.location }}</p>
-      <p><strong>Classification:</strong> {{ page.short_description }}</p>
-      <p><strong>Lore:</strong> {{ page.long_description }}</p>
     </div>
   </div>
+  
+ <div class="monster-layout-row">
+  <div class="forms-wrapper">
+    <div class="forms-container">
+      <div class="forms-label">RARE FORMS</div>
+      <div class="forms-images">
+        {% assign folder_name = page.number | append: "_" | append: page.name %}
+        {% for i in (2..10) %}
+          <img src="/assets/images/forms/{{ folder_name }}/{{ page.name }}_{{ i }}.png" alt="{{ page.name }} Form {{ i }}">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="monster-image-container">
+    <div class="glow-wrapper {{ type_class }}">
+      <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
+    </div>
+  </div>
+
+  <div class="monster-info">
+    <h1>{{ page.name }} <span class="dex-number">#{{ page.number }}</span></h1>
+    <p><strong>Stage:</strong> {{ page.stage }}</p>
+    <p><strong>Evolution Level:</strong> {{ page.evolves_at | default: "None" }}</p>
+    <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
+    <p><strong>Location:</strong> {{ page.location }}</p>
+    <p><strong>Classification:</strong> {{ page.short_description }}</p>
+    <p><strong>Lore:</strong> {{ page.long_description }}</p>
+  </div>
+
+  <div class="stats-side">
+    <canvas id="statRadarChart" width="240" height="240"></canvas>
+    <table class="monster-stats">
+      <tr>
+        <th class="hp">HP</th>
+        <th class="atk">ATK</th>
+        <th class="def">DEF</th>
+        <th class="matk">M.ATK</th>
+        <th class="mdef">M.DEF</th>
+        <th class="spd">SPD</th>
+      </tr>
+      <tr>
+        <td>{{ page.base_stats[0] }}</td>
+        <td>{{ page.base_stats[1] }}</td>
+        <td>{{ page.base_stats[2] }}</td>
+        <td>{{ page.base_stats[3] }}</td>
+        <td>{{ page.base_stats[4] }}</td>
+        <td>{{ page.base_stats[5] }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
+
 
   {% else %}
     {{ content }}
@@ -170,6 +170,7 @@
 {% endif %}
 -->
 </main>
+
   <!-- Prevent Right Click on Images -->
   <script>
     document.addEventListener('contextmenu', event => {
