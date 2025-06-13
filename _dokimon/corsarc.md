@@ -1,13 +1,13 @@
 ---
 number: 63
-name: Corsac
+name: Corsarc
 lang_names: []
 stage: 1
 evolves_at: null
 type:
 - Electric
 location: 
-image: /assets/images/corsac.png
+image: /assets/images/corsarc.png
 description: ''
 long_description: ''
 base_stats:
@@ -17,5 +17,5 @@ base_stats:
 - 97
 - 98
 - 95
-evo_chain_include: corsac_chain.html
+evo_chain_include: corsarc_chain.html
 ---
