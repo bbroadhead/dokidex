@@ -2034,23 +2034,6 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   --forms-border-color: #cccccc;
 }
 
-@media screen and (max-width: 768px) {
-  .stats-and-forms {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .forms-wrapper {
-    order: 2;
-    margin-top: 2rem;
-  }
-
-  .stats-side {
-    order: 1;
-  }
-}
-
-
 /*
 .mini-map-container {
   margin-top: 2rem;
@@ -2084,26 +2067,38 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   25%, 75% { opacity: 0; }
 }
 */
+
+/* Default layout for large screens */
+.monster-layout-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+}
+
 /* Mobile layout */
 @media (max-width: 768px) {
-  .monster-upper {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "image"
-      "info"
-      "stats";
-  }
-@media (min-width: 769px) {
-  .monster-upper {
+  .monster-layout-row {
+    flex-direction: column;
     align-items: center;
   }
-}
+
   .monster-image-container,
   .monster-info,
-  .stats-side {
+  .stats-side,
+  .forms-wrapper {
     width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  .forms-wrapper {
+	  order: 99;
   }
 }
+
+
+/* Dark mode definitions */
 
 body.dark-mode {
   --bg-color: #121212;
