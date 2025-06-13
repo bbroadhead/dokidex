@@ -6,10 +6,11 @@ stage: 1
 evolves_at: null
 type:
 - Electric
-location: 
+location: ''
 image: /assets/images/corsarc.png
 description: ''
-long_description: ''
+long_description: It can sense if a fire breaks out. When this happens, it will warn other Dokimon and guide them to safety.
+short_description: Wolf Fox Dokimon
 base_stats:
 - 90
 - 97
