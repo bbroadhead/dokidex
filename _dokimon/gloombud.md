@@ -6,7 +6,6 @@ stage: 1
 evolves_at: 16
 type:
 - Dark
-- Fairy
 location: Gad'riel Peak, Gad'riel's Domain, Wicked Woods
 image: /assets/images/gloombud.png
 description: ''
