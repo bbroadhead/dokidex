@@ -411,6 +411,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const lockButton = document.getElementById("lockImageBtn");
   const resetButton = document.getElementById("resetToDefaultBtn");
 
+  if (!mainImage || !lockButton || !resetButton) {
+    return;
+  }
+
   const monsterName = mainImage?.dataset?.name;
   const defaultImage = mainImage?.dataset?.default;
   const localStorageKey = `dokimon_locked_image_${monsterName}`;
