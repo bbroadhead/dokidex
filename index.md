@@ -8,12 +8,35 @@ title: "Dokimon: Quest - Wiki"
 <div class="filter-controls">
   <!-- Group: Stage -->
   <div class="filter-block">
+<label for="formFilter">Palettes:</label>
+<select id="formFilter" style="margin-right: 1rem;">
+  <option value="common">Common</option>
+  <option value="2">Rare Form 1</option>
+  <option value="3">Rare Form 2</option>
+  <option value="4">Rare Form 3</option>
+  <option value="5">Rare Form 4</option>
+  <option value="6">Rare Form 5</option>
+  <option value="7">Rare Form 6</option>
+  <option value="8">Rare Form 7</option>
+  <option value="9">Bound</option>
+  <option value="10">Unique</option>
+</select>
+</div>
+
+  <!-- Vertical Separator -->
+  <div class="separator"></div>
+
+  <div class="filter-block">
+  
     <label for="stage-filter">Stage:</label>
     <select id="stage-filter">
       <option value="">All</option>
       <option value="1">Stage 1</option>
       <option value="2">Stage 2</option>
       <option value="3">Stage 3</option>
+	  <option value="4">Stage 4</option>
+	  <option value="5">Stage 5</option>
+	  <option value="6">Stage 6</option>
     </select>
   </div>
 
@@ -74,12 +97,13 @@ title: "Dokimon: Quest - Wiki"
 
       <div class="dex-entry"
            data-name="{{ mon.name | downcase | default: '' }}"
+		   data-number="{{ mon.number | default: '' }}"
            data-location="{{ mon.location | downcase | default: '' }}"
            data-stage="{{ mon.stage | default: '' }}"
            data-type="{% if mon.type %}{{ mon.type | default: '' | join: ' ' }}{% else %}none{% endif %}">
         <a href="{{ mon.url }}">
           <div class="img-wrapper {{ type_class }}">
-            <img src="{{ mon.image }}" alt="{{ mon.name }}" class="monster-image small">
+            <img src="{{ mon.image }}" alt="{{ mon.name }}" class="monster-image small" data-default="{{ mon.image }}">
             <div class="img-blocker"></div>
           </div>
           <div>#{{ mon.number }} - {{ mon.name }}</div>
@@ -149,4 +173,25 @@ function filterDex() {
 filterToggle.addEventListener('click', () => {
   filterControls.classList.toggle('collapsed');
 });
+
+document.getElementById("formFilter").addEventListener("change", function () {
+  const selectedForm = this.value;
+
+  document.querySelectorAll(".dex-entry").forEach(entry => {
+    const name = entry.dataset.name;
+	const number = entry.dataset.number;
+    const img = entry.querySelector("img.monster-image");
+
+    if (!img || !name) return;
+	
+	const folderName = `${number}_${name}`;
+
+    if (selectedForm === "common") {
+      img.src = img.dataset.default;
+    } else {
+      img.src = `/assets/images/forms/${folderName}/${name}_${selectedForm}.png`;
+    }
+  });
+});
+
 </script>
