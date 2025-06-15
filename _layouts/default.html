@@ -33,7 +33,8 @@
       </div>
       <div class="nav-center">
         <div class="search-and-toggle">
-          <input type="text" placeholder="Search..." class="search-bar">
+		  <span style="color: white; margin-right: 8px;">Dark/Light Mode:</span>
+          <!--<input type="text" placeholder="Search..." class="search-bar">-->
           <div class="theme-switch-wrapper">
             <label class="theme-switch" for="dark-mode-toggle">
               <input type="checkbox" id="dark-mode-toggle" />
@@ -101,6 +102,10 @@
 
 <!-- RARE FORMS (2–8) -->
 <div class="forms-wrapper">
+<div class="forms-instructions style="text-align: center;">
+  Rare encounter rate: 1/777<br>
+</div>
+
 <div class="forms-container">
   <div class="forms-label">RARE FORMS</div>
   <div class="forms-images">
@@ -130,11 +135,24 @@
     </div>
   </div>
 </div>
+<div class="forms-instructions style="text-align: center;">
+  Click an image to set as Dokimon image
+</div>
 </div>
 
   <div class="monster-image-container">
     <div class="glow-wrapper {{ type_class }}">
-      <img src="{{ page.image }}" alt="{{ page.name }} image" class="monster-image">
+      <img id="main-monster-image"
+     src="{{ page.image }}"
+     alt="{{ page.name }} image"
+     class="monster-image"
+     data-name="{{ page.name | downcase }}"
+     data-default="{{ page.image }}">
+<div class="lock-reset-controls">
+  <button id="lockImageBtn" class="lock-button" aria-pressed="false" title="Lock selected alt. palette">🔓</button>
+  <span class="lock-label">Lock selected alt. palette</span>
+  <button id="resetToDefaultBtn">Default</button>
+</div>
     </div>
   </div>
 
@@ -385,8 +403,66 @@ document.querySelectorAll('.nav-arrow').forEach(link => {
     }, 300);
   });
 });
-
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const mainImage = document.getElementById("main-monster-image");
+  const altImages = document.querySelectorAll(".forms-images img");
+  const lockButton = document.getElementById("lockImageBtn");
+  const resetButton = document.getElementById("resetToDefaultBtn");
 
+  const monsterName = mainImage?.dataset?.name;
+  const defaultImage = mainImage?.dataset?.default;
+  const localStorageKey = `dokimon_locked_image_${monsterName}`;
+  const lockStateKey = `dokimon_lock_state_${monsterName}`;
+
+  function updateLockVisualState(isLocked) {
+    lockButton.textContent = isLocked ? '🔒' : '🔓';
+    lockButton.setAttribute('aria-pressed', isLocked);
+  }
+
+  // Load from localStorage on page load
+  const savedImage = localStorage.getItem(localStorageKey);
+  const savedLockState = localStorage.getItem(lockStateKey) === 'true';
+
+  if (savedImage) {
+    mainImage.src = savedImage;
+  }
+
+  updateLockVisualState(savedLockState);
+
+  // Click rare form images
+  altImages.forEach(img => {
+    img.addEventListener("click", () => {
+      const isLocked = lockButton.getAttribute('aria-pressed') === 'true';
+      if (isLocked) return;
+      mainImage.src = img.src;
+    });
+  });
+
+  // Toggle lock button
+  lockButton.addEventListener("click", () => {
+    const isLocked = lockButton.getAttribute('aria-pressed') === 'true';
+    const newLocked = !isLocked;
+
+    updateLockVisualState(newLocked);
+    localStorage.setItem(lockStateKey, newLocked);
+
+    if (newLocked) {
+      localStorage.setItem(localStorageKey, mainImage.src);
+    } else {
+      localStorage.removeItem(localStorageKey);
+    }
+  });
+
+  // Default reset
+  resetButton.addEventListener("click", () => {
+    mainImage.src = defaultImage;
+    localStorage.removeItem(localStorageKey);
+    localStorage.setItem(lockStateKey, false);
+    updateLockVisualState(false);
+  });
+});
+</script>
 </body>
 </html>
