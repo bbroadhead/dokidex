@@ -98,7 +98,7 @@
   
  <div class="monster-layout-row">
 
-{% assign folder_name = page.number | append: "_" | append: page.name %}
+{% assign folder_name = page.number | append: "_" | append: page.name | downcase %}
 
 <!-- RARE FORMS (2–8) -->
 <div class="forms-wrapper">
@@ -109,9 +109,9 @@
 <div class="forms-container">
   <div class="forms-label">RARE FORMS</div>
   <div class="forms-images">
-    {% assign folder_name = page.number | append: "_" | append: page.name %}
+    {% assign folder_name = page.number | append: "_" | append: page.name | downcase %}
     {% for i in (2..8) %}
-      <img src="/assets/images/forms/{{ folder_name }}/{{ page.name }}_{{ i }}.png" alt="{{ page.name }} Form {{ i }}">
+      <img src="/assets/images/forms/{{ folder_name }}/{{ page.name | downcase }}_{{ i }}.png" alt="{{ page.name }} Form {{ i }}">
     {% endfor %}
   </div>
 
@@ -121,7 +121,7 @@
     <div class="forms-box">
       <div class="forms-label">BOUND</div>
       <div class="forms-images">
-        <img src="/assets/images/forms/{{ folder_name }}/{{ page.name }}_9.png" alt="{{ page.name }} Bound Form">
+        <img src="/assets/images/forms/{{ folder_name }}/{{ page.name | downcase }}_9.png" alt="{{ page.name }} Bound Form">
       </div>
     </div>
 
@@ -130,7 +130,7 @@
     <div class="forms-box">
       <div class="forms-label">UNIQUE</div>
       <div class="forms-images">
-        <img src="/assets/images/forms/{{ folder_name }}/{{ page.name }}_10.png" alt="{{ page.name }} Unique Form">
+        <img src="/assets/images/forms/{{ folder_name }}/{{ page.name | downcase }}_10.png" alt="{{ page.name }} Unique Form">
       </div>
     </div>
   </div>
