@@ -7,7 +7,6 @@ evolves_at: 15
 type:
 - Grass
 location: 
-  (🌿)
 image: /assets/images/spud.png
 description: ''
 long_description: Spud Dokimon often spend most of their lives in hiding, but you

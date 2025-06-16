@@ -6,6 +6,7 @@ stage: 2
 evolves_at: null
 type:
 - Ghost
+- Poison
 location: Gad'riel Mountain, Route 05, Route 06
 image: /assets/images/toxorb.png
 description: ''

@@ -6,6 +6,7 @@ stage: 1
 evolves_at: 18
 type:
 - Ghost
+- Electric
 location: ???, Gad'riel Mountain, Mysterious Cave, Wicked Woods
 image: /assets/images/voltistrike.png
 description: ''

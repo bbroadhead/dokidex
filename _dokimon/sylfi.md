@@ -6,6 +6,7 @@ stage: 1
 evolves_at: 20
 type:
 - Grass
+- Flying
 location: Darkshawl Peak, Yugo Caves
 image: /assets/images/sylfi.png
 description: ''

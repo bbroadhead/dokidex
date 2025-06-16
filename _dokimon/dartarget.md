@@ -6,6 +6,7 @@ stage: 2
 evolves_at: null
 type:
 - Dark
+- Ghost
 location: 
 image: /assets/images/dartarget.png
 description: ''

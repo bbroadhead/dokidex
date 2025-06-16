@@ -6,6 +6,7 @@ stage: 1
 evolves_at: 20
 type:
 - Dragon
+- Water
 location: Pirate Ship, Rocky Ridge, Route 03
 image: /assets/images/atlas.png
 description: ''

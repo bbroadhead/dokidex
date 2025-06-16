@@ -5,7 +5,7 @@ lang_names: []
 stage: 3
 evolves_at: 20
 type:
-- Water
+- Ice
 location: Route 04
 image: /assets/images/glaceia.png
 description: ''

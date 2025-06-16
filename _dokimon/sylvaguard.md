@@ -6,6 +6,7 @@ stage: 2
 evolves_at: null
 type:
 - Grass
+- Flying
 location: 
 image: /assets/images/sylvaguard.png
 description: ''

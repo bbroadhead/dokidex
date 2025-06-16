@@ -6,6 +6,7 @@ stage: 2
 evolves_at: null
 type:
 - Fire
+- Flying
 location: Gad'riel Mountain, Route 15
 image: /assets/images/knyfagon.png
 description: ''
