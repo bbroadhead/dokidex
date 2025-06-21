@@ -21,7 +21,7 @@
         <a href="/" class="nav-button tracker-link">Dex</a>
         <a href="/world" class="nav-button tracker-link">World</a>
         <div class="dropdown">
-          <button class="nav-button" style="margin-right: 0.7rem;">Links ▾</button>
+          <button class="nav-button">Links ▾</button>
           <div class="dropdown-content">
             <a href="https://www.yanakorpgs.com/" target="_blank">Yanako RPGs</a>
             <a href="https://store.steampowered.com/app/2019300/Dokimon_Quest/" target="_blank">Dokimon: Quest</a>
