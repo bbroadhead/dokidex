@@ -2,6 +2,7 @@
 layout: default
 title: "Dokimon: Quest - Wiki"
 ---
+{% include type_chart_ui.html %}
 
 <button id="filter-toggle">Toggle Filters</button>
 

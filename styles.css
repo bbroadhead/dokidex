@@ -38,7 +38,9 @@
 .search-and-toggle {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
+  width: 100%;
 }
 
 .theme-switch {
@@ -169,7 +171,9 @@ input:checked + .slider::after {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  line-height: 1.4;
   margin: 0;
   background: #fafafa url("https://www.transparenttextures.com/patterns/white-wall-3.png");
   background-color: var(--bg-color);
@@ -197,8 +201,8 @@ body {
 }
 
 .site-nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   background: #336699;
   color: white;
@@ -218,7 +222,6 @@ body {
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
   border-radius: 0.3rem;
   cursor: pointer;
   text-decoration: none;
@@ -228,12 +231,28 @@ body {
 .nav-button {
   color: white;
   cursor: pointer;
+  font-size: 20px;
   padding: 0.6rem 1rem;
   line-height: 1.4;
   display: inline-block;
   font-weight: 700;
   font-family: inherit;
   vertical-align: middle;
+}
+
+.nav-left, .nav-right {
+  flex-shrink: 0;
+}
+
+.nav-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-center .search-and-toggle {
+  margin-left: -180px;
 }
 
 .dropdown {
@@ -245,7 +264,6 @@ body {
   background: none;
   border: none;
   color: white;
-  font-size: 1rem;
   cursor: pointer;
   padding: 0;
   text-decoration: underline;
@@ -258,7 +276,7 @@ body {
   padding: 0;
   left: 0;
   background-color: #336699;
-  min-width: 220px;
+  min-width: 230px;
   box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
   z-index: 1000;
   border-radius: 0.5rem;
@@ -379,6 +397,7 @@ main {
 
 #clear-filters {
   padding: 5px 10px;
+  margin-top: 1.5rem;
   background: #d9534f;
   color: white;
   border: none;
@@ -449,6 +468,7 @@ body.dark-mode {
 #filter-toggle {
   padding: 5px 10px;
   margin: 10px auto;
+  margin-bottom: 0;
   display: block;
   background: #888;
   color: #fff;
@@ -538,7 +558,7 @@ body.dark .dex-entry[data-type*="ice"] { background-color: #2b434b; }
 body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
 
 .dex-number {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #666;
   margin-left: 0.5rem;
 }
@@ -557,7 +577,9 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   background-color: #f8f9fa;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'VT323', monospace;
+  font-size: 19px;
+  line-height: 1.0;
   color: #212529;
   margin-top: 0.25rem;
   padding-top: 0.25rem;
@@ -627,6 +649,10 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   justify-content: center;
 }
 
+.evolution-wrapper, .evolution-wrapper * {
+  font-size: 1rem !important;
+}
+
 .back-to-dex {
   display: inline-block;
   font-weight: bold;
@@ -675,7 +701,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   width: 16.66%; /* Forces equal width for 6 columns */
   padding: 0.3rem;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   border: 1px solid #dee2e6;
 }
 
@@ -704,12 +730,23 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   flex: 1;
 }
 
-.monster-upper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+.type-icon {
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.top-right-chart-wrapper {
+  position: absolute;
+  top: 80px; /* adjust as needed */
+  right: 0;
+  z-index: 9999;
+}
+
+/* Override fixed positioning when inside this wrapper */
+.top-right-chart-wrapper .type-effect-tool {
+  position: relative;
+  transform: none;
+  left: auto;
 }
 
 .monster-upper {
@@ -1915,6 +1952,9 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   cursor: pointer;
   transition: all 0.15s ease-in-out;
   margin: 0.2rem;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .type-btn:hover {
@@ -1960,6 +2000,8 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .type-block {
@@ -1971,6 +2013,8 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .filter-group {
@@ -2305,6 +2349,74 @@ body.fade-in {
   }
 }
 
+/* Base style for all nav-left items */
+.nav-left a,
+.nav-left .nav-button,
+.nav-left .dropdown > button {
+  display: inline-block;
+  background-color: #4477aa;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 0.1rem;
+  margin-left: 0.1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.nav-button.tracker-link {
+	display: inline-block;
+}
+
+/* Hover effect */
+.nav-left a:hover,
+.nav-left .nav-button:hover,
+.nav-left .dropdown > button:hover {
+  background-color: #5599cc;
+}
+
+/* Fix dropdown layout */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #4477aa;
+  padding: 0.5rem;
+  border-radius: 6px;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.4rem 1rem;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dropdown-content a:hover {
+  background-color: #5599cc;
+}
+
+
 /* Dark mode definitions */
 
 body.dark-mode {
@@ -2414,7 +2526,9 @@ body.dark-mode .monster-image-container {
   background-color: transparent !important;
   border-radius: 0 !important;
 }
-
+body.dark-mode .nav-button:hover {
+  background-color: #1e1e1e;
+}
 .tab-container {
   margin-top: 1rem;
 }
@@ -2456,4 +2570,32 @@ body.dark-mode .tab-button.active {
 
 .tab-content.active {
   display: block;
+}
+
+/* Dark mode nav buttons */
+body.dark-mode .nav-left a,
+body.dark-mode .nav-left .nav-button,
+body.dark-mode .nav-left .dropdown > button {
+  background-color: #222;
+  color: #eee;
+}
+
+body.dark-mode .nav-left a:hover,
+body.dark-mode .nav-left .nav-button:hover,
+body.dark-mode .nav-left .dropdown > button:hover {
+  background-color: #444;
+}
+
+/* Dark mode dropdown */
+body.dark-mode .dropdown-content {
+  background-color: #222;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .dropdown-content a {
+  color: #eee;
+}
+
+body.dark-mode .dropdown-content a:hover {
+  background-color: #444;
 }

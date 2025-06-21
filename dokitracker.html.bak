@@ -1,0 +1,357 @@
+---
+layout: default
+title: DokiTracker
+permalink: /dokitracker/
+scripts:
+  - /assets/js/mondex_data.js
+  - /assets/js/dokitracker.js
+  - /assets/js/dokitracker_settings.js
+---
+<div class="tracker-layout">
+  <div class="tracker-sidebar">
+  <div class="dokitracker-logo">
+    <img src="/assets/images/dokitracker_transparent.png" alt="DokiTracker Logo">
+  </div>
+    <div class="tracker-summary-box">
+    <p><strong>Dokimon caught:</strong> <span id="caught-count">0</span> <strong>/ 144</strong></p>
+    <p><strong>Rare forms caught:</strong> <span id="rare-count">0</span></p>
+  </div>
+  </div>
+  
+  <div class="tracker-main">
+  <table class="tracker-table">
+    <thead>
+      <tr>
+	    <th>Dex</th>
+        <th>Image</th>
+        <th>Name<br>
+		<span style="font-size: 0.75em; color: #888;">(click to open panel)</span>
+		</th>
+        <th>Caught?</th>
+		<th>Rare Forms<br>
+		<span style="font-size: 0.75em; color: #888;">(double-click to remove)</span>
+		</th>
+      </tr>
+    </thead>
+    <tbody id="tracker-table-body"></tbody>
+  </table>
+</div>
+<div class="tracker-settings-box data-box">
+  <h2 class="settings-title">
+  <span class="icon">⚙️</span> Settings
+</h2>
+  <button id="mark-all-caught">Mark all as caught</button>
+  <button id="remove-all-caught">Remove all as caught</button>
+  <button id="remove-all-rares">Remove all rare forms</button>
+  <button id="export-csv">Export as CSV</button>
+  <hr class="settings-separator">
+  <button id="filter-caught">Filter out caught Dokimon</button>
+  <button id="restore-filtered" disabled>Restore filtered Dokimon</button>
+</div>
+<div id="monster-profile-panel" class="profile-panel hidden">
+  <iframe id="monster-profile-frame" src="" frameborder="0"></iframe>
+  <button id="close-profile-panel" class="close-button">✖</button>
+</div>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+.tracker-layout {
+  position: relative;
+  display: block;
+  gap: 2rem; /* spacing between sidebar and table */
+  margin: 2rem auto;
+  flex-wrap: wrap; /* optional: wrap on small screens */
+}
+.tracker-sidebar {
+  position: fixed;
+  left: calc(50% - 670px);
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.dokitracker-logo {
+  text-align: center;
+}
+.dokitracker-logo img {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  margin-bottom: 1rem;
+}
+.tracker-table td img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+.tracker-summary-box {
+  margin-left: 1rem;
+  border: 2px solid #888;
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--panel-bg, #f5f5f5);
+}
+body.dark-mode .tracker-summary-box {
+    background: #1e1e1e;
+    color: #f0f0f0;
+    border-color: #444;
+  }
+.tracker-table {
+  width: auto;
+  border-collapse: collapse;
+  table-layout: auto;
+  margin-top: 1rem;
+}
+.tracker-table th,
+.tracker-table td {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  white-space: nowrap; /* prevents wrapping */
+}
+.rare-images img {
+  margin-right: 0.25rem;
+  cursor: pointer;
+}
+.image-dropdown img:hover {
+  outline: 2px solid #444;
+  border-radius: 4px;
+}
+.image-dropdown-wrapper button {
+  font-family: 'Press Start 2P', monospace; /* Or your pixel font */
+  font-size: 0.5rem;
+  image-rendering: pixelated;
+}
+.tracker-main {
+  width: fit-content;
+  margin: 0 auto; /* center horizontally */
+}
+.tracker-settings-box {
+  position: fixed;
+  right: calc(50% - 660px); /* adjust to mirror the sidebar */
+  top: 17rem; /* stay below navbar */
+  width: 200px;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  border: 2px solid #888;
+  border-radius: 12px;
+  background: var(--panel-bg, #f5f5f5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 5;
+}
+
+.tracker-settings-box button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 6px 8px;
+  border: 1px solid #999;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark-mode .tracker-settings-box {
+  background: #1e1e1e;
+  color: #f0f0f0;
+  border-color: #444;
+}
+
+body.dark-mode .tracker-settings-box button {
+  background-color: #2a2a2a;
+  color: #eee;
+  border-color: #666;
+}
+.profile-panel {
+  position: fixed;
+  top: 0;
+  right: -33.3333%; /* hidden by default */
+  width: 33.3333%;
+  height: 100%;
+  background: var(--box-background, #fff);
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: right 0.4s ease-in-out;
+  border-left: 2px solid #888;
+}
+
+.profile-panel iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-panel.visible {
+  right: 0;
+}
+
+.profile-panel.hidden {
+  right: -33.3333%;
+}
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1000;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+}
+.clickable-name {
+  cursor: pointer;
+  color: #3399ff;
+  text-decoration: underline;
+}
+
+.clickable-name:hover {
+  color: #66ccff;
+}
+.settings-separator {
+  border: 0;
+  border-top: 2px dashed #888;
+  margin: 1rem 0;
+}
+/* General disabled button style */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Fix for dark mode so disabled still looks greyed out */
+.dark-mode button:disabled {
+  opacity: 0.4;
+  color: #888;
+  background-color: #222;
+  border-color: #444;
+}
+.settings-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0.5rem 0 1rem 0;
+  color: white;
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #444;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* <-- keeps icon and text aligned vertically */
+  gap: 0.5rem;
+  line-height: 1.2;
+}
+
+.settings-title .icon {
+  position: relative;
+  top: -3px; /* Try values like 1px or -1px if needed */
+}
+
+.tracker-table th,
+.tracker-table td {
+  border: 2px solid #999;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background-color: white;
+  color: black;
+
+  /* Metallic border illusion */
+  box-shadow:
+    inset 0 0 2px #bbb,       /* subtle bevel */
+    0 1px 0 #fff,              /* top highlight */
+    0 -1px 0 #aaa,             /* bottom shadow */
+    1px 0 0 #ccc,              /* right light edge */
+    -1px 0 0 #888;             /* left darker edge */
+}
+
+/* Optional: metallic border on the full table */
+.tracker-table {
+  border: 3px solid #aaa;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.tracker-table th,
+.tracker-table td {
+  border: 2px solid #999;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background-color: white;
+  color: black;
+
+  /* Metallic border illusion */
+  box-shadow:
+    inset 0 0 2px #bbb,       /* subtle bevel */
+    0 1px 0 #fff,              /* top highlight */
+    0 -1px 0 #aaa,             /* bottom shadow */
+    1px 0 0 #ccc,              /* right light edge */
+    -1px 0 0 #888;             /* left darker edge */
+}
+
+/* Optional: metallic border on the full table */
+.tracker-table {
+  border: 3px solid #aaa;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+body.dark-mode .tracker-table th,
+body.dark-mode .tracker-table td {
+  background-color: #1c1c1c;
+  color: #eee;
+  border: 2px solid #555;
+  box-shadow:
+    inset 0 0 2px #333,
+    0 1px 0 #666,
+    0 -1px 0 #111,
+    1px 0 0 #444,
+    -1px 0 0 #222;
+}
+
+body.dark-mode .tracker-table {
+  border-color: #666;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+.tracker-table {
+  border: 6px solid #aaa;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow:
+    0 0 0 4px #666,               /* dark outer ring */
+    0 0 0 8px #ccc,               /* light outer ring */
+    inset 0 0 10px rgba(0,0,0,0.2); /* inner shine */
+}
+body.dark-mode .tracker-table {
+  background-color: #1a1a1a;
+  border-color: #555;
+  box-shadow:
+    0 0 0 4px #333,
+    0 0 0 8px #666,
+    inset 0 0 10px rgba(255,255,255,0.05);
+}
+@keyframes shine {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+.tracker-table {
+  background-image: linear-gradient(
+    110deg,
+    rgba(255,255,255,0.1) 0%,
+    rgba(255,255,255,0.3) 40%,
+    rgba(255,255,255,0.1) 80%
+  );
+  background-size: 200% 100%;
+  animation: shine 2s linear infinite;
+}
+
+
+@media (max-width: 768px) {
+  .tracker-layout .tracker-main {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>

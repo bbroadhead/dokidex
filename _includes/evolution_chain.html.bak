@@ -1,0 +1,32 @@
+{% assign current_name = page.name | downcase %}
+{% capture chain_html %}{% endcapture %}
+
+{% for chain in site.data.evolution_chains %}
+  {% for member in chain.members %}
+    {% if member.name | downcase == current_name %}
+      {% capture chain_html %}
+        <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
+          {% for mon in chain.members %}
+            <div style="text-align:center;">
+              <a href="/dokimon/{{ mon.name | downcase | replace: ' ', '-' }}">
+                <img src="/assets/images/mini_sprites/{{ mon.name | downcase }}_mini.png"
+                     alt="{{ mon.name }}"
+                     style="image-rendering: pixelated; width:48px; height:48px;">
+              </a>
+              <div style="font-size:16px;">
+                {{ mon.name }}{% if mon.level %} (Lv {{ mon.level }}){% endif %}
+              </div>
+            </div>
+            {% unless forloop.last %}
+              <div style="font-size:24px;">&rarr;</div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      {% endcapture %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if chain_html != "" %}{% break %}{% endif %}
+{% endfor %}
+
+{{ chain_html }}

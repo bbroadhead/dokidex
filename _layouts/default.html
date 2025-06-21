@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
@@ -17,8 +18,8 @@
     
     <nav class="site-nav">
       <div class="nav-left">
-        <a href="/">Dex</a>
-        <a href="/world">World</a>
+        <a href="/" class="nav-button tracker-link">Dex</a>
+        <a href="/world" class="nav-button tracker-link">World</a>
         <div class="dropdown">
           <button class="nav-button">Links ▾</button>
           <div class="dropdown-content">
@@ -30,6 +31,7 @@
             <a href="https://steamcommunity.com/id/knightexcalibur/" target="_blank">KnightExcalibur (Dokidex developer)</a>
           </div>
         </div>
+		<a href="/dokitracker" class="nav-button tracker-link">DokiTracker</a>
       </div>
       <div class="nav-center">
         <div class="search-and-toggle">
@@ -160,7 +162,11 @@
     <h1>{{ page.name }} <span class="dex-number">#{{ page.number }}</span></h1>
     <p><strong>Stage:</strong> {{ page.stage }}</p>
     <p><strong>Evolution Level:</strong> {{ page.evolves_at | default: "None" }}</p>
-    <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
+    <p><strong>Type:</strong>
+  {% for t in page.type %}
+    <img src="/assets/images/type_icons/{{ t | downcase }}.png" alt="{{ t }}" title="{{ t }}" class="type-icon">
+  {% endfor %}
+</p>
     <p><strong>Location:</strong> {{ page.location }}</p>
     <p><strong>Classification:</strong> {{ page.short_description }}</p>
     <p><strong>Lore:</strong> {{ page.long_description }}</p>
@@ -468,5 +474,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+{% if page.scripts %}
+{% for script in page.scripts %}
+  <script src="{{ script }}"></script>
+{% endfor %}
+{% endif %}
+
 </body>
 </html>
