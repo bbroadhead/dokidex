@@ -114,11 +114,12 @@ nameCell.addEventListener("click", (event) => {
 
     const formLabels = ["2", "3", "4", "5", "6", "7", "8", "9"];
     const labelMap = { "9": "Bound" };
-
+    const folderName = `${mon.number}_${mon.name.toLowerCase()}`;
+    const fileName = `${mon.name.toLowerCase()}_${number}.png`;
     formLabels.forEach(num => {
       const label = labelMap[num] || `Form ${num}`;
       const img = document.createElement("img");
-      img.src = `/assets/images/forms/${mon.number}_${mon.name}/${mon.name}_${num}.png`;
+      img.src = `/assets/images/forms/${folderName}/${fileName}`;
       img.title = label;
       img.width = 24;
       img.height = 24;
@@ -162,8 +163,7 @@ nameCell.addEventListener("click", (event) => {
     img.title = formLabel;
 
     const number = formLabel === "Bound" ? "9" : formLabel.split(" ")[1];
-    img.src = `/assets/images/forms/${mon.number}_${mon.name}/${mon.name}_${number}.png`;
-
+    img.src = `/assets/images/forms/${folderName}/${fileName}`;
     img.addEventListener("dblclick", () => {
       container.removeChild(img);
       const index = formList.indexOf(formLabel);
