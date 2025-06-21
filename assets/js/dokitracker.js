@@ -158,6 +158,8 @@ nameCell.addEventListener("click", (event) => {
 
   function addRareImage(mon, formLabel, container, formList) {
     const img = document.createElement("img");
+    const folderName = `${mon.number}_${mon.name.toLowerCase()}`;
+    const fileName = `${mon.name.toLowerCase()}_${number}.png`;
     img.width = 32;
     img.height = 32;
     img.title = formLabel;
