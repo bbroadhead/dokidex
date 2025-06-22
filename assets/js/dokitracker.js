@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     imgCell.appendChild(img);
     row.appendChild(imgCell);
 
-    const nameCell = document.createElement("td");
-    nameCell.textContent = mon.name;
-    nameCell.classList.add("clickable-name");
-    row.appendChild(nameCell);
+const nameCell = document.createElement("td");
+nameCell.textContent = mon.name;
+nameCell.classList.add("clickable-name");
+row.appendChild(nameCell);
 
     const caughtCell = document.createElement("td");
     const checkbox = document.createElement("input");
@@ -66,16 +66,19 @@ document.addEventListener("DOMContentLoaded", () => {
       updateCounts(savedData);
     });
 
-    nameCell.addEventListener("click", (event) => {
-      event.stopPropagation();
-      const monsterName = mon.name.toLowerCase().replace(/\s+/g, '-');
-      const profileUrl = `/dokimon/${monsterName}`;
-      const panel = document.getElementById("monster-profile-panel");
-      const iframe = document.getElementById("monster-profile-frame");
-      iframe.src = profileUrl;
-      panel.classList.remove("hidden");
-      panel.classList.add("visible");
-    });
+nameCell.addEventListener("click", (event) => {
+  event.stopPropagation(); // prevent any accidental bubbling
+
+  const monsterName = mon.name.toLowerCase().replace(/\s+/g, '-');
+  const profileUrl = `/dokimon/${monsterName}`;
+
+  const panel = document.getElementById("monster-profile-panel");
+  const iframe = document.getElementById("monster-profile-frame");
+
+  iframe.src = profileUrl + "?panel=1";
+  panel.classList.remove("hidden");
+  panel.classList.add("visible");
+});
 
     tableBody.appendChild(row);
   });
@@ -111,13 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const formLabels = ["2", "3", "4", "5", "6", "7", "8", "9"];
     const labelMap = { "9": "Bound" };
-    const folderName = `${mon.number}_${mon.name.toLowerCase()}`;
 
     formLabels.forEach(num => {
       const label = labelMap[num] || `Form ${num}`;
-      const fileName = `${mon.name.toLowerCase()}_${num}.png`;
       const img = document.createElement("img");
-      img.src = `/assets/images/forms/${folderName}/${fileName}`;
+      img.src = `/assets/images/forms/${mon.number}_${mon.name}/${mon.name}_${num}.png`;
       img.title = label;
       img.width = 24;
       img.height = 24;
@@ -155,15 +156,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function addRareImage(mon, formLabel, container, formList) {
-    const number = formLabel === "Bound" ? "9" : formLabel.split(" ")[1];
-    const folderName = `${mon.number}_${mon.name.toLowerCase()}`;
-    const fileName = `${mon.name.toLowerCase()}_${number}.png`;
-
     const img = document.createElement("img");
     img.width = 32;
     img.height = 32;
     img.title = formLabel;
-    img.src = `/assets/images/forms/${folderName}/${fileName}`;
+
+    const number = formLabel === "Bound" ? "9" : formLabel.split(" ")[1];
+    img.src = `/assets/images/forms/${mon.number}_${mon.name}/${mon.name}_${number}.png`;
 
     img.addEventListener("dblclick", () => {
       container.removeChild(img);
@@ -191,68 +190,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCounts(savedData);
 
-  const filterCaughtBtn = document.getElementById("filter-caught");
-  const restoreFilteredBtn = document.getElementById("restore-filtered");
+const filterCaughtBtn = document.getElementById("filter-caught");
+const restoreFilteredBtn = document.getElementById("restore-filtered");
 
-  let allRows = [];
+let allRows = []; // holds full row data for restoration
 
-  function snapshotRows() {
-    allRows = [];
-    const rows = tableBody.querySelectorAll("tr");
-    rows.forEach((row, index) => {
-      const name = row.querySelector("td:nth-child(3)").textContent.trim();
-      allRows.push({ name, index, row });
-    });
-  }
-
-  function applyFilterState() {
-    const filterState = JSON.parse(localStorage.getItem("dokitracker-filtered") || "[]");
-    if (filterState.length > 0) {
-      snapshotRows();
-      filterState.forEach(name => {
-        const match = allRows.find(r => r.name === name);
-        if (match) {
-          match.row.remove();
-        }
-      });
-      restoreFilteredBtn.disabled = false;
-    }
-  }
-
-  filterCaughtBtn.addEventListener("click", () => {
-    snapshotRows();
-    const filteredNames = [];
-    allRows.forEach(({ name, row }) => {
-      const checkbox = row.querySelector('input[type="checkbox"]');
-      if (checkbox?.checked) {
-        filteredNames.push(name);
-        row.remove();
-      }
-    });
-    if (filteredNames.length > 0) {
-      localStorage.setItem("dokitracker-filtered", JSON.stringify(filteredNames));
-      restoreFilteredBtn.disabled = false;
-    }
+// Save full table data with sort order
+function snapshotRows() {
+  allRows = [];
+  const rows = tableBody.querySelectorAll("tr");
+  rows.forEach((row, index) => {
+    const name = row.querySelector("td:nth-child(3)").textContent.trim();
+    allRows.push({ name, index, row });
   });
+}
 
-  restoreFilteredBtn.addEventListener("click", () => {
-    const filterState = JSON.parse(localStorage.getItem("dokitracker-filtered") || "[]");
-    if (filterState.length === 0) return;
+function applyFilterState() {
+  const filterState = JSON.parse(localStorage.getItem("dokitracker-filtered") || "[]");
+  if (filterState.length > 0) {
+    snapshotRows();
     filterState.forEach(name => {
       const match = allRows.find(r => r.name === name);
       if (match) {
-        const existingRows = tableBody.querySelectorAll("tr");
-        const insertIndex = match.index;
-        if (insertIndex >= existingRows.length) {
-          tableBody.appendChild(match.row);
-        } else {
-          tableBody.insertBefore(match.row, existingRows[insertIndex]);
-        }
+        match.row.remove();
       }
     });
-    localStorage.removeItem("dokitracker-filtered");
-    restoreFilteredBtn.disabled = true;
+    restoreFilteredBtn.disabled = false;
+  }
+}
+
+filterCaughtBtn.addEventListener("click", () => {
+  snapshotRows();
+  const filteredNames = [];
+
+  allRows.forEach(({ name, row }) => {
+    const checkbox = row.querySelector('input[type="checkbox"]');
+    if (checkbox?.checked) {
+      filteredNames.push(name);
+      row.remove();
+    }
   });
+
+  if (filteredNames.length > 0) {
+    localStorage.setItem("dokitracker-filtered", JSON.stringify(filteredNames));
+    restoreFilteredBtn.disabled = false;
+  }
+});
+
+restoreFilteredBtn.addEventListener("click", () => {
+  const filterState = JSON.parse(localStorage.getItem("dokitracker-filtered") || "[]");
+  if (filterState.length === 0) return;
+
+  filterState.forEach(name => {
+    const match = allRows.find(r => r.name === name);
+    if (match) {
+      // Insert row at the correct index
+      const existingRows = tableBody.querySelectorAll("tr");
+      const insertIndex = match.index;
+      if (insertIndex >= existingRows.length) {
+        tableBody.appendChild(match.row);
+      } else {
+        tableBody.insertBefore(match.row, existingRows[insertIndex]);
+      }
+    }
+  });
+
+  localStorage.removeItem("dokitracker-filtered");
+  restoreFilteredBtn.disabled = true;
+});
 
   applyFilterState();
 });
