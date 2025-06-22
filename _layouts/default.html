@@ -139,8 +139,17 @@
   {% include evo_chains/{{ page.evo_chain_include }} %}
 {% endif %}
     </div>
+	  <div class="move-list-container">
+  <button class="move-toggle-btn" onclick="toggleMoveList()">Move List + Lvls ▼</button>
+  <div id="move-list-dropdown" class="move-dropdown hidden">
+    <ul id="move-list-content">
+      <!-- JS will inject move list here -->
+    </ul>
   </div>
-  
+</div>
+
+  </div>
+
  <div class="monster-layout-row">
 
 {% assign folder_name = page.number | append: "_" | append: page.name | downcase %}
@@ -210,7 +219,7 @@
     <img src="/assets/images/type_icons/{{ t | downcase }}.png" alt="{{ t }}" title="{{ t }}" class="type-icon">
   {% endfor %}
 </p>
-    <p><strong>Location:</strong> {{ page.location }}</p>
+    <p><strong>Obtain by:</strong> {{ page.location }}</p>
     <p><strong>Classification:</strong> {{ page.short_description }}</p>
     <p><strong>Lore:</strong> {{ page.long_description }}</p>
   </div>
@@ -542,6 +551,46 @@ window.addEventListener('DOMContentLoaded', () => {
   if (window.location.search.includes('panel=1')) {
     document.body.classList.add('in-panel');
   }
+</script>
+<script src="/assets/js/movesets.js"></script>
+<script>
+const moveData = {
+  {% assign monster_moves = site.data.movesets | where: "Monster", page.name %}
+  {% for row in site.data.movesets %}
+    "{{ row.Monster }}" : ({{ row.Monster == page.name | jsonify }}),
+  {% endfor %}
+};
+
+function toggleMoveList() {
+  const dropdown = document.getElementById("move-list-dropdown");
+  const button = document.querySelector(".move-toggle-btn");
+  const isOpen = dropdown.classList.toggle("show");
+
+  if (isOpen) {
+    dropdown.dataset.loaded = "true";
+    button.innerHTML = "Move List + Lvls ▲";
+    loadMoveList();
+  } else {
+    button.innerHTML = "Move List + Lvls ▼";
+  }
+}
+
+function loadMoveList() {
+  const monsterName = "{{ page.name }}";
+  const moveList = MOVESETS[monsterName];
+
+  if (!moveList) return;
+
+  const ul = document.getElementById("move-list-content");
+  moveList
+    .sort((a, b) => a.level - b.level)
+    .forEach(entry => {
+      const li = document.createElement("li");
+      const moveName = entry.move.replace(/_/g, " ");  // Replace underscores
+      li.textContent = `Lv ${entry.level}: ${moveName}`;
+      ul.appendChild(li);
+    });
+}
 </script>
 {% if page.scripts %}
 {% for script in page.scripts %}
