@@ -208,6 +208,7 @@ body {
   color: white;
   padding: 0.5rem 1rem;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .site-nav a {
@@ -238,10 +239,14 @@ body {
   font-weight: 700;
   font-family: inherit;
   vertical-align: middle;
+  height: 100%;              /* NEW: ensures full height clickable */
+  line-height: normal;       /* Ensure no vertical clipping */
+  box-sizing: border-box;    /* Includes padding in size */
 }
 
 .nav-left, .nav-right {
   flex-shrink: 0;
+  z-index: 2;
 }
 
 .nav-center {
@@ -249,10 +254,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .nav-center .search-and-toggle {
   margin-left: -180px;
+  pointer-events: none;
+}
+
+.search-and-toggle * {
+  pointer-events: auto;
 }
 
 .dropdown {
@@ -2353,7 +2364,7 @@ body.fade-in {
 .nav-left a,
 .nav-left .nav-button,
 .nav-left .dropdown > button {
-  display: inline-block;
+  display: inline-flex;
   background-color: #4477aa;
   color: white;
   border: none;
@@ -2371,7 +2382,7 @@ body.fade-in {
 }
 
 .nav-button.tracker-link {
-	display: inline-block;
+	display: inline-flex;
 }
 
 /* Hover effect */
@@ -2598,4 +2609,68 @@ body.dark-mode .dropdown-content a {
 
 body.dark-mode .dropdown-content a:hover {
   background-color: #444;
+}
+body.in-panel .site-header,
+body.in-panel .site-nav {
+  display: none !important;
+}
+body.in-panel .site-header,
+body.in-panel .site-nav {
+  display: none !important;
+}
+body.loading .site-header,
+body.loading .site-nav {
+  display: none;
+}
+body.in-panel .return-link {
+  display: none !important;
+}
+body.in-panel .nav-arrow.right-arrow {
+  margin-right: 12px; /* adjust as needed */
+}
+@media (max-width: 768px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+	padding-left: 0.5rem;
+  }
+
+  .nav-left,
+  .nav-center,
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .search-and-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+	padding-left: 5rem;
+  }
+
+  .theme-switch-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lang-flag {
+    font-size: 1.25rem;
+    margin: 0.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .search-and-toggle {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
 }
