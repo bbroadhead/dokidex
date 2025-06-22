@@ -6,7 +6,7 @@ stage: 1
 evolves_at: 14
 type:
 - Fire
-location: 
+location: "[Overworld Encounter]"
 image: /assets/images/lema.png
 description: ''
 long_description: Lema can often be found in groups of 3 or 5. Nothing can break their

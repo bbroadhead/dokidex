@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Water
 - Poison
-location: 
+location: "[Evolution only]"
 image: /assets/images/drifty.png
 description: ''
 long_description: Drifty excrete toxic poisons that slowly spread throughout the ocean,

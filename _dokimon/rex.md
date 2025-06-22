@@ -7,7 +7,7 @@ evolves_at: 24
 type:
 - Dragon
 - Ghost
-location: 
+location: "[Overworld Encounter]"
 image: /assets/images/rex.png
 description: ''
 long_description: Rex is the ruler of all things above Earth and uses its various

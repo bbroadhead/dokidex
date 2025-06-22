@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Light
 - Fairy
-location: 
+location: "[Evolution only]"
 image: /assets/images/hana.png
 description: ''
 long_description: Hana is an archangel that plays a divine role in the communication

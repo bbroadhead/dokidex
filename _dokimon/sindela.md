@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Grass
 - Fairy
-location: 
+location: "[Evolution only]"
 image: /assets/images/sindela.png
 description: ''
 long_description: Sindela is a mysterious humanoid Dokimon to which much is unknown.

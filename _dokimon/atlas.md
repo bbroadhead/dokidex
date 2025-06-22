@@ -7,7 +7,7 @@ evolves_at: 20
 type:
 - Dragon
 - Water
-location: Pirate Ship, Rocky Ridge, Route 03
+location: "[Fishing only] Pirate Ship, Rocky Ridge, Route 03"
 image: /assets/images/atlas.png
 description: ''
 long_description: When its born, this shy Dokimon will hollow out a rock at the bottom

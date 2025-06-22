@@ -7,7 +7,7 @@ evolves_at: 28
 type:
 - Water
 - Poison
-location: Gad'riel Mountain, Pirate Ship, Route 06, Route 12, Route 14, Scarlet Sea, Wicked Woods
+location: "[Fishing only] Gad'riel Mountain, Pirate Ship, Route 06, Route 12, Route 14, Scarlet Sea, Wicked Woods"
 image: /assets/images/gumba.png
 description: ''
 long_description: A colossal amphibian with potent poison glands, capable of unleashing

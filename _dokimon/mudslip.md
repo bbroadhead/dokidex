@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Water
 - Flying
-location: Gad'riel Mountain, Route 14
+location: "[Fishing only] Gad'riel Mountain, Route 14"
 image: /assets/images/mudslip.png
 description: ''
 long_description: It gathers food by swimming with its mouth wide open. This makes

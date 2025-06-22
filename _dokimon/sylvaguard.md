@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Grass
 - Flying
-location: 
+location: "[Evolution only]"
 image: /assets/images/sylvaguard.png
 description: ''
 long_description: They are able to control the wind to keep themselves afloat, even

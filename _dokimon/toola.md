@@ -6,7 +6,7 @@ stage: 1
 evolves_at: 16
 type:
 - Water
-location: 
+location: "[Overworld Encounter]"
 image: /assets/images/toola.png
 description: ''
 long_description: Toola are found in the deep sea and tease other fish with it's decoy

@@ -6,7 +6,7 @@ stage: 1
 evolves_at: 16
 type:
 - Water
-location: 
+location: "[Starter/Overworld Encounter (alt-region)]"
 image: /assets/images/squibbly.png
 description: ''
 long_description: It's rumored that baby Squibbly go through immense pain as their

@@ -6,7 +6,7 @@ stage: 2
 evolves_at: 34
 type:
 - Grass
-location: 
+location: "[Evolution only]"
 image: /assets/images/scytherin.png
 description: ''
 long_description: Unlike its counterparts, Scytherin is much more docile, and less

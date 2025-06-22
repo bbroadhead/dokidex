@@ -7,7 +7,7 @@ evolves_at: 36
 type:
 - Water
 - Poison
-location: 
+location: "[Evolution only]"
 image: /assets/images/sluggor.png
 description: ''
 long_description: Sluggor are very slow moving Dokimon, that inale prey at incredible

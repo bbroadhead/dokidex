@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Grass
 - Dark
-location: 
+location: "[Evolution only]"
 image: /assets/images/spring-lee.png
 description: ''
 long_description: ''

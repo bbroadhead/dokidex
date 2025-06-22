@@ -7,7 +7,7 @@ evolves_at: 24
 type:
 - Dragon
 - Flying
-location: 
+location: "[Overworld Encounter]"
 image: /assets/images/dawn.png
 description: ''
 long_description: Midnight has the power to go almost completely invisible due to

@@ -6,7 +6,7 @@ stage: 1
 evolves_at: 14
 type:
 - Fire
-location: 
+location: "[Starter/Overworld Encounter (alt-region)]"
 image: /assets/images/burnsby.png
 description: ''
 long_description: It's said they often hide amongst other plushies in hopes to torch

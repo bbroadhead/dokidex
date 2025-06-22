@@ -7,7 +7,7 @@ evolves_at: 20
 type:
 - Grass
 - Fairy
-location: Fallenridge, Route 14, Wicked Woods
+location: "[Pink grass only] Fallenridge, Route 14, Wicked Woods"
 image: /assets/images/leea.png
 description: ''
 long_description: Leea spend most of their time in hiding, as they're extremely shy.

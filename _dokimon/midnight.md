@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Dragon
 - Dark
-location: 
+location: "[Evolution only]"
 image: /assets/images/midnight.png
 description: ''
 long_description: Midnight has the power to go almost completely invisible due to

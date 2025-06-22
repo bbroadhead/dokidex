@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Dragon
 - Ghost
-location: 
+location: "[Evolution only]"
 image: /assets/images/draeking.png
 description: ''
 long_description: Draken is the ruler of all things above Earth and uses its various

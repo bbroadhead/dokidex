@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Electric
 - Fairy
-location: 
+location: "[Evolution only]"
 image: /assets/images/ohm.png
 description: ''
 long_description: Ohm buzzes with an electric aura that crackles with fairy dust.

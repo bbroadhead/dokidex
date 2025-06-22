@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Fire
 - Fight
-location: 
+location: "[Evolution only]"
 image: /assets/images/yan-yaa lii.png
 description: ''
 long_description: ''

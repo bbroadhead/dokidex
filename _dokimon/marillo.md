@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Water
 - Fight
-location: Route 14
+location: "[Fishing only] Route 14"
 image: /assets/images/marillo.png
 description: ''
 long_description: It may appear sad, but don't worry! Marillo always frowns, even

@@ -7,7 +7,7 @@ evolves_at: 40
 type:
 - Grass
 - Fairy
-location: Route 14
+location: "[Pink grass only] Route 14"
 image: /assets/images/linna.png
 description: ''
 long_description: Linna are known for showing up in what seems like a group, and entertaining

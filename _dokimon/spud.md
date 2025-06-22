@@ -6,7 +6,7 @@ stage: 1
 evolves_at: 15
 type:
 - Grass
-location: 
+location: "[Overworld Encounter]"
 image: /assets/images/spud.png
 description: ''
 long_description: Spud Dokimon often spend most of their lives in hiding, but you

@@ -7,7 +7,7 @@ evolves_at: 40
 type:
 - Fire
 - Fairy
-location: 
+location: "[Evolution only]"
 image: /assets/images/embellia.png
 description: ''
 long_description: Embellia is an intermediate caster of fire and fairy magic. Combining

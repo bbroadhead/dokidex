@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Fire
 - Fairy
-location: 
+location: "[Evolution only]"
 image: /assets/images/kthuune.png
 description: ''
 long_description: Kthuune is a mysterious humanoid Dokimon to which much is unknown.

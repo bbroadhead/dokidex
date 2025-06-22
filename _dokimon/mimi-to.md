@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Grass
 - Water
-location: Xer Central
+location: "[Fishing only] Xer Central"
 image: /assets/images/mimi-to.png
 description: ''
 long_description: It's unknown how many types of plants they can disguise themselves

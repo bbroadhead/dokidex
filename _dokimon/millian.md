@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Water
 - Fairy
-location: 
+location: "[Evolution only]"
 image: /assets/images/millian.png
 description: ''
 long_description: Millian is a mysterious humanoid Dokimon to which much is unknown.

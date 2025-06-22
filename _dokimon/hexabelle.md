@@ -7,7 +7,7 @@ evolves_at: 44
 type:
 - Ghost
 - Fairy
-location: 
+location: "[Evolution only]"
 image: /assets/images/hexabelle.png
 description: ''
 long_description: Hexabelle is a whimsical being, twirling through the ether with

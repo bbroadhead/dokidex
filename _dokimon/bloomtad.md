@@ -7,7 +7,7 @@ evolves_at: 18
 type:
 - Grass
 - Water
-location: 
+location: "[Fishing only]"
 image: /assets/images/bloomtad.png
 description: ''
 long_description: Bloomtad possesses a unique ability to harness the energy of sunlight

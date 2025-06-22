@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Electric
 - Flying
-location: 
+location: "[Evolution only]"
 image: /assets/images/zappy.png
 description: ''
 long_description: Being able to reach speeds up to 200km/h, it is the fastest known

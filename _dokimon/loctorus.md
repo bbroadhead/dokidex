@@ -6,7 +6,7 @@ stage: 2
 evolves_at: 36
 type:
 - Water
-location: 
+location: "[Evolution only]"
 image: /assets/images/loctorus.png
 description: ''
 long_description: Loctorus are known for their ability to hide in plain sight, and

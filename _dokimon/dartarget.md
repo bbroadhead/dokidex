@@ -7,7 +7,7 @@ evolves_at: null
 type:
 - Dark
 - Ghost
-location: 
+location: "[Evolution only]"
 image: /assets/images/dartarget.png
 description: ''
 long_description: Dartargets are a mysterious, yet incredibly powerful Dokimon that
