@@ -643,6 +643,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   gap: 0.25rem;
   margin-top: 0;
   padding-top: 0;
+  padding-bottom: 0.1rem;
 }
 
 .return-link {
@@ -658,6 +659,8 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .evolution-wrapper, .evolution-wrapper * {
@@ -791,6 +794,7 @@ body.dark .dex-entry[data-type*="poison"] { background-color: #4a2b4a; }
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
+  margin-top: 0;
   flex-wrap: nowrap;
 }
 
@@ -2279,6 +2283,7 @@ body.dark #resetToDefaultBtn {
 
 .right-arrow {
   right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .nav-arrow a {
@@ -2427,6 +2432,104 @@ body.fade-in {
   background-color: #5599cc;
 }
 
+.move-list-container {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.move-toggle-btn {
+  background-color: var(--btn-bg, #eee);
+  color: var(--btn-text, #111);
+  border: 1px solid var(--btn-border, #aaa);
+  padding: 6px 12px;
+  margin-bottom: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  line-height: 1.0;
+}
+
+.move-toggle-btn:hover {
+  background-color: #fff;
+}
+
+.dark-mode .move-toggle-btn {
+  --btn-bg: #222;
+  --btn-text: #fff;
+  --btn-border: #444;
+}
+
+.dark-mode .move-toggle-btn:hover {
+  background-color: #333;
+}
+
+.move-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  background: var(--dropdown-bg, #f9f9f9);
+  color: var(--dropdown-text, #111);
+  border-radius: 10px;
+  margin-top: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  opacity: 0;
+}
+
+.move-dropdown.show {
+  max-height: 600px;
+  opacity: 1;
+  padding: 10px;
+}
+
+.move-dropdown ul {
+  column-count: 3;
+  column-gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+.move-dropdown ul::before,
+.move-dropdown ul::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--divider-color, #ccc);
+  z-index: 1;
+}
+
+.move-dropdown ul::before {
+  left: calc(100% / 3);
+}
+
+.move-dropdown ul::after {
+  left: calc(200% / 3);
+}
+
+.move-dropdown li {
+  break-inside: avoid;
+  padding: 4px 12px;
+  border-bottom: 1px solid var(--dropdown-border, #ccc);
+  position: relative;
+  z-index: 2; /* ensure text is above lines */
+}
+
+.dark-mode .move-dropdown {
+  --dropdown-bg: #333;
+  --dropdown-text: #fff;
+  --divider-color: #555;
+  --dropdown-border: #555;
+}
 
 /* Dark mode definitions */
 
