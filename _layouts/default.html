@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  // Hide document until theme is applied
+  document.documentElement.style.visibility = 'hidden';
+
+  (function() {
+    const mode = localStorage.getItem('dark-mode');
+    const isDark = !mode || mode === 'enabled';
+
+    // Add class temporarily to <html> so styles apply early
+    if (isDark) {
+      document.documentElement.classList.add('pre-dark-mode');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Move the dark mode class to body
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+      document.documentElement.classList.remove('pre-dark-mode');
+
+      // Set toggle switch
+      const toggle = document.getElementById('dark-mode-toggle');
+      if (toggle) {
+        toggle.checked = isDark;
+      }
+
+      // Show page after theme is applied
+      document.documentElement.style.visibility = '';
+    });
+  })();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWHRN2K6DG"></script>
 <script>
@@ -10,6 +41,7 @@
 
   gtag('config', 'G-VWHRN2K6DG');
 </script>
+
   <meta charset="UTF-8">
   <title>Dokimon:Quest - Wiki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +50,7 @@
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
+{% unless page.panel == true or page.url contains 'panel=1' %}
   <header class="site-header">
     <div class="header-bg">
       <a href="/">
@@ -62,6 +95,7 @@
         <span class="lang-flag" data-lang="ko">🇰🇷</span>
       </div>
     </nav>
+  {% endunless %}
   </header>
 
 <main class="page-content">
@@ -253,7 +287,6 @@
 {% endif %}
 -->
 </main>
-
   <!-- Prevent Right Click on Images -->
   <script>
     document.addEventListener('contextmenu', event => {
@@ -482,6 +515,33 @@ document.addEventListener("DOMContentLoaded", function () {
     updateLockVisualState(false);
   });
 });
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    document.body.classList.add('in-panel');
+  }
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    // Add 'in-panel' class to body for CSS control
+    document.body.classList.add('in-panel');
+
+    // Modify all internal links to preserve ?panel=1
+    document.querySelectorAll('a[href^="/dokimon/"]').forEach(link => {
+      if (!link.href.includes('panel=1')) {
+        link.href += link.href.includes('?') ? '&panel=1' : '?panel=1';
+      }
+    });
+  }
+  document.body.classList.add('loading');
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('loading');
+});
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    document.body.classList.add('in-panel');
+  }
 </script>
 {% if page.scripts %}
 {% for script in page.scripts %}
