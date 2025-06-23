@@ -168,7 +168,7 @@ function createImageDropdown(mon, imageContainer, rareFormsArray) {
     img.title = formLabel;
 
     const number = formLabel === "Bound" ? "9" : formLabel.split(" ")[1];
-    img.src = `/assets/images/forms/${mon.number}_${mon.name}/${mon.name.toLowerCase()}_${num}.png`;
+    img.src = `/assets/images/forms/${mon.number}_${mon.name}/${mon.name.toLowerCase()}_${number}.png`;
 
     img.addEventListener("dblclick", () => {
       container.removeChild(img);
