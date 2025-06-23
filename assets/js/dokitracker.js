@@ -92,28 +92,36 @@ nameCell.addEventListener("click", (event) => {
     });
   }
 
-  function createImageDropdown(mon, imageContainer, rareFormsArray) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "image-dropdown-wrapper";
+function createImageDropdown(mon, imageContainer, rareFormsArray) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "image-dropdown-wrapper";
 
-    const button = document.createElement("button");
-    button.textContent = "Select...";
-    button.style.padding = "4px 8px";
-    button.style.cursor = "pointer";
-    button.style.border = "1px solid #aaa";
+  const button = document.createElement("button");
+  button.textContent = "Select...";
+  button.style.padding = "4px 8px";
+  button.style.cursor = "pointer";
+  button.style.border = "1px solid #aaa";
 
-    const dropdown = document.createElement("div");
-    dropdown.className = "image-dropdown";
-    dropdown.style.display = "none";
-    dropdown.style.position = "absolute";
-    dropdown.style.zIndex = "10";
-    dropdown.style.background = "#fff";
-    dropdown.style.padding = "4px";
-    dropdown.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
-    dropdown.style.whiteSpace = "nowrap";
+  const dropdown = document.createElement("div");
+  dropdown.className = "image-dropdown";
+  dropdown.style.display = "none";
+  dropdown.style.position = "absolute";
+  dropdown.style.zIndex = "10";
+  dropdown.style.background = "#fff";
+  dropdown.style.padding = "4px";
+  dropdown.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
+  dropdown.style.whiteSpace = "nowrap";
 
-    const formLabels = ["2", "3", "4", "5", "6", "7", "8", "9"];
-    const labelMap = { "9": "Bound" };
+  const formLabels = ["2", "3", "4", "5", "6", "7", "8", "9"];
+  const labelMap = { "9": "Bound" };
+
+  let imagesLoaded = false;
+
+  button.addEventListener("click", (e) => {
+    dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+    e.stopPropagation();
+
+    if (imagesLoaded) return;
 
     formLabels.forEach(num => {
       const label = labelMap[num] || `Form ${num}`;
@@ -139,21 +147,19 @@ nameCell.addEventListener("click", (event) => {
       dropdown.appendChild(img);
     });
 
-    button.addEventListener("click", (e) => {
-      dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
-      e.stopPropagation();
-    });
+    imagesLoaded = true;
+  });
 
-    document.addEventListener("click", () => {
-      dropdown.style.display = "none";
-    });
+  document.addEventListener("click", () => {
+    dropdown.style.display = "none";
+  });
 
-    wrapper.appendChild(button);
-    wrapper.appendChild(dropdown);
-    wrapper.style.position = "relative";
-    wrapper.style.display = "inline-block";
-    return wrapper;
-  }
+  wrapper.appendChild(button);
+  wrapper.appendChild(dropdown);
+  wrapper.style.position = "relative";
+  wrapper.style.display = "inline-block";
+  return wrapper;
+}
 
   function addRareImage(mon, formLabel, container, formList) {
     const img = document.createElement("img");
