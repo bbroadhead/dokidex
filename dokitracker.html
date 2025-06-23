@@ -56,6 +56,26 @@ scripts:
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
+body {
+  --dropdown-bg: #fff;
+  --dropdown-text: #111;
+  --dropdown-border: #ccc;
+  --btn-bg: #eee;
+  --btn-text: #111;
+  --btn-border: #aaa;
+  --btn-hover-bg: #ddd;
+}
+
+body.dark-mode {
+  --dropdown-bg: #333;
+  --dropdown-text: #fff;
+  --dropdown-border: #555;
+  --btn-bg: #222;
+  --btn-text: #fff;
+  --btn-border: #444;
+  --btn-hover-bg: #333;
+}
+
 .tracker-layout {
   position: relative;
   display: block;
@@ -142,12 +162,12 @@ body.dark-mode .tracker-summary-box {
   display: none;
   position: absolute;
   z-index: 10;
-  background: var(--dropdown-bg, #fff);
-  color: var(--dropdown-text, #111);
+  background: var(--dropdown-bg);
+  color: var(--dropdown-text);
   padding: 4px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   white-space: nowrap;
-  border: 1px solid var(--dropdown-border, #ccc);
+  border: 1px solid var(--dropdown-border);
   border-radius: 6px;
 }
 
