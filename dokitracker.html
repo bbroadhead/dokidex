@@ -114,15 +114,31 @@ body.dark-mode .tracker-summary-box {
   margin-right: 0.25rem;
   cursor: pointer;
 }
-.image-dropdown img:hover {
-  outline: 2px solid #444;
-  border-radius: 4px;
-}
+
 .image-dropdown-wrapper button {
   font-family: 'Press Start 2P', monospace; /* Or your pixel font */
   font-size: 0.5rem;
   image-rendering: pixelated;
+  padding: 4px 8px;
+  cursor: pointer;
+  border: 1px solid var(--btn-border, #aaa);
+  background-color: var(--btn-bg, #eee);
+  color: var(--btn-text, #111);
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+.image-dropdown-wrapper button:hover {
+  background-color: var(--btn-hover-bg, #ddd);
+}
+
+.dark-mode .image-dropdown-wrapper button {
+  --btn-bg: #222;
+  --btn-text: #fff;
+  --btn-border: #444;
+  --btn-hover-bg: #333;
+}
+
 .tracker-main {
   width: fit-content;
   margin: 0 auto; /* center horizontally */
