@@ -122,6 +122,7 @@ body.dark-mode .tracker-summary-box {
   border-collapse: collapse;
   table-layout: auto;
   margin-top: 1rem;
+  overflow: visible;
 }
 .tracker-table th,
 .tracker-table td {
@@ -169,11 +170,11 @@ body.dark-mode .tracker-summary-box {
   white-space: nowrap;
   border: 1px solid #ccc;
   border-radius: 6px;
-  z-index: 99;
+  z-index: 999;
 }
 
 .dark-mode .image-dropdown {
-  --dropdown-bg: #333;
+  --dropdown-bg: #333 !important;
   --dropdown-text: #fff;
   --dropdown-border: #555;
 }
@@ -181,6 +182,7 @@ body.dark-mode .tracker-summary-box {
 .tracker-main {
   width: fit-content;
   margin: 0 auto; /* center horizontally */
+  overflow: visible;
 }
 .tracker-settings-box {
   position: fixed;
