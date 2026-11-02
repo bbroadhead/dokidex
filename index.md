@@ -107,7 +107,7 @@ title: "Dokimon: Quest - Wiki"
             <img src="{{ mon.image }}" alt="{{ mon.name }}" class="monster-image small" data-default="{{ mon.image }}">
             <div class="img-blocker"></div>
           </div>
-          <div class="dex-card-details"><span class="dex-card-number">#{{ mon.number }}</span><strong class="dex-card-name">{{ mon.name }}</strong><span class="dex-card-stage">Stage {{ mon.stage }}</span><div class="dex-card-types">{% for t in mon.type %}<span class="dex-card-type">{{ t }}</span>{% endfor %}</div></div>
+          <div class="dex-card-details"><span class="dex-card-number">#{{ mon.number }}</span><strong class="dex-card-name">{{ mon.name }}</strong></div>
         </a>
       </article>
     {% endfor %}
