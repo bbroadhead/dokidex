@@ -24,6 +24,8 @@ jobs:
         run: gem install jekyll -v '~> 4.4'
       - name: Build preview with correct project path
         run: JEKYLL_ENV=production jekyll build --destination _site --baseurl /Dokidex-Preview --config _config.yml,_config_preview.yml
+      - name: Fix root-relative URLs for preview hosting
+        run: python3 .github/scripts/fix_preview_paths.py
       - name: Publish to dedicated preview repository
         uses: peaceiris/actions-gh-pages@v4
         with:
