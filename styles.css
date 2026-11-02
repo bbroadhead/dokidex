@@ -2814,3 +2814,22 @@ body.in-panel .nav-arrow.right-arrow {
 #dex-grid .dex-entry:focus-within{outline:2px solid #8bbcff;outline-offset:2px}
 @media(max-width:600px){#dex-grid.dex-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px 8px}#dex-grid .dex-entry{min-height:218px}#dex-grid .dex-entry>a{padding:9px}#dex-grid .dex-entry .img-wrapper{width:100px;height:100px}#dex-grid .dex-entry .monster-image.small{max-width:96px!important;max-height:96px!important}#dex-grid .dex-card-name{font-size:13px}}
 @media(prefers-reduced-motion:reduce){#dex-grid .dex-entry{transition:none}}
+
+
+/* Yanoverse card interaction polish: hover, focus, and tap */
+#dex-grid .dex-entry{--card-lift:0px;transform:translateY(var(--card-lift)) scale(1);transition:transform .24s cubic-bezier(.2,.7,.2,1),border-color .24s ease,box-shadow .24s ease!important;will-change:transform}
+#dex-grid .dex-entry::before{transition:opacity .28s ease,transform .5s ease!important;transform:translateX(-8%)}
+#dex-grid .dex-entry .monster-image.small{transition:transform .3s cubic-bezier(.2,.7,.2,1),filter .3s ease!important}
+@media(hover:hover) and (pointer:fine){
+  #dex-grid .dex-entry:hover{--card-lift:-5px;transform:translateY(-5px) scale(1.015)!important}
+  #dex-grid .dex-entry:hover::before{opacity:1;transform:translateX(7%)}
+  #dex-grid .dex-entry:hover .monster-image.small{transform:translateY(-3px) scale(1.045);filter:drop-shadow(0 5px 7px rgba(0,0,0,.2))}
+}
+#dex-grid .dex-entry:focus-within{--card-lift:-3px;transform:translateY(-3px) scale(1.01)!important}
+#dex-grid .dex-entry:active{transform:translateY(1px) scale(.975)!important;transition-duration:.1s!important;border-color:rgba(188,218,255,.8)!important;box-shadow:inset 0 1px 8px rgba(255,255,255,.12),0 3px 12px rgba(0,0,0,.25)!important}
+#dex-grid .dex-entry:active::before{opacity:1;transform:translateX(12%)}
+@media(prefers-reduced-motion:reduce){
+  #dex-grid .dex-entry,#dex-grid .dex-entry::before,#dex-grid .dex-entry .monster-image.small{transition:none!important;animation:none!important;will-change:auto}
+  #dex-grid .dex-entry:hover,#dex-grid .dex-entry:focus-within,#dex-grid .dex-entry:active{transform:none!important}
+  #dex-grid .dex-entry:hover .monster-image.small{transform:none!important}
+}
