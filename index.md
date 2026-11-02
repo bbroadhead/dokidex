@@ -96,7 +96,7 @@ title: "Dokimon: Quest - Wiki"
   {% assign type_class = 'border-' | append: type1 %}
 {% endif %}
 
-      <div class="dex-entry"
+      <article class="dex-entry"
            data-name="{{ mon.name | downcase | default: '' }}"
 		   data-number="{{ mon.number | default: '' }}"
            data-location="{{ mon.location | downcase | default: '' }}"
@@ -107,9 +107,9 @@ title: "Dokimon: Quest - Wiki"
             <img src="{{ mon.image }}" alt="{{ mon.name }}" class="monster-image small" data-default="{{ mon.image }}">
             <div class="img-blocker"></div>
           </div>
-          <div>#{{ mon.number }} - {{ mon.name }}</div>
+          <div class="dex-card-details"><span class="dex-card-number">#{{ mon.number }}</span><strong class="dex-card-name">{{ mon.name }}</strong><span class="dex-card-stage">Stage {{ mon.stage }}</span><div class="dex-card-types">{% for t in mon.type %}<span class="dex-card-type">{{ t }}</span>{% endfor %}</div></div>
         </a>
-      </div>
+      </article>
     {% endfor %}
   {% else %}
     <p style="color: red;">⚠ No Dokimon collection found. Check `_config.yml` and `_dokimon/` folder.</p>
