@@ -1,0 +1,34 @@
+name: Deploy Dokidex development preview
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dokidex-preview
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Install Jekyll
+        run: gem install jekyll -v '~> 4.4'
+      - name: Build preview with correct project path
+        run: jekyll build --destination _site --baseurl /Dokidex-Preview --url https://bbroadhead.github.io
+      - name: Publish to dedicated preview repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.DOKIDEX_PREVIEW_DEPLOY_KEY }}
+          external_repository: bbroadhead/Dokidex-Preview
+          publish_branch: main
+          publish_dir: ./_site
+          force_orphan: false
