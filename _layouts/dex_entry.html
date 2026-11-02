@@ -2,8 +2,9 @@
 layout: default
 ---
 
-<div class="dex-entry">
-  <h1>#{{ page.number }} - {{ page.name }}</h1>
+<article class="dex-entry yanoverse-profile">
+  <a class="yv-back-link" href="{{ '/' | relative_url }}">← Return to Dex</a>
+  <header class="yv-profile-heading"><span class="yv-profile-number">#{{ page.number }}</span><h1>{{ page.name }}</h1></header>
 
   {% assign dex = site.data.dokimon %}
   {% assign current_index = nil %}
@@ -52,17 +53,16 @@ layout: default
     </div>
   {% endif %}
 
-  <div class="img-wrapper">
+  <div class="img-wrapper yv-profile-art">
     <img src="{{ page.image }}" alt="{{ page.name }}">
     <div class="img-blocker"></div>
   </div>
 
-  <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
+  <section class="yv-profile-facts"><p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
   <p><strong>Stage:</strong> {{ page.stage }}</p>
   <p><strong>Evolves at:</strong> {{ page.evolves_at }}</p>
   <p><strong>Location:</strong> {{ page.location }}</p>
   <p>{{ page.description }}</p>
-  <p>{{ page.long_description }}</p>
+  <p>{{ page.long_description }}</p></section>
 
-  <a href="/">← Back to Index</a>
-</div>
+</article>
