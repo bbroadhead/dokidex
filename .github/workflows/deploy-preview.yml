@@ -27,7 +27,7 @@ jobs:
       - name: Publish to dedicated preview repository
         uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ${{ secrets.DOKIDEX_PREVIEW_DEPLOY_KEY }}
+          personal_token: ${{ secrets.DOKIDEX_PREVIEW_TOKEN }}
           external_repository: bbroadhead/Dokidex-Preview
           publish_branch: main
           publish_dir: ./_site
