@@ -4,7 +4,10 @@ title: "Dokimon: Quest - Wiki"
 ---
 {% include type_chart_ui.html %}
 
-<style id="yanoverse-filter-collapse-fix">\n.filter-controls.collapsed,body.dark-mode .filter-controls.collapsed{display:none!important}\n</style>\n<button id="filter-toggle" type="button" aria-controls="dex-filter-controls" aria-expanded="true">Hide Filters</button>
+<style id="yanoverse-filter-collapse-fix">
+#dex-filter-controls.collapsed,
+body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
+</style>\n<button id="filter-toggle" type="button" aria-controls="dex-filter-controls" aria-expanded="true">Hide Filters</button>
 
 <div class="filter-controls" id="dex-filter-controls">
   <!-- Group: Stage -->
