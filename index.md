@@ -4,9 +4,9 @@ title: "Dokimon: Quest - Wiki"
 ---
 {% include type_chart_ui.html %}
 
-<button id="filter-toggle">Toggle Filters</button>
+<style id="yanoverse-filter-collapse-fix">\n.filter-controls.collapsed,body.dark-mode .filter-controls.collapsed{display:none!important}\n</style>\n<button id="filter-toggle" type="button" aria-controls="dex-filter-controls" aria-expanded="true">Hide Filters</button>
 
-<div class="filter-controls">
+<div class="filter-controls" id="dex-filter-controls">
   <!-- Group: Stage -->
   <div class="filter-block">
 <label for="formFilter">Palettes:</label>
@@ -172,7 +172,7 @@ function filterDex() {
 }
 
 filterToggle.addEventListener('click', () => {
-  filterControls.classList.toggle('collapsed');
+  const isCollapsed = filterControls.classList.toggle('collapsed');\n  filterToggle.setAttribute('aria-expanded', String(!isCollapsed));\n  filterToggle.textContent = isCollapsed ? 'Show Filters' : 'Hide Filters';
 });
 
 document.getElementById("formFilter").addEventListener("change", function () {
