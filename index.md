@@ -7,7 +7,8 @@ title: "Dokimon: Quest - Wiki"
 <style id="yanoverse-filter-collapse-fix">
 #dex-filter-controls.collapsed,
 body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
-</style>\n<button id="filter-toggle" type="button" aria-controls="dex-filter-controls" aria-expanded="true">Hide Filters</button>
+</style>
+<button id="filter-toggle" type="button" aria-controls="dex-filter-controls" aria-expanded="true">Hide Filters</button>
 
 <div class="filter-controls" id="dex-filter-controls">
   <!-- Group: Stage -->
@@ -175,7 +176,9 @@ function filterDex() {
 }
 
 filterToggle.addEventListener('click', () => {
-  const isCollapsed = filterControls.classList.toggle('collapsed');\n  filterToggle.setAttribute('aria-expanded', String(!isCollapsed));\n  filterToggle.textContent = isCollapsed ? 'Show Filters' : 'Hide Filters';
+  const isCollapsed = filterControls.classList.toggle('collapsed');
+  filterToggle.setAttribute('aria-expanded', String(!isCollapsed));
+  filterToggle.textContent = isCollapsed ? 'Show Filters' : 'Hide Filters';
 });
 
 document.getElementById("formFilter").addEventListener("change", function () {
