@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded',function(){
  const unmapped=document.getElementById('yv-map-unmapped');
  const params=new URLSearchParams(location.search);
  if(!select||!pins||!Array.isArray(data)||!coords)return;
- const normalize=s=>String(s||'').toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9]+/g,' ').trim().replace(/\\broute 0+([0-9]+)\\b/g,'route $1');
+ const normalize=s=>String(s||'').toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9]+/g,' ').trim().replace(/\broute 0+([0-9]+)\b/g,'route $1');
  const aliases={'endgame portal':'Endgame Portal','gad riel peak':"Gad'riel Mountain",'gadriel peak':"Gad'riel Mountain",'darkshawl peak':'Darkshawl Spire','ginmachi city':'Giamachi City','route 8':'Route 08','route 9':'Route 09','route 1':'Route 01','route 2':'Route 02','route 3':'Route 03','route 4':'Route 04','route 5':'Route 05','route 6':'Route 06','route 7':'Route 07'};
  const coordNames=Object.keys(coords).filter(n=>coords[n]&&Number.isFinite(Number(coords[n].x))&&Number.isFinite(Number(coords[n].y)));
  const canonicalNames=[...new Set(coordNames.filter(n=>!/^\?/.test(n)))];
