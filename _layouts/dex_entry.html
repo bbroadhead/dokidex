@@ -63,6 +63,12 @@ layout: default
   <p><strong>Evolves at:</strong> {{ page.evolves_at }}</p>
   <p><strong>Location:</strong> {{ page.location }}</p>
   <p>{{ page.description }}</p>
-  <p>{{ page.long_description }}</p></section>
+  <p class="yv-description-en">{{ page.long_description }}</p>
+  {% if page.long_description_ja %}<p class="yv-description-ja" lang="ja">{{ page.long_description_ja }}</p>{% endif %}</section>
 
 </article>
+<style>
+.yv-description-ja{display:none}
+html[data-language="ja"] .yanoverse-profile:has(.yv-description-ja) .yv-description-en{display:none}
+html[data-language="ja"] .yv-description-ja{display:block}
+</style>
