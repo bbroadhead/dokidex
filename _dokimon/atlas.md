@@ -13,6 +13,8 @@ description: ''
 long_description: When its born, this shy Dokimon will hollow out a rock at the bottom
   of the sea. This will be their shell until they evolve.
 short_description: Stone Dragon Dokimon
+short_description_ja: "岩竜ドキモン"
+long_description_ja: "生まれたばかりのアトラスは臆病で、海底の岩をくり抜いて住みかにする。進化するまで、その岩が殻となる。"
 base_stats:
 - 55
 - 40
