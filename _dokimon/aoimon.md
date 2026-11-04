@@ -14,6 +14,8 @@ long_description: >
   Will stalk and kill anything it sees within reach, by any means!
   Despite this, it's intensely loyal and will do anything to protect its trainer!
 short_description: Bloodthirsty Dokimon
+short_description_ja: "血に飢えたドキモン"
+long_description_ja: "手の届く範囲にいるものなら、どんな手段を使ってでも追い詰めて倒そうとする。しかし、トレーナーには非常に忠実で、守るためなら何でもする。"
 base_stats:
   - 100
   - 55
