@@ -170,15 +170,15 @@ document.addEventListener('DOMContentLoaded',function(){
  const byPlace=new Map(coordNames.map(n=>[n,[]]));
  const unknown=new Map();
  const monsters=data.filter(m=>m&&m.name).sort((a,b)=>String(a.name).localeCompare(String(b.name)));
- const methods=/^\s*\[[^\]]+\]\s*/g;
+ const methods=/^\s*\[[^\]]+\]\s*/;
  function locations(mon){
    const raw=Array.isArray(mon.location)?mon.location.join(','):String(mon.location||'');
-   let currentMethod='';
    return raw.replace(/^['\"]|['\"]$/g,'').split(',').map(v=>v.trim().replace(/^['\"]|['\"]$/g,'')).filter(Boolean).map(part=>{
      const found=part.match(/^\[([^\]]+)\]\s*/);
-     if(found){currentMethod=found[1];part=part.replace(methods,'').trim()}
-     return {name:part,method:currentMethod};
-   }).filter(x=>x.name&&!nonWild.test(x.name));
+     const method=found?found[1]:'';
+     if(found)part=part.replace(methods,'').trim();
+     return {name:part,method};
+   }).filter(x=>x.name&&!nonWild.test(x.name)&&!/^[?\s]+$/.test(x.name));
  }
  monsters.forEach(m=>{
    const used=new Set();
@@ -211,12 +211,19 @@ document.addEventListener('DOMContentLoaded',function(){
    detail.appendChild(list);
  }
  const buttons=new Map();
+ const scroll=document.getElementById('yv-map-scroll');
+ function focusMarker(name){
+   const btn=buttons.get(name);if(!btn||!scroll)return;
+   const x=Number(coords[name].x)/1600*scroll.scrollWidth;
+   const y=Number(coords[name].y)/777*scroll.scrollHeight;
+   scroll.scrollTo({left:Math.max(0,x-scroll.clientWidth/2),top:Math.max(0,y-scroll.clientHeight/2),behavior:'smooth'});
+ }
  coordNames.forEach(name=>{
    const pos=coords[name],btn=make('button');btn.type='button';btn.className='yv-map-pin';
    btn.style.left=(Number(pos.x)/1600*100)+'%';btn.style.top=(Number(pos.y)/777*100)+'%';
    btn.title=name+' ('+(byPlace.get(name)||[]).length+' Dokimon)';
    btn.setAttribute('aria-label',btn.title);
-   btn.addEventListener('click',()=>{showPlace(name);buttons.forEach(b=>b.classList.remove('selected'));btn.classList.add('selected')});
+   btn.addEventListener('click',()=>{showPlace(name);buttons.forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');focusMarker(name)});
    pins.appendChild(btn);buttons.set(name,btn);
  });
  function update(){
@@ -228,8 +235,9 @@ document.addEventListener('DOMContentLoaded',function(){
    if(selected){
      detail.appendChild(make('h3',selected.name+' — '+matches.size+' mapped location(s)'));
      const list=make('div');list.className='yv-map-monsters';
-     [...matches].forEach(name=>{const b=make('button',name);b.type='button';b.className='yv-map-location-link';b.style.cssText='padding:8px 10px;border:1px solid #6688ad;border-radius:9px;background:#263e5c;color:#fff;cursor:pointer';b.addEventListener('click',()=>{showPlace(name);buttons.get(name)?.focus()});list.appendChild(b)});
+     [...matches].forEach(name=>{const b=make('button',name);b.type='button';b.className='yv-map-location-link';b.style.cssText='padding:8px 10px;border:1px solid #6688ad;border-radius:9px;background:#263e5c;color:#fff;cursor:pointer';b.addEventListener('click',()=>{showPlace(name);focusMarker(name);buttons.get(name)?.focus()});list.appendChild(b)});
      detail.appendChild(list);
+     if(matches.size===1)focusMarker([...matches][0]);
      const missing=locations(selected).filter(l=>!resolve(l.name));
      unmapped.hidden=!missing.length;
      if(missing.length){unmapped.replaceChildren(make('h3','Locations awaiting verified map coordinates'),make('p',missing.map(x=>x.name+(x.method?' ('+x.method+')':'')).join(' · ')))}
