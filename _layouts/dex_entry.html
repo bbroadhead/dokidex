@@ -71,6 +71,7 @@ layout: default
   {% if page.long_description_ja %}<p class="yv-description-ja" lang="ja">{{ page.long_description_ja }}</p>{% endif %}
   {% if page.long_description_ko %}<p class="yv-description-ko" lang="ko">{{ page.long_description_ko }}</p>{% endif %}</section>
 
+{% include encounter_map_embed.html mode='single' monster=page.name %}
 </article>
 <style>
 .yv-description-ja,.yv-description-ko,.yv-short-description-ko,.yv-short-description-ja{display:none}
