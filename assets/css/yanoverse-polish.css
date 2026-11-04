@@ -38,3 +38,29 @@ body.dark-mode .yv-dex-summary{border-color:rgba(147,193,238,.43);box-shadow:0 4
 
 /* Transparent monster artwork containers: retain card framing, remove image-panel fill. */
 body.dark-mode #dex-grid .dex-entry .img-wrapper,body.dark-mode #dex-grid .dex-entry .img-wrapper::before,body.dark-mode #dex-grid .dex-entry .img-wrapper::after{background:transparent!important;background-image:none!important;box-shadow:none!important}
+
+/* Type-colored card perimeter: single types stay uniform, dual types blend smoothly. */
+body.dark-mode #dex-grid .dex-entry{
+  --yv-type-one:#7898bd;--yv-type-two:var(--yv-type-one);
+  overflow:visible!important;
+  border:1px solid transparent!important;
+  background:linear-gradient(155deg,#273d58,#101f34 70%) padding-box,
+             linear-gradient(125deg,var(--yv-type-one),var(--yv-type-two)) border-box!important;
+  box-shadow:0 0 10px -4px var(--yv-type-one),0 0 16px -8px var(--yv-type-two),0 7px 20px rgba(0,0,0,.18)!important;
+}
+body.dark-mode #dex-grid .dex-entry::before{
+  content:"";position:absolute;inset:-3px;z-index:-1;pointer-events:none;
+  border-radius:inherit;background:linear-gradient(125deg,var(--yv-type-one),var(--yv-type-two));
+  filter:blur(9px);opacity:.24;transition:opacity .2s ease;
+}
+@media(hover:hover){
+  body.dark-mode #dex-grid .dex-entry:hover{
+    border-color:transparent!important;
+    box-shadow:0 0 15px -3px var(--yv-type-one),0 0 22px -6px var(--yv-type-two),0 14px 32px rgba(0,0,0,.3)!important;
+  }
+  body.dark-mode #dex-grid .dex-entry:hover::before{opacity:.42}
+}
+body.dark-mode #dex-grid .dex-entry:focus-within{
+  border-color:transparent!important;
+  box-shadow:0 0 0 2px rgba(210,231,255,.7),0 0 16px -3px var(--yv-type-one)!important;
+}
