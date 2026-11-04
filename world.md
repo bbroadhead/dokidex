@@ -122,6 +122,7 @@ permalink: /world/
       </div>
       <div class="yv-map-detail" id="yv-map-detail" aria-live="polite">Select a location marker to view encounters.</div>
       <div class="yv-map-unmapped" id="yv-map-unmapped" hidden></div>
+      <details class="yv-map-coverage" id="yv-map-coverage"><summary>Locations still awaiting map coordinates</summary><div id="yv-map-coverage-list"></div></details>
     </section>
     <details class="yv-map-original"><summary>View additional regional map</summary><img src="{{ '/assets/images/region_map_updated.png' | relative_url }}" alt="Regional pixel map" loading="lazy"></details>
   </div>
@@ -146,6 +147,8 @@ permalink: /world/
 .yv-map-monsters{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .yv-map-monsters a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#f1f7ff;background:#263e5c;border:1px solid #49698e;border-radius:9px;padding:5px 10px;font-size:13px}
 .yv-map-monsters img{width:30px;height:30px;object-fit:contain;image-rendering:pixelated}
+.yv-map-coverage{margin-top:14px;padding:11px 13px;border:1px solid rgba(145,184,230,.25);border-radius:11px;background:rgba(255,255,255,.04)}
+.yv-map-coverage summary{cursor:pointer;font-weight:650}.yv-map-coverage-list{margin-top:10px}.yv-map-coverage p{margin:8px 0;font-size:13px;line-height:1.5}
 .yv-map-original{margin:18px auto;max-width:1100px}.yv-map-original summary{cursor:pointer}.yv-map-original img{max-width:100%;height:auto;margin-top:12px}
 @media(max-width:700px){.yv-map-explorer{padding:9px}.yv-map-canvas{min-width:820px}.yv-map-scroll{max-height:58dvh}.yv-map-pin{width:21px;height:21px}}
 </style>
@@ -186,6 +189,13 @@ document.addEventListener('DOMContentLoaded',function(){
    });
    const option=document.createElement('option');option.value=m.name;option.textContent=m.name;select.appendChild(option);
  });
+ const coverage=document.getElementById('yv-map-coverage-list');
+ if(coverage){
+   const title=document.createElement('p');title.textContent=unknown.size+' distinct encounter locations currently lack verified map coordinates. These remain searchable through individual Dokimon profiles.';coverage.appendChild(title);
+   [...unknown.entries()].sort((a,b)=>a[0].localeCompare(b[0])).forEach(([name,mons])=>{
+     const item=document.createElement('p');item.textContent=name+' — '+new Set(mons.map(m=>m.name)).size+' Dokimon';coverage.appendChild(item);
+   });
+ }
  const make=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e};
  function showPlace(name){
    detail.replaceChildren();
