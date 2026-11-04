@@ -13,6 +13,8 @@ description: ''
 long_description: Few can dabble with Braveheart and make it out unharmed. With vicious
   claws that spew hot flames, he's a dangerous enemy to make.
 short_description: Courage Dokimon
+short_description_ko: "용기 도키몬"
+long_description_ko: "브레이브하트에게 덤비고도 무사히 빠져나오는 이는 드물다. 뜨거운 불꽃을 뿜는 날카로운 발톱을 지닌 위험한 상대다."
 base_stats:
 - 100
 - 118
