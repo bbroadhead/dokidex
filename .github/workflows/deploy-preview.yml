@@ -14,6 +14,8 @@ concurrency:
 jobs:
   preview:
     runs-on: ubuntu-latest
+    env:
+      GEM_HOME: /home/runner/.local/share/gem
     steps:
       - uses: actions/checkout@v4
       - name: Set up Ruby
@@ -27,6 +29,7 @@ jobs:
           key: ${{ runner.os }}-ruby-3.3-jekyll-4.4
       - name: Install Jekyll if not cached
         run: |
+          echo "$GEM_HOME/bin" >> "$GITHUB_PATH"
           if ! gem list --local --installed jekyll --version '~> 4.4'; then
             gem install jekyll -v '~> 4.4' --no-document
           fi
