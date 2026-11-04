@@ -163,14 +163,19 @@ document.addEventListener('DOMContentLoaded',function(){
  const params=new URLSearchParams(location.search);
  if(!select||!pins||!Array.isArray(data)||!coords)return;
  const normalize=s=>String(s||'').toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9]+/g,' ').trim();
- const aliases={'gad riel peak':"Gad'riel Mountain",'gadriel peak':"Gad'riel Mountain",'darkshawl peak':'Darkshawl Spire','ginmachi city':'Giamachi City','route 8':'Route 08','route 9':'Route 09','route 1':'Route 01','route 2':'Route 02','route 3':'Route 03','route 4':'Route 04','route 5':'Route 05','route 6':'Route 06','route 7':'Route 07'};
+ const aliases={'endgame portal':'Endgame Portal','gad riel peak':"Gad'riel Mountain",'gadriel peak':"Gad'riel Mountain",'darkshawl peak':'Darkshawl Spire','ginmachi city':'Giamachi City','route 8':'Route 08','route 9':'Route 09','route 1':'Route 01','route 2':'Route 02','route 3':'Route 03','route 4':'Route 04','route 5':'Route 05','route 6':'Route 06','route 7':'Route 07'};
  const coordNames=Object.keys(coords).filter(n=>coords[n]&&Number.isFinite(Number(coords[n].x))&&Number.isFinite(Number(coords[n].y)));
- const lookup=new Map(coordNames.map(n=>[normalize(n),n]));
+ const canonicalNames=[...new Set(coordNames.filter(n=>!/^\?/.test(n)))];
+ const lookup=new Map(canonicalNames.map(n=>[normalize(n),n]));
+ lookup.set(normalize('??? Town (Endgame Portal)'), 'Endgame Portal');
+ lookup.set(normalize('??? Town'), 'Endgame Portal');
  const resolve=part=>{const key=normalize(part);return lookup.get(key)||aliases[key]||null};
- const byPlace=new Map(coordNames.map(n=>[n,[]]));
+ const byPlace=new Map(canonicalNames.map(n=>[n,[]]));
+ if(coords['??? Town (Endgame Portal)']){coords['Endgame Portal']=coords['??? Town (Endgame Portal)'];canonicalNames.push('Endgame Portal');byPlace.set('Endgame Portal',[])}
  const unknown=new Map();
  const monsters=data.filter(m=>m&&m.name).sort((a,b)=>String(a.name).localeCompare(String(b.name)));
  const methods=/^\s*\[[^\]]+\]\s*/;
+ const nonWild=/^(starter|evolution only|overworld encounter|starter\/overworld encounter.*|fishing only|unknown|none|n\/a)$/i;
  function locations(mon){
    const raw=Array.isArray(mon.location)?mon.location.join(','):String(mon.location||'');
    return raw.replace(/^['\"]|['\"]$/g,'').split(',').map(v=>v.trim().replace(/^['\"]|['\"]$/g,'')).filter(Boolean).map(part=>{
@@ -218,7 +223,7 @@ document.addEventListener('DOMContentLoaded',function(){
    const y=Number(coords[name].y)/777*scroll.scrollHeight;
    scroll.scrollTo({left:Math.max(0,x-scroll.clientWidth/2),top:Math.max(0,y-scroll.clientHeight/2),behavior:'smooth'});
  }
- coordNames.forEach(name=>{
+ canonicalNames.forEach(name=>{
    const pos=coords[name],btn=make('button');btn.type='button';btn.className='yv-map-pin';
    btn.style.left=(Number(pos.x)/1600*100)+'%';btn.style.top=(Number(pos.y)/777*100)+'%';
    btn.title=name+' ('+(byPlace.get(name)||[]).length+' Dokimon)';
