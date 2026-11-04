@@ -208,6 +208,21 @@ const locationFilter = document.getElementById('location-filter');
 const searchFilter = document.getElementById('search-filter');
 const clearBtn = document.getElementById('clear-filters');
 const entries = document.querySelectorAll('.dex-entry');
+// Apply type-based border colors, blending both colors on dual-type Dokimon.
+const dexTypeColors = {
+  fire:'#f27655', water:'#58b8f5', grass:'#74c987',
+  electric:'#f6d65b', light:'#f8e9a4', dark:'#9c88d6',
+  flying:'#8ed5e5', fight:'#e58d6a', fairy:'#ef9fdf',
+  ghost:'#a38ce8', poison:'#bc80d8', dragon:'#8b9cff', ice:'#91e0ed'
+};
+document.querySelectorAll('#dex-grid .dex-entry').forEach(card => {
+  const types = (card.dataset.type || '').toLowerCase().match(/[a-z]+/g) || [];
+  const valid = [...new Set(types.filter(type => dexTypeColors[type]))];
+  if (!valid.length) return;
+  card.style.setProperty('--yv-type-one', dexTypeColors[valid[0]]);
+  card.style.setProperty('--yv-type-two', dexTypeColors[valid[1] || valid[0]]);
+});
+
 const filterToggle = document.getElementById('filter-toggle');
 const filterControls = document.querySelector('.filter-controls');
 
