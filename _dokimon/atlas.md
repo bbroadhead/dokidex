@@ -15,6 +15,7 @@ long_description: When its born, this shy Dokimon will hollow out a rock at the 
 short_description: Stone Dragon Dokimon
 short_description_ja: "岩竜ドキモン"
 long_description_ja: "生まれたばかりのアトラスは臆病で、海底の岩をくり抜いて住みかにする。進化するまで、その岩が殻となる。"
+long_description_ko: "갓 태어난 아틀라스는 겁이 많아 바닷속 바위를 파내 보금자리를 만든다. 그 바위는 진화할 때까지 껍데기 역할을 한다."
 base_stats:
 - 55
 - 40
