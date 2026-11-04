@@ -148,7 +148,7 @@ permalink: /world/
 .yv-map-toggle input{width:17px;height:17px;accent-color:#8bc5ff}
 .yv-map-pin.no-encounters{background:#64748b;border-color:#d3dbe7;box-shadow:0 0 0 2px rgba(100,116,139,.2)}
 .yv-map-pin[hidden]{display:none!important}
-@media(max-width:700px){.yv-map-monsters{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.yv-map-monsters a{min-height:142px;padding:11px 7px}.yv-map-monsters img{width:112px;height:112px}}
+@media(max-width:700px){.yv-map-monsters{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.yv-map-monsters a{min-height:142px;padding:11px 7px}.yv-map-monsters img{width:var(--yv-map-sprite-size,112px);height:var(--yv-map-sprite-size,112px)}}
 .yv-map-scroll{width:100%;overflow:auto;max-height:70dvh;border-radius:12px;border:1px solid rgba(145,184,230,.32);background:#091522;overscroll-behavior:contain}
 .yv-map-canvas{position:relative;width:100%;min-width:700px;aspect-ratio:1600/777}
 .yv-map-canvas>img{width:100%;height:100%;display:block;object-fit:fill;pointer-events:none}
@@ -161,7 +161,7 @@ permalink: /world/
 .yv-map-detail h3,.yv-map-unmapped h3{margin:0 0 9px;font-size:16px;color:#fff}
 .yv-map-monsters{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,165px),1fr));gap:12px;margin-top:12px}
 .yv-map-monsters a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;text-decoration:none;color:#f1f7ff;background:#263e5c;border:1px solid #49698e;border-radius:12px;padding:14px 10px;font-size:14px;min-height:138px;transition:transform .15s,border-color .15s}.yv-map-monsters a:hover,.yv-map-monsters a:focus-visible{transform:translateY(-2px);border-color:#a7d4ff}.yv-map-monsters a span{overflow-wrap:anywhere;line-height:1.4}
-.yv-map-monsters img{width:104px;height:104px;max-width:100%;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 4px 7px rgba(0,0,0,.3))}
+.yv-map-monsters img{width:var(--yv-map-sprite-size,104px);height:var(--yv-map-sprite-size,104px);max-width:100%;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 4px 7px rgba(0,0,0,.3))}
 .yv-map-directory{margin-top:18px}.yv-map-directory h3{margin:0 0 10px;font-size:18px}.yv-map-directory-controls{display:flex;gap:9px;flex-wrap:wrap}.yv-map-directory-controls input,.yv-map-directory-controls select{min-height:42px;background:#203754;color:#f3f7ff;border:1px solid #6486b0;border-radius:10px;padding:9px 12px;font:inherit;min-width:0}.yv-map-directory-controls input{flex:2 1 210px}.yv-map-directory-controls select{flex:1 1 170px}.yv-map-directory-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:9px;max-height:480px;overflow:auto}.yv-map-directory-item{padding:11px;border:1px solid rgba(145,184,230,.25);border-radius:11px;background:rgba(255,255,255,.045)}.yv-map-directory-item button{border:0;background:transparent;color:#b8dcff;text-align:left;padding:0;cursor:pointer;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}.yv-map-directory-item p{font-size:12px;line-height:1.45;margin:6px 0 0}.yv-map-directory-count{font-size:13px;opacity:.85}
 .yv-map-coverage{margin-top:14px;padding:11px 13px;border:1px solid rgba(145,184,230,.25);border-radius:11px;background:rgba(255,255,255,.04)}
 .yv-map-coverage summary{cursor:pointer;font-weight:650}.yv-map-coverage-list{margin-top:10px}.yv-map-coverage p{margin:8px 0;font-size:13px;line-height:1.5}
@@ -270,6 +270,20 @@ document.addEventListener('DOMContentLoaded',function(){
  }
  const buttons=new Map();
  const scroll=document.getElementById('yv-map-scroll');
+ const canvas=document.getElementById('yv-map-canvas');
+ function syncMapArtworkScale(){
+   if(!canvas)return;
+   // Scale encounter sprites with the displayed map, relative to its 1600px source.
+   // Keep them usable at both narrow and large viewport sizes.
+   const scale=canvas.getBoundingClientRect().width/1600;
+   const size=Math.round(Math.max(64,Math.min(180,160*scale)));
+   document.getElementById('yv-map-detail')?.style.setProperty('--yv-map-sprite-size',size+'px');
+ }
+ if(canvas){
+   syncMapArtworkScale();
+   if(typeof ResizeObserver!=='undefined')new ResizeObserver(syncMapArtworkScale).observe(canvas);
+   else window.addEventListener('resize',syncMapArtworkScale,{passive:true});
+ }
  function focusMarker(name){
    const btn=buttons.get(name);if(!btn||!scroll)return;
    const x=Number(coords[name].x)/1600*scroll.scrollWidth;
