@@ -4,6 +4,7 @@ layout: default
 
 <article class="dex-entry yanoverse-profile">
   <a class="yv-back-link" href="{{ '/' | relative_url }}">← Return to Dex</a>
+  <a class="yv-back-link yv-map-profile-link" href="{{ '/world/' | relative_url }}?dokimon={{ page.name | url_encode }}">View all encounter locations on map</a>
   <header class="yv-profile-heading"><span class="yv-profile-number">#{{ page.number }}</span><h1>{{ page.name }}</h1></header>
 
   {% assign dex = site.data.dokimon %}
