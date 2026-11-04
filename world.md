@@ -171,11 +171,11 @@ document.addEventListener('DOMContentLoaded',function(){
  function locations(mon){
    const raw=Array.isArray(mon.location)?mon.location.join(','):String(mon.location||'');
    let currentMethod='';
-   return raw.split(',').map(v=>v.trim()).filter(Boolean).map(part=>{
+   return raw.replace(/^['\"]|['\"]$/g,'').split(',').map(v=>v.trim().replace(/^['\"]|['\"]$/g,'')).filter(Boolean).map(part=>{
      const found=part.match(/^\[([^\]]+)\]\s*/);
      if(found){currentMethod=found[1];part=part.replace(methods,'').trim()}
      return {name:part,method:currentMethod};
-   }).filter(x=>x.name&&!/^(starter|unknown|none|n\/a)$/i.test(x.name));
+   }).filter(x=>x.name&&!nonWild.test(x.name));
  }
  monsters.forEach(m=>{
    const used=new Set();
