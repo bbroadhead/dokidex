@@ -20,8 +20,16 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-      - name: Install Jekyll
-        run: gem install jekyll -v '~> 4.4'
+      - name: Cache Jekyll gems
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/gem
+          key: ${{ runner.os }}-ruby-3.3-jekyll-4.4
+      - name: Install Jekyll if not cached
+        run: |
+          if ! gem list --local --installed jekyll --version '~> 4.4'; then
+            gem install jekyll -v '~> 4.4' --no-document
+          fi
       - name: Build preview with correct project path
         run: JEKYLL_ENV=production jekyll build --destination _site --baseurl /Dokidex-Preview --config _config.yml,_config_preview.yml
       - name: Fix root-relative URLs for preview hosting
