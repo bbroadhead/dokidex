@@ -113,6 +113,7 @@ permalink: /world/
         <label for="yv-map-monster">Find Dokimon</label>
         <select id="yv-map-monster"><option value="">All encounter locations</option></select>
         <button id="yv-map-reset" type="button">Show all</button>
+        <label class="yv-map-toggle"><input type="checkbox" id="yv-map-encounters-only"> Encounter locations only</label>
       </div>
       <div class="yv-map-scroll" id="yv-map-scroll" tabindex="0" aria-label="Scrollable world map with encounter markers">
         <div class="yv-map-canvas" id="yv-map-canvas">
@@ -134,6 +135,10 @@ permalink: /world/
 .yv-map-toolbar select,.yv-map-toolbar button{background:#203754;color:#f3f7ff;border:1px solid #6486b0;border-radius:10px;padding:10px 12px;min-height:42px;font:600 13px system-ui,sans-serif}
 .yv-map-toolbar select{flex:1 1 210px;min-width:0}
 .yv-map-toolbar button{cursor:pointer}
+.yv-map-toggle{display:inline-flex;align-items:center;gap:7px;white-space:normal;cursor:pointer}
+.yv-map-toggle input{width:17px;height:17px;accent-color:#8bc5ff}
+.yv-map-pin.no-encounters{background:#64748b;border-color:#d3dbe7;box-shadow:0 0 0 2px rgba(100,116,139,.2)}
+.yv-map-pin[hidden]{display:none!important}
 .yv-map-scroll{width:100%;overflow:auto;max-height:70dvh;border-radius:12px;border:1px solid rgba(145,184,230,.32);background:#091522;overscroll-behavior:contain}
 .yv-map-canvas{position:relative;width:100%;min-width:700px;aspect-ratio:1600/777}
 .yv-map-canvas>img{width:100%;height:100%;display:block;object-fit:fill;pointer-events:none}
@@ -169,7 +174,11 @@ document.addEventListener('DOMContentLoaded',function(){
  const lookup=new Map(canonicalNames.map(n=>[normalize(n),n]));
  lookup.set(normalize('??? Town (Endgame Portal)'), 'Endgame Portal');
  lookup.set(normalize('??? Town'), 'Endgame Portal');
- const resolve=part=>{const key=normalize(part);return lookup.get(key)||aliases[key]||null};
+ const resolve=part=>{
+   const key=normalize(part);
+   if(lookup.has(key))return lookup.get(key);
+   const alias=aliases[key];return alias&&coords[alias]?alias:null;
+ };
  const byPlace=new Map(canonicalNames.map(n=>[n,[]]));
  if(coords['??? Town (Endgame Portal)']){coords['Endgame Portal']=coords['??? Town (Endgame Portal)'];canonicalNames.push('Endgame Portal');byPlace.set('Endgame Portal',[])}
  const unknown=new Map();
@@ -226,16 +235,22 @@ document.addEventListener('DOMContentLoaded',function(){
  canonicalNames.forEach(name=>{
    const pos=coords[name],btn=make('button');btn.type='button';btn.className='yv-map-pin';
    btn.style.left=(Number(pos.x)/1600*100)+'%';btn.style.top=(Number(pos.y)/777*100)+'%';
+   if(!(byPlace.get(name)||[]).length)btn.classList.add('no-encounters');
    btn.title=name+' ('+(byPlace.get(name)||[]).length+' Dokimon)';
    btn.setAttribute('aria-label',btn.title);
    btn.addEventListener('click',()=>{showPlace(name);buttons.forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');focusMarker(name)});
    pins.appendChild(btn);buttons.set(name,btn);
  });
+ const encountersOnly=document.getElementById('yv-map-encounters-only');
  function update(){
    const selected=monsters.find(m=>m.name===select.value);
    const matches=new Set();
    if(selected)locations(selected).forEach(l=>{const name=resolve(l.name);if(name)matches.add(name)});
-   buttons.forEach((btn,name)=>{btn.classList.toggle('selected',!!selected&&matches.has(name));btn.classList.toggle('dimmed',!!selected&&!matches.has(name))});
+   buttons.forEach((btn,name)=>{
+     btn.hidden=!!encountersOnly?.checked&&!(byPlace.get(name)||[]).length;
+     btn.classList.toggle('selected',!!selected&&matches.has(name));
+     btn.classList.toggle('dimmed',!!selected&&!matches.has(name));
+   });
    detail.replaceChildren();
    if(selected){
      detail.appendChild(make('h3',selected.name+' — '+matches.size+' mapped location(s)'));
@@ -253,6 +268,7 @@ document.addEventListener('DOMContentLoaded',function(){
    }
  }
  select.addEventListener('change',update);
+ encountersOnly?.addEventListener('change',update);
  document.getElementById('yv-map-reset').addEventListener('click',()=>{select.value='';update()});
  const requested=params.get('dokimon');if(requested){const match=monsters.find(m=>normalize(m.name)===normalize(requested));if(match)select.value=match.name}
  update();
