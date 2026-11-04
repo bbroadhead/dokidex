@@ -13,6 +13,8 @@ description: ''
 long_description: Birzhaven's powerful poison rivals even that of the most deadly
   spiders. Only Moisen's feathers can stop inevitable death.
 short_description: Concoction Dokimon
+short_description_ja: "調合ドキモン"
+long_description_ja: "バージヘイヴンの強力な毒は、猛毒を持つクモにも匹敵する。避けられない死を食い止められるのは、モイセンの羽だけだ。"
 base_stats:
 - 52
 - 16
