@@ -170,6 +170,7 @@ permalink: /world/
 <script>
 document.addEventListener('DOMContentLoaded',function(){
  const data={{ site.dokimon | jsonify }};
+ const siteBase={{ '/' | relative_url | jsonify }};
  const coords={{ site.data.map_locations | jsonify }};
  const select=document.getElementById('yv-map-monster');
  const pins=document.getElementById('yv-map-pins');
@@ -240,7 +241,7 @@ document.addEventListener('DOMContentLoaded',function(){
      const card=document.createElement('div');card.className='yv-map-directory-item';
      const heading=document.createElement('button');heading.type='button';heading.textContent=rec.name;
      if(rec.mapped)heading.addEventListener('click',()=>{showPlace(rec.name);focusMarker(rec.name);buttons.get(rec.name)?.focus()});
-     else{heading.disabled=true;heading.style.textDecoration='none';heading.style.opacity='.75'}
+     else{heading.addEventListener('click',()=>{detail.replaceChildren();detail.appendChild(make('h3',rec.name+' — coordinates not yet verified'));const links=make('div');links.className='yv-map-monsters';rec.mons.forEach(({mon})=>{const a=make('a',mon.name);a.href=mon.url?(siteBase.replace(/\/$/,'')+mon.url):'#';links.appendChild(a)});detail.appendChild(links);detail.scrollIntoView({behavior:'smooth',block:'nearest'})})}
      card.appendChild(heading);
      const description=document.createElement('p');
      description.textContent=(rec.mapped?'Mapped':'Coordinates needed')+' · '+new Set(rec.mons.map(x=>x.mon.name)).size+' Dokimon';
@@ -260,8 +261,8 @@ document.addEventListener('DOMContentLoaded',function(){
    detail.appendChild(make('p',encounters.length?encounters.length+' known Dokimon encounter(s)':'No Dokimon encounters recorded here.'));
    const list=make('div');list.className='yv-map-monsters';
    encounters.forEach(({mon,method})=>{
-     const a=make('a');a.href=mon.url||'#';
-     if(mon.image){const img=make('img');img.src=mon.image;img.alt='';img.loading='lazy';a.appendChild(img)}
+     const a=make('a');a.href=mon.url?(siteBase.replace(/\/$/,'')+mon.url):'#';
+     if(mon.image){const img=make('img');img.src=/^https?:\/\//.test(mon.image)?mon.image:(siteBase.replace(/\/$/,'')+'/'+String(mon.image).replace(/^\//,''));img.alt='';img.loading='lazy';a.appendChild(img)}
      a.appendChild(make('span',mon.name+(method?' · '+method:'')));list.appendChild(a);
    });
    detail.appendChild(list);
