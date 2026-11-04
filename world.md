@@ -123,6 +123,15 @@ permalink: /world/
       </div>
       <div class="yv-map-detail" id="yv-map-detail" aria-live="polite">Select a location marker to view encounters.</div>
       <div class="yv-map-unmapped" id="yv-map-unmapped" hidden></div>
+      <section class="yv-map-directory" aria-label="Encounter location directory">
+        <h3>Location directory</h3>
+        <div class="yv-map-directory-controls">
+          <input id="yv-map-directory-search" type="search" placeholder="Search locations or Dokimon…" aria-label="Search encounter locations">
+          <select id="yv-map-directory-filter" aria-label="Filter locations"><option value="all">All locations</option><option value="mapped">Mapped</option><option value="unmapped">Awaiting coordinates</option><option value="encounters">With encounters</option></select>
+        </div>
+        <p id="yv-map-directory-count" aria-live="polite"></p>
+        <div id="yv-map-directory-results" class="yv-map-directory-results"></div>
+      </section>
       <details class="yv-map-coverage" id="yv-map-coverage"><summary>Locations still awaiting map coordinates</summary><div id="yv-map-coverage-list"></div></details>
     </section>
     <details class="yv-map-original"><summary>View additional regional map</summary><img src="{{ '/assets/images/region_map_updated.png' | relative_url }}" alt="Regional pixel map" loading="lazy"></details>
@@ -152,6 +161,7 @@ permalink: /world/
 .yv-map-monsters{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .yv-map-monsters a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#f1f7ff;background:#263e5c;border:1px solid #49698e;border-radius:9px;padding:5px 10px;font-size:13px}
 .yv-map-monsters img{width:30px;height:30px;object-fit:contain;image-rendering:pixelated}
+.yv-map-directory{margin-top:18px}.yv-map-directory h3{margin:0 0 10px;font-size:18px}.yv-map-directory-controls{display:flex;gap:9px;flex-wrap:wrap}.yv-map-directory-controls input,.yv-map-directory-controls select{min-height:42px;background:#203754;color:#f3f7ff;border:1px solid #6486b0;border-radius:10px;padding:9px 12px;font:inherit;min-width:0}.yv-map-directory-controls input{flex:2 1 210px}.yv-map-directory-controls select{flex:1 1 170px}.yv-map-directory-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:9px;max-height:480px;overflow:auto}.yv-map-directory-item{padding:11px;border:1px solid rgba(145,184,230,.25);border-radius:11px;background:rgba(255,255,255,.045)}.yv-map-directory-item button{border:0;background:transparent;color:#b8dcff;text-align:left;padding:0;cursor:pointer;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}.yv-map-directory-item p{font-size:12px;line-height:1.45;margin:6px 0 0}.yv-map-directory-count{font-size:13px;opacity:.85}
 .yv-map-coverage{margin-top:14px;padding:11px 13px;border:1px solid rgba(145,184,230,.25);border-radius:11px;background:rgba(255,255,255,.04)}
 .yv-map-coverage summary{cursor:pointer;font-weight:650}.yv-map-coverage-list{margin-top:10px}.yv-map-coverage p{margin:8px 0;font-size:13px;line-height:1.5}
 .yv-map-original{margin:18px auto;max-width:1100px}.yv-map-original summary{cursor:pointer}.yv-map-original img{max-width:100%;height:auto;margin-top:12px}
@@ -210,6 +220,38 @@ document.addEventListener('DOMContentLoaded',function(){
      const item=document.createElement('p');item.textContent=name+' — '+new Set(mons.map(m=>m.name)).size+' Dokimon';coverage.appendChild(item);
    });
  }
+ const directorySearch=document.getElementById('yv-map-directory-search');
+ const directoryFilter=document.getElementById('yv-map-directory-filter');
+ const directoryResults=document.getElementById('yv-map-directory-results');
+ const directoryCount=document.getElementById('yv-map-directory-count');
+ function renderDirectory(){
+   if(!directoryResults)return;
+   const q=normalize(directorySearch.value);
+   const filter=directoryFilter.value;
+   const records=[
+     ...canonicalNames.map(name=>({name,mapped:true,mons:byPlace.get(name)||[]})),
+     ...[...unknown.entries()].map(([name,mons])=>({name,mapped:false,mons:mons.map(mon=>({mon,method:''}))}))
+   ].filter(rec=>(filter==='all'||filter==='mapped'&&rec.mapped||filter==='unmapped'&&!rec.mapped||filter==='encounters'&&rec.mons.length>0))
+    .filter(rec=>!q||normalize(rec.name).includes(q)||rec.mons.some(x=>normalize(x.mon.name).includes(q)))
+    .sort((a,b)=>a.name.localeCompare(b.name));
+   directoryCount.textContent=records.length+' locations shown';
+   directoryResults.replaceChildren();
+   records.forEach(rec=>{
+     const card=document.createElement('div');card.className='yv-map-directory-item';
+     const heading=document.createElement('button');heading.type='button';heading.textContent=rec.name;
+     if(rec.mapped)heading.addEventListener('click',()=>{showPlace(rec.name);focusMarker(rec.name);buttons.get(rec.name)?.focus()});
+     else{heading.disabled=true;heading.style.textDecoration='none';heading.style.opacity='.75'}
+     card.appendChild(heading);
+     const description=document.createElement('p');
+     description.textContent=(rec.mapped?'Mapped':'Coordinates needed')+' · '+new Set(rec.mons.map(x=>x.mon.name)).size+' Dokimon';
+     card.appendChild(description);
+     if(rec.mons.length){const names=document.createElement('p');names.textContent=[...new Set(rec.mons.map(x=>x.mon.name))].slice(0,8).join(', ')+(rec.mons.length>8?'…':'');card.appendChild(names)}
+     directoryResults.appendChild(card);
+   });
+ }
+ directorySearch?.addEventListener('input',renderDirectory);
+ directoryFilter?.addEventListener('change',renderDirectory);
+ renderDirectory();
  const make=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e};
  function showPlace(name){
    detail.replaceChildren();
