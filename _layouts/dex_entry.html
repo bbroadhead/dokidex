@@ -63,13 +63,17 @@ layout: default
   <p><strong>Evolves at:</strong> {{ page.evolves_at }}</p>
   <p><strong>Location:</strong> {{ page.location }}</p>
   <p>{{ page.description }}</p>
+  {% if page.short_description %}<p class="yv-short-description-en">{{ page.short_description }}</p>{% endif %}
+  {% if page.short_description_ko %}<p class="yv-short-description-ko" lang="ko">{{ page.short_description_ko }}</p>{% endif %}
   <p class="yv-description-en">{{ page.long_description }}</p>
   {% if page.long_description_ja %}<p class="yv-description-ja" lang="ja">{{ page.long_description_ja }}</p>{% endif %}
   {% if page.long_description_ko %}<p class="yv-description-ko" lang="ko">{{ page.long_description_ko }}</p>{% endif %}</section>
 
 </article>
 <style>
-.yv-description-ja,.yv-description-ko{display:none}
+.yv-description-ja,.yv-description-ko,.yv-short-description-ko{display:none}
+html[data-language="ko"] .yanoverse-profile:has(.yv-short-description-ko) .yv-short-description-en{display:none}
+html[data-language="ko"] .yv-short-description-ko{display:block}
 html[data-language="ja"] .yanoverse-profile:has(.yv-description-ja) .yv-description-en{display:none}
 html[data-language="ja"] .yv-description-ja{display:block}
 html[data-language="ko"] .yanoverse-profile:has(.yv-description-ko) .yv-description-en{display:none}
