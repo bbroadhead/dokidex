@@ -298,7 +298,7 @@ document.getElementById("formFilter").addEventListener("change", function () {
     if (selectedForm === "common") {
       img.src = img.dataset.default;
     } else {
-      img.src = `/assets/images/forms/${folderName}/${name}_${selectedForm}.png`;
+      img.src = `{{ '/assets/images/forms/' | relative_url }}${folderName}/${name}_${selectedForm}.png`;
     }
   });
 });
