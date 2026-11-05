@@ -173,6 +173,14 @@ document.addEventListener('DOMContentLoaded',function(){
  const data={{ site.data.dokimon | jsonify }};
  const siteBase={{ '/' | relative_url | jsonify }};
  const coords={{ site.data.map_locations | jsonify }};
+ const spriteUrl=raw=>{
+   const value=String(raw||'').trim();
+   if(!value)return '';
+   if(/^https?:\/\//i.test(value))return value;
+   const prefix=new URL(siteBase,location.origin).pathname.replace(/\/$/,'');
+   const path='/'+value.replace(/^\/+/, '');
+   return path===prefix||path.startsWith(prefix+'/')?path:prefix+path;
+ };
  const select=document.getElementById('yv-map-monster');
  const pins=document.getElementById('yv-map-pins');
  const detail=document.getElementById('yv-map-detail');
@@ -263,7 +271,7 @@ document.addEventListener('DOMContentLoaded',function(){
    const list=make('div');list.className='yv-map-monsters';
    encounters.forEach(({mon,method})=>{
      const a=make('a');a.href=mon.url?(siteBase.replace(/\/$/,'')+mon.url):'#';
-     if(mon.image){const img=make('img');img.src=/^https?:\/\//.test(mon.image)?mon.image:(siteBase.replace(/\/$/,'')+'/'+String(mon.image).replace(/^\//,''));img.alt='';img.loading='lazy';a.appendChild(img)}
+     if(mon.image){const img=make('img');img.src=spriteUrl(mon.image);img.alt='';img.loading='lazy';a.appendChild(img)}
      a.appendChild(make('span',mon.name+(method?' · '+method:'')));list.appendChild(a);
    });
    detail.appendChild(list);
