@@ -26,7 +26,7 @@
 </style>
 <script>
 (function(){
- const data={{ site.dokimon | jsonify }};
+ const data={{ site.data.dokimon | jsonify }};
  const coords={{ site.data.map_locations | jsonify }};
  const base={{ '/' | relative_url | jsonify }};
  const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/\broute 0+([0-9]+)\b/g,'route $1');
