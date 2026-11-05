@@ -170,7 +170,7 @@ permalink: /world/
 </style>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
- const data={{ site.dokimon | jsonify }};
+ const data={{ site.data.dokimon | jsonify }};
  const siteBase={{ '/' | relative_url | jsonify }};
  const coords={{ site.data.map_locations | jsonify }};
  const select=document.getElementById('yv-map-monster');
