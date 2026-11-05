@@ -28,6 +28,14 @@
 (function(){
  const data={{ site.data.dokimon | jsonify }};
  const coords={{ site.data.map_locations | jsonify }};
+ const spriteUrl=raw=>{
+   const value=String(raw||'').trim();
+   if(!value)return '';
+   if(/^https?:\/\//i.test(value))return value;
+   const prefix=new URL(base,location.origin).pathname.replace(/\/$/,'');
+   const path='/'+value.replace(/^\/+/, '');
+   return path===prefix||path.startsWith(prefix+'/')?path:prefix+path;
+ };
  const base={{ '/' | relative_url | jsonify }};
  const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/\broute 0+([0-9]+)\b/g,'route $1');
  const names=Object.keys(coords).filter(n=>coords[n]&&Number.isFinite(+coords[n].x)&&Number.isFinite(+coords[n].y));
@@ -52,16 +60,10 @@
    const list=document.createElement('p');list.textContent=[...matched.keys()].join(' · ')||'No verified map coordinates available.';info.appendChild(list);
    if(unmapped.length){const p=document.createElement('p');p.textContent='Other reported locations (not mapped): '+unmapped.join(' · ');info.appendChild(p)}
    const image=String(m.image||'').trim();
-   // Build image paths from the same Jekyll base used by the map itself.
-   // Avoid duplicate preview prefixes and support absolute external sprite URLs.
-   const rootBase=base.replace(/\/$/,'');
-   const imagePath=image.replace(/^\/+/, '');
-   const imageUrl=/^https?:\/\//i.test(image)?image:
-     (rootBase+'/'+imagePath.replace(/^(Dokidex-Preview\/)+/i,''));
-
+   const imageUrl=spriteUrl(image);
    matched.forEach((pos,place)=>{
     const b=document.createElement('button');b.type='button';b.className='yv-encounter-sprite';b.style.left=(+pos.x/1600*100)+'%';b.style.top=(+pos.y/777*100)+'%';b.title=m.name+' — '+place;b.setAttribute('aria-label',b.title);
-    if(image){const img=document.createElement('img');img.src=imageUrl;img.alt=m.name;img.loading='eager';img.decoding='async';img.onerror=()=>{if(!img.dataset.fallback){img.dataset.fallback='1';img.src='/'+imagePath}};b.appendChild(img)}
+    if(image){const img=document.createElement('img');img.src=imageUrl;img.alt=m.name;img.loading='eager';img.decoding='async';b.appendChild(img)}
     b.addEventListener('click',()=>{list.textContent='Selected: '+place+' · Other locations: '+[...matched.keys()].filter(x=>x!==place).join(' · ')});
     markers.appendChild(b);
    });
