@@ -13,6 +13,8 @@ description: ''
 long_description: Wattlet's wings hum with electric currents as it soars through the
   night sky, illuminating the darkness with its playful dances and crackling sparks.
 short_description: Current Dokimon
+short_description_ko: "전류 도키몬"
+long_description_ko: "와틀렛은 전류가 흐르는 날개를 윙윙거리며 밤하늘을 난다. 장난스러운 춤과 튀는 불꽃으로 어둠을 밝힌다."
 base_stats:
 - 59
 - 38
