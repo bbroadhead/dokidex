@@ -13,6 +13,8 @@ description: ''
 long_description: When provoked, it will spit corrosive acid at their target that
   carries great electrical power. It does not take much to be provoked.
 short_description: Acidic Lightning Dokimon
+short_description_ko: "산성 번개 도키몬"
+long_description_ko: "화를 돋우면 강력한 전기가 흐르는 부식성 산을 상대에게 뿜어낸다. 아주 사소한 일에도 쉽게 화를 낸다."
 base_stats:
 - 75
 - 57
