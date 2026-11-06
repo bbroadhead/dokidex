@@ -121,7 +121,7 @@ for(const [en,ja] of japaneseEncounterLabels)dict.set(en,ja);
 function translateJapaneseDynamic(value){
  let result=value;
  const patterns=[
-  [/^(.*?) — (\\d+) mapped encounter locations?$/,(_,name,count)=>(officialNameMap.get(name)||name)+' — '+count+'件の出現場所がマップに登録されています'],
+  [/^(.*?) — (\d+) mapped encounter locations?$/,(_,name,count)=>(officialNameMap.get(name)||name)+' — '+count+'件の出現場所がマップに登録されています'],
   [/^Selected: (.*?) · Other locations: (.*)$/,(_,place,others)=>'選択中：'+place+' · その他の出現場所：'+others],
   [/^(.*?) rare palettes$/,(_,name)=>(officialNameMap.get(name)||name)+'のレアカラーパターン'],
   [/^(.*?) — (.*)$/,(_,name,place)=>officialNameMap.has(name)?officialNameMap.get(name)+' — '+place:null]
