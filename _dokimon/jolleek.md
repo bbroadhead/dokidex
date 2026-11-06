@@ -12,6 +12,8 @@ description: ''
 long_description: Although occasionally found leading small armies of Furreal, Jolleek
   can actually be quite gentle, and good with children.
 short_description: Role Model Dokimon
+short_description_ko: "모범 도키몬"
+long_description_ko: "때때로 작은 퍼리얼 무리를 이끄는 모습이 발견되지만, 졸리크는 사실 매우 온순하며 아이들과도 잘 어울린다."
 base_stats:
 - 33
 - 80
