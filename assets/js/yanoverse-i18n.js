@@ -171,7 +171,30 @@ function translateText(value,lang){
   }
   return translated===trim?value:value.replace(trim,translated);
 }
-function apply(lang){document.documentElement.lang=lang;document.documentElement.dataset.language=lang;document.querySelectorAll('.lang-flag[data-lang]').forEach(f=>{const active=f.dataset.lang===lang;f.setAttribute('aria-pressed',String(active));f.classList.toggle('active-language',active)});
+
+// Keep the type-effectiveness chart readable in Korean: its original icon art
+// contains baked-in English lettering, so show accessible Hangul badges instead.
+const koreanTypeLabels=new Map([['Fire','불꽃'],['Water','물'],['Grass','풀'],['Electric','전기'],['Dark','악'],['Light','빛'],['Flying','비행'],['fight','격투'],['Poison','독'],['Dragon','드래곤'],['Fairy','페어리'],['Ghost','고스트'],['Ice','얼음']]);
+const chartBadgeStyle=document.createElement('style');
+chartBadgeStyle.textContent=`
+html[data-language="ko"] #type-effect-tool th.type-header[data-type] img{display:none!important}
+#type-effect-tool .yv-ko-type-label{display:none}
+html[data-language="ko"] #type-effect-tool .yv-ko-type-label{display:flex;align-items:center;justify-content:center;min-width:35px;min-height:30px;padding:3px;border-radius:5px;border:1px solid #b5c9e8;background:linear-gradient(150deg,#426082,#1b304b);color:#fff;font:700 14px/1.1 system-ui,sans-serif;text-shadow:1px 1px #000,-1px -1px #000,1px -1px #000,-1px 1px #000;writing-mode:horizontal-tb;white-space:nowrap}
+html[data-language="ko"] #type-effect-tool thead .yv-ko-type-label{writing-mode:vertical-rl;min-height:64px;min-width:24px}
+`;
+document.head.appendChild(chartBadgeStyle);
+function ensureKoreanChartLabels(){
+ document.querySelectorAll('#type-effect-tool th.type-header[data-type]').forEach(cell=>{
+   if(cell.querySelector('.yv-ko-type-label'))return;
+   const name=koreanTypeLabels.get(cell.dataset.type);
+   if(!name)return;
+   const label=document.createElement('span');
+   label.className='yv-ko-type-label';
+   label.textContent=name;
+   cell.appendChild(label);
+ });
+}
+function apply(lang){ensureKoreanChartLabels();document.documentElement.lang=lang;document.documentElement.dataset.language=lang;document.querySelectorAll('.lang-flag[data-lang]').forEach(f=>{const active=f.dataset.lang===lang;f.setAttribute('aria-pressed',String(active));f.classList.toggle('active-language',active)});
 const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,textarea,code,pre,svg')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;while(n=walker.nextNode()){if(!originals.has(n))originals.set(n,n.nodeValue);const original=originals.get(n);let target=lang==='en'?original:translateText(original,lang);
 if((lang==='ja'||lang==='es'||lang==='pt-BR')&&n.parentElement?.closest('.monster-info')){
  const profile=n.parentElement.closest('.monster-info');
