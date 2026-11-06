@@ -12,6 +12,8 @@ description: ''
 long_description: Dartly are an extremely rare Dokimon that can be found following
   travelers. They blink in and out of our realm and the shadow realm as they wish.
 short_description: Alt. Realm Dokimon
+short_description_ko: "이계 도키몬"
+long_description_ko: "다틀리는 여행자를 따라다니는 모습이 발견되는 극히 희귀한 도키몬이다. 마음대로 현실 세계와 그림자 세계를 넘나든다."
 base_stats:
 - 45
 - 60
