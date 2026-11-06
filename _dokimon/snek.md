@@ -12,6 +12,8 @@ description: ''
 long_description: Snek are a weak but fast serpent-like Dokimon, and although they
   are frail, their intense power gives them extraordinary magical abilities.
 short_description: Snake Dokimon
+short_description_ko: "뱀 도키몬"
+long_description_ko: "스넥은 약하지만 빠른 뱀 형태의 도키몬이다. 몸은 연약해도 강력한 힘을 지녀 뛰어난 마법 능력을 발휘한다."
 base_stats:
 - 19
 - 14
