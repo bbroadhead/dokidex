@@ -13,6 +13,8 @@ description: ''
 long_description: Palsamon, the embodiment of creativity and talent, excels in its
   remarkable cosplay abilities, flawlessly replicating the looks of anyone.
 short_description: Cosplay Dokimon
+short_description_ko: "코스프레 도키몬"
+long_description_ko: "창의력과 재능의 화신인 팔사몬은 뛰어난 코스프레 능력으로 누구의 모습이든 완벽하게 재현한다."
 base_stats:
 - 130
 - 85
