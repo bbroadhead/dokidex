@@ -12,6 +12,8 @@ description: ''
 long_description: It spends all its time training, so they make good partners for
   Gym goers or sparring partners.
 short_description: Training Dokimon
+short_description_ko: "훈련 도키몬"
+long_description_ko: "온종일 훈련에 몰두하기 때문에 체육관에 다니는 사람이나 대련 상대에게 좋은 동반자가 된다."
 base_stats:
 - 48
 - 70
