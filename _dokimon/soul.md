@@ -12,6 +12,8 @@ description: ''
 long_description: It likes to play pranks on people. It doesn't mean harm, but is
   often misunderstood and shooed away.
 short_description: Prankster Dokimon
+short_description_ko: "장난꾸러기 도키몬"
+long_description_ko: "사람들에게 장난치는 것을 좋아한다. 악의는 없지만 자주 오해를 받아 쫓겨난다."
 base_stats:
 - 44
 - 59
