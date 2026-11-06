@@ -12,6 +12,8 @@ description: ''
 long_description: It collects heat in the spikes on its back, which it can transfer
   into its fangs during battle.
 short_description: Fire Snake Dokimon
+short_description_ko: "불뱀 도키몬"
+long_description_ko: "등에 난 가시에 열을 모았다가 전투 중 송곳니로 전달할 수 있다."
 base_stats:
 - 40
 - 20
