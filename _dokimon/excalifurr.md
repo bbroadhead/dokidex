@@ -12,6 +12,8 @@ description: ''
 long_description: When it's done with fighting, it will pass on its skills on to a
   young Whispurr it deems worthy.
 short_description: Hero Dokimon
+short_description_ko: "영웅 도키몬"
+long_description_ko: "전투를 마치면 자신이 자격이 있다고 인정한 어린 위스퍼에게 검술을 전수한다."
 base_stats:
 - 45
 - 80
