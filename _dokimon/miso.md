@@ -13,6 +13,8 @@ description: ''
 long_description: This Dokimon came about from a kitchen disaster, when a chef tried
   to add a secret ingredient to one of their dishes.
 short_description: Sleepy Dragon Dokimon
+short_description_ko: "졸린 드래곤 도키몬"
+long_description_ko: "요리사가 음식에 비밀 재료를 넣으려다가 벌어진 주방 사고로 탄생한 도키몬이다."
 base_stats:
 - 135
 - 80
