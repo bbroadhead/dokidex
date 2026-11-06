@@ -12,6 +12,8 @@ description: ''
 long_description: It has a gloomy aura, which lowers the mood of nearby people and
   Dokimon wherever it goes.
 short_description: Gothic Doll Dokimon
+short_description_ko: "고딕 인형 도키몬"
+long_description_ko: "우울한 기운을 풍겨 어디를 가든 주변 사람들과 도키몬들의 기분을 가라앉힌다."
 base_stats:
 - 43
 - 19
