@@ -13,6 +13,8 @@ description: ''
 long_description: The bully of the forest, it often forces weaker Dokimon to work
   as its henchmen.
 short_description: Arrogant Dokimon
+short_description_ko: "오만한 도키몬"
+long_description_ko: "숲의 폭군으로, 자신보다 약한 도키몬들을 강제로 부하로 삼아 일을 시키곤 한다."
 base_stats:
 - 55
 - 80
