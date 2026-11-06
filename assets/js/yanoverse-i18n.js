@@ -146,7 +146,7 @@ function translateText(value,lang){
   if(source.has(trim))return value.replace(trim,source.get(trim));
   if(lang==='ja'){const dynamic=translateJapaneseDynamic(trim);if(dynamic!==trim)return value.replace(trim,dynamic);}
   if(lang==='ko'){
-    const match=trim.match(/^(.*?) — (\\d+) mapped encounter locations?$/);
+    const match=trim.match(/^(.*?) — (\d+) mapped encounter locations?$/);
     if(match)return value.replace(trim,(koreanNameMap.get(match[1])||match[1])+' — 지도에 표시된 출현 장소 '+match[2]+'개');
     const rare=trim.match(/^(.*?) rare palettes$/);
     if(rare)return value.replace(trim,(koreanNameMap.get(rare[1])||rare[1])+'의 희귀 색상 변형');
