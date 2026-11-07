@@ -77,6 +77,22 @@ const koreanPairs=[
 ['YANOVERSE MULTI-DEX','야노버스 멀티 도감']
 ];
 const koreanDict=new Map(koreanPairs);
+// Additional Korean labels used by the standalone bestiary pages and map links.
+for(const [english,korean] of [
+ ['View all encounter locations on map','지도에서 모든 출현 장소 보기'],
+ ['← Return to Dex','← 도감으로 돌아가기'],
+ ['[Evolution only]','[진화로만 획득]'],
+ ['[Evolution Only]','[진화로만 획득]'],
+ ['Evolution only','진화로만 획득'],
+ ['Unmapped locations','지도에 표시되지 않은 장소'],
+ ['No encounter locations found','출현 장소를 찾을 수 없습니다'],
+ ['Encounter Locations','출현 장소'],
+ ['Encounter Location','출현 장소'],
+ ['View on map','지도에서 보기'],
+ ['View on Map','지도에서 보기'],
+ ['Return to Dex','도감으로 돌아가기']
+])koreanDict.set(english,korean);
+
 // Korean monster names from the reviewed 144-entry localization spreadsheet.
 // Indexed by current English site names (including renamed entries), not outdated source labels.
 // Romanization is reference-only and deliberately omitted from display.
