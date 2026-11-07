@@ -67,14 +67,18 @@ layout: default
   {% if page.short_description %}<p class="yv-short-description-en">{{ page.short_description }}</p>{% endif %}
   {% if page.short_description_ja %}<p class="yv-short-description-ja" lang="ja">{{ page.short_description_ja }}</p>{% endif %}
   {% if page.short_description_ko %}<p class="yv-short-description-ko" lang="ko">{{ page.short_description_ko }}</p>{% endif %}
+  {% if page.short_description_es %}<p class="yv-short-description-es" lang="es">{{ page.short_description_es }}</p>{% endif %}
+  {% if page.short_description_pt %}<p class="yv-short-description-pt" lang="pt-BR">{{ page.short_description_pt }}</p>{% endif %}
   <p class="yv-description-en">{{ page.long_description }}</p>
   {% if page.long_description_ja %}<p class="yv-description-ja" lang="ja">{{ page.long_description_ja }}</p>{% endif %}
-  {% if page.long_description_ko %}<p class="yv-description-ko" lang="ko">{{ page.long_description_ko }}</p>{% endif %}</section>
+  {% if page.long_description_ko %}<p class="yv-description-ko" lang="ko">{{ page.long_description_ko }}</p>{% endif %}
+  {% if page.long_description_es %}<p class="yv-description-es" lang="es">{{ page.long_description_es }}</p>{% endif %}
+  {% if page.long_description_pt %}<p class="yv-description-pt" lang="pt-BR">{{ page.long_description_pt }}</p>{% endif %}</section>
 
 {% include encounter_map_embed.html mode='single' monster=page.name %}
 </article>
 <style>
-.yv-description-ja,.yv-description-ko,.yv-short-description-ko,.yv-short-description-ja{display:none}
+.yv-description-ja,.yv-description-ko,.yv-description-es,.yv-description-pt,.yv-short-description-ko,.yv-short-description-ja,.yv-short-description-es,.yv-short-description-pt{display:none}
 html[data-language="ja"] .yanoverse-profile:has(.yv-short-description-ja) .yv-short-description-en{display:none}
 html[data-language="ja"] .yv-short-description-ja{display:block}
 html[data-language="ko"] .yanoverse-profile:has(.yv-short-description-ko) .yv-short-description-en{display:none}
@@ -83,4 +87,12 @@ html[data-language="ja"] .yanoverse-profile:has(.yv-description-ja) .yv-descript
 html[data-language="ja"] .yv-description-ja{display:block}
 html[data-language="ko"] .yanoverse-profile:has(.yv-description-ko) .yv-description-en{display:none}
 html[data-language="ko"] .yv-description-ko{display:block}
+html[data-language="es"] .yanoverse-profile:has(.yv-short-description-es) .yv-short-description-en{display:none}
+html[data-language="es"] .yv-short-description-es{display:block}
+html[data-language="es"] .yanoverse-profile:has(.yv-description-es) .yv-description-en{display:none}
+html[data-language="es"] .yv-description-es{display:block}
+html[data-language="pt-BR"] .yanoverse-profile:has(.yv-short-description-pt) .yv-short-description-en{display:none}
+html[data-language="pt-BR"] .yv-short-description-pt{display:block}
+html[data-language="pt-BR"] .yanoverse-profile:has(.yv-description-pt) .yv-description-en{display:none}
+html[data-language="pt-BR"] .yv-description-pt{display:block}
 </style>
