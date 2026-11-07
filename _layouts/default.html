@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script id="yv-korean-profile-data">
+window.yvKoreanProfiles={
+{% for monster in site.dokimon %}
+  {{ monster.number | jsonify }}: [{{ monster.short_description_ko | default: '' | jsonify }}, {{ monster.long_description_ko | default: '' | jsonify }}]{% unless forloop.last %},{% endunless %}
+{% endfor %}
+};
+</script>
+
 <style id="monster-navigation-critical">html,body{background-color:#0b192c!important}html.monster-arriving body{opacity:0}html.monster-leaving body{opacity:.65;transform:translateX(-5px)}html.monster-arriving body,html.monster-leaving body{transition:opacity .12s ease,transform .12s ease}@media(prefers-reduced-motion:reduce){html.monster-arriving body,html.monster-leaving body{opacity:1;transform:none;transition:none}}</style>
 <script>document.documentElement.classList.add('pre-dark-mode');document.addEventListener('DOMContentLoaded',()=>{document.body.classList.add('dark-mode');document.documentElement.classList.remove('pre-dark-mode')});</script>
 <!-- Google tag (gtag.js) -->
