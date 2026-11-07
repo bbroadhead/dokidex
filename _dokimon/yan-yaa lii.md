@@ -14,6 +14,12 @@ long_description: "Yan-Yaa Lii is normally calm and humble, but those who push i
 short_description: "Kickboxing Dokimon"
 short_description_ko: "킥복싱 도키몬"
 long_description_ko: "얀야 리이는 평소 침착하고 겸손하지만, 지나치게 자극하면 소리 없는 일격에 순식간에 목숨을 잃을 수도 있다."
+short_description_ja: "キックボクシング ドキモン"
+long_description_ja: "とても れいせいで けんきょな ドキモン だが 、 ちょうしに のっていると むごんの いちげきで しぬこと になる。"
+short_description_es: "Dokimon de Kickboxing"
+long_description_es: "Yan-Yaa Lii son unos Dokimon muy sensatos y humildes. Sin embargo, si se les lleva al límite, pueden provocar una muerte rápida con sus ataques silenciosos."
+short_description_pt: "Dokimon Kickboxing"
+long_description_pt: "Yan-Yaa Lii são Dokimon sensatos e humildes. Porém, quando levados ao limite, seus ataques silenciosos podem provocar uma morte rápida."
 base_stats:
 - 100
 - 118
