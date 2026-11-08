@@ -1,4 +1,8 @@
 const dokimonList = MONDEX_DATA; // from mondex_data.js
+// The preview is hosted below /Dokidex-Preview/; production is at the domain root.
+const dokiSiteBase = window.location.pathname.startsWith('/Dokidex-Preview/') ? '/Dokidex-Preview' : '';
+const dokiAssetUrl = path => dokiSiteBase + path;
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.getElementById("tracker-table-body");
@@ -13,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const imgCell = document.createElement("td");
     const img = document.createElement("img");
-    img.src = `/assets/images/${mon.name.toLowerCase()}.png`;
+    img.src = dokiAssetUrl(`/assets/images/${mon.name.toLowerCase()}.png`);
     img.alt = mon.name;
     img.width = 24;
     img.height = 24;
@@ -70,7 +74,7 @@ nameCell.addEventListener("click", (event) => {
   event.stopPropagation(); // prevent any accidental bubbling
 
   const monsterName = mon.name.toLowerCase().replace(/\s+/g, '-');
-  const profileUrl = `/dokimon/${monsterName}`;
+  const profileUrl = dokiAssetUrl(`/dokimon/${monsterName}`);
 
   const panel = document.getElementById("monster-profile-panel");
   const iframe = document.getElementById("monster-profile-frame");
@@ -92,72 +96,95 @@ nameCell.addEventListener("click", (event) => {
     });
   }
 
+// One reusable palette picker avoids overlapping menus and dozens of floating layers.
+let activeRareButton = null;
+const rarePicker = document.createElement("div");
+rarePicker.id = "tracker-rare-picker";
+rarePicker.className = "tracker-rare-picker";
+rarePicker.hidden = true;
+rarePicker.setAttribute("role", "dialog");
+document.body.appendChild(rarePicker);
+
+function closeRarePicker() {
+  rarePicker.hidden = true;
+  if (activeRareButton) activeRareButton.setAttribute("aria-expanded", "false");
+  activeRareButton = null;
+}
+function positionRarePicker(button) {
+  const rect = button.getBoundingClientRect();
+  const margin = 12;
+  const vw = document.documentElement.clientWidth;
+  const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  const width = Math.min(304, vw - margin * 2);
+  rarePicker.style.width = width + "px";
+  rarePicker.style.left = Math.max(margin, Math.min(rect.left + rect.width / 2 - width / 2, vw - width - margin)) + "px";
+  const height = rarePicker.getBoundingClientRect().height;
+  const spaceBelow = vh - rect.bottom - margin;
+  const spaceAbove = rect.top - margin;
+  const preferBelow = spaceBelow >= height + 8 || (spaceBelow >= spaceAbove && spaceBelow >= 120);
+  const top = preferBelow ? rect.bottom + 8 : rect.top - height - 8;
+  rarePicker.style.top = Math.max(margin, Math.min(top, vh - height - margin)) + "px";
+}
+document.addEventListener("pointerdown", e => {
+  if (!rarePicker.contains(e.target) && !(activeRareButton && activeRareButton.contains(e.target))) closeRarePicker();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeRarePicker(); });
+window.addEventListener("resize", closeRarePicker);
+window.addEventListener("scroll", closeRarePicker, true);
+
 function createImageDropdown(mon, imageContainer, rareFormsArray) {
   const wrapper = document.createElement("div");
   wrapper.className = "image-dropdown-wrapper";
-
   const button = document.createElement("button");
+  button.type = "button";
+  button.className = "rare-select-button";
   button.textContent = "Select...";
-  button.style.padding = "4px 8px";
-  button.style.cursor = "pointer";
-  button.style.border = "1px solid #aaa";
-
-  const dropdown = document.createElement("div");
-  dropdown.className = "image-dropdown";
-  dropdown.style.display = "none";
-  dropdown.style.position = "absolute";
-  dropdown.style.zIndex = "10";
-  dropdown.style.background = "#fff";
-  dropdown.style.padding = "4px";
-  dropdown.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
-  dropdown.style.whiteSpace = "nowrap";
-
-  const formLabels = ["2", "3", "4", "5", "6", "7", "8", "9"];
-  const labelMap = { "9": "Bound" };
-
-  let imagesLoaded = false;
-
-  button.addEventListener("click", (e) => {
-    dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
-    e.stopPropagation();
-
-    if (imagesLoaded) return;
-
+  button.setAttribute("aria-haspopup", "dialog");
+  button.setAttribute("aria-expanded", "false");
+  button.addEventListener("click", event => {
+    event.stopPropagation();
+    if (activeRareButton === button && !rarePicker.hidden) {
+      closeRarePicker();
+      return;
+    }
+    closeRarePicker();
+    rarePicker.replaceChildren();
+    rarePicker.setAttribute("aria-label", mon.name + " rare palettes");
+    const formLabels = ["2", "3", "4", "5", "6", "7", "8", "9"];
     formLabels.forEach(num => {
-      const label = labelMap[num] || `Form ${num}`;
+      const label = num === "9" ? "Bound" : `Form ${num}`;
+      const choice = document.createElement("button");
+      choice.type = "button";
+      choice.className = "rare-palette-choice";
+      choice.setAttribute("aria-label", label);
       const img = document.createElement("img");
-      img.src = `/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${num}.png`;
-      img.title = label;
-      img.width = 24;
-      img.height = 24;
-      img.style.margin = "2px";
-      img.style.cursor = "pointer";
-
-      img.addEventListener("click", () => {
+      img.src = dokiAssetUrl(`/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${num}.png`);
+      img.alt = "";
+      img.loading = "eager";
+      choice.appendChild(img);
+      const caption = document.createElement("span");
+      caption.textContent = label;
+      choice.appendChild(caption);
+      choice.addEventListener("click", e => {
+        e.stopPropagation();
         if (!rareFormsArray.includes(label) && rareFormsArray.length < 8) {
           rareFormsArray.push(label);
           addRareImage(mon, label, imageContainer, rareFormsArray);
+          savedData[mon.name] = savedData[mon.name] || {};
           savedData[mon.name].rareForms = rareFormsArray;
           localStorage.setItem("dokitracker", JSON.stringify(savedData));
           updateCounts(savedData);
-          dropdown.style.display = "none";
         }
+        closeRarePicker();
       });
-
-      dropdown.appendChild(img);
+      rarePicker.appendChild(choice);
     });
-
-    imagesLoaded = true;
+    activeRareButton = button;
+    button.setAttribute("aria-expanded", "true");
+    rarePicker.hidden = false;
+    positionRarePicker(button);
   });
-
-  document.addEventListener("click", () => {
-    dropdown.style.display = "none";
-  });
-
   wrapper.appendChild(button);
-  wrapper.appendChild(dropdown);
-  wrapper.style.position = "relative";
-  wrapper.style.display = "inline-block";
   return wrapper;
 }
 
@@ -168,7 +195,7 @@ function createImageDropdown(mon, imageContainer, rareFormsArray) {
     img.title = formLabel;
 
     const number = formLabel === "Bound" ? "9" : formLabel.split(" ")[1];
-    img.src = `/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${number}.png`;
+    img.src = dokiAssetUrl(`/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${number}.png`);
 
     img.addEventListener("dblclick", () => {
       container.removeChild(img);

@@ -1,0 +1,77 @@
+{% assign encounter_mode = include.mode | default: 'single' %}
+<section class="yv-encounter-embed" data-mode="{{ encounter_mode }}" data-monster="{{ include.monster | escape }}" aria-label="Dokimon encounter locations">
+  <div class="yv-encounter-heading"><h2>{% if encounter_mode == 'tracker' %}Encounter Map{% else %}Encounter Locations{% endif %}</h2>
+  {% if encounter_mode == 'tracker' %}<select class="yv-encounter-select" aria-label="Choose Dokimon"><option value="">Choose a Dokimon</option></select>{% endif %}</div>
+  <div class="yv-encounter-map-window" tabindex="0" aria-label="Scrollable encounter map"><div class="yv-encounter-map-canvas">
+    <img class="yv-encounter-map-base" src="{{ '/assets/images/worldmap_labeled.jpg' | relative_url }}" alt="Labeled Dokimon world map" draggable="false">
+    <div class="yv-encounter-markers"></div>
+  </div></div>
+  <div class="yv-encounter-info" aria-live="polite"></div>
+</section>
+<style>
+.yv-encounter-embed{width:100%;max-width:100%;box-sizing:border-box;margin:22px 0;padding:14px;border:1px solid #506c8d;border-radius:14px;background:#13243a;color:#eef5ff}
+.yv-encounter-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.yv-encounter-heading h2{margin:0;font-size:20px;color:#f5f9ff}
+.yv-encounter-select{background:#243e5b;color:#fff;border:1px solid #7899bb;border-radius:9px;min-height:42px;padding:8px;max-width:100%;flex:1 1 190px}
+.yv-encounter-map-window{width:100%;overflow:auto;max-height:65vh;border:1px solid #58718e;border-radius:10px;background:#081522;overscroll-behavior:contain}
+.yv-encounter-map-canvas{position:relative;width:100%;min-width:650px;aspect-ratio:1600/777}
+.yv-encounter-map-base{display:block;width:100%;height:100%;object-fit:fill;pointer-events:none}
+.yv-encounter-markers{position:absolute;inset:0;pointer-events:none}
+.yv-encounter-map-window .yv-encounter-sprite{position:absolute!important;transform:translate(-50%,-85%)!important;width:var(--sprite-size,36px)!important;height:var(--sprite-size,36px)!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;display:block!important;box-sizing:border-box!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;background-image:none!important;box-shadow:none!important;filter:drop-shadow(0 2px 2px #06101c) drop-shadow(0 0 2px #fff8)!important;pointer-events:auto;cursor:pointer;z-index:2;line-height:0!important;overflow:visible!important}
+.yv-encounter-map-window .yv-encounter-markers .yv-encounter-sprite>img{visibility:visible!important;opacity:1!important;display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;image-rendering:pixelated!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important}
+.yv-encounter-sprite:focus-visible{outline:3px solid white;outline-offset:3px}
+.yv-encounter-info{font-size:14px;line-height:1.55;margin-top:10px;overflow-wrap:anywhere}
+.yv-encounter-info a{color:#b8dcff}
+@media(max-width:700px){.yv-encounter-embed{padding:10px}.yv-encounter-map-canvas{min-width:760px}}
+</style>
+<script>
+(function(){
+ const data={{ site.data.dokimon | jsonify }};
+ const coords={{ site.data.map_locations | jsonify }};
+ const spriteUrl=raw=>{
+   const value=String(raw||'').trim();
+   if(!value)return '';
+   if(/^https?:\/\//i.test(value))return value;
+   const prefix=new URL(base,location.origin).pathname.replace(/\/$/,'');
+   const path='/'+value.replace(/^\/+/, '');
+   return path===prefix||path.startsWith(prefix+'/')?path:prefix+path;
+ };
+ const base={{ '/' | relative_url | jsonify }};
+ const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/\broute 0+([0-9]+)\b/g,'route $1');
+ const names=Object.keys(coords).filter(n=>coords[n]&&Number.isFinite(+coords[n].x)&&Number.isFinite(+coords[n].y));
+ const lookup=new Map(names.map(n=>[norm(n),n]));
+ const aliases={'ginmachi city':'Giamachi City','gad riel peak':"Gad'riel Mountain",'gadriel peak':"Gad'riel Mountain",'darkshawl peak':'Darkshawl Spire'};
+ const resolve=s=>lookup.get(norm(s))||aliases[norm(s)]||null;
+ const parse=m=>String(Array.isArray(m.location)?m.location.join(','):m.location||'').split(',').map(v=>v.trim().replace(/^["']|["']$/g,'').replace(/^\[[^\]]+\]\s*/,'')).filter(v=>v&&!/^(starter|evolution only|none|unknown|n\/a)$/i.test(v));
+ function init(root){
+  const canvas=root.querySelector('.yv-encounter-map-canvas'),markers=root.querySelector('.yv-encounter-markers'),info=root.querySelector('.yv-encounter-info'),picker=root.querySelector('.yv-encounter-select'),windowEl=root.querySelector('.yv-encounter-map-window');
+  if(!canvas||!Array.isArray(data))return;
+  const monsters=data.filter(m=>m&&m.name).sort((a,b)=>a.name.localeCompare(b.name));
+  if(picker)monsters.forEach(m=>{const o=document.createElement('option');o.value=m.name;o.textContent=m.name;picker.appendChild(o)});
+  const size=()=>{const px=Math.max(30,Math.min(46,36*canvas.getBoundingClientRect().width/800));markers.style.setProperty('--sprite-size',Math.round(px)+'px')};
+  size();if(window.ResizeObserver)new ResizeObserver(size).observe(canvas);else window.addEventListener('resize',size);
+  function draw(name){
+   markers.replaceChildren();info.replaceChildren();
+   const m=monsters.find(x=>norm(x.name)===norm(name));
+   if(!m){info.textContent='Choose a Dokimon to view its encounter locations.';return}
+   const matched=new Map(),unmapped=[];
+   parse(m).forEach(place=>{const key=resolve(place);if(key&&coords[key])matched.set(key,coords[key]);else unmapped.push(place)});
+   const title=document.createElement('strong');title.textContent=m.name+' — '+matched.size+' mapped encounter location'+(matched.size===1?'':'s');info.appendChild(title);
+   const list=document.createElement('p');list.textContent=[...matched.keys()].join(' · ')||'No verified map coordinates available.';info.appendChild(list);
+   if(unmapped.length){const p=document.createElement('p');p.textContent='Other reported locations (not mapped): '+unmapped.join(' · ');info.appendChild(p)}
+   const image=String(m.image||'').trim();
+   const imageUrl=spriteUrl(image);
+   matched.forEach((pos,place)=>{
+    const b=document.createElement('button');b.type='button';b.className='yv-encounter-sprite';b.style.left=(+pos.x/1600*100)+'%';b.style.top=(+pos.y/777*100)+'%';b.title=m.name+' — '+place;b.setAttribute('aria-label',b.title);
+    if(image){const img=document.createElement('img');img.src=imageUrl;img.alt=m.name;img.loading='eager';img.decoding='async';b.appendChild(img)}
+    b.addEventListener('click',()=>{list.textContent='Selected: '+place+' · Other locations: '+[...matched.keys()].filter(x=>x!==place).join(' · ')});
+    markers.appendChild(b);
+   });
+   if(matched.size){const first=matched.values().next().value;requestAnimationFrame(()=>{const x=+first.x/1600*canvas.clientWidth,y=+first.y/777*canvas.clientHeight;windowEl.scrollTo({left:Math.max(0,x-windowEl.clientWidth/2),top:Math.max(0,y-windowEl.clientHeight/2)})})}
+  }
+  if(picker){picker.addEventListener('change',()=>draw(picker.value));draw('')}else draw(root.dataset.monster);
+ }
+ function ready(){document.querySelectorAll('.yv-encounter-embed').forEach(init)}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
+</script>

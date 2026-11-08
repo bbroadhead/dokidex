@@ -1,37 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-  // Hide document until theme is applied
-  document.documentElement.style.visibility = 'hidden';
-
-  (function() {
-    const mode = localStorage.getItem('dark-mode');
-    const isDark = !mode || mode === 'enabled';
-
-    // Add class temporarily to <html> so styles apply early
-    if (isDark) {
-      document.documentElement.classList.add('pre-dark-mode');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Move the dark mode class to body
-      if (isDark) {
-        document.body.classList.add('dark-mode');
-      }
-      document.documentElement.classList.remove('pre-dark-mode');
-
-      // Set toggle switch
-      const toggle = document.getElementById('dark-mode-toggle');
-      if (toggle) {
-        toggle.checked = isDark;
-      }
-
-      // Show page after theme is applied
-      document.documentElement.style.visibility = '';
-    });
-  })();
+<script id="yv-korean-profile-data">
+window.yvKoreanProfiles={
+{% for monster in site.dokimon %}
+  {{ monster.number | jsonify }}: [{{ monster.short_description_ko | default: '' | jsonify }}, {{ monster.long_description_ko | default: '' | jsonify }}]{% unless forloop.last %},{% endunless %}
+{% endfor %}
+};
 </script>
+
+<style id="monster-navigation-critical">html,body{background-color:#0b192c!important}html.monster-arriving body{opacity:0}html.monster-leaving body{opacity:.65;transform:translateX(-5px)}html.monster-arriving body,html.monster-leaving body{transition:opacity .12s ease,transform .12s ease}@media(prefers-reduced-motion:reduce){html.monster-arriving body,html.monster-leaving body{opacity:1;transform:none;transition:none}}</style>
+<script>document.documentElement.classList.add('pre-dark-mode');document.addEventListener('DOMContentLoaded',()=>{document.body.classList.add('dark-mode');document.documentElement.classList.remove('pre-dark-mode')});</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWHRN2K6DG"></script>
 <script>
@@ -48,13 +27,206 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<style id="yanoverse-critical-styles">
+.yanoverse-brand{background:transparent!important;color:#aab8ce!important;text-align:center!important;font:600 11px/1.5 system-ui,sans-serif!important;letter-spacing:.16em!important;padding:10px 12px!important}
+.yanoverse-game-picker{display:block!important;overflow:hidden!important;padding:12px 8px!important;background:transparent!important;border:0!important;max-width:100vw!important}
+.yanoverse-game-track{display:flex!important;align-items:center!important;gap:10px!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;scrollbar-width:none!important;max-width:100%!important;margin:auto!important;padding:12px 6px!important;box-sizing:border-box!important}
+.yanoverse-game{box-sizing:border-box!important;flex:0 0 145px!important;width:145px!important;min-width:0!important;height:110px!important;min-height:0!important;max-height:110px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:5px!important;padding:10px!important;border:1px solid rgba(153,177,208,.28)!important;border-radius:12px!important;background:rgba(135,165,205,.035)!important;color:inherit!important;filter:grayscale(1)!important;opacity:.56!important;transform:scale(.92)!important;box-shadow:none!important;overflow:hidden!important;cursor:pointer!important;scroll-snap-align:center!important;transition:transform .25s,opacity .25s,filter .25s!important}
+.yanoverse-game.is-selected{flex-basis:210px!important;width:210px!important;height:124px!important;max-height:124px!important;background:rgba(135,165,205,.07)!important;border-color:rgba(149,190,241,.5)!important;filter:none!important;opacity:1!important;transform:scale(1)!important}
+.yanoverse-game img{display:block!important;max-width:100%!important;width:auto!important;height:auto!important;max-height:67px!important;object-fit:contain!important;border:0!important;border-radius:0!important;box-shadow:none!important;flex-shrink:1!important}
+.yanoverse-game-title{font:700 13px/1.2 system-ui,sans-serif!important;text-align:center!important}
+.yanoverse-game.is-selected .yanoverse-game-title{font-size:14px!important}
+.yanoverse-game small{font:600 9px/1.2 system-ui,sans-serif!important}
+@media(max-width:600px){.yanoverse-game-picker{padding:7px 0!important}.yanoverse-game-track{padding:8px calc(50vw - 100px)!important;gap:8px!important}.yanoverse-game{flex-basis:125px!important;width:125px!important;height:90px!important;max-height:90px!important}.yanoverse-game.is-selected{flex-basis:200px!important;width:200px!important;height:108px!important;max-height:108px!important}.yanoverse-game img{max-height:56px!important}}
+</style>
+<style id="yanoverse-dex-card-fix">
+/* Critical Dex card styles: load after legacy theme CSS. */
+#dex-grid.dex-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))!important;gap:14px!important;padding:14px!important}
+#dex-grid .dex-entry{position:relative!important;isolation:isolate!important;box-sizing:border-box!important;min-width:0!important;min-height:205px!important;height:auto!important;overflow:hidden!important;border:1px solid rgba(154,186,220,.3)!important;border-radius:13px!important;background:linear-gradient(145deg,rgba(41,57,77,.8),rgba(17,25,39,.9) 62%,rgba(30,42,59,.8))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 8px 24px rgba(0,0,0,.2)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;transition:transform .24s ease,box-shadow .24s ease!important}
+#dex-grid .dex-entry::before{content:""!important;display:block!important;position:absolute!important;inset:0!important;pointer-events:none!important;z-index:0!important;background:linear-gradient(115deg,transparent 9%,rgba(255,255,255,.075) 24%,rgba(255,255,255,.018) 39%,transparent 57%)!important;opacity:.8!important;transform:translateX(-8%)!important;transition:transform .4s ease!important}
+#dex-grid .dex-entry>a{position:relative!important;z-index:1!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:12px!important;height:100%!important;box-sizing:border-box!important;padding:12px!important;text-decoration:none!important}
+#dex-grid .dex-entry .img-wrapper{display:flex!important;justify-content:center!important;align-items:center!important;align-self:center!important;box-sizing:border-box!important;width:120px!important;height:120px!important;max-width:100%!important;border-radius:10px!important;background:rgba(9,17,30,.28)!important;overflow:hidden!important}
+#dex-grid .dex-entry img.monster-image.small{display:block!important;width:100%!important;height:100%!important;max-width:112px!important;max-height:112px!important;object-fit:contain!important;image-rendering:pixelated!important}
+#dex-grid .dex-entry .dex-card-details{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:5px!important;margin-top:auto!important;min-width:0!important;text-align:left!important}
+#dex-grid .dex-entry .dex-card-number{font:700 12px/1.3 system-ui,sans-serif!important;color:#86baff!important;text-decoration:none!important}
+#dex-grid .dex-entry .dex-card-name{font:750 15px/1.3 system-ui,sans-serif!important;color:#f5f8ff!important;text-decoration:none!important;overflow-wrap:anywhere!important}
+@media(hover:hover) and (pointer:fine){#dex-grid .dex-entry:hover{transform:translateY(-4px) scale(1.012)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 13px 28px rgba(0,0,0,.28)!important}#dex-grid .dex-entry:hover::before{transform:translateX(9%)!important}}
+#dex-grid .dex-entry:active{transform:scale(.98)!important}
+@media(max-width:600px){#dex-grid.dex-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;padding:10px!important}#dex-grid .dex-entry{min-height:190px!important}#dex-grid .dex-entry>a{padding:9px!important}#dex-grid .dex-entry .img-wrapper{width:100px!important;height:100px!important}#dex-grid .dex-entry .dex-card-name{font-size:13px!important}}
+@media(prefers-reduced-motion:reduce){#dex-grid .dex-entry,#dex-grid .dex-entry::before{transition:none!important}#dex-grid .dex-entry:hover,#dex-grid .dex-entry:active{transform:none!important}}
+</style>
+<style id="yanoverse-modern-ui">
+/* Unified responsive site shell; scoped to the development layout. */
+:root{--yv-panel:rgba(17,27,43,.83);--yv-line:rgba(159,187,220,.19);--yv-muted:#a7b7ca;--yv-accent:#8bbdff}
+html{scroll-padding-top:80px}
+body{overflow-x:hidden}
+body.dark-mode{background-color:#090f1a!important;background-image:radial-gradient(ellipse at 50% -10%,rgba(49,87,141,.19),transparent 55%),linear-gradient(135deg,#0a111d,#101a29 58%,#0a111a)!important;color:#edf3fc!important}
+body.dark-mode::before{pointer-events:none}
+.site-header{position:relative!important;z-index:20!important;max-width:100%!important;background:rgba(8,14,24,.91)!important;border-bottom:1px solid var(--yv-line)!important;box-shadow:0 6px 25px rgba(0,0,0,.16)!important}
+.site-header .site-nav{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;flex-wrap:wrap!important;width:100%!important;max-width:1240px!important;box-sizing:border-box!important;margin:0 auto!important;padding:10px 16px!important;background:transparent!important}
+.site-header .nav-left{display:flex!important;flex:1 1 auto!important;align-items:center!important;flex-wrap:wrap!important;gap:7px!important;min-width:0!important}
+.site-header .nav-center{display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important}
+.site-header .nav-right{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:7px!important;flex-wrap:wrap!important}
+.site-header .nav-button{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:38px!important;box-sizing:border-box!important;padding:8px 13px!important;border:1px solid var(--yv-line)!important;border-radius:9px!important;background:rgba(139,177,222,.08)!important;color:#e5edf8!important;text-decoration:none!important;font:650 13px/1.2 system-ui,sans-serif!important;letter-spacing:0!important;white-space:nowrap!important;transition:background .2s,border-color .2s,transform .2s!important}
+.site-header .nav-button:hover,.site-header .nav-button:focus-visible{background:rgba(139,177,222,.19)!important;border-color:rgba(154,196,250,.5)!important}
+.site-header .search-and-toggle{display:flex!important;align-items:center!important;gap:9px!important;width:auto!important}
+.site-header .theme-label{font:700 10px system-ui,sans-serif!important;text-transform:uppercase!important;letter-spacing:.1em!important;color:var(--yv-muted)!important}
+.site-header .theme-switch-wrapper{margin:0!important}
+.site-header .lang-flag{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:29px!important;height:29px!important;margin:0!important;border-radius:50%!important;cursor:pointer!important;font-size:19px!important}
+.site-header .dropdown-content{border:1px solid var(--yv-line)!important;border-radius:11px!important;background:#142238!important;box-shadow:0 16px 35px rgba(0,0,0,.35)!important;overflow:hidden!important;z-index:50!important}
+.site-header .dropdown-content a{font:500 13px/1.4 system-ui,sans-serif!important;padding:10px 14px!important}
+.page-content{box-sizing:border-box!important;max-width:1240px!important;width:100%!important;margin:0 auto!important;padding:20px 20px 60px!important}
+body.dark-mode .filter-controls{box-sizing:border-box!important;max-width:100%!important;display:flex!important;flex-wrap:wrap!important;align-items:flex-end!important;gap:14px!important;padding:18px!important;border:1px solid var(--yv-line)!important;border-radius:14px!important;background:var(--yv-panel)!important;box-shadow:0 8px 28px rgba(0,0,0,.12)!important}
+.filter-controls .filter-block{min-width:0!important}
+.filter-controls label{display:block!important;margin-bottom:7px!important;color:var(--yv-muted)!important;font:700 11px/1.3 system-ui,sans-serif!important;letter-spacing:.06em!important;text-transform:uppercase!important}
+.filter-controls input,.filter-controls select{box-sizing:border-box!important;max-width:100%!important;min-height:38px!important;border:1px solid rgba(158,188,226,.24)!important;border-radius:9px!important;padding:8px 10px!important;font:500 13px system-ui,sans-serif!important}
+body.dark-mode .filter-controls input,body.dark-mode .filter-controls select{background:#101d2e!important;color:#eaf2ff!important}
+#filter-toggle,#clear-filters{min-height:38px!important;border-radius:9px!important;padding:9px 14px!important;font:650 13px system-ui,sans-serif!important;cursor:pointer!important}
+#filter-toggle{margin:0 0 14px!important}
+#type-filters{display:flex!important;flex-wrap:wrap!important;gap:7px!important}
+#type-filters .type-btn{border-radius:8px!important;padding:8px 11px!important;font:700 12px system-ui,sans-serif!important;letter-spacing:0!important;min-height:34px!important;box-shadow:none!important;transition:filter .2s,transform .2s!important}
+#type-filters .type-btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+#dex-grid .dex-entry .dex-card-name,#dex-grid .dex-entry .dex-card-number{text-decoration:none!important}
+.yanoverse-game-picker{background:transparent!important}
+.yanoverse-brand{background:transparent!important}
+@media(max-width:700px){
+.site-header .site-nav{gap:10px!important;padding:10px 12px!important}
+.site-header .nav-left{order:1!important;flex:1 1 100%!important;justify-content:center!important;gap:6px!important}
+.site-header .nav-center{order:2!important;flex:1 1 auto!important;justify-content:flex-start!important}
+.site-header .nav-right{order:3!important;flex:0 1 auto!important;justify-content:flex-end!important}
+.site-header .nav-button{min-height:36px!important;padding:8px 11px!important;font-size:12px!important}
+.site-header .lang-flag{width:25px!important;height:25px!important;font-size:16px!important}
+.page-content{padding:14px 12px 44px!important}
+body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
+.filter-controls .separator{display:none!important}
+.filter-controls .filter-block{flex:1 1 130px!important}
+.filter-controls .type-block{flex:1 1 100%!important}
+#type-filters .type-btn{padding:7px 9px!important;font-size:11px!important}
+}
+@media(prefers-reduced-motion:reduce){.site-header .nav-button,#type-filters .type-btn{transition:none!important}}
+</style>
+<link rel="stylesheet" href="{{ '/assets/css/yanoverse-mobile.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/yanoverse-profile.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/yanoverse-polish.css' | relative_url }}">
+
+<style id="yanoverse-nav-language-spacing">
+/* Keep the language flags directly below the navigation on narrow screens. */
+@media(max-width:767px){
+  .site-header .site-nav{row-gap:4px!important;column-gap:8px!important;padding-top:8px!important;padding-bottom:6px!important;align-items:center!important}
+  .site-header .nav-left{margin:0!important;padding:0!important}
+  .site-header .nav-center{margin:0!important;padding:0!important}
+  .site-header .nav-right{margin:0!important;padding:0!important}
+  .site-header .search-and-toggle{margin:0!important;padding:0!important}
+}
+</style>
+
+<style id="yanoverse-centered-language-controls">
+.site-header .site-nav{justify-content:center!important;row-gap:5px!important}
+.site-header .nav-left{flex:1 1 100%!important;justify-content:center!important}
+.site-header .nav-right{order:2!important;flex:1 1 100%!important;justify-content:center!important;gap:12px!important;margin:0 auto!important;padding:0!important}
+</style>
+
+<style id="yanoverse-links-dropdown-v2">
+/* Keep the expanded menu above the language selector row. */
+.site-header .site-nav{isolation:isolate!important}
+.site-header .nav-left{position:relative!important;z-index:30!important}
+.site-header .nav-right{position:relative!important;z-index:1!important}
+.site-header .yv-links-dropdown{z-index:40!important}
+.site-header,.site-header .site-nav,.site-header .nav-left{overflow:visible!important}
+.site-header .yv-links-dropdown{position:relative!important;display:inline-flex!important;min-width:0!important}
+.site-header .yv-links-dropdown .links-button{cursor:pointer!important;white-space:nowrap!important}
+.site-header .yv-links-dropdown .dropdown-content{
+ position:absolute!important;top:calc(100% + 9px)!important;left:50%!important;right:auto!important;
+ transform:translateX(-50%) translateY(-5px)!important;
+ display:none!important;box-sizing:border-box!important;width:max-content!important;
+ min-width:220px!important;max-width:min(340px,calc(100vw - 24px))!important;
+ max-height:min(65dvh,460px)!important;overflow-y:auto!important;overflow-x:hidden!important;
+ padding:7px!important;margin:0!important;border:1px solid rgba(145,184,230,.35)!important;
+ border-radius:14px!important;background:linear-gradient(155deg,#1b2e48,#101d30)!important;
+ box-shadow:0 18px 42px rgba(0,0,0,.48),inset 0 1px rgba(255,255,255,.08)!important;
+ z-index:9999!important;opacity:1!important;visibility:visible!important;
+}
+.site-header .yv-links-dropdown .dropdown-content.show{display:flex!important;flex-direction:column!important;gap:3px!important;transform:translateX(-50%)!important}
+.site-header .yv-links-dropdown .dropdown-content a{
+ display:block!important;box-sizing:border-box!important;width:100%!important;
+ padding:11px 13px!important;margin:0!important;border:1px solid transparent!important;
+ border-radius:9px!important;background:transparent!important;color:#e9f2ff!important;
+ text-align:left!important;text-decoration:none!important;white-space:normal!important;
+ overflow-wrap:anywhere!important;word-break:normal!important;
+ font:550 13px/1.45 system-ui,sans-serif!important;text-shadow:none!important;
+}
+.site-header .yv-links-dropdown .dropdown-content a:hover,
+.site-header .yv-links-dropdown .dropdown-content a:focus-visible{
+ background:rgba(120,172,235,.16)!important;border-color:rgba(145,184,230,.27)!important;
+ color:#fff!important;outline:none!important;
+}
+@media(max-width:600px){
+ .site-header .yv-links-dropdown .dropdown-content{max-width:calc(100vw - 24px)!important;min-width:210px!important}
+}
+</style>
+
+<style id="yanoverse-embedded-profile-layout">
+/* Only monster pages loaded inside DokiTracker's iframe. */
+body.in-panel{margin:0!important;padding:0!important;min-width:0!important;overflow-x:hidden!important;background:#102239!important}
+body.in-panel main,body.in-panel .page-content,body.in-panel .wrapper{
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ margin:0!important;padding:0!important;box-sizing:border-box!important;
+}
+body.in-panel .monster-profile{
+ display:block!important;width:100%!important;max-width:100%!important;
+ margin:0!important;padding:clamp(10px,2.5vw,20px)!important;
+ box-sizing:border-box!important;
+}
+body.in-panel .monster-profile .top-bar{
+ display:flex!important;flex-direction:column!important;gap:12px!important;
+ width:100%!important;min-width:0!important;margin:0 0 14px!important;
+}
+body.in-panel .monster-profile .monster-layout-row{
+ display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+ gap:12px!important;width:100%!important;min-width:0!important;
+ margin:0!important;align-items:stretch!important;
+}
+body.in-panel .monster-profile .monster-layout-row>.monster-image-container,
+body.in-panel .monster-profile .monster-layout-row>.monster-info,
+body.in-panel .monster-profile .monster-layout-row>.stats-side,
+body.in-panel .monster-profile .monster-layout-row>.forms-wrapper{
+ grid-column:1!important;grid-row:auto!important;order:initial!important;
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ margin:0!important;padding:clamp(12px,2vw,20px)!important;
+ box-sizing:border-box!important;
+}
+body.in-panel .monster-profile .monster-layout-row>.monster-image-container{min-height:190px!important}
+body.in-panel .monster-profile #main-monster-image{max-height:255px!important;max-width:100%!important;object-fit:contain!important}
+body.in-panel .monster-profile .monster-layout-row>.monster-info{text-align:left!important;overflow-wrap:anywhere!important}
+body.in-panel .monster-profile .monster-layout-row>.stats-side{margin:0!important}
+body.in-panel .monster-profile .monster-stats{width:100%!important;max-width:100%!important}
+body.in-panel .monster-profile .forms-wrapper{padding-left:14px!important}
+body.in-panel .monster-profile .forms-container{border:0!important;width:100%!important}
+body.in-panel .monster-profile .forms-instructions{text-align:center!important;width:100%!important}
+body.in-panel .monster-profile .evolution-wrapper{width:100%!important;min-width:0!important}
+body.in-panel .monster-profile .evolution-wrapper img{max-width:100%!important;height:auto!important}
+body.in-panel .monster-profile .nav-arrows{display:none!important}
+body.in-panel .monster-profile .return-link{display:none!important}
+body.in-panel .monster-profile .top-bar>.move-list-container{width:100%!important}
+body.in-panel .monster-profile .stats-side canvas{max-width:100%!important}
+</style>
 </head>
 <body>
 {% unless page.panel == true or page.url contains 'panel=1' %}
+  <div class="yanoverse-brand">YANOVERSE <span>MULTI-DEX</span></div>
+  <section class="yanoverse-game-picker" aria-label="Select a monster-taming game">
+    <div class="yanoverse-game-track" id="yanoverse-game-track">
+      <button type="button" class="yanoverse-game" data-game="dokimon2" aria-label="Dokimon Quest 2"><img src="{{ '/assets/images/logos/dokimon-quest-2-logo.png' | relative_url }}" alt="Dokimon Quest 2 logo" loading="lazy"><span class="yanoverse-game-title">Dokimon Quest 2</span><small>IN DEVELOPMENT</small></button>
+      <button type="button" class="yanoverse-game is-selected" data-game="quest" aria-pressed="true"><img src="{{ '/assets/images/logos/dokimon-quest-logo.png' | relative_url }}" alt="Dokimon: Quest"><span class="yanoverse-game-title">Dokimon: Quest</span></button>
+      <button type="button" class="yanoverse-game" data-game="yami"><img src="{{ '/assets/images/logos/yami-kids-logo.png' | relative_url }}" alt="Yami Kids logo" loading="lazy"><span class="yanoverse-game-title">Yami Kids</span></button>
+      <button type="button" class="yanoverse-game" data-game="nuumonsters"><img src="{{ '/assets/images/logos/nuumonsters-logo.png' | relative_url }}" alt="Nuumonsters logo" loading="lazy"><span class="yanoverse-game-title">Nuumonsters</span></button>
+    </div>
+  </section>
+  <div id="yanoverse-game-notice" class="yanoverse-game-notice" hidden role="status"></div>
   <header class="site-header">
-    <div class="header-bg">
+    <div class="header-bg" style="display:none">
       <a href="/">
-        <img src="/assets/images/dokimon_wiki_header.png" alt="Dokimon Wiki Logo" class="header-logo">
+        <img src="/assets/images/logos/dokimon-quest-logo.png" alt="Dokimon Wiki Logo" class="header-logo">
       </a>
     </div>
     
@@ -62,9 +234,9 @@
       <div class="nav-left">
         <a href="/" class="nav-button tracker-link">Dex</a>
         <a href="/world" class="nav-button tracker-link">World</a>
-        <div class="dropdown">
-          <button class="nav-button">Links ▾</button>
-          <div class="dropdown-content">
+        <div class="dropdown yv-links-dropdown">
+          <button class="nav-button links-button" type="button" aria-label="Open links menu" aria-haspopup="true" aria-expanded="false" aria-controls="yv-links-menu">Links ▾</button>
+          <div class="dropdown-content" id="yv-links-menu">
             <a href="https://www.yanakorpgs.com/" target="_blank">Yanako RPGs</a>
             <a href="https://store.steampowered.com/app/2019300/Dokimon_Quest/" target="_blank">Dokimon: Quest</a>
             <a href="https://discord.com/invite/4YUaYNvVHD" target="_blank">Dokimon Discord</a>
@@ -73,26 +245,14 @@
             <a href="https://steamcommunity.com/id/knightexcalibur/" target="_blank">KnightExcalibur (Dokidex developer)</a>
           </div>
         </div>
-		<a href="/dokitracker" class="nav-button tracker-link">DokiTracker</a>
+		<a href="/dokitracker" class="nav-button tracker-link">Tracker</a>
       </div>
-      <div class="nav-center">
-        <div class="search-and-toggle">
-		  <span style="color: white; margin-right: 8px;">Dark/Light Mode:</span>
-          <!--<input type="text" placeholder="Search..." class="search-bar">-->
-          <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="dark-mode-toggle">
-              <input type="checkbox" id="dark-mode-toggle" />
-              <span class="slider round"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="nav-right">
+<div class="nav-right">
         <span class="lang-flag" data-lang="en">🇺🇸</span>
         <span class="lang-flag" data-lang="ja">🇯🇵</span>
-        <span class="lang-flag" data-lang="pt">🇧🇷</span>
-        <span class="lang-flag" data-lang="es">🇪🇸</span>
         <span class="lang-flag" data-lang="ko">🇰🇷</span>
+        <span class="lang-flag" data-lang="es">🇪🇸</span>
+        <span class="lang-flag" data-lang="pt-BR">🇧🇷</span>
       </div>
     </nav>
   {% endunless %}
@@ -121,7 +281,7 @@
 
   <div class="nav-arrows">
     {% if previous_monster %}
-      <a href="{{ previous_monster.url | relative_url }}" class="nav-arrow left-arrow" style="transform: translateY(60px) scaleX(-1);">➤</a>
+      <a href="{{ previous_monster.url | relative_url }}" class="nav-arrow left-arrow" >➤</a>
     {% endif %}
     {% if next_monster %}
       <a href="{{ next_monster.url | relative_url }}" class="nav-arrow right-arrow">➤</a>
@@ -156,7 +316,7 @@
 
 <!-- RARE FORMS (2–8) -->
 <div class="forms-wrapper">
-<div class="forms-instructions style="text-align: center;">
+<div class="forms-instructions">
   Rare encounter rate: 1/777<br>
 </div>
 
@@ -189,7 +349,7 @@
     </div>
   </div>
 </div>
-<div class="forms-instructions style="text-align: center;">
+<div class="forms-instructions">
   Click an image to set as Dokimon image
 </div>
 </div>
@@ -304,47 +464,25 @@
       }
     });
   </script>
-<script>
-  const toggleSwitch = document.getElementById('dark-mode-toggle');
-  const body = document.body;
 
-  function applyTheme(isDark) {
-    body.classList.toggle('dark-mode', isDark);
-    toggleSwitch.checked = isDark;
-    localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
-  }
-
-  toggleSwitch.addEventListener('change', () => {
-    applyTheme(toggleSwitch.checked);
-    createRadarChart();
-  });
-
-// Default to dark mode unless user set to light
-if (!localStorage.getItem('dark-mode')) {
-  localStorage.setItem('dark-mode', 'enabled');
-}
-
-  // Load preference
-  const savedTheme = localStorage.getItem('dark-mode');
-  applyTheme(savedTheme === 'enabled');
-</script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const button = document.querySelector('.links-button');
-    const menu = document.querySelector('.dropdown-content');
-
+    const button = document.querySelector('.yv-links-dropdown .links-button');
+    const menu = document.querySelector('.yv-links-dropdown .dropdown-content');
     if (button && menu) {
-      button.addEventListener('click', (e) => {
+      const close = () => { menu.classList.remove('show'); button.setAttribute('aria-expanded','false'); };
+      button.addEventListener('click', e => {
         e.preventDefault();
-        menu.classList.toggle('show');
+        const opening = !menu.classList.contains('show');
+        menu.classList.toggle('show', opening);
+        button.setAttribute('aria-expanded',String(opening));
       });
-
-      document.addEventListener('click', (e) => {
-        if (!button.contains(e.target) && !menu.contains(e.target)) {
-          menu.classList.remove('show');
-        }
+      document.addEventListener('click', e => {
+        if (!button.contains(e.target) && !menu.contains(e.target)) close();
       });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+      menu.addEventListener('click', e => { if (e.target.closest('a')) close(); });
     }
   });
 </script>
@@ -394,7 +532,7 @@ options: {
       suggestedMax: 177,
       ticks: {
         backdropColor: 'transparent',
-        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#000000",
+        color: "#ffffff",
         font: {
           weight: 'bold'
         }
@@ -441,25 +579,35 @@ createRadarChart();
   });
 </script>
 <script>
-  // Fade in on load
-  document.body.classList.add('fade-out');
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.remove('fade-out');
-    document.body.classList.add('fade-in');
+(function () {
+  // Keep the dark background painted during navigation, including the first frame.
+  const motionOK = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const navKey = 'yanoverse-monster-navigation';
+  let navigating = false;
+  try {
+    if (sessionStorage.getItem(navKey) === '1') {
+      document.documentElement.classList.add('monster-arriving');
+      sessionStorage.removeItem(navKey);
+    }
+  } catch (_) {}
+  function reveal() {
+    document.documentElement.classList.remove('monster-arriving');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(reveal), {once:true});
+  } else requestAnimationFrame(reveal);
+  window.addEventListener('pageshow', reveal);
+  document.querySelectorAll('.nav-arrow').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0 || navigating) return;
+      event.preventDefault();
+      navigating = true;
+      try { sessionStorage.setItem(navKey, '1'); } catch (_) {}
+      if (motionOK) document.documentElement.classList.add('monster-leaving');
+      window.setTimeout(() => { window.location.assign(link.href); }, motionOK ? 90 : 0);
+    });
   });
-
-  // Fade out on arrow click
-document.querySelectorAll('.nav-arrow').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const href = this.href; // Correct for <a> elements
-    document.body.classList.remove('fade-in');
-    document.body.classList.add('fade-out');
-    setTimeout(() => {
-      window.location.href = href;
-    }, 300);
-  });
-});
+})();
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -582,7 +730,8 @@ function loadMoveList() {
   if (!moveList) return;
 
   const ul = document.getElementById("move-list-content");
-  moveList
+  ul.replaceChildren();
+  [...moveList]
     .sort((a, b) => a.level - b.level)
     .forEach(entry => {
       const li = document.createElement("li");
@@ -598,5 +747,99 @@ function loadMoveList() {
 {% endfor %}
 {% endif %}
 
+<script src="{{ '/assets/js/yanoverse-selector.js' | relative_url }}" defer></script>
+<style>.lang-flag[data-lang]{border:2px solid transparent;border-radius:50%;padding:3px;cursor:pointer;transition:border-color .18s,background .18s}.lang-flag.active-language{border-color:#90c2ff;background:rgba(135,186,255,.17)}.lang-flag:focus-visible{outline:2px solid #90c2ff;outline-offset:3px}</style>
+<script src="{{ '/assets/js/yanoverse-i18n.js' | relative_url }}" defer></script>
+
+<style id="yv-final-font-overrides">
+/* Late-loaded override for legacy inline font shorthands. */
+html body .yanoverse-brand,
+html body .yanoverse-brand span,
+html body .yanoverse-game-title,
+html body .yanoverse-game .yanoverse-game-title,
+html body .yanoverse-game small,
+html body #filter-toggle,
+html body #clear-filters,
+html body #dex-filter-controls,
+html body #dex-filter-controls *,
+html body #dex-filter-controls input,
+html body #dex-filter-controls input::placeholder,
+html body #dex-filter-controls select,
+html body #dex-filter-controls button,
+html body #dex-filter-controls label,
+html body #dex-count,
+html body .dex-count,
+html body .dex-results-count {
+ font-family:'VT323',monospace!important;
+}
+html body .yanoverse-brand,
+html body .yanoverse-brand span {
+ font:400 clamp(22px,3vw,30px)/1.2 'VT323',monospace!important;
+ letter-spacing:.14em!important;
+}
+html body .yanoverse-game-title,
+html body .yanoverse-game .yanoverse-game-title,
+html body .yanoverse-game.is-selected .yanoverse-game-title{
+ font:400 clamp(23px,2.7vw,31px)/1.1 'VT323',monospace!important;
+}
+html body #filter-toggle,html body #clear-filters{
+ font:400 clamp(23px,2.4vw,29px)/1.1 'VT323',monospace!important;
+}
+html body #dex-filter-controls label{
+ font:400 clamp(20px,2vw,25px)/1.1 'VT323',monospace!important;
+}
+html body #dex-filter-controls :is(input,select){
+ font:400 clamp(23px,2.2vw,28px)/1.2 'VT323',monospace!important;
+}
+html body #dex-filter-controls input::placeholder{
+ font-family:'VT323',monospace!important;
+}
+</style>
+
+<style id="yv-inactive-game-card-alignment">
+/* Keep the inactive Quest 2 logo, title and status centered inside its card. */
+html body .yanoverse-game:not(.is-selected){
+ justify-content:center!important;
+ align-items:center!important;
+ gap:3px!important;
+ padding:7px 8px!important;
+}
+html body .yanoverse-game:not(.is-selected) img{
+ display:block!important;
+ flex:0 1 auto!important;
+ width:auto!important;
+ height:auto!important;
+ max-height:44px!important;
+ max-width:100%!important;
+ margin:0 auto!important;
+ object-fit:contain!important;
+}
+html body .yanoverse-game:not(.is-selected) .yanoverse-game-title{
+ display:block!important;
+ flex:0 0 auto!important;
+ width:100%!important;
+ min-width:0!important;
+ margin:0!important;
+ font:400 21px/1 'VT323',monospace!important;
+ text-align:center!important;
+ white-space:normal!important;
+ overflow-wrap:normal!important;
+ word-break:normal!important;
+}
+html body .yanoverse-game:not(.is-selected) small{
+ display:block!important;
+ flex:0 0 auto!important;
+ margin:0!important;
+ font:400 12px/1 'VT323',monospace!important;
+ text-align:center!important;
+}
+@media(max-width:600px){
+ html body .yanoverse-game:not(.is-selected) img{max-height:34px!important}
+ html body .yanoverse-game:not(.is-selected) .yanoverse-game-title{
+  font-size:19px!important;line-height:1!important;
+ }
+ html body .yanoverse-game:not(.is-selected) small{font-size:11px!important}
+}
+</style>
 </body>
 </html>

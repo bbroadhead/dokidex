@@ -14,6 +14,8 @@ long_description: Hexabelle is a whimsical being, twirling through the ether wit
   a trail of spectral dust. It is said to be the guardian of lost souls, guiding them
   with its ethereal light.
 short_description: Spectral Sylph Dokimon
+short_description_ko: "유령 실프 도키몬"
+long_description_ko: "헥사벨은 영적인 먼지를 흩뿌리며 허공을 맴도는 기묘한 존재다. 길 잃은 영혼을 수호하며 신비로운 빛으로 길을 안내한다고 전해진다."
 base_stats:
 - 70
 - 21

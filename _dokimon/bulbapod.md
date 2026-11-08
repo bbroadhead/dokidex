@@ -2,6 +2,7 @@
 number: 4
 name: Bulbapod
 lang_names: []
+name_ja: "ブルバポッド"
 stage: 1
 evolves_at: 15
 type:
@@ -12,6 +13,12 @@ description: ''
 long_description: Bulbapod is known for using its cute face to lure in passerbys,
   hiding its sharp scythes out of sight until it's time for lunch.
 short_description: Mantis Dokimon
+short_description_ko: "사마귀 도키몬"
+long_description_ko: "구근몽은 귀여운 얼굴로 지나가는 이들을 유인한 뒤, 먹잇감이 다가올 때까지 날카로운 낫을 숨겨 두는 것으로 알려져 있다."
+long_description_ja: "ブルバポッドは かわいい かおで ひとびとを おびきよせ ながら、ごはんの じかんまで その するどい かまを かくしている ことが しられて います。"
+short_description_ja: "かまきり ドキモン"
+short_description_ko: "사마귀 도키몬"
+long_description_ko: "벌바포드는 귀여운 얼굴로 지나가는 이들을 유인하는 것으로 유명하다. 식사 시간이 될 때까지 날카로운 낫을 숨기고 있다."
 base_stats:
 - 49
 - 56

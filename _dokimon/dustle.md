@@ -12,6 +12,8 @@ description: ''
 long_description: It's unable to fly, but Dustle is so light that it will drift in
   the wind to travel.
 short_description: Dust Ball Bird Dokimon
+short_description_ko: "먼지 뭉치 새 도키몬"
+long_description_ko: "더슬은 날지 못하지만 몸이 워낙 가벼워 바람에 실려 이동한다."
 base_stats:
 - 35
 - 30

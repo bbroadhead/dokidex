@@ -13,6 +13,8 @@ description: ''
 long_description: A colossal amphibian with potent poison glands, capable of unleashing
   toxic attacks from its massive mouth.
 short_description: Giant Toad Dokimon
+short_description_ko: "거대 두꺼비 도키몬"
+long_description_ko: "강력한 독샘을 지닌 거대한 양서류로, 커다란 입에서 독성 공격을 내뿜을 수 있다."
 base_stats:
 - 75
 - 50

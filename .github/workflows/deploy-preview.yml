@@ -1,0 +1,47 @@
+name: Deploy Dokidex development preview
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dokidex-preview
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    env:
+      GEM_HOME: /home/runner/.local/share/gem
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Cache Jekyll gems
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/gem
+          key: ${{ runner.os }}-ruby-3.3-jekyll-4.4
+      - name: Install Jekyll if not cached
+        run: |
+          echo "$GEM_HOME/bin" >> "$GITHUB_PATH"
+          if ! gem list --local --installed jekyll --version '~> 4.4'; then
+            gem install jekyll -v '~> 4.4' --no-document
+          fi
+      - name: Build preview with correct project path
+        run: JEKYLL_ENV=production jekyll build --destination _site --baseurl /Dokidex-Preview --config _config.yml,_config_preview.yml
+      - name: Fix root-relative URLs for preview hosting
+        run: python3 .github/scripts/fix_preview_paths.py
+      - name: Publish to dedicated preview repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.DOKIDEX_PREVIEW_TOKEN }}
+          external_repository: bbroadhead/Dokidex-Preview
+          publish_branch: main
+          publish_dir: ./_site
+          force_orphan: false

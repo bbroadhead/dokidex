@@ -2,8 +2,10 @@
 layout: default
 ---
 
-<div class="dex-entry">
-  <h1>#{{ page.number }} - {{ page.name }}</h1>
+<article class="dex-entry yanoverse-profile">
+  <a class="yv-back-link" href="{{ '/' | relative_url }}">← Return to Dex</a>
+  <a class="yv-back-link yv-map-profile-link" href="{{ '/world/' | relative_url }}?dokimon={{ page.name | url_encode }}">View all encounter locations on map</a>
+  <header class="yv-profile-heading"><span class="yv-profile-number">#{{ page.number }}</span><h1>{{ page.name }}</h1></header>
 
   {% assign dex = site.data.dokimon %}
   {% assign current_index = nil %}
@@ -52,17 +54,45 @@ layout: default
     </div>
   {% endif %}
 
-  <div class="img-wrapper">
+  <div class="img-wrapper yv-profile-art">
     <img src="{{ page.image }}" alt="{{ page.name }}">
     <div class="img-blocker"></div>
   </div>
 
-  <p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
+  <section class="yv-profile-facts"><p><strong>Type:</strong> {{ page.type | join: ' / ' }}</p>
   <p><strong>Stage:</strong> {{ page.stage }}</p>
   <p><strong>Evolves at:</strong> {{ page.evolves_at }}</p>
   <p><strong>Location:</strong> {{ page.location }}</p>
   <p>{{ page.description }}</p>
-  <p>{{ page.long_description }}</p>
+  {% if page.short_description %}<p class="yv-short-description-en">{{ page.short_description }}</p>{% endif %}
+  {% if page.short_description_ja %}<p class="yv-short-description-ja" lang="ja">{{ page.short_description_ja }}</p>{% endif %}
+  {% if page.short_description_ko %}<p class="yv-short-description-ko" lang="ko">{{ page.short_description_ko }}</p>{% endif %}
+  {% if page.short_description_es %}<p class="yv-short-description-es" lang="es">{{ page.short_description_es }}</p>{% endif %}
+  {% if page.short_description_pt %}<p class="yv-short-description-pt" lang="pt-BR">{{ page.short_description_pt }}</p>{% endif %}
+  <p class="yv-description-en">{{ page.long_description }}</p>
+  {% if page.long_description_ja %}<p class="yv-description-ja" lang="ja">{{ page.long_description_ja }}</p>{% endif %}
+  {% if page.long_description_ko %}<p class="yv-description-ko" lang="ko">{{ page.long_description_ko }}</p>{% endif %}
+  {% if page.long_description_es %}<p class="yv-description-es" lang="es">{{ page.long_description_es }}</p>{% endif %}
+  {% if page.long_description_pt %}<p class="yv-description-pt" lang="pt-BR">{{ page.long_description_pt }}</p>{% endif %}</section>
 
-  <a href="/">← Back to Index</a>
-</div>
+{% include encounter_map_embed.html mode='single' monster=page.name %}
+</article>
+<style>
+.yv-description-ja,.yv-description-ko,.yv-description-es,.yv-description-pt,.yv-short-description-ko,.yv-short-description-ja,.yv-short-description-es,.yv-short-description-pt{display:none}
+html[data-language="ja"] .yanoverse-profile:has(.yv-short-description-ja) .yv-short-description-en{display:none}
+html[data-language="ja"] .yv-short-description-ja{display:block}
+html[data-language="ko"] .yanoverse-profile:has(.yv-short-description-ko) .yv-short-description-en{display:none}
+html[data-language="ko"] .yv-short-description-ko{display:block}
+html[data-language="ja"] .yanoverse-profile:has(.yv-description-ja) .yv-description-en{display:none}
+html[data-language="ja"] .yv-description-ja{display:block}
+html[data-language="ko"] .yanoverse-profile:has(.yv-description-ko) .yv-description-en{display:none}
+html[data-language="ko"] .yv-description-ko{display:block}
+html[data-language="es"] .yanoverse-profile:has(.yv-short-description-es) .yv-short-description-en{display:none}
+html[data-language="es"] .yv-short-description-es{display:block}
+html[data-language="es"] .yanoverse-profile:has(.yv-description-es) .yv-description-en{display:none}
+html[data-language="es"] .yv-description-es{display:block}
+html[data-language="pt-BR"] .yanoverse-profile:has(.yv-short-description-pt) .yv-short-description-en{display:none}
+html[data-language="pt-BR"] .yv-short-description-pt{display:block}
+html[data-language="pt-BR"] .yanoverse-profile:has(.yv-description-pt) .yv-description-en{display:none}
+html[data-language="pt-BR"] .yv-description-pt{display:block}
+</style>

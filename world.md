@@ -106,9 +106,239 @@ permalink: /world/
   </div>
 
   <div id="maps" class="tab-content">
-    <h2>World Maps</h2>
-
-    <img src="/assets/images/worldmap_labeled.jpg" alt="Labeled Map" style="max-width: 100%; margin-bottom: 1rem;">
-    <img src="/assets/images/region_map_updated.png" alt="Pixel Map" style="max-width: 100%;">
+    <h2>Dokimon Encounter Map</h2>
+    <p class="yv-map-intro">Select a Dokimon to highlight all its known mapped encounter locations, or tap a marker to explore the Dokimon found there. Some locations still need verified map coordinates.</p>
+    <section class="yv-map-explorer" aria-label="Dokimon encounter map">
+      <div class="yv-map-toolbar">
+        <label for="yv-map-monster">Find Dokimon</label>
+        <select id="yv-map-monster"><option value="">All encounter locations</option></select>
+        <button id="yv-map-reset" type="button">Show all</button>
+        <label class="yv-map-toggle"><input type="checkbox" id="yv-map-encounters-only"> Encounter locations only</label>
+      </div>
+      <div class="yv-map-scroll" id="yv-map-scroll" tabindex="0" aria-label="Scrollable world map with encounter markers">
+        <div class="yv-map-canvas" id="yv-map-canvas">
+          <img src="{{ '/assets/images/worldmap_labeled.jpg' | relative_url }}" alt="Dokimon world map" draggable="false">
+          <div id="yv-map-pins" class="yv-map-pins"></div>
+        </div>
+      </div>
+      <div class="yv-map-detail" id="yv-map-detail" aria-live="polite">Select a location marker to view encounters.</div>
+      <div class="yv-map-unmapped" id="yv-map-unmapped" hidden></div>
+      <section class="yv-map-directory" aria-label="Encounter location directory">
+        <h3>Location directory</h3>
+        <div class="yv-map-directory-controls">
+          <input id="yv-map-directory-search" type="search" placeholder="Search locations or Dokimon…" aria-label="Search encounter locations">
+          <select id="yv-map-directory-filter" aria-label="Filter locations"><option value="all">All locations</option><option value="mapped">Mapped</option><option value="unmapped">Awaiting coordinates</option><option value="encounters">With encounters</option></select>
+        </div>
+        <p id="yv-map-directory-count" aria-live="polite"></p>
+        <div id="yv-map-directory-results" class="yv-map-directory-results"></div>
+      </section>
+      <details class="yv-map-coverage" id="yv-map-coverage"><summary>Locations still awaiting map coordinates</summary><div id="yv-map-coverage-list"></div></details>
+    </section>
+    <details class="yv-map-original"><summary>View additional regional map</summary><img src="{{ '/assets/images/region_map_updated.png' | relative_url }}" alt="Regional pixel map" loading="lazy"></details>
   </div>
+<style id="yv-encounter-map-style">
+.yv-map-explorer{max-width:1100px;margin:12px auto 22px;padding:14px;border:1px solid rgba(144,192,255,.3);border-radius:17px;background:linear-gradient(145deg,#172b44,#0d192b);color:#e8f2ff;box-shadow:0 14px 35px rgba(0,0,0,.22);box-sizing:border-box}
+.yv-map-intro{max-width:850px;margin:10px auto 18px;line-height:1.6}
+.yv-map-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.yv-map-toolbar label{font-weight:700;font-size:13px}
+.yv-map-toolbar select,.yv-map-toolbar button{background:#203754;color:#f3f7ff;border:1px solid #6486b0;border-radius:10px;padding:10px 12px;min-height:42px;font:600 13px system-ui,sans-serif}
+.yv-map-toolbar select{flex:1 1 210px;min-width:0}
+.yv-map-toolbar button{cursor:pointer}
+.yv-map-toggle{display:inline-flex;align-items:center;gap:7px;white-space:normal;cursor:pointer}
+.yv-map-toggle input{width:17px;height:17px;accent-color:#8bc5ff}
+.yv-map-pin.no-encounters{background:#64748b;border-color:#d3dbe7;box-shadow:0 0 0 2px rgba(100,116,139,.2)}
+.yv-map-pin[hidden]{display:none!important}
+@media(max-width:700px){.yv-map-monsters{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.yv-map-monsters a{min-height:142px;padding:11px 7px}.yv-map-monsters img{width:var(--yv-map-sprite-size,112px);height:var(--yv-map-sprite-size,112px)}}
+.yv-map-scroll{width:100%;overflow:auto;max-height:70dvh;border-radius:12px;border:1px solid rgba(145,184,230,.32);background:#091522;overscroll-behavior:contain}
+.yv-map-canvas{position:relative;width:100%;min-width:700px;aspect-ratio:1600/777}
+.yv-map-canvas>img{width:100%;height:100%;display:block;object-fit:fill;pointer-events:none}
+.yv-map-pins{position:absolute;inset:0;pointer-events:none}
+.yv-map-pin{position:absolute;transform:translate(-50%,-50%);width:19px;height:19px;padding:0;border:2px solid #fff;border-radius:50%;background:#56a7f7;box-shadow:0 1px 7px #061322,0 0 0 3px rgba(86,167,247,.25);cursor:pointer;pointer-events:auto;z-index:1}
+.yv-map-pin:hover,.yv-map-pin:focus-visible{z-index:5;outline:2px solid #fff;outline-offset:3px}
+.yv-map-pin.selected{background:#ffd56a;box-shadow:0 0 0 5px rgba(255,213,106,.33),0 0 17px #ffdb78;z-index:3}
+.yv-map-pin.dimmed{opacity:.2}
+.yv-map-detail,.yv-map-unmapped{margin-top:12px;padding:13px;border:1px solid rgba(145,184,230,.25);border-radius:11px;background:rgba(255,255,255,.045);line-height:1.55}
+.yv-map-detail h3,.yv-map-unmapped h3{margin:0 0 9px;font-size:16px;color:#fff}
+.yv-map-monsters{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,165px),1fr));gap:12px;margin-top:12px}
+.yv-map-monsters a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;text-decoration:none;color:#f1f7ff;background:#263e5c;border:1px solid #49698e;border-radius:12px;padding:14px 10px;font-size:14px;min-height:138px;transition:transform .15s,border-color .15s}.yv-map-monsters a:hover,.yv-map-monsters a:focus-visible{transform:translateY(-2px);border-color:#a7d4ff}.yv-map-monsters a span{overflow-wrap:anywhere;line-height:1.4}
+.yv-map-monsters img{width:var(--yv-map-sprite-size,104px);height:var(--yv-map-sprite-size,104px);max-width:100%;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 4px 7px rgba(0,0,0,.3))}
+.yv-map-directory{margin-top:18px}.yv-map-directory h3{margin:0 0 10px;font-size:18px}.yv-map-directory-controls{display:flex;gap:9px;flex-wrap:wrap}.yv-map-directory-controls input,.yv-map-directory-controls select{min-height:42px;background:#203754;color:#f3f7ff;border:1px solid #6486b0;border-radius:10px;padding:9px 12px;font:inherit;min-width:0}.yv-map-directory-controls input{flex:2 1 210px}.yv-map-directory-controls select{flex:1 1 170px}.yv-map-directory-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:9px;max-height:480px;overflow:auto}.yv-map-directory-item{padding:11px;border:1px solid rgba(145,184,230,.25);border-radius:11px;background:rgba(255,255,255,.045)}.yv-map-directory-item button{border:0;background:transparent;color:#b8dcff;text-align:left;padding:0;cursor:pointer;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}.yv-map-directory-item p{font-size:12px;line-height:1.45;margin:6px 0 0}.yv-map-directory-count{font-size:13px;opacity:.85}
+.yv-map-coverage{margin-top:14px;padding:11px 13px;border:1px solid rgba(145,184,230,.25);border-radius:11px;background:rgba(255,255,255,.04)}
+.yv-map-coverage summary{cursor:pointer;font-weight:650}.yv-map-coverage-list{margin-top:10px}.yv-map-coverage p{margin:8px 0;font-size:13px;line-height:1.5}
+.yv-map-original{margin:18px auto;max-width:1100px}.yv-map-original summary{cursor:pointer}.yv-map-original img{max-width:100%;height:auto;margin-top:12px}
+@media(max-width:700px){.yv-map-explorer{padding:9px}.yv-map-canvas{min-width:820px}.yv-map-scroll{max-height:58dvh}.yv-map-pin{width:21px;height:21px}}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ const data={{ site.data.dokimon | jsonify }};
+ const siteBase={{ '/' | relative_url | jsonify }};
+ const coords={{ site.data.map_locations | jsonify }};
+ const spriteUrl=raw=>{
+   const value=String(raw||'').trim();
+   if(!value)return '';
+   if(/^https?:\/\//i.test(value))return value;
+   const prefix=new URL(siteBase,location.origin).pathname.replace(/\/$/,'');
+   const path='/'+value.replace(/^\/+/, '');
+   return path===prefix||path.startsWith(prefix+'/')?path:prefix+path;
+ };
+ const select=document.getElementById('yv-map-monster');
+ const pins=document.getElementById('yv-map-pins');
+ const detail=document.getElementById('yv-map-detail');
+ const unmapped=document.getElementById('yv-map-unmapped');
+ const params=new URLSearchParams(location.search);
+ if(!select||!pins||!Array.isArray(data)||!coords)return;
+ const normalize=s=>String(s||'').toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9]+/g,' ').trim().replace(/\broute 0+([0-9]+)\b/g,'route $1');
+ const aliases={'endgame portal':'Endgame Portal','gad riel peak':"Gad'riel Mountain",'gadriel peak':"Gad'riel Mountain",'darkshawl peak':'Darkshawl Spire','ginmachi city':'Giamachi City','route 8':'Route 08','route 9':'Route 09','route 1':'Route 01','route 2':'Route 02','route 3':'Route 03','route 4':'Route 04','route 5':'Route 05','route 6':'Route 06','route 7':'Route 07'};
+ const coordNames=Object.keys(coords).filter(n=>coords[n]&&Number.isFinite(Number(coords[n].x))&&Number.isFinite(Number(coords[n].y)));
+ const canonicalNames=[...new Set(coordNames.filter(n=>!/^\?/.test(n)))];
+ const lookup=new Map(canonicalNames.map(n=>[normalize(n),n]));
+ lookup.set(normalize('??? Town (Endgame Portal)'), 'Endgame Portal');
+ lookup.set(normalize('??? Town'), 'Endgame Portal');
+ const resolve=part=>{
+   const key=normalize(part);
+   if(lookup.has(key))return lookup.get(key);
+   const alias=aliases[key];return alias&&coords[alias]?alias:null;
+ };
+ const byPlace=new Map(canonicalNames.map(n=>[n,[]]));
+ if(coords['??? Town (Endgame Portal)']){coords['Endgame Portal']=coords['??? Town (Endgame Portal)'];canonicalNames.push('Endgame Portal');byPlace.set('Endgame Portal',[])}
+ const unknown=new Map();
+ const monsters=data.filter(m=>m&&m.name).sort((a,b)=>String(a.name).localeCompare(String(b.name)));
+ const methods=/^\s*\[[^\]]+\]\s*/;
+ const nonWild=/^(starter|evolution only|overworld encounter|starter\/overworld encounter.*|fishing only|unknown|none|n\/a)$/i;
+ function locations(mon){
+   const raw=Array.isArray(mon.location)?mon.location.join(','):String(mon.location||'');
+   return raw.replace(/^['\"]|['\"]$/g,'').split(',').map(v=>v.trim().replace(/^['\"]|['\"]$/g,'')).filter(Boolean).map(part=>{
+     const found=part.match(/^\[([^\]]+)\]\s*/);
+     const method=found?found[1]:'';
+     if(found)part=part.replace(methods,'').trim();
+     return {name:part,method};
+   }).filter(x=>x.name&&!nonWild.test(x.name)&&!/^[?\s]+$/.test(x.name));
+ }
+ monsters.forEach(m=>{
+   const used=new Set();
+   locations(m).forEach(loc=>{
+     const place=resolve(loc.name);
+     if(place){if(!used.has(place)){byPlace.get(place).push({mon:m,method:loc.method});used.add(place)}}
+     else {const key=loc.name; if(!unknown.has(key))unknown.set(key,[]);unknown.get(key).push(m)}
+   });
+   const option=document.createElement('option');option.value=m.name;option.textContent=m.name;select.appendChild(option);
+ });
+ const coverage=document.getElementById('yv-map-coverage-list');
+ if(coverage){
+   const title=document.createElement('p');title.textContent=unknown.size+' distinct encounter locations currently lack verified map coordinates. These remain searchable through individual Dokimon profiles.';coverage.appendChild(title);
+   [...unknown.entries()].sort((a,b)=>a[0].localeCompare(b[0])).forEach(([name,mons])=>{
+     const item=document.createElement('p');item.textContent=name+' — '+new Set(mons.map(m=>m.name)).size+' Dokimon';coverage.appendChild(item);
+   });
+ }
+ const directorySearch=document.getElementById('yv-map-directory-search');
+ const directoryFilter=document.getElementById('yv-map-directory-filter');
+ const directoryResults=document.getElementById('yv-map-directory-results');
+ const directoryCount=document.getElementById('yv-map-directory-count');
+ function renderDirectory(){
+   if(!directoryResults)return;
+   const q=normalize(directorySearch.value);
+   const filter=directoryFilter.value;
+   const records=[
+     ...canonicalNames.map(name=>({name,mapped:true,mons:byPlace.get(name)||[]})),
+     ...[...unknown.entries()].map(([name,mons])=>({name,mapped:false,mons:mons.map(mon=>({mon,method:''}))}))
+   ].filter(rec=>(filter==='all'||filter==='mapped'&&rec.mapped||filter==='unmapped'&&!rec.mapped||filter==='encounters'&&rec.mons.length>0))
+    .filter(rec=>!q||normalize(rec.name).includes(q)||rec.mons.some(x=>normalize(x.mon.name).includes(q)))
+    .sort((a,b)=>a.name.localeCompare(b.name));
+   directoryCount.textContent=records.length+' locations shown';
+   directoryResults.replaceChildren();
+   records.forEach(rec=>{
+     const card=document.createElement('div');card.className='yv-map-directory-item';
+     const heading=document.createElement('button');heading.type='button';heading.textContent=rec.name;
+     if(rec.mapped)heading.addEventListener('click',()=>{showPlace(rec.name);focusMarker(rec.name);buttons.get(rec.name)?.focus()});
+     else{heading.addEventListener('click',()=>{detail.replaceChildren();detail.appendChild(make('h3',rec.name+' — coordinates not yet verified'));const links=make('div');links.className='yv-map-monsters';rec.mons.forEach(({mon})=>{const a=make('a',mon.name);a.href=mon.url?(siteBase.replace(/\/$/,'')+mon.url):'#';links.appendChild(a)});detail.appendChild(links);detail.scrollIntoView({behavior:'smooth',block:'nearest'})})}
+     card.appendChild(heading);
+     const description=document.createElement('p');
+     description.textContent=(rec.mapped?'Mapped':'Coordinates needed')+' · '+new Set(rec.mons.map(x=>x.mon.name)).size+' Dokimon';
+     card.appendChild(description);
+     if(rec.mons.length){const names=document.createElement('p');names.textContent=[...new Set(rec.mons.map(x=>x.mon.name))].slice(0,8).join(', ')+(rec.mons.length>8?'…':'');card.appendChild(names)}
+     directoryResults.appendChild(card);
+   });
+ }
+ directorySearch?.addEventListener('input',renderDirectory);
+ directoryFilter?.addEventListener('change',renderDirectory);
+ renderDirectory();
+ const make=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e};
+ function showPlace(name){
+   detail.replaceChildren();
+   detail.appendChild(make('h3',name));
+   const encounters=byPlace.get(name)||[];
+   detail.appendChild(make('p',encounters.length?encounters.length+' known Dokimon encounter(s)':'No Dokimon encounters recorded here.'));
+   const list=make('div');list.className='yv-map-monsters';
+   encounters.forEach(({mon,method})=>{
+     const a=make('a');a.href=mon.url?(siteBase.replace(/\/$/,'')+mon.url):'#';
+     if(mon.image){const img=make('img');img.src=spriteUrl(mon.image);img.alt='';img.loading='lazy';a.appendChild(img)}
+     a.appendChild(make('span',mon.name+(method?' · '+method:'')));list.appendChild(a);
+   });
+   detail.appendChild(list);
+ }
+ const buttons=new Map();
+ const scroll=document.getElementById('yv-map-scroll');
+ const canvas=document.getElementById('yv-map-canvas');
+ function syncMapArtworkScale(){
+   if(!canvas)return;
+   // Scale encounter sprites with the displayed map, relative to its 1600px source.
+   // Keep them usable at both narrow and large viewport sizes.
+   const scale=canvas.getBoundingClientRect().width/1600;
+   const size=Math.round(Math.max(64,Math.min(180,160*scale)));
+   document.getElementById('yv-map-detail')?.style.setProperty('--yv-map-sprite-size',size+'px');
+ }
+ if(canvas){
+   syncMapArtworkScale();
+   if(typeof ResizeObserver!=='undefined')new ResizeObserver(syncMapArtworkScale).observe(canvas);
+   else window.addEventListener('resize',syncMapArtworkScale,{passive:true});
+ }
+ function focusMarker(name){
+   const btn=buttons.get(name);if(!btn||!scroll)return;
+   const x=Number(coords[name].x)/1600*scroll.scrollWidth;
+   const y=Number(coords[name].y)/777*scroll.scrollHeight;
+   scroll.scrollTo({left:Math.max(0,x-scroll.clientWidth/2),top:Math.max(0,y-scroll.clientHeight/2),behavior:'smooth'});
+ }
+ canonicalNames.forEach(name=>{
+   const pos=coords[name],btn=make('button');btn.type='button';btn.className='yv-map-pin';
+   btn.style.left=(Number(pos.x)/1600*100)+'%';btn.style.top=(Number(pos.y)/777*100)+'%';
+   if(!(byPlace.get(name)||[]).length)btn.classList.add('no-encounters');
+   btn.title=name+' ('+(byPlace.get(name)||[]).length+' Dokimon)';
+   btn.setAttribute('aria-label',btn.title);
+   btn.addEventListener('click',()=>{showPlace(name);buttons.forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');focusMarker(name)});
+   pins.appendChild(btn);buttons.set(name,btn);
+ });
+ const encountersOnly=document.getElementById('yv-map-encounters-only');
+ function update(){
+   const selected=monsters.find(m=>m.name===select.value);
+   const matches=new Set();
+   if(selected)locations(selected).forEach(l=>{const name=resolve(l.name);if(name)matches.add(name)});
+   buttons.forEach((btn,name)=>{
+     btn.hidden=!!encountersOnly?.checked&&!(byPlace.get(name)||[]).length;
+     btn.classList.toggle('selected',!!selected&&matches.has(name));
+     btn.classList.toggle('dimmed',!!selected&&!matches.has(name));
+   });
+   detail.replaceChildren();
+   if(selected){
+     detail.appendChild(make('h3',selected.name+' — '+matches.size+' mapped location(s)'));
+     const list=make('div');list.className='yv-map-monsters';
+     [...matches].forEach(name=>{const b=make('button',name);b.type='button';b.className='yv-map-location-link';b.style.cssText='padding:8px 10px;border:1px solid #6688ad;border-radius:9px;background:#263e5c;color:#fff;cursor:pointer';b.addEventListener('click',()=>{showPlace(name);focusMarker(name);buttons.get(name)?.focus()});list.appendChild(b)});
+     detail.appendChild(list);
+     if(matches.size===1)focusMarker([...matches][0]);
+     const missing=locations(selected).filter(l=>!resolve(l.name));
+     unmapped.hidden=!missing.length;
+     if(missing.length){unmapped.replaceChildren(make('h3','Locations awaiting verified map coordinates'),make('p',missing.map(x=>x.name+(x.method?' ('+x.method+')':'')).join(' · ')))}
+     if(!matches.size&&!missing.length)detail.appendChild(make('p','No mapped wild encounters recorded for this Dokimon.'));
+   }else{
+     detail.appendChild(make('p','Select a location marker or choose a Dokimon above.'));
+     unmapped.hidden=true;
+   }
+ }
+ select.addEventListener('change',update);
+ encountersOnly?.addEventListener('change',update);
+ document.getElementById('yv-map-reset').addEventListener('click',()=>{select.value='';update()});
+ const requested=params.get('dokimon');if(requested){const match=monsters.find(m=>normalize(m.name)===normalize(requested));if(match)select.value=match.name}
+ update();
+ if(requested){document.querySelector('[data-tab="maps"]')?.click()}
+});
+</script>
 </div>

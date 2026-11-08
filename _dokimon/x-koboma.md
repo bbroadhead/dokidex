@@ -10,7 +10,16 @@ type:
 location: Gad'riel's Domain
 image: /assets/images/x-koboma.png
 description: ''
-long_description: ''
+long_description: "A burst of legendary fire destroys its mechanical suit. X-Koboma emerges as a flaming skeleton sustained by sheer willpower."
+short_description: "Undead Dokimon"
+short_description_ko: "언데드 도키몬"
+long_description_ko: "전설적인 불꽃이 폭발하면서 기계 갑옷이 산산조각 난다. 엑스코보마는 오직 의지의 힘으로 움직이는 불타는 해골의 모습으로 나타난다."
+short_description_ja: "アンデッド ドキモン"
+long_description_ja: "でんせつの ほのおが ばくはつ したこと により、 メカスーツ は たえきれずに ほうかいした。"
+short_description_es: "El Dokimon Muerto Viviente"
+long_description_es: "En una explosión de fuego legendario, el traje mecánico no puede resistir y se desintegra. Así, X-Koboma emerge como un esqueleto de llamas controlado únicamente por su fuerza de voluntad."
+short_description_pt: "Dokimon Morto-vivo"
+long_description_pt: "Em uma explosão de fogo lendário, a armadura mecânica se desintegra. X-Koboma surge como um esqueleto flamejante controlado apenas pela força de vontade."
 base_stats:
 - 100
 - 60

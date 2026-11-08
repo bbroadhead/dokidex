@@ -12,6 +12,8 @@ description: ''
 long_description: Frostby's fists are frozen over due to fishing with their hands.
   It's said one must capture 100,000 fish to evolve.
 short_description: Ice Fist Dokimon
+short_description_ko: "얼음 주먹 도키몬"
+long_description_ko: "프로스트비는 손으로 물고기를 잡다가 주먹이 얼어붙었다. 진화하려면 물고기 10만 마리를 잡아야 한다고 전해진다."
 base_stats:
 - 55
 - 40

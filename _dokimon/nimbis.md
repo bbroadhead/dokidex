@@ -11,6 +11,8 @@ image: /assets/images/nimbis.png
 description: ''
 long_description: Its wool glows at night, making it a popular material for artisans.
 short_description: Glowing Dokimon
+short_description_ko: "발광 도키몬"
+long_description_ko: "양털이 밤에 빛나기 때문에 장인들이 즐겨 사용하는 재료다."
 base_stats:
 - 47
 - 58

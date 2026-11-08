@@ -4,9 +4,144 @@ title: "Dokimon: Quest - Wiki"
 ---
 {% include type_chart_ui.html %}
 
-<button id="filter-toggle">Toggle Filters</button>
+<style id="yanoverse-filter-collapse-fix">
+#dex-filter-controls.collapsed,
+body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
+#filter-toggle {display:flex!important;align-items:center!important;justify-content:center!important;width:fit-content!important;max-width:calc(100% - 24px)!important;min-height:42px!important;margin:4px auto 18px!important;padding:10px 22px!important;border:1px solid rgba(152,191,237,.36)!important;border-radius:12px!important;background:linear-gradient(145deg,#243c5b,#14273e)!important;color:#edf5ff!important;font:700 13px/1.3 system-ui,sans-serif!important;letter-spacing:.025em!important;box-shadow:0 6px 20px rgba(0,0,0,.2)!important;cursor:pointer!important;transition:background .2s,transform .2s!important;}
+#filter-toggle:hover,#filter-toggle:focus-visible {background:linear-gradient(145deg,#355779,#1d3653)!important;}
+#filter-toggle:active {transform:scale(.98)!important;}
 
-<div class="filter-controls">
+/* Centered glass-style type chips, with compact search and clear controls. */
+#dex-filter-controls .type-block {flex:1 1 100%!important;text-align:center!important}
+#dex-filter-controls .type-block>label {text-align:center!important;margin-bottom:10px!important}
+#dex-filter-controls #type-filters {
+  display:flex!important;flex-wrap:wrap!important;justify-content:center!important;
+  align-items:center!important;gap:9px!important;width:100%!important;
+}
+#dex-filter-controls #type-filters .type-btn {
+  position:relative!important;overflow:hidden!important;
+  min-height:37px!important;padding:9px 14px!important;
+  border:1px solid rgba(220,237,255,.34)!important;border-radius:11px!important;
+  background-image:linear-gradient(160deg,rgba(255,255,255,.29),rgba(255,255,255,.08) 46%,rgba(5,17,32,.2))!important;
+  background-blend-mode:screen!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.32),0 4px 12px rgba(0,0,0,.19)!important;
+  color:#fff!important;font:700 12px/1.2 system-ui,sans-serif!important;
+  text-shadow:0 1px 3px rgba(0,0,0,.65)!important;
+  backdrop-filter:blur(10px) saturate(145%)!important;
+  -webkit-backdrop-filter:blur(10px) saturate(145%)!important;
+  transition:transform .16s,box-shadow .16s,filter .16s!important;
+}
+#dex-filter-controls #type-filters .type-btn {
+  box-sizing:border-box!important;
+  flex:0 0 92px!important;
+  width:92px!important;
+  min-width:92px!important;
+  max-width:92px!important;
+  height:38px!important;
+  min-height:38px!important;
+  max-height:38px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:6px 8px!important;
+  white-space:nowrap!important;
+}
+#dex-filter-controls #type-filters .type-btn:hover {
+  transform:translateY(-2px)!important;filter:brightness(1.13)!important;
+}
+#dex-filter-controls #type-filters .type-btn.active {
+  border-color:rgba(255,255,255,.9)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 0 2px rgba(145,206,255,.55),0 5px 18px rgba(40,117,199,.34)!important;
+  filter:brightness(1.2)!important;
+}
+#dex-filter-controls {
+  row-gap:8px!important;column-gap:12px!important;align-items:end!important;
+}
+#dex-filter-controls .filter-block:has(#location-filter),
+#dex-filter-controls .filter-block:has(#search-filter) {margin-bottom:0!important;padding-bottom:0!important}
+#dex-filter-controls .filter-block:has(#clear-filters) {
+  flex:1 1 100%!important;display:flex!important;justify-content:center!important;
+  margin:0!important;padding:0!important;
+}
+#dex-filter-controls #clear-filters {
+  width:auto!important;min-height:41px!important;margin:0 auto!important;
+  padding:10px 23px!important;border:1px solid rgba(181,215,250,.38)!important;
+  border-radius:12px!important;color:#edf6ff!important;
+  background:linear-gradient(150deg,rgba(80,119,164,.42),rgba(23,45,72,.75))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 5px 17px rgba(0,0,0,.2)!important;
+  backdrop-filter:blur(12px) saturate(140%)!important;
+  -webkit-backdrop-filter:blur(12px) saturate(140%)!important;
+  font:700 13px/1.2 system-ui,sans-serif!important;
+  transition:transform .16s,background .16s!important;
+}
+#dex-filter-controls #clear-filters:hover {background:linear-gradient(150deg,rgba(105,149,199,.55),rgba(31,61,95,.82))!important}
+#dex-filter-controls #clear-filters:active {transform:scale(.98)!important}
+@media(max-width:767px){
+  #dex-filter-controls {row-gap:7px!important}
+  #dex-filter-controls #type-filters {gap:7px!important}
+  #dex-filter-controls #type-filters .type-btn {padding:6px 8px!important;height:38px!important;min-height:38px!important;max-height:38px!important}
+}
+</style>
+<button id="filter-toggle" type="button" aria-controls="dex-filter-controls" aria-expanded="true">Hide Filters</button>
+
+<div class="filter-controls" id="dex-filter-controls">
+  
+<style id="yv-localized-type-badges">
+/* Reuse the original pixel-art labels in English. Other languages retain
+   selectable type identifiers and render translated live text over a clean badge. */
+#dex-filter-controls #type-filters .type-btn {
+  --yv-type-color:#607c9a;
+  padding:3px!important;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--yv-type-color),white 26%),var(--yv-type-color) 52%,color-mix(in srgb,var(--yv-type-color),black 33%))!important;
+  border:2px solid color-mix(in srgb,var(--yv-type-color),white 28%)!important;
+  border-radius:7px!important;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.25),inset 0 -3px 0 rgba(0,0,0,.25),0 2px 5px rgba(0,0,0,.22)!important;
+}
+#type-filters .type-fire{--yv-type-color:#e56a43!important}
+#type-filters .type-water{--yv-type-color:#438dce!important}
+#type-filters .type-grass{--yv-type-color:#4eaa64!important}
+#type-filters .type-electric{--yv-type-color:#d3ad39!important}
+#type-filters .type-light{--yv-type-color:#d6bb65!important}
+#type-filters .type-dark{--yv-type-color:#6d58a2!important}
+#type-filters .type-flying{--yv-type-color:#6bafc3!important}
+#type-filters .type-fight{--yv-type-color:#b86443!important}
+#type-filters .type-fairy{--yv-type-color:#c96ba7!important}
+#type-filters .type-ghost{--yv-type-color:#7760b3!important}
+#type-filters .type-poison{--yv-type-color:#9250ae!important}
+#type-filters .type-dragon{--yv-type-color:#586dbb!important}
+#type-filters .type-ice{--yv-type-color:#6dbbc9!important}
+#dex-filter-controls #type-filters .type-btn .yv-type-label {
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  width:100%;height:100%;min-width:0;
+  color:white!important;font:700 clamp(12px,1.5vw,16px)/1.05 'VT323',monospace!important;
+  text-shadow:1px 1px 0 rgba(0,0,0,.85),-1px -1px 0 rgba(0,0,0,.4)!important;
+  white-space:nowrap;
+}
+html[lang="en"] #dex-filter-controls #type-filters .type-btn {
+  background-image:var(--yv-type-image)!important;
+  background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
+}
+html[lang="en"] #dex-filter-controls #type-filters .type-btn .yv-type-label {
+  opacity:0!important;
+}
+#type-filters .type-fire{--yv-type-image:url('{{ '/assets/images/type_icons/fire.png' | relative_url }}')}
+#type-filters .type-water{--yv-type-image:url('{{ '/assets/images/type_icons/water.png' | relative_url }}')}
+#type-filters .type-grass{--yv-type-image:url('{{ '/assets/images/type_icons/grass.png' | relative_url }}')}
+#type-filters .type-electric{--yv-type-image:url('{{ '/assets/images/type_icons/electric.png' | relative_url }}')}
+#type-filters .type-light{--yv-type-image:url('{{ '/assets/images/type_icons/light.png' | relative_url }}')}
+#type-filters .type-dark{--yv-type-image:url('{{ '/assets/images/type_icons/dark.png' | relative_url }}')}
+#type-filters .type-flying{--yv-type-image:url('{{ '/assets/images/type_icons/flying.png' | relative_url }}')}
+#type-filters .type-fight{--yv-type-image:url('{{ '/assets/images/type_icons/fight.png' | relative_url }}')}
+#type-filters .type-fairy{--yv-type-image:url('{{ '/assets/images/type_icons/fairy.png' | relative_url }}')}
+#type-filters .type-ghost{--yv-type-image:url('{{ '/assets/images/type_icons/ghost.png' | relative_url }}')}
+#type-filters .type-poison{--yv-type-image:url('{{ '/assets/images/type_icons/poison.png' | relative_url }}')}
+#type-filters .type-dragon{--yv-type-image:url('{{ '/assets/images/type_icons/dragon.png' | relative_url }}')}
+#type-filters .type-ice{--yv-type-image:url('{{ '/assets/images/type_icons/ice.png' | relative_url }}')}
+#dex-filter-controls #type-filters .type-btn.active {
+  outline:2px solid #e9f6ff!important;outline-offset:1px!important;
+  filter:brightness(1.18)!important;
+}
+</style>
   <!-- Group: Stage -->
   <div class="filter-block">
 <label for="formFilter">Palettes:</label>
@@ -45,19 +180,19 @@ title: "Dokimon: Quest - Wiki"
   <div class="filter-block type-block">
     <label>Type:</label>
     <div id="type-filters">
-      <button class="type-btn type-fire" data-type="Fire">Fire</button>
-      <button class="type-btn type-water" data-type="Water">Water</button>
-      <button class="type-btn type-grass" data-type="Grass">Grass</button>
-      <button class="type-btn type-electric" data-type="Electric">Electric</button>
-      <button class="type-btn type-light" data-type="Light">Light</button>
-      <button class="type-btn type-dark" data-type="Dark">Dark</button>
-      <button class="type-btn type-flying" data-type="Flying">Flying</button>
-      <button class="type-btn type-fight" data-type="Fight">Fight</button>
-      <button class="type-btn type-fairy" data-type="Fairy">Fairy</button>
-      <button class="type-btn type-ghost" data-type="Ghost">Ghost</button>
-      <button class="type-btn type-poison" data-type="Poison">Poison</button>
-      <button class="type-btn type-dragon" data-type="Dragon">Dragon</button>
-      <button class="type-btn type-ice" data-type="Ice">Ice</button>
+      <button class="type-btn type-fire" data-type="Fire"><span class="yv-type-label">Fire</span></button>
+      <button class="type-btn type-water" data-type="Water"><span class="yv-type-label">Water</span></button>
+      <button class="type-btn type-grass" data-type="Grass"><span class="yv-type-label">Grass</span></button>
+      <button class="type-btn type-electric" data-type="Electric"><span class="yv-type-label">Electric</span></button>
+      <button class="type-btn type-light" data-type="Light"><span class="yv-type-label">Light</span></button>
+      <button class="type-btn type-dark" data-type="Dark"><span class="yv-type-label">Dark</span></button>
+      <button class="type-btn type-flying" data-type="Flying"><span class="yv-type-label">Flying</span></button>
+      <button class="type-btn type-fight" data-type="Fight"><span class="yv-type-label">Fight</span></button>
+      <button class="type-btn type-fairy" data-type="Fairy"><span class="yv-type-label">Fairy</span></button>
+      <button class="type-btn type-ghost" data-type="Ghost"><span class="yv-type-label">Ghost</span></button>
+      <button class="type-btn type-poison" data-type="Poison"><span class="yv-type-label">Poison</span></button>
+      <button class="type-btn type-dragon" data-type="Dragon"><span class="yv-type-label">Dragon</span></button>
+      <button class="type-btn type-ice" data-type="Ice"><span class="yv-type-label">Ice</span></button>
     </div>
   </div>
 
@@ -79,6 +214,47 @@ title: "Dokimon: Quest - Wiki"
   </div>
 </div>
 
+<div class="yv-dex-summary" id="yv-dex-summary" role="status" aria-live="polite">
+  <span><strong id="yv-visible-count">0</strong> <span data-yv-count-label>Dokimon shown</span></span>
+</div>
+<style id="yv-dex-summary-style">
+.yv-dex-summary{box-sizing:border-box;max-width:100%;width:fit-content;margin:4px auto 18px;padding:9px 19px;border:1px solid rgba(145,184,230,.27);border-radius:999px;background:linear-gradient(145deg,rgba(36,60,91,.68),rgba(20,39,62,.75));color:#dceaff;font:600 13px/1.4 system-ui,sans-serif;text-align:center}
+.yv-dex-summary strong{color:#fff;font-size:15px}
+
+/* Compact, content-width type filters that naturally wrap and center on any screen. */
+#dex-filter-controls #type-filters{
+ display:flex!important;flex-flow:row wrap!important;justify-content:center!important;
+ align-content:center!important;align-items:center!important;
+ gap:6px!important;width:100%!important;min-width:0!important;
+}
+#dex-filter-controls #type-filters .type-btn{
+ flex:0 0 auto!important;width:auto!important;min-width:0!important;max-width:none!important;
+ height:34px!important;min-height:34px!important;max-height:34px!important;
+ padding:5px 10px!important;margin:0!important;
+ font:normal clamp(19px,2.3vw,23px)/1 'VT323',monospace!important;
+ white-space:nowrap!important;
+}
+@media(max-width:420px){
+ #dex-filter-controls #type-filters{gap:5px!important}
+ #dex-filter-controls #type-filters .type-btn{
+  height:32px!important;min-height:32px!important;max-height:32px!important;
+  padding:4px 8px!important;font-size:19px!important;
+ }
+}
+
+/* Equal-width compact type buttons, with centered responsive wrapping. */
+#dex-filter-controls #type-filters .type-btn{
+ flex:0 0 76px!important;width:76px!important;
+ min-width:76px!important;max-width:76px!important;
+ box-sizing:border-box!important;
+}
+@media(max-width:420px){
+ #dex-filter-controls #type-filters .type-btn{
+  flex-basis:76px!important;width:76px!important;
+  min-width:76px!important;max-width:76px!important;
+ }
+}
+</style>
 <div class="dex-grid" id="dex-grid">
   {% if site.dokimon %}
     {% assign sorted = site.dokimon | sort: "number" %}
@@ -96,7 +272,7 @@ title: "Dokimon: Quest - Wiki"
   {% assign type_class = 'border-' | append: type1 %}
 {% endif %}
 
-      <div class="dex-entry"
+      <article class="dex-entry"
            data-name="{{ mon.name | downcase | default: '' }}"
 		   data-number="{{ mon.number | default: '' }}"
            data-location="{{ mon.location | downcase | default: '' }}"
@@ -107,9 +283,9 @@ title: "Dokimon: Quest - Wiki"
             <img src="{{ mon.image }}" alt="{{ mon.name }}" class="monster-image small" data-default="{{ mon.image }}">
             <div class="img-blocker"></div>
           </div>
-          <div>#{{ mon.number }} - {{ mon.name }}</div>
+          <div class="dex-card-details"><span class="dex-card-number">#{{ mon.number }}</span><strong class="dex-card-name">{{ mon.name }}</strong></div>
         </a>
-      </div>
+      </article>
     {% endfor %}
   {% else %}
     <p style="color: red;">⚠ No Dokimon collection found. Check `_config.yml` and `_dokimon/` folder.</p>
@@ -123,6 +299,21 @@ const locationFilter = document.getElementById('location-filter');
 const searchFilter = document.getElementById('search-filter');
 const clearBtn = document.getElementById('clear-filters');
 const entries = document.querySelectorAll('.dex-entry');
+// Apply type-based border colors, blending both colors on dual-type Dokimon.
+const dexTypeColors = {
+  fire:'#f27655', water:'#58b8f5', grass:'#74c987',
+  electric:'#f6d65b', light:'#f8e9a4', dark:'#9c88d6',
+  flying:'#8ed5e5', fight:'#e58d6a', fairy:'#ef9fdf',
+  ghost:'#a38ce8', poison:'#bc80d8', dragon:'#8b9cff', ice:'#91e0ed'
+};
+document.querySelectorAll('#dex-grid .dex-entry').forEach(card => {
+  const types = (card.dataset.type || '').toLowerCase().match(/[a-z]+/g) || [];
+  const valid = [...new Set(types.filter(type => dexTypeColors[type]))];
+  if (!valid.length) return;
+  card.style.setProperty('--yv-type-one', dexTypeColors[valid[0]]);
+  card.style.setProperty('--yv-type-two', dexTypeColors[valid[1] || valid[0]]);
+});
+
 const filterToggle = document.getElementById('filter-toggle');
 const filterControls = document.querySelector('.filter-controls');
 
@@ -160,6 +351,7 @@ function filterDex() {
   const loc = locationFilter.value.toLowerCase();
   const search = searchFilter.value.toLowerCase();
 
+  let visibleCount = 0;
   entries.forEach(entry => {
     const matchType = [...activeTypes].every(type =>
       entry.dataset.type.includes(type)
@@ -167,12 +359,19 @@ function filterDex() {
     const matchStage = !stage || entry.dataset.stage === stage;
     const matchLoc = entry.dataset.location.includes(loc);
     const matchSearch = entry.dataset.name.includes(search);
-    entry.style.display = (matchType && matchStage && matchLoc && matchSearch) ? '' : 'none';
+    const visible = matchType && matchStage && matchLoc && matchSearch;
+    entry.style.display = visible ? '' : 'none';
+    if (visible) visibleCount++;
   });
+  const count = document.getElementById('yv-visible-count');
+  if (count) count.textContent = String(visibleCount);
 }
+filterDex();
 
 filterToggle.addEventListener('click', () => {
-  filterControls.classList.toggle('collapsed');
+  const isCollapsed = filterControls.classList.toggle('collapsed');
+  filterToggle.setAttribute('aria-expanded', String(!isCollapsed));
+  filterToggle.textContent = isCollapsed ? 'Show Filters' : 'Hide Filters';
 });
 
 document.getElementById("formFilter").addEventListener("change", function () {
@@ -190,7 +389,7 @@ document.getElementById("formFilter").addEventListener("change", function () {
     if (selectedForm === "common") {
       img.src = img.dataset.default;
     } else {
-      img.src = `/assets/images/forms/${folderName}/${name}_${selectedForm}.png`;
+      img.src = `{{ '/assets/images/forms/' | relative_url }}${folderName}/${name}_${selectedForm}.png`;
     }
   });
 });

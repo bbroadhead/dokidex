@@ -12,6 +12,8 @@ description: ''
 long_description: These friendly creatures are considered good luck, as following
   one will often lead you to treasure.
 short_description: Will-o-wisp Dokimon
+short_description_ko: "도깨비불 도키몬"
+long_description_ko: "이 친근한 생물은 행운의 상징으로 여겨진다. 뒤따라가면 보물을 발견하는 일이 많기 때문이다."
 base_stats:
 - 48
 - 62

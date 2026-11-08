@@ -1,0 +1,1013 @@
+/* Yanoverse visual refinement — shared tokens and surfaces */
+:root{--yv-bg:#0b1525;--yv-surface:#15253b;--yv-surface-raised:#1d324c;--yv-stroke:rgba(158,191,232,.23);--yv-text:#eff5ff;--yv-muted:#b3c4db;--yv-accent:#91c7ff;--yv-radius:16px}
+body.dark-mode{background:radial-gradient(ellipse 75% 38% at 50% 0%,rgba(45,87,143,.19),transparent 80%),var(--yv-bg)!important;color:var(--yv-text)}
+body.dark-mode .page-content{line-height:1.6}
+body.dark-mode .page-content h1,body.dark-mode .page-content h2,body.dark-mode .page-content h3{letter-spacing:-.025em;line-height:1.25;text-wrap:balance}
+body.dark-mode .page-content h1{font-size:clamp(1.75rem,3.4vw,2.6rem)}
+body.dark-mode .page-content h2{font-size:clamp(1.35rem,2.3vw,1.9rem)}
+body.dark-mode .page-content p{overflow-wrap:break-word}
+body.dark-mode .page-content a{transition:color .18s,border-color .18s,background-color .18s}
+body.dark-mode .page-content a:focus-visible,body.dark-mode .page-content button:focus-visible,body.dark-mode .page-content input:focus-visible,body.dark-mode .page-content select:focus-visible{outline:2px solid var(--yv-accent)!important;outline-offset:3px}
+body.dark-mode .page-content :is(input[type="search"],input[type="text"],select,textarea){color-scheme:dark;border-radius:10px}
+body.dark-mode :is(.yv-map-explorer,.yv-encounter-embed,.yv-map-directory-item,.yv-map-detail,.yv-map-unmapped,.tracker-summary-box,.tracker-settings-box){box-shadow:0 12px 32px rgba(0,0,0,.14)}
+body.dark-mode :is(.yv-map-directory-item,.yv-map-monsters a,.yv-encounter-embed){transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+@media(hover:hover){body.dark-mode .yv-map-directory-item:hover{border-color:rgba(160,201,250,.55);transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.2)}}
+body.dark-mode .yv-map-toolbar select,body.dark-mode .yv-map-directory-controls input,body.dark-mode .yv-map-directory-controls select,body.dark-mode .yv-encounter-select{background-color:#1a304a;border-color:rgba(150,190,234,.45)}
+body.dark-mode .yv-map-toolbar select:hover,body.dark-mode .yv-map-directory-controls input:hover,body.dark-mode .yv-map-directory-controls select:hover{border-color:#8cbee9}
+body.dark-mode .yv-map-coverage,body.dark-mode .yv-map-original{color:var(--yv-muted)}
+body.dark-mode .yv-map-detail h3,body.dark-mode .yv-map-directory h3{color:var(--yv-text)}
+@media(max-width:700px){body.dark-mode .page-content{padding-bottom:72px!important}body.dark-mode .yv-map-explorer,body.dark-mode .yv-encounter-embed{border-radius:13px}body.dark-mode .yv-map-directory-results{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){body.dark-mode .page-content *,body.dark-mode .page-content *::before,body.dark-mode .page-content *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* Dex gallery: consistent card rhythm without overriding type-specific art borders */
+body.dark-mode #dex-grid.dex-grid{gap:clamp(11px,1.8vw,20px)!important;align-items:stretch;padding:10px 2px 24px!important}
+body.dark-mode #dex-grid .dex-entry{position:relative;min-width:0!important;margin:0!important;padding:0!important;overflow:hidden;border:1px solid rgba(144,180,221,.29)!important;border-radius:16px!important;background:linear-gradient(155deg,rgba(48,77,112,.54),rgba(16,32,52,.96) 64%)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.075),0 7px 20px rgba(0,0,0,.18)!important;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease!important}
+body.dark-mode #dex-grid .dex-entry>a{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:100%!important;box-sizing:border-box!important;padding:12px!important;text-decoration:none!important;color:var(--yv-text)!important}
+body.dark-mode #dex-grid .dex-entry .img-wrapper{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-height:0!important;aspect-ratio:1/1!important;margin:0!important;overflow:hidden!important;border-radius:12px!important;background:transparent!important;box-shadow:none!important}
+body.dark-mode #dex-grid .dex-entry .monster-image{display:block!important;width:82%!important;height:82%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;image-rendering:pixelated!important;filter:drop-shadow(0 8px 9px rgba(0,0,0,.24));transition:transform .22s ease!important}
+body.dark-mode #dex-grid .dex-card-details{display:flex!important;align-items:baseline!important;justify-content:center!important;flex-wrap:wrap!important;gap:4px 9px!important;min-width:0!important;padding:13px 2px 5px!important;text-align:center!important;line-height:1.4!important}
+body.dark-mode #dex-grid .dex-card-number{color:#a8c6e6!important;font:700 12px/1.4 system-ui,sans-serif!important;letter-spacing:.035em!important}
+body.dark-mode #dex-grid .dex-card-name{color:#f2f7ff!important;font:750 clamp(13px,1.25vw,16px)/1.35 system-ui,sans-serif!important;overflow-wrap:anywhere!important}
+@media(hover:hover){body.dark-mode #dex-grid .dex-entry:hover{transform:translateY(-4px)!important;border-color:rgba(158,205,255,.72)!important;box-shadow:0 14px 32px rgba(0,0,0,.3),0 0 0 1px rgba(144,196,249,.12)!important}body.dark-mode #dex-grid .dex-entry:hover .monster-image{transform:scale(1.07)!important}}
+body.dark-mode #dex-grid .dex-entry:focus-within{border-color:#a3d0ff!important;box-shadow:0 0 0 2px rgba(145,199,255,.35)!important}
+body.dark-mode #dex-filter-controls{border:1px solid rgba(144,180,221,.22)!important;border-radius:17px!important;background:linear-gradient(160deg,rgba(29,51,77,.7),rgba(14,29,48,.76))!important;padding:clamp(12px,2vw,22px)!important;box-shadow:0 10px 28px rgba(0,0,0,.13)!important}
+body.dark-mode #dex-filter-controls .filter-block>label{color:#c8dbf0!important;font-weight:700!important;letter-spacing:.02em!important}
+body.dark-mode #dex-filter-controls :is(input,select){min-height:43px!important;border:1px solid rgba(156,190,228,.4)!important;border-radius:10px!important;background:#1a304a!important;color:#f4f8ff!important;padding:9px 11px!important}
+body.dark-mode .yv-dex-summary{border-color:rgba(147,193,238,.43);box-shadow:0 4px 16px rgba(0,0,0,.15)}
+@media(max-width:767px){body.dark-mode #dex-grid.dex-grid{gap:10px!important;padding:7px 0 22px!important}body.dark-mode #dex-grid .dex-entry>a{padding:8px!important}body.dark-mode #dex-grid .dex-card-details{padding:9px 1px 3px!important;gap:3px 6px!important}body.dark-mode #dex-grid .dex-card-name{font-size:13px!important}body.dark-mode #dex-grid .dex-card-number{font-size:11px!important}}
+
+/* Transparent monster artwork containers: retain card framing, remove image-panel fill. */
+body.dark-mode #dex-grid .dex-entry .img-wrapper,body.dark-mode #dex-grid .dex-entry .img-wrapper::before,body.dark-mode #dex-grid .dex-entry .img-wrapper::after{background:transparent!important;background-image:none!important;box-shadow:none!important}
+
+/* Type-colored card perimeter: single types stay uniform, dual types blend smoothly. */
+body.dark-mode #dex-grid .dex-entry{
+  --yv-type-one:#7898bd;--yv-type-two:var(--yv-type-one);
+  overflow:visible!important;
+  border:1px solid transparent!important;
+  background:linear-gradient(155deg,#273d58,#101f34 70%) padding-box,
+             linear-gradient(125deg,var(--yv-type-one),var(--yv-type-two)) border-box!important;
+  box-shadow:0 0 10px -4px var(--yv-type-one),0 0 16px -8px var(--yv-type-two),0 7px 20px rgba(0,0,0,.18)!important;
+}
+body.dark-mode #dex-grid .dex-entry::before{
+  content:"";position:absolute;inset:-3px;z-index:-1;pointer-events:none;
+  border-radius:inherit;background:linear-gradient(125deg,var(--yv-type-one),var(--yv-type-two));
+  filter:blur(9px);opacity:.24;transition:opacity .2s ease;
+}
+@media(hover:hover){
+  body.dark-mode #dex-grid .dex-entry:hover{
+    border-color:transparent!important;
+    box-shadow:0 0 15px -3px var(--yv-type-one),0 0 22px -6px var(--yv-type-two),0 14px 32px rgba(0,0,0,.3)!important;
+  }
+  body.dark-mode #dex-grid .dex-entry:hover::before{opacity:.42}
+}
+body.dark-mode #dex-grid .dex-entry:focus-within{
+  border-color:transparent!important;
+  box-shadow:0 0 0 2px rgba(210,231,255,.7),0 0 16px -3px var(--yv-type-one)!important;
+}
+
+/* Sprite-only display: no inset dark tile, matte, overlay or artwork background.
+   The outer card's type glow and surface remain unchanged. */
+html body #dex-grid .dex-entry .img-wrapper,
+html body #dex-grid .dex-entry .img-wrapper::before,
+html body #dex-grid .dex-entry .img-wrapper::after,
+html body #dex-grid .dex-entry .img-blocker,
+html body #dex-grid .dex-entry img.monster-image,
+html body #dex-grid .dex-entry img.monster-image.small {
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border:0!important;
+}
+html body #dex-grid .dex-entry .img-blocker{display:none!important}
+html body #dex-grid .dex-entry .img-wrapper{border-radius:0!important}
+
+/* Larger sprites on Dex cards; keep labels and gradient type border intact. */
+html body #dex-grid .dex-entry .img-wrapper{
+  width:100%!important;height:auto!important;aspect-ratio:1/1!important;
+  margin:0!important;align-self:stretch!important;overflow:visible!important;
+}
+html body #dex-grid .dex-entry img.monster-image.small{
+  width:96%!important;height:96%!important;max-width:none!important;
+  max-height:none!important;padding:0!important;object-fit:contain!important;
+  image-rendering:pixelated!important;
+}
+@media(max-width:767px){
+  html body #dex-grid .dex-entry>a{padding:7px!important;gap:2px!important}
+  html body #dex-grid .dex-entry .img-wrapper{aspect-ratio:1/1!important}
+}
+
+/* Actual legacy monster profile markup uses .monster-image-container/.glow-wrapper,
+   not .yv-profile-art. Remove its dark image panel without touching palette controls. */
+html body .monster-profile .monster-image-container,
+html body .monster-profile .monster-image-container .glow-wrapper,
+html body .monster-profile .monster-image-container #main-monster-image,
+html body .monster-image-container,
+html body .monster-image-container .glow-wrapper,
+html body .monster-image-container #main-monster-image {
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+html body .monster-image-container .glow-wrapper{
+  border:0!important;
+}
+html body .monster-image-container #main-monster-image{
+  border:0!important;
+}
+
+/* Compact, consistently sized cards: 3 across on phones, more columns as space allows. */
+html body #dex-grid.dex-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,105px),1fr))!important;
+  gap:clamp(8px,1.5vw,14px)!important;
+  width:100%!important;
+  align-items:stretch!important;
+}
+html body #dex-grid .dex-entry{
+  width:100%!important;min-width:0!important;
+}
+html body #dex-grid .dex-entry>a{
+  padding:clamp(6px,1vw,10px)!important;
+}
+html body #dex-grid .dex-entry .dex-card-details{
+  padding:6px 0 3px!important;
+  gap:2px 5px!important;
+}
+html body #dex-grid .dex-entry .dex-card-name{
+  font-size:clamp(11px,1.2vw,13px)!important;
+}
+@media(max-width:767px){
+  html body #dex-grid.dex-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:8px!important;
+    padding:6px 0 18px!important;
+  }
+  html body #dex-grid .dex-entry>a{padding:5px!important}
+  html body #dex-grid .dex-entry .dex-card-name{font-size:11px!important}
+  html body #dex-grid .dex-entry .dex-card-number{font-size:10px!important}
+}
+@media(min-width:768px){
+  html body #dex-grid.dex-grid{
+    grid-template-columns:repeat(auto-fill,minmax(115px,1fr))!important;
+  }
+}
+
+/* Shared pixel typography across the site, including buttons and form controls. */
+html body,html body button,html body input,html body select,html body textarea,
+html body a,html body label,html body table,html body .page-content,
+html body .page-content h1,html body .page-content h2,html body .page-content h3,
+html body .page-content p,html body .page-content strong,
+html body .page-content span,html body .page-content div{
+  font-family:'VT323',monospace!important;
+}
+html body{font-size:clamp(20px,1.65vw,24px)!important;line-height:1.28!important}
+html body .page-content{font-size:clamp(21px,1.8vw,25px)!important}
+html body button,html body input,html body select,html body textarea{font-size:clamp(19px,1.55vw,23px)!important}
+html body #dex-grid .dex-card-name{font-size:clamp(18px,1.55vw,23px)!important}
+html body #dex-grid .dex-card-number{font-size:clamp(17px,1.4vw,20px)!important}
+@media(max-width:767px){
+ html body #dex-grid .dex-card-name{font-size:18px!important;line-height:1.05!important}
+ html body #dex-grid .dex-card-number{font-size:17px!important}
+}
+/* White numeric labels on SVG web/network diagrams and evolution connectors. */
+html body svg text,html body svg tspan,html body .web-diagram .number,
+html body .web-diagram [class*="number"],html body .network-diagram text{
+ fill:#fff!important;color:#fff!important;font-family:'VT323',monospace!important;
+}
+/* Profile layout: strong hierarchy, compact navigation, and a clear desktop split. */
+html body .yanoverse-profile{
+ display:grid!important;
+ grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr)!important;
+ gap:clamp(12px,2vw,24px)!important;
+ max-width:1180px!important;
+ padding:clamp(10px,2vw,24px)!important;
+ align-items:start!important;
+}
+html body .yanoverse-profile>.yv-back-link{
+ grid-column:1/-1!important;grid-row:auto!important;
+ width:fit-content!important;padding:7px 13px!important;margin:0!important;
+ border:1px solid rgba(148,191,244,.28)!important;border-radius:10px!important;
+ background:rgba(35,59,89,.48)!important;color:#d3e7ff!important;
+ font-size:22px!important;
+}
+html body .yanoverse-profile .yv-profile-heading{
+ grid-column:1/-1!important;grid-row:auto!important;
+ padding:5px 0 15px!important;gap:12px!important;
+}
+html body .yanoverse-profile .yv-profile-heading h1{
+ font-size:clamp(36px,4.4vw,64px)!important;line-height:1!important;
+}
+html body .yanoverse-profile .yv-profile-number{font-size:clamp(26px,2.7vw,38px)!important;color:#a7ccff!important}
+html body .yanoverse-profile .yv-profile-art{
+ grid-column:1!important;grid-row:auto!important;
+ min-height:300px!important;max-width:100%!important;
+ padding:clamp(12px,2vw,24px)!important;
+ background:linear-gradient(145deg,rgba(49,76,108,.36),rgba(15,31,50,.55))!important;
+ border:1px solid rgba(152,196,245,.3)!important;border-radius:20px!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 12px 30px rgba(0,0,0,.16)!important;
+}
+html body .yanoverse-profile .yv-profile-art>img{
+ max-width:100%!important;max-height:390px!important;
+ background:transparent!important;object-fit:contain!important;
+ filter:drop-shadow(0 12px 14px rgba(0,0,0,.19));
+}
+html body .yanoverse-profile .yv-profile-facts{
+ grid-column:2!important;grid-row:auto!important;
+ padding:clamp(16px,2vw,26px)!important;border-radius:20px!important;
+ background:linear-gradient(155deg,rgba(37,62,91,.78),rgba(15,30,49,.9))!important;
+}
+html body .yanoverse-profile .yv-profile-facts p{
+ font-size:clamp(22px,1.9vw,27px)!important;line-height:1.22!important;
+ margin:0 0 12px!important;
+}
+html body .yanoverse-profile .evolution-chain{
+ grid-column:1/-1!important;grid-row:auto!important;
+ padding:clamp(14px,2vw,24px)!important;border-radius:20px!important;
+}
+html body .yanoverse-profile .evolution-chain h2{font-size:clamp(27px,2.5vw,36px)!important}
+html body .yanoverse-profile .chain-wrapper{
+ justify-content:center!important;flex-wrap:wrap!important;
+ overflow-x:visible!important;gap:clamp(7px,1.6vw,18px)!important;
+}
+html body .yanoverse-profile .chain-stage{
+ flex:0 1 155px!important;min-width:0!important;
+ padding:12px!important;border-radius:14px!important;
+ background:rgba(116,166,222,.075)!important;
+ font-size:22px!important;
+}
+html body .yanoverse-profile .chain-stage img{width:100%!important;max-width:105px!important;height:95px!important;object-fit:contain!important}
+html body .yanoverse-profile .evo-arrow{font-size:23px!important;color:#fff!important}
+@media(max-width:700px){
+ html body .yanoverse-profile{display:flex!important;flex-direction:column!important;gap:12px!important;padding:8px!important}
+ html body .yanoverse-profile>*{width:100%!important;box-sizing:border-box!important}
+ html body .yanoverse-profile>.yv-back-link{width:fit-content!important}
+ html body .yanoverse-profile .yv-profile-art{min-height:220px!important;padding:12px!important}
+ html body .yanoverse-profile .yv-profile-art>img{max-height:285px!important}
+ html body .yanoverse-profile .yv-profile-facts{padding:16px!important}
+ html body .yanoverse-profile .chain-wrapper{flex-wrap:nowrap!important;justify-content:flex-start!important;overflow-x:auto!important;gap:6px!important}
+ html body .yanoverse-profile .chain-stage{flex:0 0 82px!important;padding:6px!important;font-size:18px!important}
+ html body .yanoverse-profile .chain-stage img{height:70px!important;max-width:72px!important}
+ html body .yanoverse-profile .evo-arrow{font-size:18px!important;white-space:nowrap!important}
+}
+
+/* Evolution chains: fit all stages and arrows within the viewport, no horizontal scrolling. */
+html body .yanoverse-profile .chain-wrapper{
+ display:flex!important;flex-wrap:nowrap!important;justify-content:center!important;
+ align-items:center!important;overflow:visible!important;width:100%!important;
+ min-width:0!important;box-sizing:border-box!important;gap:clamp(3px,1vw,14px)!important;
+}
+html body .yanoverse-profile .chain-stage{
+ flex:1 1 0!important;min-width:0!important;max-width:170px!important;
+ box-sizing:border-box!important;overflow-wrap:anywhere!important;
+}
+html body .yanoverse-profile .chain-stage .img-wrapper{
+ width:100%!important;min-width:0!important;
+}
+html body .yanoverse-profile .chain-stage img{
+ width:100%!important;max-width:100%!important;height:auto!important;
+ max-height:105px!important;object-fit:contain!important;
+}
+html body .yanoverse-profile .evo-arrow{
+ flex:0 1 auto!important;min-width:0!important;white-space:nowrap!important;
+ text-align:center!important;
+}
+@media(max-width:700px){
+ html body .yanoverse-profile .chain-wrapper{
+  flex-wrap:nowrap!important;justify-content:space-between!important;
+  overflow:visible!important;gap:clamp(2px,.7vw,6px)!important;
+  padding:4px 0!important;
+ }
+ html body .yanoverse-profile .chain-stage{
+  flex:1 1 0!important;min-width:0!important;max-width:none!important;
+  padding:clamp(3px,1vw,8px)!important;font-size:clamp(13px,3.1vw,18px)!important;
+ }
+ html body .yanoverse-profile .chain-stage img{
+  width:100%!important;height:auto!important;max-height:clamp(55px,17vw,90px)!important;
+ }
+ html body .yanoverse-profile .evo-arrow{
+  flex:0 1 auto!important;font-size:clamp(12px,3vw,18px)!important;
+ }
+}
+
+/* Responsive Dex tiles: portrait shows 3; landscape adds columns at the same tile size.
+   Flex layout centers the final, partially filled row. */
+html body #dex-grid.dex-grid{
+ display:flex!important;flex-wrap:wrap!important;justify-content:center!important;
+ align-content:flex-start!important;align-items:stretch!important;
+ gap:8px!important;width:100%!important;box-sizing:border-box!important;
+ padding:8px 0 22px!important;
+}
+html body #dex-grid.dex-grid>.dex-entry{
+ flex:0 0 108px!important;width:108px!important;max-width:108px!important;
+ min-width:0!important;margin:0!important;box-sizing:border-box!important;
+}
+@media(max-width:359px){
+ html body #dex-grid.dex-grid>.dex-entry{
+  flex-basis:calc((100% - 16px)/3)!important;
+  width:calc((100% - 16px)/3)!important;
+  max-width:calc((100% - 16px)/3)!important;
+ }
+}
+@media(min-width:360px) and (max-width:379px){
+ html body #dex-grid.dex-grid>.dex-entry{
+  flex-basis:calc((100% - 16px)/3)!important;
+  width:calc((100% - 16px)/3)!important;
+  max-width:calc((100% - 16px)/3)!important;
+ }
+}
+/* Legacy monster pages: unified glass panels and stable layout at every orientation. */
+html body .monster-profile{
+ width:100%!important;max-width:1240px!important;min-width:0!important;
+ margin:0 auto!important;box-sizing:border-box!important;
+ padding:clamp(8px,2vw,22px)!important;
+}
+html body .monster-profile .top-bar{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ gap:12px!important;width:100%!important;min-width:0!important;
+ margin:0 0 16px!important;
+}
+html body .monster-profile .monster-layout-row{
+ display:grid!important;
+ grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)!important;
+ gap:clamp(12px,1.8vw,22px)!important;
+ align-items:start!important;justify-content:stretch!important;
+ width:100%!important;min-width:0!important;margin:0!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container,
+html body .monster-profile .monster-layout-row>.monster-info,
+html body .monster-profile .monster-layout-row>.stats-side,
+html body .monster-profile .monster-layout-row>.forms-wrapper,
+html body .monster-profile .top-bar>.evolution-wrapper,
+html body .monster-profile .top-bar>.move-list-container{
+ box-sizing:border-box!important;min-width:0!important;
+ margin:0!important;max-width:100%!important;
+ border:1px solid rgba(144,180,221,.29)!important;border-radius:17px!important;
+ background:linear-gradient(155deg,rgba(48,77,112,.54),rgba(16,32,52,.96) 64%)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.075),0 7px 20px rgba(0,0,0,.18)!important;
+ padding:clamp(12px,1.8vw,22px)!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container{
+ grid-column:1!important;grid-row:1!important;
+ display:flex!important;justify-content:center!important;align-items:center!important;
+ width:100%!important;min-height:240px!important;
+}
+html body .monster-profile .monster-image-container .glow-wrapper{
+ width:100%!important;min-width:0!important;max-width:100%!important;
+ background:transparent!important;background-image:none!important;
+ box-shadow:none!important;border:0!important;
+}
+html body .monster-profile #main-monster-image{
+ max-width:100%!important;max-height:330px!important;object-fit:contain!important;
+ background:transparent!important;
+}
+html body .monster-profile .monster-layout-row>.monster-info{
+ grid-column:2!important;grid-row:1 / span 2!important;width:100%!important;
+ overflow-wrap:anywhere!important;
+}
+html body .monster-profile .monster-layout-row>.stats-side{
+ grid-column:1!important;grid-row:2!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ width:100%!important;
+}
+html body .monster-profile .stats-side canvas{display:block!important;max-width:100%!important;height:auto!important}
+html body .monster-profile .monster-stats{max-width:100%!important;width:100%!important;table-layout:fixed!important}
+html body .monster-profile .monster-stats :is(th,td){padding:4px 2px!important;overflow-wrap:anywhere!important}
+html body .monster-profile .monster-layout-row>.forms-wrapper{
+ grid-column:1/-1!important;grid-row:3!important;
+ width:100%!important;display:flex!important;flex-direction:column!important;
+ align-items:center!important;gap:10px!important;padding:clamp(14px,2vw,22px)!important;
+}
+html body .monster-profile .forms-wrapper>.forms-container{
+ width:100%!important;max-width:100%!important;margin:0!important;
+ border:0!important;outline:0!important;box-shadow:none!important;
+ background:transparent!important;padding:0!important;
+}
+html body .monster-profile .forms-instructions{
+ display:block!important;width:100%!important;text-align:center!important;
+ margin:0!important;padding:0!important;color:#c9dcef!important;
+}
+html body .monster-profile .forms-wrapper>.forms-instructions:last-child{
+ text-align:center!important;align-self:center!important;
+}
+html body .monster-profile .forms-images{justify-content:center!important;max-width:100%!important}
+html body .monster-profile .forms-extra-row{justify-content:center!important;max-width:100%!important}
+html body .monster-profile .top-bar>.evolution-wrapper{width:100%!important}
+html body .monster-profile .top-bar>.move-list-container{width:100%!important;text-align:center!important}
+html body .monster-profile .evolution-wrapper :is(img,svg){max-width:100%!important;height:auto!important}
+@media(max-width:850px){
+ html body .monster-profile .monster-layout-row{
+  grid-template-columns:minmax(0,1fr)!important;gap:12px!important;
+ }
+ html body .monster-profile .monster-layout-row>.monster-image-container,
+ html body .monster-profile .monster-layout-row>.monster-info,
+ html body .monster-profile .monster-layout-row>.stats-side,
+ html body .monster-profile .monster-layout-row>.forms-wrapper{
+  grid-column:1!important;grid-row:auto!important;
+  width:100%!important;max-width:100%!important;min-width:0!important;
+  margin:0!important;padding:14px!important;
+ }
+ html body .monster-profile .monster-layout-row>.monster-image-container{order:0!important;min-height:200px!important}
+ html body .monster-profile .monster-layout-row>.monster-info{order:1!important}
+ html body .monster-profile .monster-layout-row>.stats-side{order:2!important}
+ html body .monster-profile .monster-layout-row>.forms-wrapper{order:3!important;padding:14px!important}
+ html body .monster-profile .monster-layout-row>.monster-info{text-align:left!important}
+ html body .monster-profile .forms-wrapper{padding-left:14px!important}
+}
+@media(orientation:landscape) and (max-height:550px){
+ html body .monster-profile .monster-layout-row{gap:12px!important}
+ html body .monster-profile .top-bar{gap:10px!important}
+ html body .monster-profile .monster-layout-row>.monster-image-container{min-height:180px!important}
+}
+
+/* Keep card labels directly beneath artwork instead of pinning them to the bottom. */
+html body #dex-grid.dex-grid>.dex-entry{
+ min-height:0!important;height:auto!important;align-self:start!important;
+}
+html body #dex-grid.dex-grid>.dex-entry>a{
+ height:auto!important;min-height:0!important;
+ justify-content:flex-start!important;gap:2px!important;
+}
+html body #dex-grid.dex-grid>.dex-entry .dex-card-details{
+ margin-top:0!important;padding:2px 1px 5px!important;
+ align-self:stretch!important;flex:0 0 auto!important;
+}
+
+/* Monster detail refinements: floating move list, compact navigation, rare forms last. */
+html body .monster-profile .top-bar>.move-list-container,
+html body.in-panel .monster-profile .top-bar>.move-list-container{
+ position:relative!important;z-index:35!important;overflow:visible!important;
+ align-self:center!important;width:fit-content!important;max-width:100%!important;
+ min-width:0!important;min-height:0!important;padding:0!important;margin:0 auto!important;
+ background:transparent!important;background-image:none!important;
+ border:0!important;border-radius:0!important;box-shadow:none!important;
+}
+html body .monster-profile .move-toggle-btn{
+ display:block!important;margin:0 auto!important;
+ padding:9px 17px!important;max-width:100%!important;
+ border:1px solid rgba(164,206,251,.44)!important;border-radius:12px!important;
+ background:linear-gradient(145deg,rgba(55,91,132,.94),rgba(25,47,75,.96))!important;
+ color:#f1f7ff!important;box-shadow:inset 0 1px rgba(255,255,255,.1),0 6px 16px rgba(0,0,0,.2)!important;
+ font:normal clamp(21px,2.1vw,27px)/1.15 'VT323',monospace!important;
+ cursor:pointer!important;
+}
+html body .monster-profile .move-toggle-btn:hover{background:#315578!important;border-color:#a9d3ff!important}
+html body .monster-profile .move-dropdown{
+ position:absolute!important;top:calc(100% + 8px)!important;left:50%!important;
+ transform:translateX(-50%)!important;z-index:200!important;
+ width:min(560px,calc(100vw - 36px))!important;max-width:calc(100vw - 36px)!important;
+ max-height:min(65dvh,530px)!important;overflow-y:auto!important;overflow-x:hidden!important;
+ box-sizing:border-box!important;padding:12px!important;margin:0!important;
+ border:1px solid rgba(155,201,249,.48)!important;border-radius:16px!important;
+ background:linear-gradient(150deg,#263e5d,#12263e)!important;color:#f1f7ff!important;
+ box-shadow:0 18px 44px rgba(0,0,0,.53),inset 0 1px rgba(255,255,255,.09)!important;
+}
+html body .monster-profile .move-dropdown.hidden:not(.show){display:none!important}
+html body .monster-profile .move-dropdown.show{display:block!important}
+html body .monster-profile #move-list-content{
+ display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,145px),1fr))!important;
+ gap:5px 10px!important;margin:0!important;padding:0!important;list-style:none!important;
+}
+html body .monster-profile #move-list-content li{
+ margin:0!important;padding:7px 9px!important;border:1px solid rgba(154,196,237,.16)!important;
+ border-radius:8px!important;background:rgba(111,160,211,.1)!important;
+ color:#e8f3ff!important;font:normal clamp(19px,1.6vw,23px)/1.1 'VT323',monospace!important;
+ text-align:left!important;overflow-wrap:anywhere!important;
+}
+html body .monster-profile .monster-layout-row{
+ position:relative!important;z-index:1!important;
+}
+html body .monster-profile .top-bar{position:relative!important;z-index:30!important}
+html body .monster-profile .monster-layout-row>.forms-wrapper{
+ grid-column:1/-1!important;grid-row:99!important;order:99!important;
+}
+html body .monster-profile .forms-label{
+ display:table!important;margin:0 auto 10px!important;padding:6px 15px!important;
+ border:1px solid rgba(163,206,249,.4)!important;border-radius:11px!important;
+ background:linear-gradient(145deg,rgba(70,113,159,.45),rgba(29,52,82,.85))!important;
+ box-shadow:inset 0 1px rgba(255,255,255,.1)!important;
+ color:#edf6ff!important;font:normal clamp(21px,2vw,27px)/1 'VT323',monospace!important;
+ text-align:center!important;
+}
+html body .monster-profile .forms-extra-row{
+ display:flex!important;justify-content:center!important;align-items:stretch!important;
+ gap:clamp(12px,3vw,28px)!important;padding-top:18px!important;
+}
+html body .monster-profile .forms-extra-row .forms-box{
+ flex:1 1 0!important;min-width:0!important;max-width:280px!important;
+ padding:12px 6px 8px!important;border:0!important;background:transparent!important;
+ text-align:center!important;
+}
+html body .monster-profile .forms-extra-row .forms-label{margin-bottom:14px!important}
+html body .monster-profile .forms-extra-row .forms-images{justify-content:center!important}
+html body .monster-profile .forms-instructions:last-child{
+ text-align:center!important;padding-top:12px!important;
+}
+html body .nav-arrows{
+ position:fixed!important;inset:0!important;pointer-events:none!important;
+ z-index:60!important;display:flex!important;align-items:center!important;
+ justify-content:space-between!important;padding:0 clamp(5px,1vw,18px)!important;
+ box-sizing:border-box!important;
+}
+html body .nav-arrows .nav-arrow{
+ pointer-events:auto!important;position:static!important;transform:none!important;
+ display:grid!important;place-items:center!important;
+ width:clamp(34px,4vw,48px)!important;height:clamp(48px,7vw,64px)!important;
+ border:1px solid rgba(166,207,248,.5)!important;border-radius:12px!important;
+ background:linear-gradient(145deg,rgba(56,95,138,.95),rgba(19,41,67,.96))!important;
+ box-shadow:0 7px 20px rgba(0,0,0,.3)!important;
+ color:#e9f5ff!important;font:normal 27px/1 'VT323',monospace!important;
+ text-decoration:none!important;
+}
+html body .nav-arrows .left-arrow{transform:scaleX(-1)!important}
+html body .nav-arrows .nav-arrow:hover{background:#3a658e!important}
+html body.in-panel .nav-arrows{display:none!important}
+@media(max-width:850px){
+ html body .monster-profile .monster-layout-row>.forms-wrapper{
+  grid-column:1!important;grid-row:auto!important;order:99!important;
+ }
+ html body .monster-profile .move-dropdown{
+  width:min(440px,calc(100vw - 30px))!important;
+ }
+ html body .monster-profile .forms-extra-row{gap:8px!important;padding-top:15px!important}
+ html body .monster-profile .forms-extra-row .forms-box{padding:10px 2px!important}
+ html body .nav-arrows{padding:0 3px!important}
+}
+
+/* Fine-tune profile spacing and center the main monster artwork. */
+html body .monster-profile .forms-extra-row{
+ padding-top:9px!important;
+}
+html body .monster-profile .forms-instructions:last-child{
+ padding-top:5px!important;
+ margin-top:0!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container{
+ display:flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ text-align:center!important;
+}
+html body .monster-profile .monster-image-container .glow-wrapper{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ margin-inline:auto!important;
+}
+html body .monster-profile #main-monster-image{
+ display:block!important;
+ margin-inline:auto!important;
+ align-self:center!important;
+ object-fit:contain!important;
+}
+@media(max-width:850px){
+ html body .monster-profile .forms-extra-row{padding-top:7px!important}
+}
+
+/* Remove legacy three-column divider pseudo-elements from the move list. */
+html body .monster-profile .move-dropdown ul::before,
+html body .monster-profile .move-dropdown ul::after{
+ content:none!important;display:none!important;background:none!important;
+}
+
+/* Pin previous/next controls to the visible viewport midpoint.
+   Legacy fixed-position/top rules must not shift them into the header. */
+html body:not(.in-panel) .nav-arrows{
+ position:fixed!important;top:50dvh!important;bottom:auto!important;
+ left:0!important;right:0!important;width:100%!important;height:0!important;
+ min-height:0!important;margin:0!important;padding:0!important;
+ transform:none!important;display:block!important;overflow:visible!important;
+ pointer-events:none!important;z-index:60!important;
+}
+html body:not(.in-panel) .nav-arrows .nav-arrow{
+ position:fixed!important;top:50dvh!important;bottom:auto!important;
+ margin:0!important;transform:translateY(-50%)!important;
+ pointer-events:auto!important;
+}
+html body:not(.in-panel) .nav-arrows .left-arrow{
+ left:max(5px,env(safe-area-inset-left))!important;right:auto!important;
+ transform:translateY(-50%) scaleX(-1)!important;
+}
+html body:not(.in-panel) .nav-arrows .right-arrow{
+ right:max(5px,env(safe-area-inset-right))!important;left:auto!important;
+ transform:translateY(-50%)!important;
+}
+html body.in-panel .nav-arrows{display:none!important}
+
+/* Uniform evolution-chain stage widths; arrows use narrow dedicated tracks. */
+html body .monster-profile .evolution-wrapper .evo-chain{
+ display:flex!important;flex-wrap:nowrap!important;align-items:center!important;
+ justify-content:space-between!important;gap:clamp(3px,1vw,12px)!important;
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ box-sizing:border-box!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd){
+ flex:1 1 0!important;width:0!important;min-width:0!important;max-width:none!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;gap:5px!important;
+ text-align:center!important;overflow-wrap:anywhere!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(even){
+ flex:0 0 clamp(12px,3vw,26px)!important;width:clamp(12px,3vw,26px)!important;
+ min-width:0!important;text-align:center!important;
+ font-size:clamp(17px,2.5vw,25px)!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd)>a{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ width:100%!important;min-width:0!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd) img{
+ display:block!important;width:clamp(35px,8vw,72px)!important;
+ height:clamp(35px,8vw,72px)!important;max-width:100%!important;
+ object-fit:contain!important;image-rendering:pixelated!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd)>div{
+ width:100%!important;max-width:100%!important;
+ font-size:clamp(15px,2.8vw,23px)!important;line-height:1.12!important;
+ white-space:normal!important;text-align:center!important;
+}
+@media(max-width:400px){
+ html body .monster-profile .evolution-wrapper .evo-chain{gap:2px!important}
+ html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(even){
+  flex-basis:12px!important;width:12px!important;
+ }
+}
+/* Neutralize old body-wide 0.5s fades; navigation uses a short dark transition. */
+html body.fade-out,html body.fade-in{opacity:1!important;transition:none!important}
+html.monster-leaving body{opacity:.65!important;transition:opacity .09s ease,transform .09s ease!important}
+html.monster-arriving body{opacity:0!important}
+@media(prefers-reduced-motion:reduce){
+ html.monster-leaving body,html.monster-arriving body{opacity:1!important;transform:none!important;transition:none!important}
+}
+
+/* Site-wide typography: every UI element, generated label, and SVG text uses VT323.
+   Explicit exclusions only for icon glyph fonts to preserve their symbols. */
+html,html body,html body *,
+html body *::before,html body *::after,
+html body svg text,html body svg tspan,
+html body input,html body textarea,html body select,
+html body button,html body option,
+html body canvas + *,html body [contenteditable]{
+ font-family:'VT323',monospace!important;
+}
+html body :is(.material-icons,.material-symbols-outlined,.material-symbols-rounded,
+ .fa,.fas,.far,.fab,[class^="fa-"],[class*=" fa-"],
+ .lucide,[class*="icon-font"]){
+ font-family:inherit;
+}
+
+/* Content-sized, centered glass panels on legacy monster profiles. */
+html body .monster-profile .top-bar{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;width:100%!important;gap:10px!important;
+}
+html body .monster-profile .top-bar>.return-link{align-self:flex-start!important}
+html body .monster-profile .top-bar>.evolution-wrapper{
+ display:inline-flex!important;align-self:center!important;flex:0 1 auto!important;
+ width:max-content!important;max-width:100%!important;min-width:0!important;
+ padding:clamp(7px,1.5vw,12px)!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain{
+ width:max-content!important;max-width:100%!important;min-width:0!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd){
+ flex:0 1 clamp(70px,18vw,165px)!important;width:clamp(70px,18vw,165px)!important;
+}
+html body .monster-profile .monster-layout-row{
+ display:flex!important;flex-wrap:wrap!important;justify-content:center!important;
+ align-items:flex-start!important;align-content:flex-start!important;
+ gap:clamp(10px,2vw,20px)!important;width:100%!important;
+ max-width:100%!important;min-width:0!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container,
+html body .monster-profile .monster-layout-row>.monster-info,
+html body .monster-profile .monster-layout-row>.stats-side,
+html body .monster-profile .monster-layout-row>.forms-wrapper{
+ grid-column:auto!important;grid-row:auto!important;
+ flex:0 1 auto!important;align-self:flex-start!important;
+ width:max-content!important;max-width:100%!important;min-width:0!important;
+ box-sizing:border-box!important;margin:0!important;
+ padding:clamp(8px,1.2vw,13px)!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container{
+ order:1!important;min-height:0!important;max-width:min(100%,390px)!important;
+}
+html body .monster-profile .monster-layout-row>.monster-info{
+ order:2!important;max-width:min(100%,520px)!important;
+ overflow-wrap:break-word!important;
+}
+html body .monster-profile .monster-layout-row>.stats-side{
+ order:3!important;max-width:min(100%,440px)!important;
+}
+html body .monster-profile .monster-layout-row>.forms-wrapper{
+ order:99!important;flex:0 1 auto!important;
+ max-width:min(100%,780px)!important;
+ margin-inline:auto!important;
+}
+html body .monster-profile .monster-image-container .glow-wrapper{
+ width:max-content!important;max-width:100%!important;
+}
+html body .monster-profile .monster-image-container #main-monster-image{
+ max-width:100%!important;height:auto!important;
+}
+html body .monster-profile .forms-container{
+ width:max-content!important;max-width:100%!important;
+}
+html body .monster-profile .forms-images{
+ max-width:100%!important;flex-wrap:wrap!important;
+}
+@media(max-width:700px){
+ html body .monster-profile .monster-layout-row{
+  display:flex!important;flex-wrap:wrap!important;
+  justify-content:center!important;gap:10px!important;
+ }
+ html body .monster-profile .monster-layout-row>.monster-image-container,
+ html body .monster-profile .monster-layout-row>.monster-info,
+ html body .monster-profile .monster-layout-row>.stats-side,
+ html body .monster-profile .monster-layout-row>.forms-wrapper{
+  width:max-content!important;max-width:100%!important;
+  flex:0 1 auto!important;padding:8px!important;
+ }
+ html body .monster-profile .monster-layout-row>.monster-info{
+  max-width:min(100%,520px)!important;
+ }
+ html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd){
+  flex:1 1 0!important;width:0!important;
+ }
+}
+
+/* Repair collapsed evolution stages caused by max-content + zero-width flex items. */
+html body .monster-profile .top-bar>.evolution-wrapper{
+ display:block!important;
+ width:min(100%,680px)!important;max-width:680px!important;
+ min-width:0!important;box-sizing:border-box!important;
+ margin-inline:auto!important;padding:10px!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain{
+ display:flex!important;flex-flow:row nowrap!important;
+ align-items:center!important;justify-content:center!important;
+ width:100%!important;min-width:0!important;max-width:100%!important;
+ gap:clamp(3px,1vw,12px)!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd){
+ flex:1 1 0!important;width:auto!important;min-width:0!important;
+ max-width:none!important;align-self:center!important;
+ overflow-wrap:normal!important;word-break:normal!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd)>div{
+ width:100%!important;white-space:normal!important;
+ overflow-wrap:normal!important;word-break:normal!important;
+ font-size:clamp(15px,2.6vw,23px)!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(even){
+ flex:0 0 clamp(12px,3vw,25px)!important;width:clamp(12px,3vw,25px)!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container{
+ display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:center!important;
+ flex:0 1 auto!important;width:fit-content!important;
+ max-width:min(100%,440px)!important;
+ margin-inline:auto!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container>.glow-wrapper{
+ display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:center!important;
+ width:fit-content!important;max-width:100%!important;margin:0 auto!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container #main-monster-image{
+ display:block!important;align-self:center!important;margin:0 auto!important;
+ max-width:100%!important;object-fit:contain!important;
+}
+@media(max-width:700px){
+ html body .monster-profile .top-bar>.evolution-wrapper{
+  width:calc(100% - 12px)!important;max-width:100%!important;
+ }
+ html body .monster-profile .monster-layout-row>.monster-image-container{
+  flex:0 1 auto!important;width:fit-content!important;max-width:100%!important;
+  margin-inline:auto!important;
+ }
+}
+
+/* Center every monster profile section within its responsive row. */
+html body .monster-profile .monster-layout-row{
+ display:flex!important;flex-wrap:wrap!important;justify-content:center!important;
+ align-items:center!important;align-content:center!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container,
+html body .monster-profile .monster-layout-row>.monster-info,
+html body .monster-profile .monster-layout-row>.stats-side,
+html body .monster-profile .monster-layout-row>.forms-wrapper{
+ align-self:center!important;margin-inline:auto!important;
+}
+html body .monster-profile .top-bar{
+ align-items:center!important;justify-content:center!important;
+}
+html body .monster-profile .top-bar>.evolution-wrapper,
+html body .monster-profile .top-bar>.move-list-container{
+ align-self:center!important;margin-inline:auto!important;
+}
+html body .monster-profile .forms-wrapper .forms-container,
+html body .monster-profile .forms-wrapper .forms-images,
+html body .monster-profile .forms-wrapper .forms-extra-row{
+ margin-inline:auto!important;justify-content:center!important;
+}
+
+/* Override legacy header/nav shorthand font declarations, not just inherited text. */
+html body .site-header .yanoverse-brand,
+html body .site-header .yanoverse-brand *,
+html body .site-header .yanoverse-game-title,
+html body .site-header .yanoverse-game .yanoverse-game-title,
+html body .site-header .yanoverse-game small,
+html body .site-header .site-nav,
+html body .site-header .site-nav *,
+html body .site-header .nav-left,
+html body .site-header .nav-left *,
+html body .site-header nav a,
+html body .site-header nav button,
+html body .site-header nav span,
+html body .site-header .language-selector,
+html body .site-header .language-selector *{
+ font-family:'VT323',monospace!important;
+}
+html body .site-header .yanoverse-brand{
+ font-size:clamp(19px,2.2vw,25px)!important;
+ font-weight:400!important;
+}
+html body .site-header .yanoverse-game-title{
+ font-size:clamp(22px,2.5vw,29px)!important;
+ font-weight:400!important;line-height:1.1!important;
+}
+html body .site-header .yanoverse-game.is-selected .yanoverse-game-title{
+ font-size:clamp(24px,2.7vw,31px)!important;
+}
+html body .site-header .yanoverse-game small{
+ font-size:16px!important;font-weight:400!important;
+}
+html body .site-header .site-nav :is(a,button,.dropdown-toggle){
+ font-family:'VT323',monospace!important;
+ font-size:clamp(24px,2.5vw,30px)!important;
+ font-weight:400!important;
+}
+
+
+/* Desktop-only refinement. Mobile rules and the main Dex card grid are intentionally untouched. */
+@media (min-width: 701px) {
+  /* Center the game-logo selector within the full header width. */
+  html body .yanoverse-game-track {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  /* Slightly reduce the desktop navigation controls without changing their styling. */
+  html body .site-nav :is(a,button,.dropdown-toggle),
+  html body .site-nav .nav-left :is(a,button,.dropdown-toggle) {
+    font-size: clamp(19px, 1.8vw, 23px) !important;
+    padding: .38rem .72rem !important;
+  }
+
+  /* Compact the filter toggle and filter panel; preserve colors, borders and type artwork. */
+  html body #filter-toggle {
+    font-size: 21px !important;
+    padding: 8px 16px !important;
+    margin-top: 8px !important;
+  }
+  html body #dex-filter-controls.filter-controls {
+    width: min(100% - 32px, 1050px) !important;
+    max-width: 1050px !important;
+    box-sizing: border-box !important;
+    gap: 12px !important;
+    padding: 12px 16px !important;
+    margin: 10px auto !important;
+  }
+  html body #dex-filter-controls .filter-block {
+    gap: 6px !important;
+  }
+  html body #dex-filter-controls .filter-block label,
+  html body #dex-filter-controls label {
+    font-size: 19px !important;
+    line-height: 1 !important;
+  }
+  html body #dex-filter-controls select,
+  html body #dex-filter-controls input {
+    font-size: 17px !important;
+    min-height: 38px !important;
+    padding: 6px 10px !important;
+  }
+  html body #dex-filter-controls #type-filters {
+    gap: 6px !important;
+  }
+  html body #dex-filter-controls #type-filters .type-btn {
+    min-height: 32px !important;
+    height: 32px !important;
+    padding: 2px !important;
+  }
+  html body #dex-filter-controls #type-filters .type-btn .yv-type-label {
+    font-size: 14px !important;
+  }
+  html body #dex-filter-controls #clear-filters {
+    font-size: 16px !important;
+    padding: 7px 14px !important;
+  }
+
+  /* Give monster profiles the available desktop width between the fixed side arrows. */
+  html body .monster-profile {
+    width: calc(100vw - 150px) !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    margin-inline: auto !important;
+    padding-inline: clamp(12px, 1.5vw, 26px) !important;
+  }
+
+  /* Compact the evolution chain and move-list control only on desktop. */
+  html body .monster-profile .top-bar > .evolution-wrapper {
+    width: min(100%, 570px) !important;
+    max-width: 570px !important;
+    padding: 7px !important;
+  }
+  html body .monster-profile .evolution-wrapper .evo-chain {
+    gap: 6px !important;
+  }
+  html body .monster-profile .evolution-wrapper .evo-chain > div:nth-child(odd) > div {
+    font-size: clamp(14px, 1.15vw, 18px) !important;
+  }
+  html body .monster-profile .move-toggle-btn {
+    font-size: 17px !important;
+    padding: 5px 10px !important;
+  }
+  html body .monster-profile .move-list-container {
+    margin-top: 4px !important;
+  }
+
+  /* Three balanced content columns, with the rare-form section spanning the row.
+     The fixed left/right navigation buttons are not selected or restyled here. */
+  html body .monster-profile .monster-layout-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr) !important;
+    align-items: center !important;
+    justify-items: center !important;
+    justify-content: stretch !important;
+    gap: clamp(12px, 1.4vw, 24px) !important;
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    padding-inline: clamp(8px, 1vw, 18px) !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-image-container,
+  html body .monster-profile .monster-layout-row > .monster-info,
+  html body .monster-profile .monster-layout-row > .stats-side {
+    grid-row: 1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    justify-self: stretch !important;
+    align-self: center !important;
+    margin: 0 !important;
+    padding: clamp(8px, 1vw, 16px) !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-image-container {
+    grid-column: 1 !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-info {
+    grid-column: 2 !important;
+  }
+  html body .monster-profile .monster-layout-row > .stats-side {
+    grid-column: 3 !important;
+  }
+  html body .monster-profile .monster-layout-row > .forms-wrapper {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    max-width: none !important;
+    justify-self: stretch !important;
+    align-self: center !important;
+    margin: 0 !important;
+    padding: clamp(8px, 1vw, 16px) !important;
+    box-sizing: border-box !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-image-container #main-monster-image {
+    max-width: min(100%, 330px) !important;
+    max-height: 390px !important;
+    object-fit: contain !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-info {
+    overflow-wrap: anywhere !important;
+  }
+  html body .monster-profile .monster-layout-row > .stats-side {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  html body .monster-profile .stats-side .monster-stats-visual {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  html body .monster-profile .forms-wrapper .forms-container,
+  html body .monster-profile .forms-wrapper .forms-images,
+  html body .monster-profile .forms-wrapper .forms-extra-row {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+}
